@@ -1,4 +1,4 @@
-# auto-issue workflow v2
+name: Auto Issue from Drafts
 
 on:
   push:
@@ -21,103 +21,83 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Ensure labels exist
+      - name: Show workspace
+        run: |
+          echo "=== ls -la ==="
+          ls -la
+          echo "=== issue-drafts/ ==="
+          ls -la issue-drafts/ 2>&1 || true
+          echo "=== gh version ==="
+          gh --version || true
+          echo "=== jq version ==="
+          jq --version || true
+
+      - name: Sync drafts to issues
+        shell: bash
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set +e
-          declare -A COLORS=(
-            [documentation]="0075ca"
-            [review]="fbca04"
-            [research]="5319e7"
-            [maintenance]="d4c5f9"
-            [compliance]="b60205"
-            [qms]="0e8a16"
-            [design-control]="1d76db"
-            [risk]="e11d21"
-          )
-          for name in "${\!COLORS[@]}"; do
-            gh label create "$name" --color "${COLORS[$name]}" --force >/dev/null 2>&1
-          done
-          echo "labels ensured"
+          set -x
 
-      - name: Sync issue drafts to GitHub Issues
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -uo pipefail
           LOG="issue-drafts/_log.json"
-          mkdir -p issue-drafts
           [ -f "$LOG" ] || echo '{}' > "$LOG"
+          echo "initial log: $(cat "$LOG")"
 
           changed=0
           shopt -s nullglob
-          for f in issue-drafts/*.md; do
+          files=(issue-drafts/*.md)
+          echo "found ${#files[@]} files"
+
+          for f in "${files[@]}"; do
             name="$(basename "$f")"
-            case "$name" in _*|README.md) continue ;; esac
-            echo "::group::process $name"
+            case "$name" in _*|README.md) echo "skip $name"; continue ;; esac
+            echo "=== processing $name ==="
 
-            title=""; labels=""; state=""
-            if head -n 1 "$f" | grep -qE '^---[[:space:]]*$'; then
-              end=$(awk 'NR>1 && /^---[[:space:]]*$/ {print NR; exit}' "$f")
-              if [ -n "$end" ] && [ "$end" -gt 1 ]; then
-                fm="$(sed -n "2,$((end-1))p" "$f")"
-                body="$(tail -n +$((end+1)) "$f")"
-              else
-                fm=""; body="$(cat "$f")"
+            # Extract frontmatter
+            title=""; body_start=1
+            if [ "$(head -n 1 "$f" | tr -d '[:space:]')" = "---" ]; then
+              end_line=$(awk 'NR>1 && /^---[[:space:]]*$/ {print NR; exit}' "$f")
+              if [ -n "$end_line" ]; then
+                title=$(sed -n "2,$((end_line-1))p" "$f" | grep -E '^title:' | head -n1 | sed -E 's/^title:[[:space:]]*//; s/^"(.*)"$/\1/; s/^'"'"'(.*)'"'"'$/\1/')
+                body_start=$((end_line+1))
               fi
-            else
-              fm=""; body="$(cat "$f")"
             fi
-
-            title="$(printf '%s\n' "$fm"  | sed -n 's/^title:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'\''(.*)'\''$/\1/')"
-            labels="$(printf '%s\n' "$fm" | sed -n 's/^labels:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'\''(.*)'\''$/\1/')"
-            state="$(printf '%s\n'  "$fm" | sed -n 's/^state:[[:space:]]*//p'  | head -n1)"
             [ -z "$title" ] && title="$name"
+            echo "title: [$title]"
 
-            issue_num="$(jq -r --arg k "$name" '.[$k] // empty' "$LOG")"
+            bodyfile=$(mktemp)
+            tail -n +$body_start "$f" > "$bodyfile"
 
-            tmpbody="$(mktemp)"
-            printf '%s' "$body" > "$tmpbody"
+            issue_num=$(jq -r --arg k "$name" '.[$k] // empty' "$LOG")
+            echo "existing issue: [$issue_num]"
 
             if [ -z "$issue_num" ]; then
-              echo "creating issue: title=[$title] labels=[$labels]"
-              if [ -n "$labels" ]; then
-                url="$(gh issue create --title "$title" --body-file "$tmpbody" --label "$labels" 2>&1)"
-                rc=$?
-                if [ $rc -ne 0 ]; then
-                  echo "label 포함 생성 실패, 라벨 없이 재시도: $url"
-                  url="$(gh issue create --title "$title" --body-file "$tmpbody")"
-                fi
-              else
-                url="$(gh issue create --title "$title" --body-file "$tmpbody")"
-              fi
-              num="${url##*/}"
-              if [[ "$num" =~ ^[0-9]+$ ]]; then
+              echo "creating new issue..."
+              out=$(gh issue create --title "$title" --body-file "$bodyfile" 2>&1)
+              echo "gh output: $out"
+              num=$(echo "$out" | grep -oE 'https://github\.com/[^/]+/[^/]+/issues/[0-9]+' | grep -oE '[0-9]+$' | tail -n1)
+              if [ -n "$num" ]; then
                 jq --arg k "$name" --arg v "$num" '.[$k]=$v' "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
                 changed=1
-                echo "created #$num -> $url"
+                echo "SUCCESS: created #$num"
               else
-                echo "::error::failed to extract issue number from: $url"
+                echo "FAILED to parse issue number"
               fi
             else
               echo "updating #$issue_num"
-              gh issue edit "$issue_num" --title "$title" --body-file "$tmpbody" >/dev/null || echo "edit failed"
-              if [ "$state" = "closed" ]; then
-                gh issue close "$issue_num" >/dev/null || true
-              elif [ "$state" = "open" ]; then
-                gh issue reopen "$issue_num" >/dev/null || true
-              fi
-              echo "updated #$issue_num"
+              gh issue edit "$issue_num" --title "$title" --body-file "$bodyfile"
             fi
-            echo "::endgroup::"
           done
+
+          echo "final log: $(cat "$LOG")"
+          echo "changed=$changed"
 
           if [ "$changed" -eq 1 ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add "$LOG"
-            git commit -m "chore(issues): update _log.json [skip ci]" || true
-            git push || true
+            git commit -m "chore(issues): update _log.json [skip ci]"
+            git push
           fi
-          echo "done"
+          exit 0
