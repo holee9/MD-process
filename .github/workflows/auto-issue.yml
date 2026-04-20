@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'issue-drafts/**.md'
+      - '.github/workflows/auto-issue.yml'
   workflow_dispatch: {}
 
 permissions:
@@ -20,11 +21,31 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Ensure labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          declare -A COLORS=(
+            [documentation]="0075ca"
+            [review]="fbca04"
+            [research]="5319e7"
+            [maintenance]="d4c5f9"
+            [compliance]="b60205"
+            [qms]="0e8a16"
+            [design-control]="1d76db"
+            [risk]="e11d21"
+          )
+          for name in "${\!COLORS[@]}"; do
+            gh label create "$name" --color "${COLORS[$name]}" --force >/dev/null 2>&1
+          done
+          echo "labels ensured"
+
       - name: Sync issue drafts to GitHub Issues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           LOG="issue-drafts/_log.json"
           mkdir -p issue-drafts
           [ -f "$LOG" ] || echo '{}' > "$LOG"
@@ -33,12 +54,13 @@ jobs:
           shopt -s nullglob
           for f in issue-drafts/*.md; do
             name="$(basename "$f")"
-            case "$name" in _*) continue ;; esac
+            case "$name" in _*|README.md) continue ;; esac
+            echo "::group::process $name"
 
             title=""; labels=""; state=""
-            if head -n 1 "$f" | grep -q '^---\s*$'; then
+            if head -n 1 "$f" | grep -qE '^---[[:space:]]*$'; then
               end=$(awk 'NR>1 && /^---[[:space:]]*$/ {print NR; exit}' "$f")
-              if [ -n "$end" ]; then
+              if [ -n "$end" ] && [ "$end" -gt 1 ]; then
                 fm="$(sed -n "2,$((end-1))p" "$f")"
                 body="$(tail -n +$((end+1)) "$f")"
               else
@@ -49,7 +71,7 @@ jobs:
             fi
 
             title="$(printf '%s\n' "$fm"  | sed -n 's/^title:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'\''(.*)'\''$/\1/')"
-            labels="$(printf '%s\n' "$fm" | sed -n 's/^labels:[[:space:]]*//p' | head -n1)"
+            labels="$(printf '%s\n' "$fm" | sed -n 's/^labels:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'\''(.*)'\''$/\1/')"
             state="$(printf '%s\n'  "$fm" | sed -n 's/^state:[[:space:]]*//p'  | head -n1)"
             [ -z "$title" ] && title="$name"
 
@@ -59,34 +81,43 @@ jobs:
             printf '%s' "$body" > "$tmpbody"
 
             if [ -z "$issue_num" ]; then
-              echo "::group::create $name"
+              echo "creating issue: title=[$title] labels=[$labels]"
               if [ -n "$labels" ]; then
-                url="$(gh issue create --title "$title" --body-file "$tmpbody" --label "$labels")"
+                url="$(gh issue create --title "$title" --body-file "$tmpbody" --label "$labels" 2>&1)"
+                rc=$?
+                if [ $rc -ne 0 ]; then
+                  echo "label 포함 생성 실패, 라벨 없이 재시도: $url"
+                  url="$(gh issue create --title "$title" --body-file "$tmpbody")"
+                fi
               else
                 url="$(gh issue create --title "$title" --body-file "$tmpbody")"
               fi
               num="${url##*/}"
-              jq --arg k "$name" --arg v "$num" '.[$k]=$v' "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
-              changed=1
-              echo "Created issue #$num for $name"
-              echo "::endgroup::"
-            else
-              echo "::group::update $name -> #$issue_num"
-              gh issue edit "$issue_num" --title "$title" --body-file "$tmpbody" || true
-              if [ "$state" = "closed" ]; then
-                gh issue close "$issue_num" || true
-              elif [ "$state" = "open" ]; then
-                gh issue reopen "$issue_num" || true
+              if [[ "$num" =~ ^[0-9]+$ ]]; then
+                jq --arg k "$name" --arg v "$num" '.[$k]=$v' "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
+                changed=1
+                echo "created #$num -> $url"
+              else
+                echo "::error::failed to extract issue number from: $url"
               fi
-              echo "Updated issue #$issue_num for $name"
-              echo "::endgroup::"
+            else
+              echo "updating #$issue_num"
+              gh issue edit "$issue_num" --title "$title" --body-file "$tmpbody" >/dev/null || echo "edit failed"
+              if [ "$state" = "closed" ]; then
+                gh issue close "$issue_num" >/dev/null || true
+              elif [ "$state" = "open" ]; then
+                gh issue reopen "$issue_num" >/dev/null || true
+              fi
+              echo "updated #$issue_num"
             fi
+            echo "::endgroup::"
           done
 
           if [ "$changed" -eq 1 ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add "$LOG"
-            git commit -m "chore(issues): update issue-drafts log [skip ci]" || true
+            git commit -m "chore(issues): update _log.json [skip ci]" || true
             git push || true
           fi
+          echo "done"
