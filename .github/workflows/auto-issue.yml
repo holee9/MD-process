@@ -1,0 +1,92 @@
+name: Auto Issue from Drafts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'issue-drafts/**.md'
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync issue drafts to GitHub Issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          LOG="issue-drafts/_log.json"
+          mkdir -p issue-drafts
+          [ -f "$LOG" ] || echo '{}' > "$LOG"
+
+          changed=0
+          shopt -s nullglob
+          for f in issue-drafts/*.md; do
+            name="$(basename "$f")"
+            case "$name" in _*) continue ;; esac
+
+            title=""; labels=""; state=""
+            if head -n 1 "$f" | grep -q '^---\s*$'; then
+              end=$(awk 'NR>1 && /^---[[:space:]]*$/ {print NR; exit}' "$f")
+              if [ -n "$end" ]; then
+                fm="$(sed -n "2,$((end-1))p" "$f")"
+                body="$(tail -n +$((end+1)) "$f")"
+              else
+                fm=""; body="$(cat "$f")"
+              fi
+            else
+              fm=""; body="$(cat "$f")"
+            fi
+
+            title="$(printf '%s\n' "$fm"  | sed -n 's/^title:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'\''(.*)'\''$/\1/')"
+            labels="$(printf '%s\n' "$fm" | sed -n 's/^labels:[[:space:]]*//p' | head -n1)"
+            state="$(printf '%s\n'  "$fm" | sed -n 's/^state:[[:space:]]*//p'  | head -n1)"
+            [ -z "$title" ] && title="$name"
+
+            issue_num="$(jq -r --arg k "$name" '.[$k] // empty' "$LOG")"
+
+            tmpbody="$(mktemp)"
+            printf '%s' "$body" > "$tmpbody"
+
+            if [ -z "$issue_num" ]; then
+              echo "::group::create $name"
+              if [ -n "$labels" ]; then
+                url="$(gh issue create --title "$title" --body-file "$tmpbody" --label "$labels")"
+              else
+                url="$(gh issue create --title "$title" --body-file "$tmpbody")"
+              fi
+              num="${url##*/}"
+              jq --arg k "$name" --arg v "$num" '.[$k]=$v' "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
+              changed=1
+              echo "Created issue #$num for $name"
+              echo "::endgroup::"
+            else
+              echo "::group::update $name -> #$issue_num"
+              gh issue edit "$issue_num" --title "$title" --body-file "$tmpbody" || true
+              if [ "$state" = "closed" ]; then
+                gh issue close "$issue_num" || true
+              elif [ "$state" = "open" ]; then
+                gh issue reopen "$issue_num" || true
+              fi
+              echo "Updated issue #$issue_num for $name"
+              echo "::endgroup::"
+            fi
+          done
+
+          if [ "$changed" -eq 1 ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add "$LOG"
+            git commit -m "chore(issues): update issue-drafts log [skip ci]" || true
+            git push || true
+          fi
