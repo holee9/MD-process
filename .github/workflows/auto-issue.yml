@@ -1,4 +1,4 @@
-name: Auto Issue from Drafts
+# auto-issue workflow v2
 
 on:
   push:
