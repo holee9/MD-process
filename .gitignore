@@ -1,1 +1,15 @@
-.secrets/token.txt
+# secrets
+.secrets/
+*.token
+*.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# git recovery artifacts
+.git/index.lock
+.git/index.new
+.git/*.bak
