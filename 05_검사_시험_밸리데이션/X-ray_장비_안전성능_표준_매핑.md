@@ -85,3 +85,49 @@
 - 07_위험관리_ISO14971/ISO14971_프로세스_상세.md
 - 01_법규_규제/04_유럽_MDR/GSPR_정합표준_매핑표.md
 - 01_법규_규제/03_미국_FDA/FDA_QMSR_2026.md
+
+## 8. 영상품질 QC 프로토콜 매핑 (v0.1)
+
+### 8.1 목적
+진단용 방사선 발생장치 안전관리규칙(제1122호) 검사항목과 IEC/국제 표준의 영상품질 시험 프로토콜을 매핑하여, 출하 QC·정기검사·PMS 환류에 일관된 기준을 제공한다.
+
+### 8.2 영상품질 검사 항목 매핑
+
+| 검사 항목 | 규칙 제1122호 근거 | IEC/국제 표준 | 시험 방법·판정 기준 | 출하 QC 반영 |
+|-----------|-------------------|--------------|-------------------|-------------|
+| 공간 해상도(Spatial Resolution) | 별표 검사항목 — 해상력 | IEC 62220-1-1 §5.4 (MTF) | Line-pair phantom 또는 디지털 MTF 분석, ≥2.0 lp/mm @ 10% MTF (DR) | 출하 시 MTF 측정 기록 |
+| 저대비 해상도(Low Contrast) | 별표 검사항목 — 저대비 해상력 | IEC 61223-3-2 (수용시험), AAPM TG-150 | 저대비 디테일 팬텀(Leeds TO.20 등), 가시 구멍 수 기준 | 출하 시 팬텀 촬영 기록 |
+| 균일성(Uniformity) | 별표 — 감도 균일성 | IEC 62220-1-1 §5.6 (NNPS), AAPM TG-150 §6.3 | 균일 노출 → ROI 분석, 편차 ≤15% (제조사 내부 기준) | 출하 시 Flood-field 촬영 |
+| 잡음 특성(Noise/NPS) | — | IEC 62220-1-1 §5.5 (NPS), AAPM TG-150 | Noise Power Spectrum 분석, DQE 산출 연동 | DQE 시험과 통합 |
+| DQE(Detective Quantum Efficiency) | — | IEC 62220-1-1:2015 전체 | RQA5 빔조건, DQE(0) ≥ 제조사 목표값 | 형식시험 1회 + 출하 샘플링 |
+| 잔상(Ghosting/Lag) | 별표 — 잔상 | IEC 62220-1-1 §5.7 | 고노출 후 무노출 프레임 비율, ≤1% (DR) | 출하 시 잔상 시험 |
+| AEC 정확도(Auto Exposure Control) | 별표 — 자동노출제어 | IEC 60601-2-54 §203.7.8 | ±25% 선량 변동 이내 (피사체 두께 변화 시) | 출하 교정 기록 |
+| 관전압 정확도(kVp Accuracy) | 제5조 검사항목 | IEC 60601-2-54 §201.12.1 | ±10% 이내 (비침습 kVp 미터) | 출하 교정 기록 |
+| 반가층(HVL) | 제5조 검사항목 | IEC 60601-1-3 §7 | Al 추가 필터법, 관전압별 최소 HVL 표 충족 | 형식시험 기록 |
+| 선량 재현성(Dose Reproducibility) | 제5조 검사항목 | IEC 60601-2-54 §203.6.4 | 변동계수(CoV) ≤ 0.05 (5%) | 출하 시 5회 반복 측정 |
+| DAP 정확도(Dose Area Product) | 별표 — 선량표시 | IEC 60580:2019 §5 | 기준선량계 대비 ±25% 이내 | 출하 교정 기록 |
+
+### 8.3 QC 프로토콜 단계
+
+| 단계 | 시점 | 주체 | 적용 항목 |
+|------|------|------|-----------|
+| 형식시험(Type Test) | 설계 완료 후 1회 | 공인시험소 | DQE, MTF, NPS, HVL, 누설선량 전항목 |
+| 출하시험(Release Test) | 매 출하 | 제조사 QC | 관전압, AEC, DAP, 해상도, 균일성, 잔상, 선량재현성 |
+| 설치검사(Acceptance Test) | 설치 후 | 제조사+사용자 | 규칙 별표 전항목 + 환경 요인(전원, 접지) |
+| 정기검사(Periodic Test) | 3년 주기 | 지정검사기관 | 규칙 제5조 항목 전체 |
+| 일상 QC(Routine QC) | 일/주/월 | 사용자(방사선사) | 균일성(일), AEC확인(주), 해상도 팬텀(월) |
+
+### 8.4 판정 기준 출처 정리
+- AAPM TG-150: Performance Evaluation of Digital Radiography Systems (2024)
+- KFDA/KIAQC 정기검사 매뉴얼 (한국의료영상품질관리원)
+- IEC 61223-3-2: Acceptance and Constancy Tests — Imaging Performance of X-ray Equipment for Radiographic and Radioscopic Systems
+- ACR-AAPM-SIIM Technical Standard for Electronic Practice of Medical Imaging
+
+### 8.5 PMS 환류
+- 정기검사 부적합 데이터 → `08_시판후_감시_PMS/PMS_개요.md` §3 데이터원천에 반영
+- 현장 영상품질 클레임 코드: IQ-001(해상도), IQ-002(균일성), IQ-003(잔상), IQ-004(AEC) 분류
+- CAPA 트리거: 동일 코드 3건/분기 발생 시 경향분석 착수
+
+### 8.6 오픈 이슈
+1. KIAQC 정기검사 매뉴얼 최신판(2025) 입수 후 판정기준 수치 교차확인 필요
+2. 투시(Fluoroscopy) 모드 별도 QC 항목 추가 여부 검토
