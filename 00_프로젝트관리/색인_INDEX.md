@@ -122,3 +122,38 @@
 9. Risk File AI 위험 카탈로그 템플릿 (ISO 14971 + AI 특유 위험)
 10. UDR 마스터 데이터 모델(IT 설계)
 11. RACI-REG-001 (PRRC ↔ 한국/미국) 매트릭스 개정
+
+---
+
+## Regula(ra-med-bot) 연동 현황
+
+> 추가일: 2026-05-02 (브레인스토밍 확정 반영)
+
+### 연동 구조
+
+본 레포는 Regula(ra-med-bot)의 **Knowledge Source #1 (회사 정책·지침·SOP)** 역할을 담당한다.
+
+```
+사내 직원 질문
+    │
+    ▼
+Regula Agent 탐색 (MD-process + ra-project)
+    │
+    ├── [찾음] → 팩트 + 출처 답변
+    └── [못 찾음] → RA 담당자 분류 → MD-process Issue 등록 → Cowork 처리
+```
+
+### bot Issue 연계 처리 원칙
+
+- Regula 미답변 중 사내 정책 부족으로 분류된 항목은 본 레포 GitHub Issue로 등록
+- 라벨: `policy-gap`
+- Cowork 자동 스케줄링이 Issue 기반으로 SOP·지침 보강 처리
+- 처리 완료 후 Regula 지식베이스 자동 업데이트
+
+### bot 연동 관련 신규 작업 항목
+
+12. SOP-BOT-001 Regula 미답변 처리 절차 (bot 연동 SOP)
+13. 정책갭 Issue 처리 기준 매트릭스
+14. Regula 답변 가능 정책 범위 문서
+
+> 전체 시스템 아키텍처: [ra-med-bot/docs/시스템_아키텍처.md](https://github.com/holee9/ra-med-bot/blob/main/docs/시스템_아키텍처.md)
