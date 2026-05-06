@@ -1,6 +1,7 @@
 ---
 title: "[점검] Git repo 연동 상태 점검 결과 — 2026-04-20"
 labels: "maintenance,review"
+state: closed
 ---
 
 ## 개요
