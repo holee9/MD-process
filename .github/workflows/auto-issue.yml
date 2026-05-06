@@ -21,16 +21,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Show workspace
+      - name: Ensure labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "=== ls -la ==="
-          ls -la
-          echo "=== issue-drafts/ ==="
-          ls -la issue-drafts/ 2>&1 || true
-          echo "=== gh version ==="
-          gh --version || true
-          echo "=== jq version ==="
-          jq --version || true
+          set +e
+          declare -A COLORS=(
+            [documentation]="0075ca"
+            [review]="fbca04"
+            [research]="5319e7"
+            [maintenance]="d4c5f9"
+            [compliance]="b60205"
+            [qms]="0e8a16"
+            [design-control]="1d76db"
+            [risk]="e11d21"
+            [pms]="ff9800"
+            [supplier]="795548"
+            [training]="009688"
+            [process-validation]="3f51b5"
+          )
+          for name in "${!COLORS[@]}"; do
+            gh label create "$name" --color "${COLORS[$name]}" --force >/dev/null 2>&1
+          done
+          echo "labels ensured"
 
       - name: Sync drafts to issues
         shell: bash
@@ -38,11 +51,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set +e
-          set -x
 
           LOG="issue-drafts/_log.json"
           [ -f "$LOG" ] || echo '{}' > "$LOG"
-          echo "initial log: $(cat "$LOG")"
 
           changed=0
           shopt -s nullglob
@@ -51,53 +62,78 @@ jobs:
 
           for f in "${files[@]}"; do
             name="$(basename "$f")"
-            case "$name" in _*|README.md) echo "skip $name"; continue ;; esac
-            echo "=== processing $name ==="
+            case "$name" in _*|README.md) continue ;; esac
+            echo "::group::process $name"
 
-            # Extract frontmatter
-            title=""; body_start=1
+            # --- Parse frontmatter ---
+            title=""; labels=""; state=""; body_start=1
             if [ "$(head -n 1 "$f" | tr -d '[:space:]')" = "---" ]; then
               end_line=$(awk 'NR>1 && /^---[[:space:]]*$/ {print NR; exit}' "$f")
-              if [ -n "$end_line" ]; then
-                title=$(sed -n "2,$((end_line-1))p" "$f" | grep -E '^title:' | head -n1 | sed -E 's/^title:[[:space:]]*//; s/^"(.*)"$/\1/; s/^'"'"'(.*)'"'"'$/\1/')
+              if [ -n "$end_line" ] && [ "$end_line" -gt 1 ]; then
+                fm=$(sed -n "2,$((end_line-1))p" "$f")
+                title=$(printf '%s\n' "$fm" | sed -n 's/^title:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'"'"'(.*)'"'"'$/\1/')
+                labels=$(printf '%s\n' "$fm" | sed -n 's/^labels:[[:space:]]*//p' | head -n1 | sed -E 's/^"(.*)"$/\1/; s/^'"'"'(.*)'"'"'$/\1/' | tr -d ' ')
+                state=$(printf '%s\n' "$fm" | sed -n 's/^state:[[:space:]]*//p' | head -n1 | tr -d ' ')
                 body_start=$((end_line+1))
               fi
             fi
             [ -z "$title" ] && title="$name"
-            echo "title: [$title]"
 
             bodyfile=$(mktemp)
             tail -n +$body_start "$f" > "$bodyfile"
 
             issue_num=$(jq -r --arg k "$name" '.[$k] // empty' "$LOG")
-            echo "existing issue: [$issue_num]"
+            echo "title=[$title] labels=[$labels] state=[$state] existing=#${issue_num:-NEW}"
 
             if [ -z "$issue_num" ]; then
-              echo "creating new issue..."
-              out=$(gh issue create --title "$title" --body-file "$bodyfile" 2>&1)
-              echo "gh output: $out"
+              # New issue
+              if [ -n "$labels" ]; then
+                out=$(gh issue create --title "$title" --body-file "$bodyfile" --label "$labels" 2>&1)
+                if [ $? -ne 0 ]; then
+                  echo "label 포함 실패, 라벨 없이 재시도"
+                  out=$(gh issue create --title "$title" --body-file "$bodyfile" 2>&1)
+                fi
+              else
+                out=$(gh issue create --title "$title" --body-file "$bodyfile" 2>&1)
+              fi
               num=$(echo "$out" | grep -oE 'https://github\.com/[^/]+/[^/]+/issues/[0-9]+' | grep -oE '[0-9]+$' | tail -n1)
               if [ -n "$num" ]; then
                 jq --arg k "$name" --arg v "$num" '.[$k]=$v' "$LOG" > "$LOG.tmp" && mv "$LOG.tmp" "$LOG"
                 changed=1
-                echo "SUCCESS: created #$num"
+                echo "CREATED #$num"
+                # If new issue is also marked closed, close it
+                if [ "$state" = "closed" ]; then
+                  gh issue close "$num" >/dev/null 2>&1 && echo "  → closed immediately"
+                fi
               else
-                echo "FAILED to parse issue number"
+                echo "::error::failed to extract issue number from output: $out"
               fi
             else
-              echo "updating #$issue_num"
-              gh issue edit "$issue_num" --title "$title" --body-file "$bodyfile"
+              # Existing issue: update title/body, sync labels and state
+              gh issue edit "$issue_num" --title "$title" --body-file "$bodyfile" >/dev/null 2>&1 || echo "edit failed"
+              if [ -n "$labels" ]; then
+                # Remove old labels then add new (gh issue edit --add-label only adds; no remove via issue edit)
+                # Use --add-label, accepting accumulation. For full sync use API.
+                gh issue edit "$issue_num" --add-label "$labels" >/dev/null 2>&1 || true
+              fi
+              # State transitions
+              if [ "$state" = "closed" ]; then
+                gh issue close "$issue_num" >/dev/null 2>&1 && echo "  → closed"
+              elif [ "$state" = "open" ]; then
+                gh issue reopen "$issue_num" >/dev/null 2>&1 && echo "  → reopened"
+              fi
+              echo "UPDATED #$issue_num"
             fi
+            echo "::endgroup::"
           done
 
-          echo "final log: $(cat "$LOG")"
           echo "changed=$changed"
 
           if [ "$changed" -eq 1 ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add "$LOG"
-            git commit -m "chore(issues): update _log.json [skip ci]"
-            git push
+            git commit -m "chore(issues): update _log.json [skip ci]" || true
+            git push || true
           fi
           exit 0
