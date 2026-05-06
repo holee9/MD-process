@@ -1,3 +1,18 @@
+---
+doc-id: AI_구성요소_단위_성능평가
+title: AI 구성요소 단위 성능평가 — 디지털의료제품법 제40조 대응
+type: Guide
+version: v0.1
+status: draft
+category: 03_설계_개발관리
+purpose: AI 구성요소 단위 성능평가 — 디지털의료제품법 제40조 대응 관련 문서
+applicable: [FDA SBOM, MFDS, 디지털의료제품법]
+related-issues: [15]
+owner: TBD
+last-review: 2026-04-24
+review-due: 2027-04-24
+---
+
 # AI 구성요소 단위 성능평가 — 디지털의료제품법 제40조 대응
 
 **버전**: v0.1

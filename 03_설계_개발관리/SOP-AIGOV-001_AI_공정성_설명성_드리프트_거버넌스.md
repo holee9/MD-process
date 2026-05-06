@@ -1,3 +1,18 @@
+---
+doc-id: SOP-AIGOV-001
+title: SOP-AIGOV-001 — AI 공정성·설명성·드리프트 거버넌스 (v0.1 초안)
+type: SOP
+version: v0.1
+status: draft
+category: 03_설계_개발관리
+purpose: SOP-AIGOV-001 — AI 공정성·설명성·드리프트 거버넌스 (v0.1 초안) 관련 문서
+applicable: [EU AI Act, ISO13485:2016, ISO14971:2019, MFDS, UDI, 디지털의료제품법]
+related-issues: [20]
+owner: TBD
+last-review: 2026-04-25
+review-due: 2027-04-25
+---
+
 # SOP-AIGOV-001 — AI 공정성·설명성·드리프트 거버넌스 (v0.1 초안)
 
 문서번호: SOP-AIGOV-001

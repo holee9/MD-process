@@ -1,3 +1,19 @@
+---
+doc-id: PMS_개요
+title: 시판후 감시 (Post-Market Surveillance) — v0.2
+type: Overview
+version: v0.2
+status: draft
+category: 08_시판후_감시_PMS
+purpose: 시판후 감시 (Post-Market Surveillance) — v0.2 관련 문서
+applicable: [EU AI Act, EU MDR 2017/745, FDA QMSR, IEC62304, IEC81001-5-1, ISO13485:2016, MFDS, UDI]
+forms: [F-PMS-001]
+related-issues: [22]
+owner: TBD
+last-review: 2026-05-02
+review-due: 2027-05-02
+---
+
 # 시판후 감시 (Post-Market Surveillance) — v0.2
 
 > **버전**: v0.2 | **최종 갱신**: 2026-05-03 | **작성**: holee9-automation

@@ -1,3 +1,18 @@
+---
+doc-id: 디지털의료기기_GMP_적합판정_신청_패키지
+title: 디지털의료기기 GMP 적합판정 신청 패키지 (초안)
+type: Guide
+version: v0.1
+status: draft
+category: 02_품질경영시스템_QMS
+purpose: 디지털의료기기 GMP 적합판정 신청 패키지 (초안) 관련 문서
+applicable: [EU MDR PRRC, FDA SBOM, IEC62304, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, 디지털의료제품법]
+related-issues: [33]
+owner: TBD
+last-review: 2026-04-29
+review-due: 2027-04-29
+---
+
 # 디지털의료기기 GMP 적합판정 신청 패키지 (초안)
 
 ## 1. 개요

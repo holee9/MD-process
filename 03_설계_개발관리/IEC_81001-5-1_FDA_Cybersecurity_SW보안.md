@@ -1,3 +1,18 @@
+---
+doc-id: IEC_81001-5-1_FDA_Cybersecurity_SW보안
+title: 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 (v0.1)
+type: Guide
+version: v0.1
+status: draft
+category: 03_설계_개발관리
+purpose: 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 (v0.1) 관련 문서
+applicable: [EU MDR PRRC, FDA SBOM, IEC62304, IEC81001-5-1, ISO14971:2019, MFDS, UDI, 디지털의료제품법]
+related-issues: [11]
+owner: TBD
+last-review: 2026-04-21
+review-due: 2027-04-21
+---
+
 # 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 (v0.1)
 
 ## 1. 목적

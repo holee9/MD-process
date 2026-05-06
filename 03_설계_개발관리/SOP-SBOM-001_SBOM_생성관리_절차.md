@@ -1,3 +1,18 @@
+---
+doc-id: SOP-SBOM-001
+title: SOP-SBOM-001 — SBOM 생성·관리 절차 (v0.1 초안)
+type: SOP
+version: v0.1
+status: draft
+category: 03_설계_개발관리
+purpose: SOP-SBOM-001 — SBOM 생성·관리 절차 (v0.1 초안) 관련 문서
+applicable: [EU MDR 2017/745, FDA QMSR, FDA SBOM, IEC81001-5-1, ISO13485:2016, MFDS, 디지털의료제품법]
+related-issues: [13, 17]
+owner: TBD
+last-review: 2026-04-22
+review-due: 2027-04-22
+---
+
 # SOP-SBOM-001 — SBOM 생성·관리 절차 (v0.1 초안)
 
 문서번호: SOP-SBOM-001

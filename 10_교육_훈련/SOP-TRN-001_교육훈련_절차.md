@@ -1,3 +1,19 @@
+---
+doc-id: SOP-TRN-001
+title: "SOP-TRN-001: 교육·훈련 관리 절차 (v0.2)"
+type: SOP
+version: v0.2
+status: draft
+category: 10_교육_훈련
+purpose: "SOP-TRN-001: 교육·훈련 관리 절차 (v0.2) 관련 문서"
+applicable: [EU MDR 2017/745, EU MDR PRRC, FDA QMSR, IEC60601-2-54, IEC62304, IEC81001-5-1, ISO13485:2016, MFDS, 진단용방사선안전관리규칙(제1122호)]
+forms: [F-TRN-001, F-TRN-002]
+related-issues: [54, 55]
+owner: TBD
+last-review: 2026-05-03
+review-due: 2027-05-03
+---
+
 # SOP-TRN-001: 교육·훈련 관리 절차 (v0.2)
 
 > v0.2 — 2026-05-04 신규 작성: 절차 흐름도, 양식 참조, 판정기준, X-ray 시스템 적용예시 포함

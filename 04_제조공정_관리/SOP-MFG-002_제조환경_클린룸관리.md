@@ -1,3 +1,19 @@
+---
+doc-id: SOP-MFG-002
+title: SOP-MFG-002 제조환경 및 클린룸 관리 절차 (v0.2)
+type: SOP
+version: v0.2
+status: draft
+category: 04_제조공정_관리
+purpose: SOP-MFG-002 제조환경 및 클린룸 관리 절차 (v0.2) 관련 문서
+applicable: [FDA QMSR, ISO13485:2016, MFDS]
+forms: [F-ENV-001, F-ENV-002, F-ENV-003]
+related-issues: [47]
+owner: TBD
+last-review: 2026-05-01
+review-due: 2027-05-01
+---
+
 # SOP-MFG-002 제조환경 및 클린룸 관리 절차 (v0.2)
 
 > v0.2 — 2026-05-02 신규 작성: 절차 흐름, 환경 모니터링 양식, X-ray 디텍터 조립 적용예시 포함

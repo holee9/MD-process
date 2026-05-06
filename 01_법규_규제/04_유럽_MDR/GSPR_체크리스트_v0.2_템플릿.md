@@ -1,3 +1,18 @@
+---
+doc-id: GSPR_체크리스트_v0.2_템플릿
+title: QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿)
+type: Checklist
+version: v0.2
+status: draft
+category: 01_법규_규제
+purpose: QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿) 관련 문서
+applicable: [EU AI Act, EU MDR 2017/745, EU MDR GSPR, IEC60601-1, IEC60601-2-54, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019]
+related-issues: [5, 40, 46, 48, 49, 51, 53, 54, 56, 57, 58, 60, 62, 63]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿)
 
 ## 1. 적용 규정

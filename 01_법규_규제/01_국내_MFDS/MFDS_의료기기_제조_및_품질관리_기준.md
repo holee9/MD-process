@@ -1,3 +1,18 @@
+---
+doc-id: MFDS_의료기기_제조_및_품질관리_기준
+title: 의료기기 제조 및 품질관리 기준 (MFDS)
+type: Guide
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: 의료기기 제조 및 품질관리 기준 (MFDS) 관련 문서
+applicable: [ISO13485:2016, MFDS]
+related-issues: [33]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # 의료기기 제조 및 품질관리 기준 (MFDS)
 
 ## 1. 법적 근거

@@ -1,3 +1,18 @@
+---
+doc-id: FDA_QMSR_820.35_vs_ISO13485_4.2.5
+title: FDA QMSR § 820.35 ↔ ISO 13485 4.2.5 차이표 (2026-04-20)
+type: Guide
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: FDA QMSR § 820.35 ↔ ISO 13485 4.2.5 차이표 (2026-04-20) 관련 문서
+applicable: [21 CFR Part 820, EU MDR 2017/745, FDA QMSR, ISO13485:2016, UDI]
+related-issues: [44]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # FDA QMSR § 820.35 ↔ ISO 13485 4.2.5 차이표 (2026-04-20)
 
 ## 1. 적용 전제

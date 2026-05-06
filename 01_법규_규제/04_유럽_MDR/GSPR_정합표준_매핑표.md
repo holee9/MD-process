@@ -1,3 +1,18 @@
+---
+doc-id: GSPR_정합표준_매핑표
+title: EU MDR Annex I GSPR ↔ 정합표준 매핑표 (2026-04-20)
+type: Matrix
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: EU MDR Annex I GSPR ↔ 정합표준 매핑표 (2026-04-20) 관련 문서
+applicable: [EU AI Act, EU MDR 2017/745, EU MDR GSPR, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019, UDI]
+related-issues: [5]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # EU MDR Annex I GSPR ↔ 정합표준 매핑표 (2026-04-20)
 
 ## 1. 배경

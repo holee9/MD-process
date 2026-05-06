@@ -1,3 +1,19 @@
+---
+doc-id: JD-RA-001
+title: JD-RA-001 PRRC / 품질책임자 / Management Representative 통합 직무기술서 (v0.2)
+type: JD
+version: v0.2
+status: draft
+category: 00_프로젝트관리
+purpose: JD-RA-001 PRRC / 품질책임자 / Management Representative 통합 직무기술서 (v0.2) 관련 문서
+applicable: [21 CFR Part 820, EU MDR 2017/745, EU MDR PRRC, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC81001-5-1, ISO13485:2016, MFDS, UDI, 디지털의료제품법]
+forms: [F-JD-001]
+related-issues: [3, 63]
+owner: TBD
+last-review: 2026-05-05
+review-due: 2027-05-05
+---
+
 # JD-RA-001 PRRC / 품질책임자 / Management Representative 통합 직무기술서 (v0.2)
 
 > v0.2 — 2026-05-06: 역량평가 양식(F-JD-001) 추가, 절차 흐름도, 자격검증 판정기준 구체화, X-ray 사업 맥락 반영, 교차참조 보강

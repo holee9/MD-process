@@ -1,3 +1,18 @@
+---
+doc-id: 외부_Pen-test_계획서_v0.1
+title: 외부 침투시험(Penetration Test) 계획서 (v0.1 초안)
+type: Plan
+version: v0.1
+status: draft
+category: 05_검사_시험_밸리데이션
+purpose: 외부 침투시험(Penetration Test) 계획서 (v0.1 초안) 관련 문서
+applicable: [FDA SBOM, IEC81001-5-1, MFDS, UDI]
+related-issues: [11, 25, 26, 34]
+owner: TBD
+last-review: 2026-04-26
+review-due: 2027-04-26
+---
+
 # 외부 침투시험(Penetration Test) 계획서 (v0.1 초안)
 
 문서번호: PLAN-PEN-001

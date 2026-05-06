@@ -1,3 +1,19 @@
+---
+doc-id: SOP-PMS-001
+title: SOP-PMS-001 불만처리 및 부작용보고 절차 — v0.2
+type: SOP
+version: v0.2
+status: draft
+category: 08_시판후_감시_PMS
+purpose: SOP-PMS-001 불만처리 및 부작용보고 절차 — v0.2 관련 문서
+applicable: [EU MDR 2017/745, FDA QMSR, ISO13485:2016, MFDS]
+forms: [F-PMS-001, F-PMS-002]
+related-issues: [52]
+owner: TBD
+last-review: 2026-05-02
+review-due: 2027-05-02
+---
+
 # SOP-PMS-001 불만처리 및 부작용보고 절차 — v0.2
 
 > **문서번호**: SOP-PMS-001 | **버전**: v0.2 (R.0) | **시행일**: 2026-05-03

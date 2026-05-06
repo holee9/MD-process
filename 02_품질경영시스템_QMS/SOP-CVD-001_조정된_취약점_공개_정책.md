@@ -1,3 +1,18 @@
+---
+doc-id: SOP-CVD-001
+title: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안)
+type: SOP
+version: v0.1
+status: draft
+category: 02_품질경영시스템_QMS
+purpose: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안) 관련 문서
+applicable: [EU MDR 2017/745, FDA SBOM, ISO13485:2016, MFDS]
+related-issues: [19]
+owner: TBD
+last-review: 2026-04-25
+review-due: 2027-04-25
+---
+
 # SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안)
 
 문서번호: SOP-CVD-001

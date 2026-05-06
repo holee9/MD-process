@@ -1,3 +1,18 @@
+---
+doc-id: FDA_QMSR_2026
+title: FDA QMSR (Quality Management System Regulation)
+type: Guide
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: FDA QMSR (Quality Management System Regulation) 관련 문서
+applicable: [21 CFR Part 820, FDA QMSR, ISO13485:2016, UDI]
+related-issues: [18, 23, 24, 27, 28, 44, 45, 50, 61, 65]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # FDA QMSR (Quality Management System Regulation)
 
 ## 1. 개요

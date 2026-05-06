@@ -1,3 +1,18 @@
+---
+doc-id: PRRC_역할_및_한미_대응자_매핑
+title: EU MDR Art. 15 PRRC 역할 및 한·미 대응자 매핑 (2026-04-20)
+type: Matrix
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: EU MDR Art. 15 PRRC 역할 및 한·미 대응자 매핑 (2026-04-20) 관련 문서
+applicable: [EU AI Act, EU MDR 2017/745, EU MDR PRRC, FDA QMSR, ISO13485:2016, MFDS, 디지털의료제품법]
+related-issues: [3]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # EU MDR Art. 15 PRRC 역할 및 한·미 대응자 매핑 (2026-04-20)
 
 ## 1. 정의 (EU MDR 2017/745 Art. 15)

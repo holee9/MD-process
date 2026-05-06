@@ -1,3 +1,18 @@
+---
+doc-id: X-ray_장비_안전성능_표준_매핑
+title: 의료용 X-ray 장비 안전·성능 표준 매핑 (v0.1)
+type: Matrix
+version: v0.1
+status: draft
+category: 05_검사_시험_밸리데이션
+purpose: 의료용 X-ray 장비 안전·성능 표준 매핑 (v0.1) 관련 문서
+applicable: [EU MDR 2017/745, EU MDR GSPR, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, UDI, 디지털의료제품법, 진단용방사선안전관리규칙(제1122호)]
+related-issues: [10]
+owner: TBD
+last-review: 2026-04-30
+review-due: 2027-04-30
+---
+
 # 의료용 X-ray 장비 안전·성능 표준 매핑 (v0.1)
 
 ## 1. 목적

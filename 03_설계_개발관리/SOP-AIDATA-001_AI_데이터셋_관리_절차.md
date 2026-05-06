@@ -1,3 +1,18 @@
+---
+doc-id: SOP-AIDATA-001
+title: "SOP-AIDATA-001: AI/ML 데이터셋 관리 절차 (v0.1)"
+type: SOP
+version: v0.1
+status: draft
+category: 03_설계_개발관리
+purpose: "SOP-AIDATA-001: AI/ML 데이터셋 관리 절차 (v0.1) 관련 문서"
+applicable: [EU AI Act, IEC62304, ISO13485:2016, ISO14971:2019, MFDS]
+related-issues: [34]
+owner: TBD
+last-review: 2026-04-29
+review-due: 2027-04-29
+---
+
 # SOP-AIDATA-001: AI/ML 데이터셋 관리 절차 (v0.1)
 
 ## 1. 목적

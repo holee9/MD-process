@@ -1,3 +1,17 @@
+---
+doc-id: EU_AI_Act_MDR_중첩적용_매핑
+title: EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)
+type: Matrix
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비) 관련 문서
+applicable: [EU AI Act, EU MDR 2017/745, FDA QMSR, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019, 디지털의료제품법]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)
 
 ## 1. 목적

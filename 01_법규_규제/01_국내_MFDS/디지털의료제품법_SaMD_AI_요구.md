@@ -1,3 +1,18 @@
+---
+doc-id: 디지털의료제품법_SaMD_AI_요구
+title: 디지털의료제품법 — SaMD/AI 의료기기 요구사항 정리 (2026-04 기준)
+type: Guide
+version: v0.1
+status: draft
+category: 01_법규_규제
+purpose: 디지털의료제품법 — SaMD/AI 의료기기 요구사항 정리 (2026-04 기준) 관련 문서
+applicable: [EU MDR GSPR, FDA QMSR, FDA SBOM, IEC62366-1, ISO13485:2016, MFDS, 디지털의료제품법]
+related-issues: [14, 16]
+owner: TBD
+last-review: 2026-04-22
+review-due: 2027-04-22
+---
+
 # 디지털의료제품법 — SaMD/AI 의료기기 요구사항 정리 (2026-04 기준)
 
 ## 1. 법령 개요

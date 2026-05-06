@@ -1,3 +1,17 @@
+---
+doc-id: QMS_구축_핵심요소
+title: QMS 구축 핵심 요소
+type: Guide
+version: v0.1
+status: draft
+category: 02_품질경영시스템_QMS
+purpose: QMS 구축 핵심 요소 관련 문서
+applicable: [EU MDR 2017/745, FDA QMSR, ISO13485:2016, ISO14971:2019, MFDS, UDI]
+owner: TBD
+last-review: 2026-04-20
+review-due: 2027-04-20
+---
+
 # QMS 구축 핵심 요소
 
 ## 1. 표준 통합 관점
