@@ -1,0 +1,55 @@
+name: Build Document Matrix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '00_프로젝트관리/**.md'
+      - '01_법규_규제/**.md'
+      - '02_품질경영시스템_QMS/**.md'
+      - '03_설계_개발관리/**.md'
+      - '04_제조공정_관리/**.md'
+      - '05_검사_시험_밸리데이션/**.md'
+      - '06_문서_기록관리/**.md'
+      - '07_위험관리_ISO14971/**.md'
+      - '08_시판후_감시_PMS/**.md'
+      - '09_공급자_관리/**.md'
+      - '10_교육_훈련/**.md'
+      - '11_일일_리서치로그/**.md'
+      - '12_교차검증_보고서/**.md'
+      - 'scripts/build_matrix.py'
+      - '.github/workflows/build-matrix.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build matrix
+        run: |
+          python3 scripts/build_matrix.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet "00_프로젝트관리/문서_매트릭스.md"; then
+            echo "no changes"
+          else
+            git add "00_프로젝트관리/문서_매트릭스.md"
+            git commit -m "chore(matrix): rebuild 문서_매트릭스.md [skip ci]"
+            git push
+          fi
