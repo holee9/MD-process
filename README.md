@@ -43,6 +43,11 @@
 - `_log.json`에 파일명 ↔ 이슈번호 매핑 유지
 - 워크플로: [`.github/workflows/auto-issue.yml`](.github/workflows/auto-issue.yml)
 
+### 문서 매트릭스 (전체 현황 단일 진실원)
+- **[`00_프로젝트관리/문서_매트릭스.md`](00_프로젝트관리/문서_매트릭스.md)** — 모든 문서의 ID·제목·유형·버전·상태·표준·양식·이슈·소유자·검토만료를 한 표로 자동 집계
+- 각 문서 frontmatter(YAML)를 SSOT로 사용 → push마다 [`build-matrix.yml`](.github/workflows/build-matrix.yml)이 자동 재생성
+- 작성 규칙: [`00_프로젝트관리/문서_메타데이터_규칙.md`](00_프로젝트관리/문서_메타데이터_규칙.md)
+
 ### 운영 규칙
 - [00_프로젝트관리/이슈관리_규칙.md](00_프로젝트관리/이슈관리_규칙.md)
 - [issue-drafts/README.md](issue-drafts/README.md)
@@ -66,6 +71,8 @@
 ## 📊 진행 현황 (자동 갱신)
 
 > **마지막 갱신:** 2026-05-06 · **다음 자동 갱신:** 매일 03:18 KST
+>
+> 📋 **상세 현황 보기:** [`00_프로젝트관리/문서_매트릭스.md`](00_프로젝트관리/문서_매트릭스.md) (전체 91건의 모든 메타데이터)
 
 ### 한눈에 보기
 
@@ -165,4 +172,4 @@ pie showData
     "후속 검증 대기" : 8
 ```
 
-🔗 [전체 Open 이슈 보기](https://github.com/holee9/MD-process/issues?q=is%3Aopen) · [Closed 이슈](https://github.com/holee9/MD-process/issues?q=is%3Aclosed) · [Actions](https://github.com/holee9/MD-process/actions)
+🔗 [📋 문서 매트릭스](00_프로젝트관리/문서_매트릭스.md) · [Open 이슈](https://github.com/holee9/MD-process/issues?q=is%3Aopen) · [Closed 이슈](https://github.com/holee9/MD-process/issues?q=is%3Aclosed) · [Actions](https://github.com/holee9/MD-process/actions) · [메타데이터 규칙](00_프로젝트관리/문서_메타데이터_규칙.md)
