@@ -1,6 +1,7 @@
 ---
 title: "[12] FDA SBOM 의무화(2025-10) 제출물 사전점검 — Readiness 56%"
 labels: "documentation,review,fda,cybersecurity"
+state: closed
 ---
 
 ## 배경

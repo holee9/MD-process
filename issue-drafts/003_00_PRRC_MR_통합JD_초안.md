@@ -1,6 +1,7 @@
 ---
 title: "[00 프로젝트관리] JD-RA-001 PRRC/품질책임자/MR 통합 직무기술서 v0.1"
 labels: "documentation,review"
+state: closed
 ---
 
 ## 배경

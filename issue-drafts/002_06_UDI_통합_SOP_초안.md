@@ -1,6 +1,7 @@
 ---
 title: "[06 문서·기록관리] SOP-UDI-001 UDI 통합관리 v0.1 초안 작성"
 labels: "documentation,review"
+state: closed
 ---
 
 ## 배경
