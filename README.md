@@ -71,26 +71,26 @@
 
 ## 📊 진행 현황 (자동 갱신)
 
-> **마지막 갱신:** 2026-05-11 · **다음 자동 갱신:** 매일 03:18 KST
+> **마지막 갱신:** 2026-05-12 · **다음 자동 갱신:** 매일 03:18 KST
 >
 > 📋 **상세 현황 보기:** [`00_프로젝트관리/문서_매트릭스.md`](00_프로젝트관리/문서_매트릭스.md) (전체 문서의 모든 메타데이터)
 
 ### 한눈에 보기
 
-![docs](https://img.shields.io/badge/문서-111-228be6?style=flat-square)
-![issues_total](https://img.shields.io/badge/이슈-86-495057?style=flat-square)
+![docs](https://img.shields.io/badge/문서-116-228be6?style=flat-square)
+![issues_total](https://img.shields.io/badge/이슈-89-495057?style=flat-square)
 ![closed](https://img.shields.io/badge/완료-47-2b8a3e?style=flat-square)
-![open](https://img.shields.io/badge/진행중-39-f59f00?style=flat-square)
-![research](https://img.shields.io/badge/리서치로그-26-7950f2?style=flat-square)
-![crosscheck](https://img.shields.io/badge/교차검증-25-15aabf?style=flat-square)
+![open](https://img.shields.io/badge/진행중-42-f59f00?style=flat-square)
+![research](https://img.shields.io/badge/리서치로그-27-7950f2?style=flat-square)
+![crosscheck](https://img.shields.io/badge/교차검증-26-15aabf?style=flat-square)
 
 ### 이슈 상태
 
 ```mermaid
 pie showData
-    title 이슈 86건 (2026-05-11)
+    title 이슈 89건 (2026-05-12)
     "완료 (closed)" : 47
-    "진행중 (open)" : 39
+    "진행중 (open)" : 42
 ```
 
 ### 카테고리별 문서 분포
@@ -101,7 +101,7 @@ xychart-beta horizontal
     title "카테고리별 문서 수"
     x-axis ["00_PM","01_법규","02_QMS","03_설계","04_제조","05_검사","06_문서","07_위험","08_PMS","09_공급","10_교육","11_로그","12_검증"]
     y-axis "문서 수" 0 --> 30
-    bar [7,12,13,8,4,5,3,2,2,2,2,26,25]
+    bar [7,12,13,8,4,6,3,3,3,2,2,27,26]
 ```
 
 ### 카테고리별 충실도
@@ -113,10 +113,10 @@ xychart-beta horizontal
 | 02_QMS | 13 | 10 | 97% | `█████████▊` |
 | 03_설계_개발 | 8 | 5 | 85% | `████████▌░` |
 | 04_제조공정 | 4 | 3 | 80% | `████████░░` |
-| 05_검사_시험 | 5 | 3 | 75% | `███████▌░░` |
+| 05_검사_시험 | 6 | 4 | 80% | `████████░░` |
 | 06_문서_기록 | 3 | 2 | 70% | `███████░░░` |
-| 07_위험관리 | 2 | 1 | 60% | `██████░░░░` |
-| 08_PMS | 2 | 1 | 60% | `██████░░░░` |
+| 07_위험관리 | 3 | 2 | 70% | `███████░░░` |
+| 08_PMS | 3 | 2 | 70% | `███████░░░` |
 | 09_공급자 | 2 | 1 | 60% | `██████░░░░` |
 | 10_교육_훈련 | 2 | 1 | 60% | `██████░░░░` |
 
@@ -129,10 +129,10 @@ xychart-beta horizontal
 | 02_QMS | 8 | 2 | · | 3 | 13 |
 | 03_설계_개발 | 3 | 5 | · | · | 8 |
 | 04_제조공정 | 3 | 1 | · | · | 4 |
-| 05_검사_시험 | · | · | 1 | 4 | 5 |
+| 05_검사_시험 | 1 | · | 1 | 4 | 6 |
 | 06_문서_기록 | 2 | · | 1 | · | 3 |
-| 07_위험관리 | · | 1 | 1 | · | 2 |
-| 08_PMS | 1 | · | 1 | · | 2 |
+| 07_위험관리 | 1 | 1 | 1 | · | 3 |
+| 08_PMS | 2 | · | 1 | · | 3 |
 | 09_공급자 | 1 | · | 1 | · | 2 |
 | 10_교육_훈련 | 1 | · | 1 | · | 2 |
 
@@ -143,9 +143,6 @@ xychart-beta horizontal
 ```mermaid
 timeline
     title 최근 7일 산출물
-    2026-05-06 : 프로젝트 개요 v0.2
-               : JD-RA-001 v0.2
-               : SOP-MFG-001 제조공정관리
     2026-05-07 : MFDS GMP 30대 절차 매핑
                : 영상품질 QC 프로토콜
     2026-05-08 : SOP-CAPA-001 시정예방조치
@@ -157,6 +154,9 @@ timeline
     2026-05-11 : SOP-SVC-001 서비스 활동
                : TF-TD-001 의료기기파일 관리
                : PRO-DA-001 데이터 분석
+    2026-05-12 : SOP-RM-001 위험관리 절차
+               : SOP-VAL-001 SW 검증 밸리데이션
+               : SOP-PSUR-001 PSUR·PMCF
 ```
 
 ### 시스템 헬스
@@ -173,19 +173,18 @@ timeline
 
 ```mermaid
 pie showData
-    title Open 이슈 39건 카테고리별
-    "02_QMS" : 7
+    title Open 이슈 42건 카테고리별
+    "02_QMS" : 8
     "03_설계_개발" : 7
-    "05_검사_시험" : 5
+    "05_검사_시험" : 6
     "04_제조공정" : 4
+    "08_PMS" : 4
+    "07_위험관리" : 3
     "01_법규_규제" : 3
-    "08_PMS" : 3
-    "00_프로젝트관리" : 2
-    "06_문서_기록" : 2
-    "07_위험관리" : 2
     "09_공급자" : 2
     "10_교육_훈련" : 2
-```
+    "06_문서_기록" : 2
+    "00_프로젝트관리" : 1
 
 ---
 
