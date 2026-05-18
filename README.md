@@ -71,26 +71,26 @@
 
 ## 📊 진행 현황 (자동 갱신)
 
-> **마지막 갱신:** 2026-05-18 · **다음 자동 갱신:** 매일 03:18 KST
+> **마지막 갱신:** 2026-05-19 · **다음 자동 갱신:** 매일 03:18 KST
 >
 > 📋 **상세 현황 보기:** [`00_프로젝트관리/문서_매트릭스.md`](00_프로젝트관리/문서_매트릭스.md) (전체 문서의 모든 메타데이터)
 
 ### 한눈에 보기
 
-![docs](https://img.shields.io/badge/문서-135-228be6?style=flat-square)
-![issues_total](https://img.shields.io/badge/이슈-107-495057?style=flat-square)
-![closed](https://img.shields.io/badge/완료-62-2b8a3e?style=flat-square)
-![open](https://img.shields.io/badge/진행중-45-f59f00?style=flat-square)
-![research](https://img.shields.io/badge/리서치로그-33-7950f2?style=flat-square)
-![crosscheck](https://img.shields.io/badge/교차검증-32-15aabf?style=flat-square)
+![docs](https://img.shields.io/badge/문서-139-228be6?style=flat-square)
+![issues_total](https://img.shields.io/badge/이슈-111-495057?style=flat-square)
+![closed](https://img.shields.io/badge/완료-63-2b8a3e?style=flat-square)
+![open](https://img.shields.io/badge/진행중-48-f59f00?style=flat-square)
+![research](https://img.shields.io/badge/리서치로그-34-7950f2?style=flat-square)
+![crosscheck](https://img.shields.io/badge/교차검증-33-15aabf?style=flat-square)
 
 ### 이슈 상태
 
 ```mermaid
 pie showData
-    title 이슈 107건 (2026-05-18)
-    "완료 (closed)" : 62
-    "진행중 (open)" : 45
+    title 이슈 111건 (2026-05-19)
+    "완료 (closed)" : 63
+    "진행중 (open)" : 48
 ```
 
 ### 카테고리별 문서 분포
@@ -100,8 +100,8 @@ pie showData
 xychart-beta horizontal
     title "카테고리별 문서 수"
     x-axis ["00_PM","01_법규","02_QMS","03_설계","04_제조","05_검사","06_문서","07_위험","08_PMS","09_공급","10_교육","11_로그","12_검증"]
-    y-axis "문서 수" 0 --> 33
-    bar [7,12,13,8,5,8,4,3,4,3,3,33,32]
+    y-axis "문서 수" 0 --> 34
+    bar [7,12,13,8,5,8,4,4,4,4,3,34,33]
 ```
 
 ### 카테고리별 충실도
@@ -115,9 +115,9 @@ xychart-beta horizontal
 | 04_제조공정 | 5 | 4 | 85% | `████████▌░` |
 | 05_검사_시험 | 8 | 6 | 88% | `████████▊░` |
 | 06_문서_기록 | 4 | 3 | 75% | `███████▌░░` |
-| 07_위험관리 | 3 | 2 | 70% | `███████░░░` |
+| 07_위험관리 | 4 | 2 | 75% | `███████▌░░` |
 | 08_PMS | 4 | 3 | 78% | `███████▊░░` |
-| 09_공급자 | 3 | 2 | 68% | `██████▊░░░` |
+| 09_공급자 | 4 | 2 | 75% | `███████▌░░` |
 | 10_교육_훈련 | 3 | 2 | 68% | `██████▊░░░` |
 
 ### 카테고리 × 유형 매트릭스 미니뷰
@@ -131,9 +131,9 @@ xychart-beta horizontal
 | 04_제조공정 | 4 | · | 1 | · | · | 5 |
 | 05_검사_시험 | 3 | · | · | 1 | 4 | 8 |
 | 06_문서_기록 | 3 | · | · | 1 | · | 4 |
-| 07_위험관리 | 1 | · | 1 | 1 | · | 3 |
+| 07_위험관리 | 1 | 1 | 1 | 1 | · | 4 |
 | 08_PMS | 3 | · | · | 1 | · | 4 |
-| 09_공급자 | 1 | · | 1 | 1 | · | 3 |
+| 09_공급자 | 1 | 1 | 1 | 1 | · | 4 |
 | 10_교육_훈련 | 1 | 1 | · | 1 | · | 3 |
 
 > 상세 매트릭스 → [`00_프로젝트관리/문서_매트릭스.md`](00_프로젝트관리/문서_매트릭스.md)
@@ -143,7 +143,6 @@ xychart-beta horizontal
 ```mermaid
 timeline
     title 최근 7일 산출물
-    2026-05-13 : SOP-CAL-001 교정 관리 절차
     2026-05-14 : SOP-IQ-001 설치검증·수용시험
                : MFDS GMP 커버리지 갱신
     2026-05-15 : SOP-DOC-001 문서·기록 관리 절차
@@ -151,6 +150,8 @@ timeline
     2026-05-17 : GUIDE-SQA-001 품질합의서 작성지침
     2026-05-18 : SOP-FSCA-001 현장안전시정조치 절차
                : F-TRN-001 교육훈련 기록양식·역량매트릭스
+    2026-05-19 : F-RM-002 FMEA 위험분석 워크시트
+               : F-SUP-001 공급자 초기 평가 양식
 ```
 
 ### 시스템 헬스
@@ -167,7 +168,7 @@ timeline
 
 ```mermaid
 pie showData
-    title Open 이슈 45건 카테고리별
+    title Open 이슈 48건 카테고리별
     "02_QMS" : 8
     "03_설계_개발" : 7
     "05_검사_시험" : 6
@@ -177,8 +178,9 @@ pie showData
     "06_문서_기록" : 3
     "01_법규_규제" : 3
     "10_교육_훈련" : 3
-    "09_공급자" : 2
+    "09_공급자" : 3
     "00_프로젝트관리" : 2
+    "기타" : 1
 ```
 
 ---
