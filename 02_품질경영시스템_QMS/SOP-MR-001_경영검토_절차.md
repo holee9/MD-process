@@ -2,7 +2,7 @@
 doc-id: SOP-MR-001
 title: 경영검토 절차
 type: SOP
-version: v0.1
+version: v0.2
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: QMS의 적합성·충분성·효과성을 최고경영자가 정기적으로 검토하는 절차 수립
@@ -15,8 +15,8 @@ forms: [F-MR-001, F-MR-002]
 related-docs: [SOP-CAPA-001, SOP-IA-001, SOP-NC-001, SOP-PMS-001, SOP-CC-001]
 related-issues: []
 owner: 최고경영자 / QA Lead
-last-review: 2026-05-10
-review-due: 2027-05-10
+last-review: 2026-05-21
+review-due: 2027-05-21
 ---
 
 # SOP-MR-001 경영검토 절차
@@ -271,4 +271,5 @@ EU MDR 적용 시: 최종 제품 시장 출시 후 최소 10년 (임플란트 15
 
 | 버전 | 일자 | 변경 내용 | 작성자 |
 |------|------|----------|--------|
+| v0.2 | 2026-05-21 | v0.2 보강 — 양식 템플릿(F-MR-001/002) 본문 포함 확인, X-ray 고유 입력 4항목, 수시 경영검토 트리거·SLA, FDA QMSR 실사 대응 명확화 | holee9-automation |
 | v0.1 | 2026-05-10 | 초안 작성 | holee9-automation |
