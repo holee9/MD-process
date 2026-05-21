@@ -1,16 +1,18 @@
 ---
 doc-id: SOP-CVD-001
-title: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안)
+title: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책
 type: SOP
-version: v0.1
+version: v0.2
 status: draft
 category: 02_품질경영시스템_QMS
-purpose: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안) 관련 문서
-applicable: [EU MDR 2017/745, FDA SBOM, ISO13485:2016, MFDS]
+purpose: 보안 취약점의 조정된 공개·접수·처리·공시 절차를 수립하여 제품 사이버보안 유지
+applicable: [IEC81001-5-1:2021, FDA Premarket Cybersecurity Guidance 2023, EU MDR 2017/745, ISO13485:2016, MFDS]
+forms: [F-CVD-001]
+related-docs: [SOP-SBOM-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [19]
 owner: TBD
-last-review: 2026-04-25
-review-due: 2027-04-25
+last-review: 2026-05-21
+review-due: 2027-05-21
 ---
 
 # SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안)
@@ -131,6 +133,7 @@ PGP 키는 매 12개월 갱신, 채널은 24/7 모니터링.
 ## 14. 개정 이력
 | 버전 | 날짜 | 변경 내용 | 작성 |
 |------|------|-----------|------|
+| v0.2 | 2026-05-21 | v0.2 보강 — forms·related-docs 추가, applicable 규격 보강, frontmatter 정규화, 양식 템플릿(F-CVD-001) 추가 |
 | v0.1 | 2026-04-25 | 초안 작성 | 자동화 세션 |
 
 ## 15. 미확정·후속 과제
@@ -138,3 +141,38 @@ PGP 키는 매 12개월 갱신, 채널은 24/7 모니터링.
 - PSIRT 인력 충원 계획(최소 2 FTE) — HR 협의 필요
 - security.txt·PGP 키 인프라 구성 — IT 협조 요청
 - Sigstore/in-toto 활용 패치 아티팩트 서명 자동화 — SOP-SBOM-001 v0.2와 병행 검토
+
+
+---
+
+## 부록: 양식 템플릿
+
+### F-CVD-001 — 취약점 신고 접수·처리 기록
+
+| 항목 | 내용 |
+|------|------|
+| CVD No. | CVD-YYYY-NNN |
+| 접수일 | |
+| 신고 채널 | ☐이메일 ☐웹폼 ☐CERT 통보 ☐내부 발견 |
+| 신고자 정보 | (익명 허용, 연락처) |
+| **취약점 상세** | |
+| 영향 제품/SW 버전 | (X-ray 시스템 모델, Detector FW, SW 버전) |
+| 취약점 유형 | (CWE 분류) |
+| CVSS 점수 (v3.1) | |
+| 심각도 | ☐Critical(≥9.0) ☐High(7.0~8.9) ☐Medium(4.0~6.9) ☐Low(<4.0) |
+| 환자안전 영향 | ☐선량 제어 영향 ☐영상 무결성 영향 ☐데이터 유출 ☐없음 |
+| **처리 SLA** | |
+| 확인 응답 기한 | 접수 후 5영업일 |
+| 패치 배포 목표 | Critical: 30일 / High: 60일 / Medium: 90일 |
+| 공시 예정일 | (신고자 협의) |
+| **조치 내역** | |
+| 근본 원인 | |
+| 패치/완화 조치 | |
+| SBOM 갱신 | ☐필요 ☐불필요 |
+| 변경통제 연계 | ☐SOP-CC-001(CR No:    ) |
+| CAPA 연계 | ☐SOP-CAPA-001(CAPA No:    ) ☐불필요 |
+| 규제 보고 | ☐FDA(MDR) ☐MFDS ☐NB ☐해당없음 |
+| **종결** | |
+| 공시 완료일 | |
+| 신고자 확인 | ☐완료 ☐불필요 |
+| 종결 승인자 | |
