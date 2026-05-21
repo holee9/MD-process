@@ -2,7 +2,7 @@
 doc-id: PRO-CRP-001
 title: 고객관련 프로세스 절차
 type: SOP
-version: v0.1
+version: v0.2
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: 제품 요구사항 결정·검토·고객 의사소통 및 계약검토 절차 수립
@@ -15,8 +15,8 @@ forms: [F-CRP-001, F-CRP-002]
 related-docs: [SOP-CC-001, SOP-PMS-001, SOP-MR-001]
 related-issues: []
 owner: RA/QA Lead
-last-review: 2026-05-10
-review-due: 2027-05-10
+last-review: 2026-05-21
+review-due: 2027-05-21
 ---
 
 # PRO-CRP-001 고객관련 프로세스 절차
@@ -261,4 +261,5 @@ review-due: 2027-05-10
 
 | 버전 | 일자 | 변경 내용 | 작성자 |
 |------|------|----------|--------|
+| v0.2 | 2026-05-21 | v0.2 보강 — X-ray 고유 고객 요구사항 6항목 추가, 교차참조 갱신 |
 | v0.1 | 2026-05-10 | 초안 작성 | holee9-automation |
