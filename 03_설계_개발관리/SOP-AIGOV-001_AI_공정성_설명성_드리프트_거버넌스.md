@@ -1,145 +1,296 @@
 ---
 doc-id: SOP-AIGOV-001
-title: SOP-AIGOV-001 — AI 공정성·설명성·드리프트 거버넌스 (v0.1 초안)
+title: AI 공정성·설명성·드리프트 거버넌스
 type: SOP
-version: v0.1
+version: v0.2
 status: draft
 category: 03_설계_개발관리
-purpose: SOP-AIGOV-001 — AI 공정성·설명성·드리프트 거버넌스 (v0.1 초안) 관련 문서
-applicable: [EU AI Act, ISO13485:2016, ISO14971:2019, MFDS, UDI, 디지털의료제품법]
+purpose: 의료용 X-ray AI 구성요소의 공정성·설명성·드리프트를 전 수명주기에 걸쳐 모니터링·통제하는 거버넌스 정의
+applicable: [ISO 13485:2016 §7.3, ISO 14971:2019, IEC 62304:2015, EU AI Act 2024/1689 Art.9/10/13/14/17, FDA PCCP Guidance 2024, MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, IMDRF AIMD N67]
+forms: [F-AIGOV-001, F-AIGOV-002]
+related-docs: [SOP-AIDATA-001, AI_구성요소_단위_성능평가, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-PSUR-001, SOP-FSCA-001, 디지털의료제품법_SaMD_AI_요구, QC-IQ-001]
 related-issues: [20]
-owner: TBD
-last-review: 2026-04-25
-review-due: 2027-04-25
+owner: AI Governance Officer
+last-review: 2026-05-23
+review-due: 2027-05-23
 ---
 
-# SOP-AIGOV-001 — AI 공정성·설명성·드리프트 거버넌스 (v0.1 초안)
-
-문서번호: SOP-AIGOV-001
-버전: v0.1 (초안)
-작성일: 2026-04-25
-관련: 03_설계_개발관리/AI_구성요소_단위_성능평가.md, 02_QMS/디지털의료제품법_요구사항_매트릭스.md(DR-32/33/35), 07_위험관리_ISO14971/
+# AI 공정성·설명성·드리프트 거버넌스 — v0.2
 
 ## 1. 목적
-의료용 X-ray 시스템에 탑재되는 AI 구성요소(진단보조, 선량제어, 영상복원, 생성형)의
-공정성(Fairness)·설명성(Explainability)·데이터 드리프트(Drift)를 전 수명주기 동안
-정량 모니터링·통제하기 위한 거버넌스를 정의한다.
 
-## 2. 규제·표준 근거
-- 디지털의료제품법 시행규칙(개정 예정 2026) 제40조 — 구성요소 성능평가
-- MFDS "AI 의료기기 허가·심사 가이드라인" 2025 개정판
-- FDA "AI/ML-Based Software as a Medical Device Action Plan" + PCCP Guidance(2024-12)
-- EU AI Act(Reg. 2024/1689) Art. 9 (Risk Mgmt), Art. 10 (Data Governance), Art. 13 (Transparency), Art. 14 (Human Oversight), Art. 17 (QMS)
-- IMDRF AIMD WG/N67 "Machine Learning-enabled Medical Devices: Key Terms and Definitions"
-- ISO/IEC 23894:2023 (AI Risk Management)
-- ISO/IEC TS 12791:2024 (Treatment of unwanted bias in classification/regression ML)
-- ISO/IEC TS 4213:2022 (Assessment of ML classification performance)
+의료용 X-ray 시스템에 탑재되는 AI 구성요소(진단보조, 선량제어, 영상복원, 생성형)의 공정성(Fairness)·설명성(Explainability)·데이터 드리프트(Drift)를 전 수명주기 동안 정량 모니터링·통제하기 위한 거버넌스를 정의한다.
 
-## 3. 적용 범위
-| 분류 | 예시 | 본 SOP 적용 |
-|------|------|------------|
-| 진단보조 AI | 결절 검출, 골밀도 추정 | ●(Full) |
-| 선량제어 AI | AEC, 자동 KV/mAs | ●(Full) |
-| 영상복원 AI | DLR, MAR, Denoise | ●(Full) |
-| 생성형 AI | 합성 이미지, Synthesis View | ●(Full + 추가 검토) |
-| 비-임상 AI | UI 추천, 워크플로 최적화 | ◐(Drift만 적용) |
+## 2. 적용 범위
 
-## 4. 책임·권한
-| 역할 | 책임 |
-|------|------|
-| AI Governance Officer | 본 SOP 운영 총괄, 분기별 리뷰 주재 |
-| Data Steward | 데이터셋 수집·라벨링·메타데이터·바이어스 평가 |
-| ML Engineer | 모델 학습·검증·재학습 트리거 실행 |
-| Clinical Lead | 임상 영향평가, 의료진 사용성 검토 |
-| QA/RA | DHF·시판후 보고, 규제 보고 |
-| Risk Manager | ISO 14971 위험분석 통합 |
-
-## 5. 핵심 원칙
-1. **Pre-specified**: 모든 AI 컴포넌트는 PCCP(Predetermined Change Control Plan)와 등가의 사전 변경계획을 보유한다.
-2. **Continuously monitored**: 시판 후 성능·드리프트·공정성을 자동 수집·집계한다.
-3. **Human oversight**: 임상 의사결정 경로에는 항상 의료진 개입 지점을 명시한다(EU AI Act Art. 14).
-4. **Explainable**: 의료진이 활용 가능한 수준의 설명(saliency, feature attribution, confidence interval 등)을 제공한다.
-5. **Auditable**: 학습·재학습·예측 결정에 대한 데이터 lineage를 보존한다(MDR §10.4 / ISO 13485 §4.2.5).
-
-## 6. 공정성(Fairness)
-### 6.1 평가 차원
-- 인구학적: 연령(소아/성인/고령), 성별, 인종/민족(가능한 경우), 체격(BMI/체중)
-- 임상학적: 병변 유형, 영상 프로토콜, 장비 모델, 시설(병원 규모/지역)
-- 데이터 출처: 국가, 데이터 vendor
-
-### 6.2 지표
-- Demographic Parity Difference, Equalized Odds, Equal Opportunity
-- Subgroup AUROC/Sensitivity/Specificity 95% CI
-- 임계값: 주요 부분군 간 성능 격차 ≤ 5%p (절대) / 상대편향 ≤ 10%
-
-### 6.3 대응
-- 사전: 데이터 수집 시 부분군 ≥ 100명/군 확보, 미달 시 가중 샘플링
-- 사후: ISO/IEC TS 12791 권고 기법(reweighing, threshold optimization, post-hoc calibration) 적용
-- 격차 해소 불가 시: 라벨에 적용 제한 명시(Indications for Use 한정)
-
-## 7. 설명성(Explainability)
-### 7.1 출력 형태
-- 분류/검출: 픽셀 단위 heatmap(Grad-CAM 등) + 확률·신뢰도
-- 회귀(선량 추정 등): 입력 특징 기여도 + 95% 예측구간
-- 생성형: 입력 대비 변형 영역 차이맵 + 합성 표시 워터마크(EU AI Act Art. 50 의무)
-
-### 7.2 의료진 인터페이스 요건
-- 모든 AI 결과 화면에 "AI 보조 결과 — 최종 판단은 의료진" 고정 문구
-- 신뢰도 임계값 미달 시 "Low confidence" 경고
-- 의료진 Override 로그 100% 기록(ISO 14971 Pos-Market 입력)
-
-### 7.3 설명 품질 검증
-- 정성: 임상 패널(≥3명) 평가, 합치도 κ ≥ 0.6
-- 정량: Faithfulness(Insertion/Deletion AUC), Stability(Local Lipschitz)
-- 임계값 미달 시 모델 또는 설명 기법 재검토
-
-## 8. 데이터·모델 드리프트
-### 8.1 드리프트 유형
-| 유형 | 정의 | 모니터링 방법 |
-|------|------|---------------|
-| Covariate (Input) Drift | 입력 분포 변화 | PSI, KL Divergence |
-| Concept Drift | 입출력 관계 변화 | Rolling AUROC, Bayesian online detector |
-| Label Drift | 정답 분포 변화 | 분기별 라벨 검토 표본 |
-| Prevalence Drift | 양성률 변화 | EWMA 모니터 |
-| Hardware Drift | 장비 노후/캘리브레이션 변화 | Phantom QA 결과 연동 |
-
-### 8.2 모니터링 빈도
-- 자동: 일 단위 입력 통계, 주 단위 성능 메트릭
-- 수동: 분기 1회 임상 라벨 표본 재평가(N≥200)
-
-### 8.3 트리거·조치
-| 임계 | 조치 |
-|------|------|
-| PSI > 0.1 | 데이터 검토(소프트 알람) |
-| PSI > 0.25 또는 AUROC 하락 ≥ 5%p | 재학습 검토(SOP-CC-001 변경관리 진입) |
-| 임상 위해 가능성(ISO 14971 RAR ↑) | 즉시 사용중지·FSN 검토 |
-
-## 9. 변경관리(PCCP) 연계
-- 사전 정의된 학습 데이터 추가, 임계값 튜닝, 정기 재학습은 PCCP 범위 내에서 SOP-CC-001 경량 경로로 처리
-- 새로운 인구집단·장비 추가, 알고리즘 구조 변경, 적응증 확대는 정식 변경관리(중·대 변경) 진입
-- PCCP 범위 변경은 FDA·MFDS·EU에 사전 통지 필요
-
-## 10. 시판후 감시(PMS) 연동
-- 본 SOP의 KPI는 08_시판후_감시_PMS/PMS_개요.md 의 PSUR/PMCF 입력으로 활용
-- AI 관련 부작용은 별도 분류 코드(AIE-XX) 부여하여 통계 분리
-
-## 11. 측정 지표(KPI)
-- 부분군 성능 격차 5%p 이내 유지 비율 ≥ 95%
-- 설명 품질 임계값 미달 모델 비율 = 0
-- 드리프트 알람 후 조치 평균 일수 ≤ 14일
-- AI 부작용(AIE-XX) 보고 누락 = 0
-
-## 12. 기록 및 보관
-- 학습/검증 데이터셋 카드, 모델 카드, 공정성 평가서, 설명성 평가서, 드리프트 모니터링 로그
-- 보관 기간: ISO 13485 §4.2.5 + MDR Annex IX = 제품 EoS 후 15년
-
-## 13. 개정 이력
-| 버전 | 날짜 | 변경 내용 |
+| 분류 | 예시 | 적용 수준 |
 |------|------|-----------|
-| v0.1 | 2026-04-25 | 초안 작성 |
+| 진단보조 AI | 결절 검출, 골밀도 추정, 골절 검출 | Full (§6~§8 전체) |
+| 선량제어 AI | AEC 최적화, 자동 kV/mAs 선택 | Full |
+| 영상복원 AI | DLR(Deep Learning Reconstruction), MAR, Denoise | Full |
+| 생성형 AI | 합성 이미지, Synthesis View | Full + Art.50 추가 요건 |
+| 비-임상 AI | UI 추천, 워크플로 최적화 | Drift 모니터링만 (§8) |
 
-## 14. 미확정·후속 과제
-- ISO/IEC TS 12791 권고 기법별 임상영상 적용성 비교 — 별도 워킹페이퍼 필요
-- EU AI Act Art. 50 합성 표시 워터마크 기술적 요건 — 표준 미확정 상태
-- 디지털의료제품법 자율성능인증제 세부 항목과 본 SOP §6/§7 매핑 — 시행규칙 확정 후 보강
-- PCCP 범위 외 변경에 대한 FDA 510(k)/De Novo·MFDS 변경허가 결정 트리 — SOP-CC-001 v0.2와 병합
+## 3. 규제 근거
+
+| 규제/표준 | 조항 | 핵심 요구 |
+|-----------|------|-----------|
+| EU AI Act (2024/1689) | Art. 9 | 위험관리 — AI 특유 위험 포함 |
+| EU AI Act | Art. 10 | 데이터 거버넌스 — 편향 관리 의무 |
+| EU AI Act | Art. 13 | 투명성 — 설명성 요구 |
+| EU AI Act | Art. 14 | 인간 감독 — 의료진 개입 지점 |
+| EU AI Act | Art. 17 | QMS — AI 관련 품질 관리 |
+| EU AI Act | Art. 50 | 생성형 AI 합성 표시 의무 |
+| FDA PCCP (2024) | 전체 | 사전결정 변경관리 계획 |
+| MFDS AI 가이드 (2025) | 전체 | AI 의료기기 허가심사 |
+| 디지털의료제품법 | §40 | 구성요소 성능평가 |
+| ISO/IEC 23894:2023 | 전체 | AI 위험관리 |
+| ISO/IEC TS 12791:2024 | 전체 | 비의도적 편향 처리 |
+
+## 4. 용어 정의
+
+| 용어 | 정의 |
+|------|------|
+| Covariate Drift | 입력 데이터 분포 변화 (PSI/KL Divergence로 측정) |
+| Concept Drift | 입력-출력 관계 변화 (Rolling AUROC로 검출) |
+| PCCP | Predetermined Change Control Plan — 사전결정 변경관리 계획 |
+| VGA | Visual Grading Analysis — 영상 품질 정성 평가 |
+| Saliency Map | 모델 판단 근거 시각화 (Grad-CAM 등) |
+
+## 5. 책임과 권한
+
+| 역할 | 책임 | 판정 권한 |
+|------|------|-----------|
+| AI Governance Officer | 본 SOP 운영 총괄, 분기별 리뷰 주재 | 거버넌스 KPI 판정 |
+| Data Steward | 데이터셋 메타데이터·편향 평가 (SOP-AIDATA-001) | 데이터 품질 확인 |
+| ML Engineer | 모델 학습·검증·재학습·드리프트 모니터링 실행 | 기술 판정 |
+| Clinical Lead | 임상 영향평가, 설명성 검증, Override 판정 | 임상 적합성 확인 |
+| QA/RA | DDF·시판후 보고, 규제 보고 | 기록 적합성 |
+| Risk Manager | ISO 14971 위험분석 통합 (SOP-RM-001) | 위험 수용 판정 |
+
+## 6. 공정성(Fairness) 관리 절차
+
+### 6.1 평가 계획 수립
+
+| 단계 | 수행자 | 활동 | 판정 기준 |
+|------|--------|------|-----------|
+| 6.1.1 | AI Gov Officer | 평가 대상 하위그룹 정의 | 최소 아래 차원 포함 |
+| 6.1.2 | ML Engineer | 각 하위그룹 최소 표본 수 확보 확인 | ≥ 100명/군 |
+| 6.1.3 | Clinical Lead | 임상적 유의미 격차 임계값 합의 | 문서화 |
+
+**평가 차원 (X-ray 특화):**
+- 인구학적: 연령(소아 < 18 / 성인 / 고령 ≥ 65), 성별, 체격(BMI)
+- 임상학적: 병변 유형, 영상 프로토콜, 촬영 부위
+- 장비: X-ray 장비 제조사·모델, Detector 유형(a-Si, IGZO, CsI, GOS)
+- 촬영 조건: 저선량 vs 표준선량, Grid 유무, AEC 사용 여부
+
+### 6.2 공정성 평가 실행
+
+| 단계 | 수행자 | 활동 | 판정 기준 |
+|------|--------|------|-----------|
+| 6.2.1 | ML Engineer | 하위그룹별 성능 지표 산출 (AUROC, Sensitivity, Specificity 95% CI) | 산출 완료 |
+| 6.2.2 | ML Engineer | Demographic Parity Difference, Equalized Odds 산출 | 산출 완료 |
+| 6.2.3 | ML Engineer | 주요 부분군 간 성능 격차 확인 | 격차 ≤ 5%p (절대) |
+| 6.2.4 | Clinical Lead | 임상적 수용 가능 여부 판단 | 임상 승인 |
+
+### 6.3 편향 완화 및 잔여 위험 처리
+
+| 단계 | 수행자 | 활동 | 판정 기준 |
+|------|--------|------|-----------|
+| 6.3.1 | ML Engineer | 편향 완화 기법 적용: reweighing, threshold optimization, post-hoc calibration | F-AIGOV-001 기록 |
+| 6.3.2 | ML Engineer | 완화 후 재평가 | 격차 ≤ 5%p |
+| 6.3.3 | Risk Manager | 잔여 편향 → ISO 14971 위험등록부 반영 (F-RM-002) | 위험 등록 |
+| 6.3.4 | RA Lead | 격차 해소 불가 시 적용 제한 명시 (IFU 한정) | IFU 반영 |
+
+## 7. 설명성(Explainability) 관리 절차
+
+### 7.1 설명 출력 설계
+
+| AI 유형 | 설명 방법 | 출력 형태 |
+|---------|-----------|-----------|
+| 검출/분류 (결절, 골절) | Grad-CAM, SHAP | 픽셀 heatmap + 확률·신뢰도 |
+| 회귀 (선량 추정, 골밀도) | Feature Attribution | 입력 특징 기여도 + 95% 예측구간 |
+| 영상복원 (DLR, Denoise) | Input-Output Diff Map | 원본 대비 변형 영역 표시 |
+| 생성형 (합성 이미지) | Synthesis Watermark | 합성 영역 표시 + 워터마크 (Art. 50) |
+
+### 7.2 설명성 검증
+
+| 단계 | 수행자 | 활동 | 판정 기준 |
+|------|--------|------|-----------|
+| 7.2.1 | ML Engineer | Faithfulness 측정: Insertion/Deletion AUC | AUC ≥ 0.7 |
+| 7.2.2 | ML Engineer | Stability 측정: Local Lipschitz Continuity | 변동 ≤ 10% |
+| 7.2.3 | Clinical Lead | 임상 패널 정성 평가 (≥ 3명) | 합치도 κ ≥ 0.6 |
+| 7.2.4 | Clinical Lead | 의료진 인터페이스 요건 확인 | 전항목 충족 |
+
+**의료진 인터페이스 필수 요건 (X-ray 워크스테이션):**
+- 모든 AI 결과 화면에 "AI 보조 결과 — 최종 판단은 의료진" 고정 문구
+- 신뢰도 임계값 미달 시 "Low Confidence" 경고 표시
+- 의료진 Override 로그 100% 기록 (PMS 입력)
+- X-ray 영상 위 Saliency Map 오버레이 On/Off 토글
+- 원본 영상과 AI 보정 영상 Side-by-side 비교 기능
+
+### 7.3 설명 품질 미달 시 조치
+
+| 조건 | 조치 | 담당 | 기한 |
+|------|------|------|------|
+| Faithfulness AUC < 0.7 | 설명 기법 변경 또는 모델 재설계 | ML Engineer | 30일 |
+| 임상 패널 κ < 0.6 | 설명 UI 개선 후 재평가 | ML Engineer + UX | 30일 |
+| 미해결 | 해당 AI 기능 릴리스 보류 | AI Gov Officer | 즉시 |
+
+## 8. 데이터·모델 드리프트 관리 절차
+
+### 8.1 모니터링 체계
+
+| 드리프트 유형 | 측정 지표 | 모니터링 빈도 | 담당 |
+|---------------|-----------|---------------|------|
+| Covariate (Input) Drift | PSI, KL Divergence | 자동 — 일 단위 | ML Engineer |
+| Concept Drift | Rolling AUROC, Bayesian detector | 자동 — 주 단위 | ML Engineer |
+| Label Drift | 분기별 라벨 검토 표본 (N ≥ 200) | 수동 — 분기 1회 | Clinical Lead |
+| Prevalence Drift | EWMA 양성률 모니터 | 자동 — 주 단위 | ML Engineer |
+| Hardware Drift | Phantom QA 결과 연동 (QC-IQ-001) | 수동 — 월 1회 | QA |
+
+**X-ray 하드웨어 드리프트 특수 항목:**
+- Detector 감도 변화: Gain 캘리브레이션 추세 모니터링
+- X-ray Tube 노화: 출력 감소, 초점 크기 변화 → 영상 품질 영향
+- Grid 정렬 변화: 산란선 제거 효율 변화
+
+### 8.2 트리거·조치 매트릭스
+
+| 임계 | 수준 | 조치 | 담당 | 기한 |
+|------|------|------|------|------|
+| PSI > 0.1 | 소프트 알람 | 데이터 검토, 원인 분석 | ML Engineer | 7일 |
+| PSI > 0.25 | 경고 | 재학습 검토 → SOP-CC-001 진입 | AI Gov Officer | 14일 |
+| AUROC 하락 ≥ 5%p | 경고 | 재학습 검토 → SOP-CC-001 진입 | AI Gov Officer | 14일 |
+| 임상 위해 가능성 | 위기 | 즉시 사용중지, FSN 검토 (SOP-FSCA-001) | QA + RA | 즉시 |
+
+### 8.3 재학습 변경관리 경로
+
+| 변경 유형 | 경로 | 근거 |
+|-----------|------|------|
+| PCCP 범위 내: 학습 데이터 추가, 임계값 튜닝, 정기 재학습 | SOP-CC-001 경량 경로 (Class I) | FDA PCCP |
+| PCCP 범위 외: 새 인구집단, 장비 추가, 알고리즘 구조 변경 | SOP-CC-001 정식 변경관리 (Class II/III) | FDA/MFDS |
+| 적응증 확대 | 규제 재허가/재인증 | FDA 510(k)/De Novo, MFDS 변경허가 |
+
+## 9. 양식
+
+### F-AIGOV-001 공정성·설명성 평가 기록
+
+```
+═══════════════════════════════════════════════════════════
+         F-AIGOV-001 공정성·설명성 평가 기록
+═══════════════════════════════════════════════════════════
+AI 구성요소명: ________________  모델 버전: ____________
+평가일: ____-__-__              평가자: ________________
+
+A. 공정성 평가
+┌──────────────────┬──────┬──────┬──────┬──────┬────────┐
+│ 하위그룹         │AUROC │Sens  │Spec  │95%CI │판정    │
+├──────────────────┼──────┼──────┼──────┼──────┼────────┤
+│ 전체             │      │      │      │      │        │
+│ 소아(<18)        │      │      │      │      │Pass/Fail│
+│ 성인(18-64)      │      │      │      │      │Pass/Fail│
+│ 고령(≥65)        │      │      │      │      │Pass/Fail│
+│ 남성             │      │      │      │      │Pass/Fail│
+│ 여성             │      │      │      │      │Pass/Fail│
+│ 저체중(BMI<18.5) │      │      │      │      │Pass/Fail│
+│ 비만(BMI≥30)     │      │      │      │      │Pass/Fail│
+│ Detector: a-Si   │      │      │      │      │Pass/Fail│
+│ Detector: IGZO   │      │      │      │      │Pass/Fail│
+│ 저선량 촬영      │      │      │      │      │Pass/Fail│
+│ 표준선량 촬영    │      │      │      │      │Pass/Fail│
+├──────────────────┼──────┴──────┴──────┴──────┴────────┤
+│ 최대 격차        │ ____%p (기준: ≤5%p)                │
+│ 편향 완화 기법   │ □reweighing □threshold □calibration│
+│ 잔여 편향 위험   │ ISO 14971 등록: □예 □아니오        │
+└──────────────────┴────────────────────────────────────┘
+
+B. 설명성 평가
+┌──────────────────────────┬────────┬────────┬──────────┐
+│ 항목                     │ 결과   │ 기준   │ 판정     │
+├──────────────────────────┼────────┼────────┼──────────┤
+│ Faithfulness (Ins/Del AUC)│       │ ≥0.7  │ Pass/Fail│
+│ Stability (Lipschitz)    │        │ ≤10%  │ Pass/Fail│
+│ 임상 패널 합치도 (κ)     │       │ ≥0.6  │ Pass/Fail│
+│ UI 필수 요건 충족        │        │ 전항목│ Pass/Fail│
+│ 생성형 워터마크(Art.50)  │        │ 해당시│ Pass/Fail│
+└──────────────────────────┴────────┴────────┴──────────┘
+
+종합 판정: □ 합격  □ 조건부 합격  □ 부적합
+조건/사유: ______________________________________________
+
+AI Gov Officer: ___________ 일자: ____-__-__
+Clinical Lead:  ___________ 일자: ____-__-__
+```
+
+### F-AIGOV-002 드리프트 모니터링 기록
+
+```
+═══════════════════════════════════════════════════════════
+         F-AIGOV-002 드리프트 모니터링 기록
+═══════════════════════════════════════════════════════════
+AI 구성요소명: ________________  모니터링 기간: __~__
+작성자: ________________        작성일: ____-__-__
+
+A. 드리프트 지표
+┌──────────────────┬────────┬────────┬──────┬──────────┐
+│ 지표             │ 현재값 │ 임계값 │ 판정 │ 추세     │
+├──────────────────┼────────┼────────┼──────┼──────────┤
+│ Input PSI        │        │ 0.1/0.25│     │ ↑↓→     │
+│ Rolling AUROC    │        │ 하락≤5%p│     │ ↑↓→     │
+│ Prevalence EWMA  │        │ baseline│     │ ↑↓→     │
+│ Phantom QA 결과  │        │ 기준내 │      │ ↑↓→     │
+│ Detector Gain 추세│       │ ±5%   │      │ ↑↓→     │
+└──────────────────┴────────┴────────┴──────┴──────────┘
+
+B. 알람 이력 (해당 기간)
+┌──┬──────┬──────────┬──────────┬──────┬──────────────┐
+│# │일자  │알람 유형  │측정값    │조치  │완료일        │
+├──┼──────┼──────────┼──────────┼──────┼──────────────┤
+│  │      │          │          │      │              │
+└──┴──────┴──────────┴──────────┴──────┴──────────────┘
+
+C. 변경관리 진입 여부
+□ 미해당  □ SOP-CC-001 경량 경로 (CC No._____)
+□ SOP-CC-001 정식 변경관리 (CC No._____)
+□ 사용중지·FSN 검토 (SOP-FSCA-001)
+
+ML Engineer:      ___________ 일자: ____-__-__
+AI Gov Officer:   ___________ 일자: ____-__-__
+```
+
+## 10. 측정 지표 (KPI)
+
+| KPI | 목표 | 측정 주기 | 보고 대상 |
+|-----|------|-----------|-----------|
+| 부분군 성능 격차 ≤ 5%p 유지 비율 | ≥ 95% | 분기 | 경영검토 |
+| 설명 품질 임계값 미달 모델 비율 | 0% | 릴리스 시 | AI Gov Officer |
+| 드리프트 알람 후 조치 평균 일수 | ≤ 14일 | 분기 | 경영검토 |
+| AI 부작용(AIE-XX) 보고 누락 | 0건 | 월 | QA |
+| 의료진 Override율 모니터링 | 추세 보고 | 분기 | Clinical Lead |
+
+## 11. 시판후 감시(PMS) 연동
+
+- 본 SOP의 KPI는 SOP-PSUR-001의 PSUR/PMCF 입력으로 활용
+- AI 관련 부작용은 별도 분류 코드(AIE-XX) 부여하여 통계 분리
+- 드리프트 경고 발생 시 SOP-FSCA-001 검토 연계
+
+## 12. 관련 문서
+
+| 문서 ID | 명칭 | 관계 |
+|---------|------|------|
+| SOP-AIDATA-001 | AI/ML 데이터셋 관리 절차 | 데이터 품질·편향 입력 |
+| AI_구성요소_단위_성능평가 | 성능평가 | 공정성 평가 결과 활용 |
+| SOP-CC-001 | 변경통제 절차 | 재학습 변경관리 |
+| SOP-RM-001 | 위험관리 절차 | 편향·드리프트 위험 반영 |
+| F-RM-002 | FMEA 워크시트 | 위험 항목 등록 |
+| SOP-PSUR-001 | PSUR/PMCF | KPI → PMS 보고 |
+| SOP-FSCA-001 | FSCA 절차 | 위기 시 사용중지 |
+| QC-IQ-001 | 영상품질 QC | Hardware Drift 연동 |
+| 디지털의료제품법_SaMD_AI_요구 | 법규 요구사항 | §40 성능평가 근거 |
+
+## 13. 변경 이력
+
+| 버전 | 날짜 | 변경 내용 | 작성자 |
+|------|------|-----------|--------|
+| v0.1 | 2026-04-25 | 초안 작성 | 업무규칙 개발팀 |
+| v0.2 | 2026-05-23 | 보강 — 단계별 절차 표(수행자/판정기준), F-AIGOV-001/002 양식, X-ray 하드웨어 드리프트·Detector 유형별 공정성 평가, 트리거-조치 매트릭스, 상호참조 확충 | QA/RA |
