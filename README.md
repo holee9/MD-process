@@ -71,23 +71,23 @@
 
 ## 📊 진행 현황 (자동 갱신)
 
-> 마지막 갱신: **2026-05-24** · 다음 자동 갱신: 2026-05-25 03:18 KST
+> 마지막 갱신: **2026-05-25** · 다음 자동 갱신: 2026-05-26 03:18 KST
 
 ### 한눈에 보기
 
 ![문서](https://img.shields.io/badge/문서-68건-blue)
-![이슈](https://img.shields.io/badge/이슈-120건-orange)
+![이슈](https://img.shields.io/badge/이슈-119건-orange)
 ![완료](https://img.shields.io/badge/Closed-70건-green)
-![진행중](https://img.shields.io/badge/Open-50건-yellow)
-![리서치](https://img.shields.io/badge/리서치로그-41건-blueviolet)
-![교차검증](https://img.shields.io/badge/교차검증-40건-ff69b4)
+![진행중](https://img.shields.io/badge/Open-49건-yellow)
+![리서치](https://img.shields.io/badge/리서치로그-42건-blueviolet)
+![교차검증](https://img.shields.io/badge/교차검증-41건-ff69b4)
 
 ### 이슈 상태
 
 ```mermaid
-pie title 이슈 상태 (총 120건)
+pie title 이슈 상태 (총 119건)
     "Closed (70)" : 70
-    "Open (50)" : 50
+    "Open (49)" : 49
 ```
 
 ### 카테고리별 문서 분포
@@ -104,7 +104,7 @@ xychart-beta horizontal
 
 | 카테고리 | 문서 수 | v0.2+ | 비율 | 진행 상태 |
 |----------|--------|-------|------|----------|
-| 01_법규_규제 | 12 | 3 | 25% | `██░░░░░░░░` |
+| 01_법규_규제 | 12 | 8 | **66%** | `██████░░░░` |
 | 02_품질경영시스템_QMS | 13 | 13 | **100%** | `██████████` ✅ |
 | 03_설계_개발관리 | 10 | 10 | **100%** | `██████████` ✅ |
 | 04_제조공정_관리 | 6 | 3 | 50% | `█████░░░░░` |
@@ -114,7 +114,7 @@ xychart-beta horizontal
 | 08_시판후_감시_PMS | 4 | 2 | 50% | `█████░░░░░` |
 | 09_공급자_관리 | 4 | 2 | 50% | `█████░░░░░` |
 | 10_교육_훈련 | 3 | 2 | 66% | `██████░░░░` |
-| **전체** | **68** | **41** | **60%** | `██████░░░░` |
+| **전체** | **68** | **46** | **68%** | `██████░░░░` |
 
 ### 카테고리 × 유형 매트릭스 미니뷰
 
@@ -138,10 +138,6 @@ xychart-beta horizontal
 ```mermaid
 timeline
     title 최근 활동 (2026-05)
-    2026-05-21 : SOP-MR-001 v0.2 보강
-               : PRO-CRP-001 v0.2 보강
-               : SOP-CVD-001 v0.2 보강
-               : PRO-DA-001 v0.2 보강
     2026-05-22 : F-CC-001 v0.2 보강
                : QMS_구축_핵심요소 v0.2 보강
                : GMP_적합판정 v0.2 보강
@@ -158,7 +154,12 @@ timeline
                : ALARA_설계명세 v0.2 보강
                : AI_구성요소_성능평가 v0.2 보강
                : Tier 2 설계개발 100% 완료
-               : v0.2+ 41/68 (60%) 돌파
+    2026-05-25 : ISO13485_2016_요약 v0.2 보강
+               : FDA_QMSR_2026 v0.2 보강
+               : FDA_QMSR_820.35 차이표 v0.2 보강
+               : EU_MDR_2017_745 v0.2 보강
+               : 진단용방사선규칙 v0.2 보강
+               : v0.2+ 46/68 (68%) 달성
 ```
 
 ### 시스템 헬스
@@ -174,8 +175,8 @@ timeline
 ### Open 이슈 분류
 
 ```mermaid
-pie title Open 이슈 분류 (50건)
-    "documentation (30)" : 30
+pie title Open 이슈 분류 (49건)
+    "documentation (29)" : 29
     "review (10)" : 10
     "enhancement (5)" : 5
     "기타 (5)" : 5
