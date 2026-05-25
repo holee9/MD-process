@@ -1,73 +1,183 @@
 ---
 doc-id: EU_AI_Act_MDR_중첩적용_매핑
-title: EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)
+title: "EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)"
 type: Matrix
-version: v0.1
+version: v0.2
 status: draft
 category: 01_법규_규제
-purpose: EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비) 관련 문서
-applicable: [EU AI Act, EU MDR 2017/745, FDA QMSR, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019, 디지털의료제품법]
-owner: TBD
-last-review: 2026-04-20
-review-due: 2027-04-20
+purpose: "EU AI Act(2024/1689)와 EU MDR(2017/745) 간 중첩 요건 식별, 단일 QMS/기술문서 통합 충족 전략 및 X-ray AI 영상 분석 시스템 적용 지침"
+applicable: [EU AI Act(Regulation 2024/1689), EU MDR 2017/745, ISO13485:2016, ISO14971:2019, IEC62304:2006/A1:2015, IEC62366-1:2015/A1:2020, IEC81001-5-1:2021, FDA QMSR 21 CFR 820, 디지털의료제품법]
+forms: [F-AIAMD-GAP-001]
+related-docs: [EU_MDR_2017_745, GSPR_정합표준_매핑표, GSPR_체크리스트_v0.2_템플릿, SOP-AIGOV-001, SOP-AIDATA-001, SOP-CC-001, SOP-RM-001, SOP-PSUR-001, 디지털의료제품법_SaMD_AI_요구]
+related-issues: [4, 7, 20, 21, 48, 58]
+owner: RA/QA Lead
+last-review: 2026-05-26
+review-due: 2027-05-26
 ---
 
 # EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)
 
 ## 1. 목적
+
 본 문서는 AI/ML 기반 의료 SW(SaMD), 특히 X-ray 영상 판독 보조 기능을 염두에 두고 EU AI Act (Regulation (EU) 2024/1689)와 EU MDR (Regulation (EU) 2017/745) 간 중첩 요건을 식별하고, 단일 QMS/기술문서에서 동시에 충족하기 위한 매핑을 정리한다.
 
 ## 2. 위험 분류 — 중첩 조건
-- AI Act Art. 6(1): 부속 II에 나열된 EU 조화법령(MDR 포함) 제품의 안전 구성요소 또는 그 자체 제품이고, 제3자 적합성평가(NB)가 필요한 경우 → **High-risk AI system**
-- 대부분의 Class IIa 이상 AI SaMD는 NB 관여가 필요하므로 High-risk 분류 가능성이 높음
-- Class I self-certification 기기는 원칙상 High-risk 비해당 (단, Annex III 별도 해당 여부 확인)
 
-## 3. 요건 매핑
-| AI Act 요건 | MDR / ISO 매핑 | 통합 접근 |
-|-------------|----------------|-----------|
-| Art. 9 Risk Management System | MDR Annex I §3, ISO 14971:2019/A11 | 단일 Risk File, AI 특유 위험(편향, 데이터 드리프트, 적대적 입력) 항목 보강 |
-| Art. 10 Data & Data Governance | MDR Annex II §6.1, IEC 62304, GMLP | 학습/검증/테스트 데이터셋 관리 SOP (대표성, 라벨링 품질, 편향 점검) |
-| Art. 11 Technical Documentation | MDR Annex II/III | 통합 TD에 AI Act Annex IV 항목 별도 섹션 |
-| Art. 12 Record-keeping (Logging) | MDR Annex I §17.2 + IEC 62304 | 배포 모델별 추론 로그 설계, PII 분리·보존 기간 규정 |
-| Art. 13 Transparency/IFU | MDR Annex I §23, IEC 82304-1 | IFU에 의도된 용도, 한계, 성능지표, 모니터링 지표 명시 |
-| Art. 14 Human Oversight | MDR Annex I §14.2, IEC 62366-1 | 사용적합성 파일에 감독 시나리오 추가 |
-| Art. 15 Accuracy/Robustness/Cybersecurity | MDR Annex I §17.2/§17.4, IEC 81001-5-1, FDA Pre-mkt Cyber Guidance | 사이버보안 계획 + 모델 성능 적합성 시험 결합 |
-| Art. 16–17 QMS | MDR Art. 10(9), ISO 13485, QMSR §820.25 | 기존 QMS 확장, AI 관련 절차 추가 (데이터·모델 변경관리) |
-| Art. 43 CA 경로 | MDR 적합성평가(Annex IX/X/XI) | MDR 경로에 AI Act 요건을 포함해 단일 평가 — NB 선택 시 지정 범위 확인 |
-| Art. 61 Post-market monitoring | MDR Art. 83–86 (PMS/PSUR) | 통합 PMS Plan/Report — 모델 성능 모니터링·드리프트 지표 포함 |
-| Art. 62 Serious incident reporting | MDR Art. 87 | Vigilance SOP 단일화, AI Act 관련 지표 추가 필드 |
+### 2.1 High-risk AI 분류 판단 절차
 
-## 4. PCCP / Change Management
-- AI Act는 사전 계획된 변경(예: 재학습)을 "substantial modification" 예외로 허용(Art. 43(4))
-- MDR은 중요 변경 시 NB 보고 필요 — PCCP(Pre-determined Change Control Plan) 방식으로 정합
-- SOP-CHG-001(가칭)에 PCCP 섹션 추가 필요
+```
+1. 제품이 EU 조화법령(Annex II) 대상인가?
+   ├─ Yes: MDR/IVDR 등재 확인
+   │   └─ 제3자 적합성평가(NB) 필요한 Class?
+   │       ├─ Class IIa/IIb/III → High-risk AI system (Art. 6(1))
+   │       └─ Class I (self-cert) → 원칙상 비해당 (단, Annex III 확인)
+   └─ No: Annex III 별도 해당 여부 확인
 
-## 5. 시점/적용
-- AI Act 발효: 2024-08-01 / High-risk 조항 본격 적용: 2026-08-02
-- 기존 MDR 인증 제품은 2027-08-02까지 과도기 (해석 지침 확인 필요)
-- 본 프로젝트는 2026년 내 설계개발 중 → 초기 단계부터 AI Act 반영 권고
+2. High-risk 확정 시
+   ├─ AI Act Chapter III 전체 요건 적용
+   ├─ 적합성평가 경로: MDR 경로에 AI Act 요건 통합
+   └─ EU DB 등록 의무 (Art. 49)
+```
 
-## 6. 한국·미국 연계 참고
-- KR: 디지털의료제품법(2025-01-24 시행) SaMD·AI 규정 병합 검토(후속 과제)
-- US: FDA GMLP 원칙, 2025 Draft Guidance on AI/ML enabled devices, PCCP 개념 일치 → 통합 변경관리 가능
+**판정 기준**: 대부분의 Class IIa 이상 AI SaMD는 NB 관여가 필요하므로 High-risk 분류 가능성이 높다.
 
-## 7. Gap → 조치
-| Gap | 조치 |
-|-----|------|
-| Risk File에 AI 특유 위험 템플릿 부재 | 14971 위험관리 계획·표에 AI 위험 카탈로그(편향/드리프트/적대적입력/설명가능성) 추가 |
-| 데이터 거버넌스 SOP 부재 | SOP-DATA-001(가칭) 신규 — 수집/라벨링/편향감사/버전관리 |
-| 모델 변경관리 SOP 부재 | SOP-CHG-001 개정 또는 SOP-ML-001 신규 + PCCP 섹션 |
-| PMS에 모델 성능 지표 부재 | PMS Plan에 AUC/Sensitivity/Specificity/서비스드리프트 모니터링 포함 |
-| 기술문서 구조가 MDR 전용 | TD 템플릿에 AI Act Annex IV 매핑 컬럼 도입 |
+### 2.2 X-ray AI 시스템 분류 예시
 
-## 8. 출처
-- Regulation (EU) 2024/1689 (AI Act)
-- Regulation (EU) 2017/745 (MDR)
-- MDCG 2019-11, MDCG 2019-16 Rev.1
-- IEC 62304:2006/A2:2015, IEC 62366-1:2015/A1:2020, IEC 81001-5-1:2021
+| 구성요소 | MDR Class | NB 필요 | AI Act 분류 | 근거 |
+|----------|-----------|---------|-------------|------|
+| AI 영상 판독 보조 SW (CADe/CADx) | IIa~IIb | Yes | **High-risk** | Art. 6(1) + Annex II §11 |
+| X-ray 콘솔 SW (비AI) | IIa | Yes | **비해당** | AI 기능 없음 |
+| AI 자동 노출 제어 | IIa | Yes | **High-risk** | 안전 구성요소 |
+| AI 데이터 분석 (통계 리포트) | IIa | Yes | 판단 필요 | Rule-based vs. ML 여부 |
+
+## 3. 적용 일정 (단계별)
+
+| 시점 | AI Act 적용 내용 | MDR 상태 | 비고 |
+|------|-----------------|----------|------|
+| 2024-08-01 | AI Act 발효 | MDR 전면 적용 중 | |
+| 2025-02-02 | 금지 AI 관행 적용 | — | 의료기기 해당 거의 없음 |
+| 2025-08-02 | 범용 AI 모델(GPAI) 규칙 적용 | — | 의료기기 탑재 GPAI 해당 시 |
+| **2026-08-02** | **High-risk 조항 본격 적용** | MDR 전면 적용 | **핵심 마일스톤** |
+| 2027-08-02 | Art. 6(1) 경로 과도기 종료 | MDR 유지 | Class IIb/III + IVD C/D |
+
+**주의**: 2026-08-02부터 High-risk 의무가 본격 적용되나, MDR Annex I(GSPR) 제품의 경우 Art. 6(1) 경로는 2027-08-02까지 과도기가 인정될 수 있다. NB 선정 시 AI Act 지정 범위(designated scope) 포함 여부를 반드시 확인한다.
+
+## 4. 요건 매핑 상세
+
+### 4.1 위험관리
+
+| AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 | X-ray 적용 |
+|-------------|------|----------------|-----------|-----------|
+| Risk Management System | Art. 9 | MDR Annex I §3, ISO 14971:2019/A11 | 단일 Risk File에 AI 특유 위험 항목 추가 | 편향(특정 체형·인종별 판독 정확도 차이), 데이터 드리프트(장비 교체·프로토콜 변경 시 영상 특성 변화), 적대적 입력(조작된 영상) |
+| 위험 허용 기준 | Art. 9(2) | ISO 14971 §7 | ALARP + AI 특유 임계값 추가 | 위음성(missed finding) 위험 → Sensitivity 하한선 설정 |
+
+### 4.2 데이터 거버넌스
+
+| AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 | X-ray 적용 |
+|-------------|------|----------------|-----------|-----------|
+| Data & Data Governance | Art. 10 | MDR Annex II §6.1, IEC 62304, GMLP | 학습/검증/테스트 데이터셋 관리 SOP | X-ray 영상 데이터: 다기관(≥3), 다장비 브랜드, 체형·연령·성별 대표성 확보 |
+| 데이터 품질 | Art. 10(2-5) | — | 라벨링 품질 관리, 편향 점검 | 판독 전문의 ≥2인 합의 라벨링, Cohen's κ ≥ 0.80 |
+
+### 4.3 기술문서 & 투명성
+
+| AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 |
+|-------------|------|----------------|-----------|
+| Technical Documentation | Art. 11 | MDR Annex II/III | 통합 TD에 AI Act Annex IV 항목 별도 섹션 추가 |
+| Record-keeping (Logging) | Art. 12 | MDR Annex I §17.2, IEC 62304 | 추론 로그 설계: 입력 영상 ID, 출력 결과, 신뢰도 점수, 타임스탬프. PII 분리·보존 기간 규정 |
+| Transparency/IFU | Art. 13 | MDR Annex I §23, IEC 82304-1 | IFU에 의도된 용도, 한계(false positive/negative 비율), 성능 지표, 모니터링 지표 명시 |
+| Human Oversight | Art. 14 | MDR Annex I §14.2, IEC 62366-1 | 사용적합성 파일에 감독 시나리오 추가: 방사선사/의사가 AI 결과를 무시(override)할 수 있는 UI 설계 |
+
+### 4.4 정확도·견고성·사이버보안
+
+| AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 | X-ray 적용 |
+|-------------|------|----------------|-----------|-----------|
+| Accuracy | Art. 15(1) | MDR Annex I §1 | 임상 성능 시험 + AI 성능 지표 결합 | AUC, Sensitivity, Specificity, PPV, NPV (해부 구조별·병변별) |
+| Robustness | Art. 15(3) | MDR Annex I §17.2 | Stress Testing: 입력 변형, 장비 변동, 환경 변화 | 다양한 kVp/mAs 조합, 노이즈 주입, 저선량 영상 테스트 |
+| Cybersecurity | Art. 15(4) | MDR Annex I §17.4, IEC 81001-5-1 | 사이버보안 계획 통합 | DICOM 통신 보안, 모델 파일 무결성 검증 |
+
+### 4.5 QMS & 적합성평가
+
+| AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 |
+|-------------|------|----------------|-----------|
+| QMS | Art. 16-17 | MDR Art. 10(9), ISO 13485, QMSR §820.25 | 기존 QMS 확장: AI 데이터·모델 변경관리 절차 추가 (SOP-AIGOV-001, SOP-AIDATA-001) |
+| 적합성평가 경로 | Art. 43 | MDR Annex IX/X/XI | MDR 경로에 AI Act 요건 포함하여 단일 평가. NB 선택 시 AI Act 지정 범위 확인 필수 |
+
+### 4.6 시판 후 관리
+
+| AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 | X-ray 적용 |
+|-------------|------|----------------|-----------|-----------|
+| Post-market monitoring | Art. 61 | MDR Art. 83-86 (PMS/PSUR) | 통합 PMS Plan/Report에 모델 성능 모니터링·드리프트 지표 포함 | AUC 월간 추적, 드리프트 임계 ±5% 시 경보 |
+| Serious incident reporting | Art. 62 | MDR Art. 87 (Vigilance) | Vigilance SOP 단일화, AI 관련 추가 필드(모델 버전, 입력 데이터 특성) | AI 오판독으로 인한 진단 지연/오진 → FSCA 연계 |
+
+## 5. PCCP / Change Management
+
+| 규제 | 변경관리 접근 | 통합 방안 |
+|------|-------------|-----------|
+| AI Act Art. 43(4) | 사전 계획된 변경(재학습) → "substantial modification" 예외 허용 | SOP-CC-001에 PCCP 섹션: 사전 승인 범위, 성능 기준, 검증 방법 명시 |
+| MDR | 중요 변경 시 NB 보고 | PCCP 범위 내 변경 → NB 사전 합의, 범위 외 → 변경 인증 |
+| 디지털의료제품법 | 변경관리 계획(CMP) 제출 가능 | CMP와 PCCP 구조 통합 (단일 문서) |
+| FDA | PCCP Draft Guidance (2023) | 동일 프레임워크 활용, 미국 제출용 별도 섹션 |
+
+## 6. Gap → 조치 매트릭스
+
+| # | Gap | 심각도 | 조치 | 담당 | 연계 문서 | 목표 완료 |
+|---|-----|--------|------|------|-----------|-----------|
+| 1 | Risk File에 AI 특유 위험 템플릿 부재 | 높음 | ISO 14971 위험관리 계획·표에 AI 위험 카탈로그(편향/드리프트/적대적입력/설명가능성) 추가 | RA/QA | SOP-RM-001, F-RM-002 | 2026 Q3 |
+| 2 | 데이터 거버넌스 SOP 부재 | 높음 | SOP-AIDATA-001 수립: 수집/라벨링/편향감사/버전관리 | SW/Data | SOP-AIDATA-001 | v0.2 완료 |
+| 3 | 모델 변경관리 절차 보강 필요 | 높음 | SOP-CC-001에 PCCP 섹션 추가, AI 변경 판정 기준 구체화 | RA/QA | SOP-CC-001 | v0.2 완료 |
+| 4 | PMS에 모델 성능 지표 부재 | 중간 | PMS Plan에 AUC/Sensitivity/Specificity/드리프트 모니터링 포함 | RA | SOP-PSUR-001 | 2026 Q3 |
+| 5 | 기술문서 구조가 MDR 전용 | 중간 | TD 템플릿에 AI Act Annex IV 매핑 컬럼 도입 | RA | TF-TD-001 | 2026 Q3 |
+| 6 | NB AI Act 지정 범위 확인 미완 | 중간 | NB 선정 시 AI Act 범위 포함 여부 확인 계획 수립 | RA | — | 2026 Q4 |
+
+## 7. 양식: F-AIAMD-GAP-001 AI Act × MDR 갭 분석 워크시트
+
+```
+=== AI Act × MDR 갭 분석 워크시트 ===
+
+제품명:                           MDR Class:
+AI 기능 설명:                     AI Act 분류:
+분석 일자:                        분석자:
+
+| # | AI Act 조항 | MDR 대응 조항 | 현재 충족 수준 | 갭 설명 | 조치 계획 | 완료 목표 | 상태 |
+|---|-------------|--------------|---------------|---------|-----------|-----------|------|
+| 1 | Art. 9 Risk Mgmt | Annex I §3 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 2 | Art. 10 Data Gov. | Annex II §6.1 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 3 | Art. 11 Tech Doc | Annex II/III | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 4 | Art. 12 Logging | Annex I §17.2 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 5 | Art. 13 Transparency | Annex I §23 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 6 | Art. 14 Human Oversight | Annex I §14.2 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 7 | Art. 15 Accuracy/Robust/Cyber | Annex I §17 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 8 | Art. 16-17 QMS | Art. 10(9) | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 9 | Art. 43 CA | Annex IX/X/XI | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 10 | Art. 61 PMS | Art. 83-86 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+| 11 | Art. 62 Incident | Art. 87 | ☐ 충족 / ☐ 부분 / ☐ 미충족 | | | | |
+
+서명: _____________________ 일자: _______________
+```
+
+## 8. 한국·미국 연계 참고
+
+| 규제 | 대응 개념 | 통합 가능성 |
+|------|----------|-------------|
+| 디지털의료제품법 (KR) | SaMD·AI 규정, 변경관리계획(CMP) | CMP = PCCP 구조 통합 |
+| FDA GMLP 원칙 (US) | AI/ML SaMD 개발 원칙 | 데이터 거버넌스·투명성 요건 정합 |
+| FDA PCCP (US) | 사전 계획 변경관리 | 단일 PCCP 문서로 EU/US/KR 대응 |
+| FDA Pre-market Cyber Guidance (US) | 사이버보안 사전심사 | IEC 81001-5-1 기반 통합 |
+
+## 9. 출처
+
+- Regulation (EU) 2024/1689 (AI Act) — 전문, Art. 6, 9-17, 43, 61-62, Annex II/III/IV
+- Regulation (EU) 2017/745 (MDR) — Art. 10, 15, 83-87, Annex I-III, IX-XI
+- MDCG 2019-11 (소프트웨어 분류), MDCG 2019-16 Rev.1 (사이버보안), MDCG 2020-3 (significant changes)
+- IEC 62304:2006/A1:2015, IEC 62366-1:2015/A1:2020, IEC 81001-5-1:2021
+- ISO 14971:2019/A11:2021
 - FDA AI/ML-based SaMD Action Plan, PCCP Draft Guidance 2023
+- DQS Global — AI Act & AI-Enabled Medical Devices: Regulatory Status 2026
+- MedDeviceGuide — EU AI Act for Medical Devices Compliance Guide 2026
 
-## 9. 개정 이력
+## 10. 개정 이력
+
 | 버전 | 일자 | 내용 |
 |------|------|------|
-| 0.1 | 2026-04-20 | 초안 작성 (High-risk 기준·요건 매핑·Gap) |
+| v0.1 | 2026-04-20 | 초안 작성 (High-risk 기준·요건 매핑·Gap) |
+| v0.2 | 2026-05-26 | 분류 판단 절차·적용 일정 구체화, X-ray 적용 예시 전면 보강, 양식 F-AIAMD-GAP-001 추가, 상호참조 확충, Gap 조치 매트릭스 상세화 |
