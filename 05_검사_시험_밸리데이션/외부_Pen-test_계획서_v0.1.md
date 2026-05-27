@@ -1,44 +1,67 @@
 ---
-doc-id: 외부_Pen-test_계획서_v0.1
-title: 외부 침투시험(Penetration Test) 계획서 (v0.1 초안)
+doc-id: 외부_Pen-test_계획서
+title: 외부 침투시험(Penetration Test) 계획서
 type: Plan
-version: v0.1
+version: v0.2
 status: draft
 category: 05_검사_시험_밸리데이션
-purpose: 외부 침투시험(Penetration Test) 계획서 (v0.1 초안) 관련 문서
-applicable: [FDA SBOM, IEC81001-5-1, MFDS, UDI]
+purpose: 의료용 X-ray 시스템·SW에 대한 외부 보안 침투시험 발주·수행·결과보고 계획 수립
+applicable:
+  - FDA Premarket Cybersecurity Guidance (2023-09-26) §V.D, §VI.D
+  - MFDS 의료기기 사이버보안 허가·심사 가이드라인 (2025-01-10) 제6장
+  - IEC 81001-5-1:2021 §7.4
+  - IEC TR 60601-4-5:2021
+  - AAMI TIR57:2016
+  - NIST SP 800-115
+  - OWASP WSTG v4.2 / MASTG v1.7
+  - 디지털의료기기 전자적 침해행위 보안지침 제15조
+forms:
+  - F-PEN-001
+  - F-PEN-002
+  - F-PEN-003
+related-docs:
+  - SOP-CVD-001
+  - SOP-SBOM-001
+  - SOP-CC-001
+  - IEC_81001-5-1_FDA_Cybersecurity_SW보안
+  - SOP-RM-001
+  - X-ray_장비_안전성능_표준_매핑
 related-issues: [11, 25, 26, 34]
-owner: TBD
-last-review: 2026-04-26
-review-due: 2027-04-26
+owner: Security Officer / QA/RA Lead
+last-review: 2026-05-28
+review-due: 2027-05-28
 ---
 
-# 외부 침투시험(Penetration Test) 계획서 (v0.1 초안)
+# 외부 침투시험(Penetration Test) 계획서
 
 문서번호: PLAN-PEN-001
-버전: v0.1 (초안)
-작성일: 2026-04-26
+버전: v0.2
+작성일: 2026-04-26 / 보강일: 2026-05-28
 작성자: 의료기기 업무규칙 개발팀
-관련 문서: 02_QMS/SOP-CVD-001_조정된_취약점_공개_정책.md, 03_설계_개발관리/IEC_81001-5-1_FDA_Cybersecurity_SW보안.md, 03_설계_개발관리/SOP-SBOM-001_SBOM_생성관리_절차.md, 06_문서_기록관리/SOP-UDI-001_UDI_통합관리_초안.md, 12_교차검증_보고서/2026-04-24_FDA_SBOM_제출물_사전점검.md
 
 ## 1. 목적
-의료용 X-ray 시스템(콘솔·검출기·서버·클라우드 연계 SW)에 대한 외부 보안 침투시험을 발주·수행·결과보고 하기 위한 계획을 수립한다.
 
-본 계획은 FDA Premarket Cybersecurity Guidance(2023-09-26) §V.D, §VI.D 의 "security testing" 의무 및
-MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제6장의 시험요구를 충족하는 외부 검증 산출물을 확보한다.
+의료용 X-ray 시스템(콘솔·검출기·서버·클라우드 연계 SW)에 대한 외부 보안 침투시험을 발주·수행·결과보고하기 위한 계획을 수립한다.
+
+본 계획은 FDA Premarket Cybersecurity Guidance(2023-09-26) §V.D, §VI.D의 "security testing" 의무 및 MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제6장의 시험요구를 충족하는 외부 검증 산출물을 확보한다.
 
 ## 2. 규제·표준 근거
-- FD&C Act §524B(b)(1)(B): "design, develop, and maintain ... reasonable assurance that the device and related systems are cybersecure"
-- FDA Premarket Cybersecurity Guidance(2023-09-26) §V.D Vulnerability Testing, §VI.D Penetration Testing
-- MFDS "의료기기 사이버보안 허가·심사 가이드라인"(2025-01-10) 제6장 시험요구
-- 디지털의료기기 전자적 침해행위 보안지침 제15조 (취약점 점검)
-- AAMI TIR57:2016 (Principles for medical device security – Risk management)
-- IEC 81001-5-1:2021 §7.4 (Security testing)
-- IEC TR 60601-4-5:2021 (Security capabilities for medical electrical equipment)
-- NIST SP 800-115 (Technical Guide to Information Security Testing and Assessment)
-- OWASP WSTG v4.2 / OWASP MASTG v1.7 / OWASP IoT Security Verification Standard
+
+| 근거 | 조항 | 요구사항 요약 |
+|------|------|-------------|
+| FD&C Act §524B(b)(1)(B) | — | "reasonable assurance that the device and related systems are cybersecure" |
+| FDA Premarket Cybersecurity Guidance | §V.D, §VI.D | Vulnerability Testing, Penetration Testing 의무 |
+| MFDS 사이버보안 가이드라인 | 제6장 | 시험 결과 제출 의무 |
+| 디지털의료기기 보안지침 | 제15조 | 취약점 점검 의무 |
+| AAMI TIR57:2016 | 전체 | 의료기기 보안 위험관리 원칙 |
+| IEC 81001-5-1:2021 | §7.4 | Security testing 요구 |
+| IEC TR 60601-4-5:2021 | 전체 | ME 기기 보안 역량 |
+| NIST SP 800-115 | 전체 | 정보보안 시험 기술 가이드 |
+| OWASP WSTG v4.2 | 전체 | 웹 보안 시험 가이드 |
+| OWASP MASTG v1.7 | 전체 | 모바일 앱 보안 시험 가이드 |
 
 ## 3. 적용 범위 (Scope)
+
 | 자산 | 위협 표면 | 시험 범위 |
 |------|----------|----------|
 | X-ray 콘솔 SW(Workstation) | 로컬·네트워크 | OS hardening, 인증·세션·권한, USB·미디어, 입력 검증 |
@@ -50,24 +73,96 @@ MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제
 
 비범위(Out-of-Scope): 환자 임상 데이터 직접 추출(법적·윤리적 제약), 물리 침입(별도 평가)
 
-## 4. 시험 방법론
-### 4.1 단계
-1. **사전 정보 수집** (1주) — SBOM(SOP-SBOM-001 산출물) · 아키텍처 · TM(STRIDE) 검토
-2. **위협 모델링 검증** (1주) — 자체 STRIDE 결과와 외부 평가 격차 분석
-3. **취약점 스캔** (1주) — 자동 도구(Nessus·Greenbone·OWASP ZAP 등) 1차
-4. **수동 침투시험** (3주) — Black/Grey/White Box 혼합
-5. **익스플로잇 검증** (1주) — Critical/High 항목 재현·영향분석
-6. **보고서 초안 → 협의** (1주) — 임시 보고서 → 사내 검토 → 최종
-7. **재시험(선택)** (2주, 별도 계약) — 패치 후 재현 시험
+### 3.1 X-ray 시스템 특화 시험 시나리오
 
-총 기간: 7주(주요 보고)+2주(재시험)
+의료용 X-ray 시스템의 특수성을 반영한 시험 시나리오:
 
-### 4.2 접근 모델
-- Black Box: 외부자 관점 — 인증 정보 없이 시작
-- Grey Box: 일반 사용자 권한 — 운영자 계정 발급
-- White Box: 설계 정보 제공 — SBOM·아키텍처·소스 부분 검토
+| 시나리오 | 위험 | 시험 방법 | 판정 기준 |
+|----------|------|----------|----------|
+| AEC/노출제어 파라미터 변조 | 환자 과노출 → 방사선 피해 | 통신 채널 MITM, 파라미터 인젝션 | 변조 불가 또는 감지·차단 확인 |
+| 디텍터 교정 데이터 위변조 | 영상 열화 → 오진 | 교정 파일 무결성 검증 우회 시도 | 서명 검증 필수, 변조 시 부팅 차단 |
+| DICOM 헤더 조작 | 환자 혼동 → 오진 | DICOM fuzzing + 헤더 위변조 | 무결성 검증 또는 비정상 헤더 거부 |
+| 원격 서비스 채널 무단 접근 | 장비 설정 무단 변경 | VPN 우회, 인증 시도 | MFA 적용, 세션 타임아웃 |
+| 방사선 인터록 SW 우회 | 안전장치 무력화 | 인터록 제어 경로 분석 | HW 인터록 백업, SW 단독 비활성화 불가 |
+| AI 영상처리 모델 입력 공격 | 진단 결과 왜곡 | Adversarial input injection | 입력 범위 검증, 이상 탐지 |
 
-### 4.3 도구 및 표준 매핑
+## 4. 절차 흐름
+
+### 4.1 전체 프로세스 개요
+
+```
+[계획 수립] → [RFP 작성·발주] → [평가기관 선정·계약] → [사전 준비]
+    → [시험 실행] → [보고서 검토] → [패치·재시험] → [제출 패키지 통합]
+```
+
+### 4.2 단계별 상세 절차
+
+**Phase 1: 계획 수립 및 RFP (2주)**
+
+| 단계 | 수행자 | 활동 | 산출물 | 판정 기준 |
+|------|--------|------|--------|----------|
+| 1.1 | Security Officer | 시험 범위 확정: 위협 모델(STRIDE) 결과 기반으로 시험 대상 자산·인터페이스 결정 | 시험 범위 정의서 | 모든 Critical/High 위협 시나리오 포함 여부 |
+| 1.2 | QA/RA | 규제 요구사항 매핑: FDA §VI.D, MFDS 제6장 요구사항을 시험 항목에 매핑 | 규제 매핑표 | 100% 커버리지 |
+| 1.3 | Security Officer | RFP 작성: 자격 요건, 범위, 산출물 형식, NDA, 일정, 예산 명시 | RFP 문서 | §5 발주 요건 충족 |
+| 1.4 | Security Officer | 평가기관 후보 3개사 이상 접촉 및 제안서 수령 | 제안서 평가표(F-PEN-001) | 평가 기준 70점 이상 |
+
+**Phase 2: 평가기관 선정 및 계약 (2주)**
+
+| 단계 | 수행자 | 활동 | 산출물 | 판정 기준 |
+|------|--------|------|--------|----------|
+| 2.1 | Security Officer + QA | 제안서 평가: 기술 역량(40%), 의료기기 경험(25%), 가격(20%), 일정(15%) | 선정 보고서 | 합산 70점 이상 |
+| 2.2 | 법무 | NDA 및 계약 체결: 데이터 취급, 보고 의무, 재시험 조건 포함 | 계약서 | NDA 체결 완료 |
+| 2.3 | Security Officer | Kick-off 미팅: 범위·일정·연락체계·에스컬레이션 합의 | 회의록 | 양측 서명 |
+
+**Phase 3: 사전 준비 (1주)**
+
+| 단계 | 수행자 | 활동 | 산출물 | 판정 기준 |
+|------|--------|------|--------|----------|
+| 3.1 | SW Architect | 시험 환경 구성: 격리 LAB, Staging 클라우드, 가상 데이터셋 준비 | 환경 구성 확인서 | §6 환경 요건 충족 |
+| 3.2 | SW Dev Team | SBOM, 아키텍처 문서, STRIDE 결과 제공 | 기술 자료 패키지 | SOP-SBOM-001 산출물 포함 |
+| 3.3 | Security Officer | Grey/White Box 계정·접근 권한 발급 | 접근 권한 목록 | 최소 권한 원칙 |
+
+**Phase 4: 시험 실행 (7주)**
+
+| 주차 | 활동 | 수행자 | 산출물 |
+|------|------|--------|--------|
+| W1 | 사전 정보 수집: SBOM·아키텍처·TM(STRIDE) 검토 | 외부 평가기관 | 정보 수집 보고서 |
+| W2 | 위협 모델링 검증: 자체 STRIDE 결과와 외부 평가 격차 분석 | 외부 평가기관 | 격차 분석 보고서 |
+| W3 | 취약점 스캔: 자동 도구(Nessus·Greenbone·OWASP ZAP) 1차 | 외부 평가기관 | 자동 스캔 결과 |
+| W4-6 | 수동 침투시험: Black/Grey/White Box 혼합 수행 | 외부 평가기관 | 시험 기록 |
+| W7 | 익스플로잇 검증: Critical/High 항목 재현·영향분석 | 외부 평가기관 | 검증 보고서 |
+
+**Phase 5: 보고서 검토 및 패치 (3주)**
+
+| 단계 | 수행자 | 활동 | 판정 기준 |
+|------|--------|------|----------|
+| 5.1 | 외부 평가기관 | 최종 보고서 작성: CVE/CVSS 점수, OWASP Risk Rating 포함 | FDA SPDF 형식 부합 |
+| 5.2 | Security Officer + QA | 보고서 검토: 발견사항 분류, 패치 우선순위 결정 | §7 SLA 기준 적용 |
+| 5.3 | SW Dev Team | 패치 개발 및 적용 | 변경통제 SOP-CC-001 절차 준수 |
+| 5.4 | QA/RA | VEX 산출물 생성: OpenVEX 또는 CSAF 2.0 형식 | SOP-SBOM-001 연계 |
+
+**Phase 6: 재시험 (선택, 2주)**
+
+- 패치 후 Critical/High 항목 재현 시험 수행
+- 재시험 범위는 패치된 취약점 + 회귀 시험
+- 재시험 결과 보고서 별도 작성
+
+**Phase 7: 제출 패키지 통합 (1주)**
+
+- FDA 510(k)/MFDS 제출용 사이버보안 섹션에 시험 결과 통합
+- Executive Summary 작성(영문)
+- 모든 산출물 DHF에 편입
+
+### 4.3 접근 모델
+
+| 모델 | 설명 | 적용 대상 |
+|------|------|----------|
+| Black Box | 외부자 관점, 인증 정보 없이 시작 | 외부 네트워크 인터페이스, 클라우드 |
+| Grey Box | 일반 사용자 권한(운영자 계정 발급) | 콘솔 SW, 뷰어 |
+| White Box | 설계 정보 제공(SBOM·아키텍처·소스 부분 검토) | 검출기 펌웨어, DICOM 인터페이스 |
+
+### 4.4 도구 및 표준 매핑
+
 | 영역 | 표준/도구 |
 |------|-----------|
 | 네트워크 스캔 | Nmap, Nessus, Greenbone |
@@ -78,75 +173,168 @@ MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제
 | 권한·코드 | Semgrep, OSS Review Toolkit |
 
 ## 5. 발주 요건 (RFP 핵심)
-- 자격: ISO/IEC 27001 인증 보유 + ICS/Medical IoT 경험 ≥3년 + CREST/OSCP 보유 평가자
-- 산출물 언어: 한·영 동시 또는 영문 + 국문 요약
-- 비공개 계약(NDA), 결과 데이터 안전한 채널 전달, 시험 환경 격리
-- CVE/CVSS v3.1 점수 부여, OWASP Risk Rating, FDA SPDF Cybersecurity Section 형식 부합
-- VEX(JSON, OpenVEX 또는 CSAF 2.0) 산출물 함께 납품
+
+### 5.1 평가기관 자격 요건
+
+- ISO/IEC 27001 인증 보유
+- ICS/Medical IoT 침투시험 경험 ≥3년
+- CREST 또는 OSCP 보유 평가자 1인 이상
+- 의료기기 규제(FDA/EU MDR/MFDS) 이해 가능 인력 보유
+
+### 5.2 산출물 요건
+
+- 보고서 언어: 한·영 동시 또는 영문 + 국문 요약
+- CVE/CVSS v3.1 점수 부여
+- OWASP Risk Rating 포함
+- FDA SPDF Cybersecurity Section 형식 부합
+- VEX(JSON, OpenVEX 또는 CSAF 2.0) 산출물 납품
+
+### 5.3 보안 요건
+
+- NDA 체결 필수
+- 결과 데이터는 암호화 채널(PGP/Secure Drop)로 전달
+- 시험 환경 격리 준수
+- 시험 완료 후 평가기관 보유 데이터 파기 증명
 
 ## 6. 시험 환경
-| 환경 | 용도 |
-|------|------|
-| 격리 시험실(LAB-SEC-01) | HW 콘솔·검출기 실물, 외부 인터넷 차단, 트래픽 캡처 가능 |
-| Staging 클라우드(CL-STAGE) | 운영과 동등 구성, 익명 데이터만 |
-| 가상 임상 데이터셋 | DICOM 익명 샘플(병원 협력 데이터셋, IRB 비대상) |
+
+| 환경 | 용도 | 요건 |
+|------|------|------|
+| 격리 시험실(LAB-SEC-01) | HW 콘솔·검출기 실물 시험 | 외부 인터넷 차단, 트래픽 캡처 가능, 방사선 차폐 |
+| Staging 클라우드(CL-STAGE) | 클라우드 백엔드 시험 | 운영과 동등 구성, 익명 데이터만 |
+| 가상 임상 데이터셋 | DICOM 시험용 | 익명 샘플(IRB 비대상), 환자 식별 불가 |
+
+### 6.1 X-ray 시험 환경 특수 요건
+
+- 방사선 발생장치 시험 시 방사선 안전관리규칙(제1122호) 준수
+- 시험 중 X-ray 방사선 조사 필요 시 방사선 안전관리자 입회
+- 검출기 교정 상태 확인 후 시험 착수
+- AEC/노출제어 관련 시험 시 팬텀 사용(인체 조사 금지)
 
 ## 7. 결과 분류 및 SLA
-| 등급 | CVSS v3.1 | 패치 SLA(SOP-CVD-001 §7) | 발견 시 즉시조치 |
-|------|----------|----------------------|------------------|
-| Critical | ≥9.0 | 30d | 임시 회피책 24h 내 전사 공유 |
-| High | 7.0–8.9 | 60d | 위험 등급화 |
-| Medium | 4.0–6.9 | 90d | 다음 정기 패치 포함 |
-| Low | <4.0 | 180d | 변경관리 흐름 |
+
+| 등급 | CVSS v3.1 | 패치 SLA (SOP-CVD-001 §7) | 발견 시 즉시조치 |
+|------|----------|--------------------------|-----------------|
+| Critical | ≥9.0 | 30일 | 임시 회피책 24시간 내 전사 공유, RA에 즉시 보고 |
+| High | 7.0–8.9 | 60일 | 위험 등급화, 변경통제 착수 |
+| Medium | 4.0–6.9 | 90일 | 다음 정기 패치 포함 |
+| Low | <4.0 | 180일 | 변경관리 흐름 |
+
+### 7.1 X-ray 안전 관련 취약점 판정 강화 기준
+
+방사선 안전 또는 환자 안전에 직접 영향을 미치는 취약점은 CVSS 점수와 무관하게 등급을 상향한다:
+
+| 영향 영역 | 자동 등급 상향 | 근거 |
+|-----------|--------------|------|
+| AEC/노출 파라미터 변조 가능 | → Critical | 환자 과노출 위험 |
+| 방사선 인터록 우회 가능 | → Critical | 안전장치 무력화 |
+| DICOM 환자 데이터 무결성 훼손 | → High 이상 | 오진 위험 |
+| 디텍터 교정 데이터 변조 | → High 이상 | 영상 품질 저하 → 진단 오류 |
+| AI 모델 출력 조작 가능 | → High 이상 | AI 보조 진단 왜곡 |
 
 ## 8. 산출물 (FDA·MFDS 제출용)
-1. Penetration Test Plan (본 문서, v최종)
-2. Threat Model Validation Report
-3. Vulnerability Test Report (자동스캔 결과 통합)
-4. Penetration Test Report — Findings · Reproduction · Remediation
-5. VEX(SBOM-CVE 영향성 매트릭스, OpenVEX/CSAF)
-6. Re-test Report(패치 후)
-7. Executive Summary(영문, FDA SPDF Cyber Section 인용)
+
+| No. | 산출물 | 형식 | 책임 |
+|-----|--------|------|------|
+| 1 | Penetration Test Plan (본 문서, v최종) | Word/PDF | Security Officer |
+| 2 | Threat Model Validation Report | Word/PDF | 외부 평가기관 |
+| 3 | Vulnerability Test Report (자동스캔 결과) | JSON + Word | 외부 평가기관 |
+| 4 | Penetration Test Report — Findings·Reproduction·Remediation | Word/PDF | 외부 평가기관 |
+| 5 | VEX (SBOM-CVE 영향성 매트릭스) | OpenVEX JSON / CSAF 2.0 | QA/RA |
+| 6 | Re-test Report (패치 후) | Word/PDF | 외부 평가기관 |
+| 7 | Executive Summary (영문, FDA SPDF 인용) | Word/PDF | QA/RA |
 
 ## 9. 책임·승인
+
 | 역할 | 인원 | 책임 |
 |------|------|------|
-| Security Officer | 1 | 발주·총괄·결과 검토 |
+| Security Officer | 1 | 발주·총괄·결과 검토, 최종 승인 |
 | QA/RA | 2 | 규제 적합성·문서화·VEX 통합 |
-| SW Architect | 1 | 시험 환경 구성·재현 검증 |
+| SW Architect | 1 | 시험 환경 구성·재현 검증·패치 개발 |
 | Clinical Affairs | 1 | 임상 데이터 익명화 검증 |
 | 외부 감사(선택) | 1 | 결과 독립 검토 |
 
 ## 10. 일정 (예시)
-| 마일스톤 | 시점 |
-|----------|------|
-| RFP 발행·평가 | T0+1m |
-| 계약 체결 | T0+2m |
-| Kick-off | T0+2m |
-| 시험 본 수행 | T0+3 ~ T0+4.5m |
-| 보고서 최종 | T0+5m |
-| 재시험(필요 시) | T0+5 ~ T0+6m |
-| 510(k)/MFDS 제출 패키지 통합 | T0+6m |
+
+| 마일스톤 | 시점 | 책임 |
+|----------|------|------|
+| RFP 발행·평가 | T0+1개월 | Security Officer |
+| 계약 체결 | T0+2개월 | 법무 |
+| Kick-off | T0+2개월 | Security Officer |
+| 시험 본 수행 | T0+3 ~ T0+4.5개월 | 외부 평가기관 |
+| 보고서 최종 | T0+5개월 | 외부 평가기관 |
+| 재시험(필요 시) | T0+5 ~ T0+6개월 | 외부 평가기관 |
+| 510(k)/MFDS 제출 패키지 통합 | T0+6개월 | QA/RA |
 
 ## 11. 예산 추정 (참고)
-- 외부 평가기관 발주: 8~15만 USD (범위·기간 따라 변동)
-- 도구·인프라(자체 스캔 인프라 보강): 2만 USD
-- 재시험: 본 계약의 30~50%
+
+| 항목 | 예상 비용 | 비고 |
+|------|----------|------|
+| 외부 평가기관 발주 | 8~15만 USD | 범위·기간에 따라 변동 |
+| 도구·인프라(자체 스캔 보강) | 2만 USD | Nessus 라이선스 등 |
+| 재시험 | 본 계약의 30~50% | Critical/High 발견 시 |
 
 ## 12. 변경관리 트리거
-- 주요 SW 릴리스(IEC 81001-5-1 §6.5 의 변경 분류)·OS·미들웨어·OSS 컴포넌트 메이저 버전 업
-- SBOM의 Critical CVE 발견(SOP-SBOM-001 §6 → SOP-CVD-001 §6 연계)
-- 신규 시장(미국·EU·KR) 출시 또는 신규 인터페이스(클라우드, 모바일) 추가
-- PMS(08) 또는 CVD(02_QMS) 흐름에서 사이버 침해사고 발생 시 즉시 재계획
 
-## 13. 변경이력
+다음 조건 발생 시 침투시험 재계획 필요:
+
+- 주요 SW 릴리스(IEC 81001-5-1 §6.5 변경 분류) 적용 시
+- OS·미들웨어·OSS 컴포넌트 메이저 버전 업 시
+- SBOM의 Critical CVE 발견 시 (SOP-SBOM-001 §6 → SOP-CVD-001 §6 연계)
+- 신규 시장(미국·EU·KR) 출시 또는 신규 인터페이스(클라우드, 모바일) 추가 시
+- PMS(08) 또는 CVD(02_QMS) 흐름에서 사이버 침해사고 발생 시
+
+## 13. 양식
+
+### F-PEN-001 — 침투시험 평가기관 선정 평가표
+
+| 평가 항목 | 배점 | 평가 기준 | 후보사 A | 후보사 B | 후보사 C |
+|-----------|------|----------|---------|---------|---------|
+| 기술 역량 | 40 | CREST/OSCP 보유, 도구 활용도, 보고서 샘플 품질 | | | |
+| 의료기기 경험 | 25 | ICS/Medical IoT 경험 연수, 레퍼런스, FDA/EU MDR 이해 | | | |
+| 가격 | 20 | 총비용 대비 범위 합리성, 재시험 포함 여부 | | | |
+| 일정 | 15 | 착수 가능 시기, 완료 일정 준수 가능성 | | | |
+| **합계** | **100** | 70점 이상 시 적격 | | | |
+
+평가일: __________ 평가자: __________ 승인자: __________
+
+### F-PEN-002 — 침투시험 결과 추적 대장
+
+| No. | 취약점 ID | CVSS | 등급 | 영향 자산 | 발견일 | 패치 SLA | 패치 완료일 | 재시험 결과 | 담당자 | 비고 |
+|-----|----------|------|------|----------|--------|---------|-----------|-----------|--------|------|
+| 1 | | | | | | | | | | |
+| 2 | | | | | | | | | | |
+
+작성자: __________ 검토자: __________ 일자: __________
+
+### F-PEN-003 — X-ray 안전 취약점 등급 상향 판정서
+
+| 항목 | 내용 |
+|------|------|
+| 취약점 ID | |
+| 원래 CVSS 점수 / 등급 | |
+| 환자 안전 영향 분석 | (방사선 과노출 / 인터록 우회 / 영상 무결성 / AI 출력 조작 해당 여부) |
+| 상향 후 등급 | |
+| 판정 근거 | |
+| 판정자 | Security Officer: __________ 서명: __________ |
+| QA/RA 검토 | __________ 서명: __________ |
+| 판정일 | |
+
+## 14. 관련 문서
+
+| 문서 ID | 문서명 | 연관 |
+|---------|--------|------|
+| SOP-CVD-001 | 조정된 취약점 공개 정책 | 패치 SLA 기준, 취약점 공개 절차 |
+| SOP-SBOM-001 | SBOM 생성관리 절차 | 시험 입력: SBOM, VEX 산출물 |
+| SOP-CC-001 | 변경통제 절차 | 패치 변경통제 |
+| SOP-RM-001 | 위험관리 절차 | 위협 모델링, 잔여 위험 평가 |
+| IEC_81001-5-1 | 사이버보안 SW 보안 | 보안 시험 요구사항 근거 |
+| X-ray_장비_안전성능_표준_매핑 | X-ray 안전·성능 표준 매핑 | 형식시험 연계, 방사선 안전 기준 |
+| SOP-FSCA-001 | 현장안전시정조치 절차 | Critical 취약점 → FSCA 트리거 |
+
+## 15. 개정 이력
+
 | 버전 | 일자 | 작성자 | 내용 |
 |------|------|--------|------|
 | v0.1 | 2026-04-26 | 의료기기 업무규칙 개발팀 | 초안 작성 |
-
-## 출처
-- FDA Premarket Cybersecurity Guidance (2023-09-26)
-- MFDS 의료기기 사이버보안 허가·심사 가이드라인 (2025-01-10)
-- AAMI TIR57:2016, IEC 81001-5-1:2021, IEC TR 60601-4-5:2021
-- NIST SP 800-115, OWASP WSTG/MASTG/IoTSVS
-- 확인일: 2026-04-26
+| v0.2 | 2026-05-28 | QA/RA | 절차 흐름 상세화, X-ray 안전 취약점 판정 기준 추가, 양식(F-PEN-001~003) 추가, 상호참조 보강 |
