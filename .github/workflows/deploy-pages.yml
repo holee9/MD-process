@@ -1,0 +1,61 @@
+name: Deploy Dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '00_프로젝트관리/**.md'
+      - '01_법규_규제/**.md'
+      - '02_품질경영시스템_QMS/**.md'
+      - '03_설계_개발관리/**.md'
+      - '04_제조공정_관리/**.md'
+      - '05_검사_시험_밸리데이션/**.md'
+      - '06_문서_기록관리/**.md'
+      - '07_위험관리_ISO14971/**.md'
+      - '08_시판후_감시_PMS/**.md'
+      - '09_공급자_관리/**.md'
+      - '10_교육_훈련/**.md'
+      - '11_일일_리서치로그/**.md'
+      - '12_교차검증_보고서/**.md'
+      - 'issue-drafts/**'
+      - 'scripts/build_dashboard_html.py'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build dashboard HTML
+        run: python3 scripts/build_dashboard_html.py
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

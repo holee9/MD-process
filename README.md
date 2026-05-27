@@ -48,6 +48,11 @@
 - 각 문서 frontmatter(YAML)를 SSOT로 사용 → push마다 [`build-matrix.yml`](.github/workflows/build-matrix.yml)이 자동 재생성
 - 작성 규칙: [`00_프로젝트관리/문서_메타데이터_규칙.md`](00_프로젝트관리/문서_메타데이터_규칙.md)
 
+### HTML 대시보드 (회의·보고 자료용)
+- **[🌐 holee9.github.io/MD-process](https://holee9.github.io/MD-process/)** — 브라우저에서 즉시 열리는 대시보드 (Chart.js 차트·인쇄 친화)
+- push마다 [`deploy-pages.yml`](.github/workflows/deploy-pages.yml)이 자동 빌드·배포
+- 회의·리뷰에서 그대로 영사 또는 인쇄 가능
+
 ### 운영 규칙
 - [00_프로젝트관리/이슈관리_규칙.md](00_프로젝트관리/이슈관리_규칙.md)
 - [issue-drafts/README.md](issue-drafts/README.md)
