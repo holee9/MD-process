@@ -1,3 +1,4 @@
+# triggered 2026-05-28T00:10:19Z
 #!/usr/bin/env python3
 """
 HTML 대시보드 생성기 — GitHub Pages 호스팅 또는 로컬 브라우저 열기용.
