@@ -43,6 +43,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pyyaml
       - name: Build dashboard HTML
         run: python3 scripts/build_dashboard_html.py
       - name: Upload artifact
