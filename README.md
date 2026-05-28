@@ -74,6 +74,38 @@
 ---
 
 
+
+## 🖥 회의·보고에서 대시보드 사용
+
+본 프로젝트는 **단일 진실원(Single Source of Truth)** 원칙으로 운영. 어떤 환경에서 보든 동일 컨텐츠.
+
+### 1. 회의실·다른 PC에서 보기
+브라우저로 접속: **https://holee9.github.io/MD-process/**
+- 매 push 시 자동 갱신
+- Chart.js 차트, KPI, Tier 진행, 잔여 보강 대상까지 풍부
+
+### 2. 이메일·메신저로 공유
+링크 또는 HTML 파일 첨부.
+- **링크 공유:** 위 Pages URL 그대로
+- **파일 다운로드:** 대시보드 페이지 상단의 "💾 HTML 다운로드" 버튼 또는 [`docs/index.html`](docs/index.html) raw 다운로드
+- 인터넷 없는 환경에서도 HTML 파일을 더블클릭으로 열 수 있음 (Chart.js CDN만 있으면 차트 표시. 없어도 표·KPI는 정상 표시)
+
+### 3. 인쇄·PDF 저장
+대시보드 페이지 상단의 "🖨 인쇄 / PDF 저장" 버튼 클릭. 또는 브라우저 인쇄(Ctrl+P) → "PDF로 저장".
+- 인쇄 친화 CSS 적용 (밝은 배경, 액션 버튼 자동 숨김)
+
+### 4. Cowork 본인 PC에서 보기
+사이드바의 Pinned "MD Process Dashboard" — GitHub Pages와 자동 동기 (스케줄러가 매일 03:18 KST 동기).
+
+### 데이터 출처
+- 각 문서의 `frontmatter` (version·status·doc-id·applicable 등) — 단일 진실원
+- `00_프로젝트관리/_dashboard_config.yml` — 사업 정보 (목표일·Tier)
+- `issue-drafts/*.md` + `_log.json` — 이슈 현황
+- git log — 최근 활동·일별 속도
+- 빌드 스크립트: [`scripts/build_dashboard_html.py`](scripts/build_dashboard_html.py)
+
+---
+
 ## 📊 진행 현황 (자동 갱신)
 
 > 마지막 갱신: **2026-05-28** · 다음 자동 갱신: 2026-05-29 03:18 KST
