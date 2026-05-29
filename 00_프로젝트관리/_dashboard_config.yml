@@ -42,5 +42,5 @@ tiers:
   - id: 5
     name: Tier 5
     categories: ['04_제조공정_관리','06_문서_기록관리','07_위험관리_ISO14971','08_시판후_감시_PMS','09_공급자_관리','10_교육_훈련']
-    completed_at: null
+    completed_at: '2026-05-30'
     target_date: '2026-05-31'
