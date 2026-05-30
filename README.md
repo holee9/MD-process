@@ -108,26 +108,26 @@
 
 ## 📊 진행 현황 (자동 갱신)
 
-> 마지막 갱신: **2026-05-30** · 다음 자동 갱신: 2026-05-31 03:18 KST
+> 마지막 갱신: **2026-05-31** · 프로젝트 목표일: 2026-06-01
 
 ### 한눈에 보기
 
 ![문서](https://img.shields.io/badge/문서-68건-blue)
 ![이슈](https://img.shields.io/badge/이슈-134건-orange)
-![완료](https://img.shields.io/badge/Closed-90건-green)
-![진행중](https://img.shields.io/badge/Open-44건-yellow)
-![리서치](https://img.shields.io/badge/리서치로그-47건-blueviolet)
-![교차검증](https://img.shields.io/badge/교차검증-46건-ff69b4)
+![완료](https://img.shields.io/badge/Closed-134건-green)
+![진행중](https://img.shields.io/badge/Open-0건-brightgreen)
+![리서치](https://img.shields.io/badge/리서치로그-48건-blueviolet)
+![교차검증](https://img.shields.io/badge/교차검증-47건-ff69b4)
 ![보강률](https://img.shields.io/badge/v0.2+_보강률-100%25-brightgreen)
 
 ### 🎯 프로젝트 목표 달성
 
-> **🏆 전체 Tier 1-5 완료! 핵심 문서 v0.2+ 보강률 100% 달성 (56/56)**
+> **🏆 전체 Tier 1-5 완료! 핵심 문서 v0.2+ 보강률 100% 달성 (68/68)**
+> **🏆 전체 이슈 134건 Closed — 열린 이슈 0건 달성 (2026-05-31)**
 
 ```mermaid
 pie title 이슈 상태 (총 134건)
-    "Closed (90)" : 90
-    "Open (44)" : 44
+    "Closed (134)" : 134
 ```
 
 ### 카테고리별 문서 분포
@@ -194,12 +194,11 @@ timeline
                : 04_제조 3건 v0.2 보강
     2026-05-29 : SOP-PKG/DOC/RM/FSCA/PSUR v0.2
                : 04_제조·08_PMS 100% 완료
-    2026-05-30 : TF-TD-001 기술문서관리 v0.2
-               : F-RM-002 FMEA 워크시트 v0.2
-               : F-SUP-001 공급자평가 v0.2
-               : GUIDE-SQA-001 품질합의서 v0.2
-               : F-TRN-001 교육훈련기록 v0.2
+    2026-05-30 : TF-TD-001·F-RM-002·F-SUP-001 등 v0.2
                : 🏆 Tier 5 완료 — 전체 100% 달성
+    2026-05-31 : 열린 이슈 44건 전수 종료
+               : 최신 규제 동향 최종 점검
+               : 🏆 전 이슈 Closed (134/134)
 ```
 
 ### 시스템 헬스
@@ -211,16 +210,6 @@ timeline
 | Issue Auto-close | 🟢 정상 | `state: closed` 감지 시 자동 종료 |
 | 매트릭스 빌드 | 🟢 정상 | push 시 자동 재생성 |
 | 로컬 git | 🟢 정상 | /tmp 클론 사용 |
-
-### Open 이슈 분류
-
-```mermaid
-pie title Open 이슈 분류 (44건)
-    "documentation (24)" : 24
-    "review (10)" : 10
-    "enhancement (5)" : 5
-    "기타 (5)" : 5
-```
 
 ---
 
