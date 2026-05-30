@@ -1,16 +1,24 @@
-# TF-TD-001 의료기기파일 및 기술문서 관리 절차
-
 ---
-document-id: TF-TD-001
+doc-id: TF-TD-001
 title: 의료기기파일 및 기술문서 관리 절차
+type: Procedure
+category: 06_문서_기록관리
+purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
 version: v0.2
-status: Draft
+status: draft
 last-review: 2026-05-30
-author: 의료기기 업무규칙 개발팀
 owner: RA/QA
-applies-to: 의료용 X-ray 시스템, 디지털 디텍터, 관련 SW
-standards: ISO 13485:2016, EU MDR 2017/745, FDA QMSR (21 CFR 820), MFDS GMP, IEC 62304, IEC 60601-2-54, IEC 81001-5-1
+applicable:
+  - ISO 13485:2016
+  - EU MDR 2017/745
+  - FDA QMSR (21 CFR 820)
+  - MFDS GMP
+  - IEC 62304
+  - IEC 60601-2-54
+  - IEC 81001-5-1
 ---
+
+# TF-TD-001 의료기기파일 및 기술문서 관리 절차
 
 ## 개정 이력
 
