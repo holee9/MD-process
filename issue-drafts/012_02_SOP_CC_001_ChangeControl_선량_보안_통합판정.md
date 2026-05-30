@@ -1,6 +1,7 @@
 ---
 title: "[02] SOP-CC-001 Change Control v0.1 — 선량·보안 통합 판정 체계"
 labels: "documentation,qms,compliance"
+state: closed
 ---
 
 ## 배경

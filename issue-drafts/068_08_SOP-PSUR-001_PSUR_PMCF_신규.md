@@ -1,6 +1,7 @@
 ---
 title: "[08_PMS] SOP-PSUR-001 정기안전성보고·PMCF 절차 v0.1 신규 작성"
 labels: "documentation,review"
+state: closed
 ---
 
 ## 작업 내용

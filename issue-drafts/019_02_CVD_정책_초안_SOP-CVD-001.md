@@ -1,6 +1,7 @@
 ---
 title: "[02_QMS] CVD(Coordinated Vulnerability Disclosure) 정책 초안 SOP-CVD-001"
 labels: "documentation,review,compliance"
+state: closed
 ---
 
 ## 배경

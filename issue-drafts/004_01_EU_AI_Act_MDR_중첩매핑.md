@@ -1,6 +1,7 @@
 ---
 title: "[01 법규·규제] EU AI Act ↔ EU MDR 중첩 적용 매핑 v0.1"
 labels: "documentation,review"
+state: closed
 ---
 
 ## 배경

@@ -1,6 +1,7 @@
 ---
 title: "[05_검사_시험_밸리데이션] 외부 침투시험(Pen-test) 계획서 v0.1 초안"
 labels: "documentation,compliance,review"
+state: closed
 ---
 
 ## 배경

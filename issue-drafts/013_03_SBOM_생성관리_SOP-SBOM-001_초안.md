@@ -1,6 +1,7 @@
 ---
 title: "[03] SOP-SBOM-001 v0.1 초안 — SBOM 생성·VEX·VDR 통합 관리 절차"
 labels: "documentation,qms,design-control,compliance"
+state: closed
 ---
 
 ## 배경

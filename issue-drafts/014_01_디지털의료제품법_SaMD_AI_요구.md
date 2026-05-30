@@ -1,6 +1,7 @@
 ---
 title: "[01] 디지털의료제품법 SaMD/AI 요구사항 정리 및 35개 요구 매트릭스 과제"
 labels: "documentation,compliance,research"
+state: closed
 ---
 
 ## 배경

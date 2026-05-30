@@ -1,6 +1,7 @@
 ---
 title: "[03_설계개발] AI 공정성·설명성·드리프트 거버넌스 SOP-AIGOV-001"
 labels: "documentation,review,design-control"
+state: closed
 ---
 
 ## 배경
