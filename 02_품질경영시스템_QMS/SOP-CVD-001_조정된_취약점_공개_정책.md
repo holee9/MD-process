@@ -2,16 +2,16 @@
 doc-id: SOP-CVD-001
 title: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책
 type: SOP
-version: v0.2
+version: v0.3
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: 보안 취약점의 조정된 공개·접수·처리·공시 절차를 수립하여 제품 사이버보안 유지
-applicable: [IEC81001-5-1:2021, FDA Premarket Cybersecurity Guidance 2023, EU MDR 2017/745, ISO13485:2016, MFDS]
+applicable: [IEC81001-5-1:2021, FDA Premarket Cybersecurity Guidance 2026-02-03, EU MDR 2017/745, ISO13485:2016, MFDS]
 forms: [F-CVD-001]
 related-docs: [SOP-SBOM-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [19]
 owner: TBD
-last-review: 2026-05-21
+last-review: 2026-06-05
 review-due: 2027-05-21
 ---
 
@@ -130,9 +130,60 @@ PGP 키는 매 12개월 갱신, 채널은 24/7 모니터링.
 - DHF/DMR 편입: VEX, 패치 검증 결과, 공시문, 규제기관 보고 사본
 - 연 1회 경영검토에 KPI·미해결 건 보고
 
+
+---
+
+## 15A. FDA 사이버보안 지침 2026-02 개정 대응 (v0.3 추가)
+
+> **배경**: FDA가 2026-02-03 사이버보안 지침을 재발행하여 QSR → QMSR 참조를 전면 교체했다. CVD 계획은 FD&C Act §524B(b)(2)에 따라 "cyber device"의 시판 전 제출 의무 문서이며, QMSR 하에서 QMS 문서로 명시적으로 편입된다.
+
+### 15A.1 QMSR 하 CVD 계획의 QMS 편입
+
+| 항목 | 변경 사항 |
+|------|----------|
+| 문서 위상 | 독립 정책문서 → QMS 필수 문서(ISO 13485 §4.2.4 문서관리 대상) |
+| 실사 열람 | FDA 실사 시 CVD 계획·실행 기록 직접 열람 대상 (QMSR 하 보호 조항 없음) |
+| 설계관리 연계 | CVD 계획을 설계관리(§7.3) 출력물로 명시 — 설계 검토 시 사이버보안 리스크 평가와 CVD 대응 역량 확인 |
+| SPDF 연계 | Secure Product Development Framework 내 CVD를 사후 보안 유지(post-market security maintenance) 핵심 프로세스로 배치 |
+
+### 15A.2 CP 7382.850 실사 — 사이버보안 CVD 점검 항목
+
+FDA CP 7382.850(2026-01-30)은 "cyber device" 실사 시 다음 CVD 관련 항목을 확인한다:
+
+1. **CVD 계획 존재 및 최신성**: §524B 요구 CVD 계획이 QMS에 편입되어 관리되는지
+2. **취약점 모니터링 체계**: SBOM 기반 지속적 모니터링(CISA KEV, NVD, vendor advisory) 운영 증적
+3. **신고 접수·처리 이력**: 외부 신고 접수 후 SLA 준수 기록, 패치 배포 기록
+4. **규제 보고 연계**: Critical/High 취약점의 MDR 보고 여부 판정 기록
+5. **SBOM 갱신 기록**: 패치 적용 시 SBOM 갱신·VEX 발행 기록
+
+### 15A.3 CVSS v4.0 전면 적용
+
+기존 CVSS v3.1 기반 심각도 평가를 CVSS v4.0으로 전면 전환한다:
+
+| 항목 | CVSS v3.1 (기존) | CVSS v4.0 (변경) |
+|------|-----------------|-----------------|
+| 심각도 계산 | Base Score 단독 | Base + Threat + Environmental + Supplemental 4중 평가 |
+| 의료기기 반영 | 환자안전 별도 평가 필요 | Supplemental 메트릭에 Safety 포함 가능 |
+| 점수 체계 | 0.0~10.0 | 0.0~10.0 (동일 범위, 세분화된 산출) |
+| 적용 시점 | 즉시 (신규 신고부터) | |
+
+F-CVD-001 양식의 'CVSS 점수' 항목을 'CVSS v4.0 점수'로 변경하고, Base/Threat/Environmental 각 점수를 별도 기록한다.
+
+### 15A.4 X-ray 시스템 사이버보안 CVD 특수사항
+
+X-ray 시스템은 "cyber device"로서 다음 취약점 유형에 대한 CVD 대응 역량을 유지한다:
+
+| 취약점 유형 | 환자안전 영향 | CVD 대응 우선순위 |
+|------------|-------------|-----------------|
+| 선량 제어 SW 취약점 | 과선량·저선량 위험 | Critical — 30일 이내 패치 |
+| 영상 무결성 취약점 | 진단 오류 위험 | Critical — 30일 이내 패치 |
+| 환자 데이터 유출 취약점 | 개인정보 침해 | High — 60일 이내 패치 |
+| 원격 접근 취약점 | 장비 무단 제어 위험 | Critical — 30일 이내 패치 |
+| OSS 구성요소 취약점 | 간접적 | SBOM 기반 영향도 평가 후 등급 결정 |
 ## 14. 개정 이력
 | 버전 | 날짜 | 변경 내용 | 작성 |
 |------|------|-----------|------|
+| v0.3 | 2026-06-05 | v0.3 보강 — FDA 사이버보안 지침 2026-02 개정 반영, QMSR CVD 계획 QMS 편입, CVSS v4.0 전면 적용 |
 | v0.2 | 2026-05-21 | v0.2 보강 — forms·related-docs 추가, applicable 규격 보강, frontmatter 정규화, 양식 템플릿(F-CVD-001) 추가 |
 | v0.1 | 2026-04-25 | 초안 작성 | 자동화 세션 |
 
