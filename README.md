@@ -108,27 +108,27 @@
 
 ## 📊 진행 현황 (자동 갱신)
 
-> 마지막 갱신: **2026-06-04** · 프로젝트 목표일: 2026-06-01 · **🏆 목표 달성**
+> 마지막 갱신: **2026-06-05** · 프로젝트 목표일: 2026-06-01 · **🏆 목표 달성**
 
 ### 한눈에 보기
 
 ![문서](https://img.shields.io/badge/문서-70건-blue)
-![이슈](https://img.shields.io/badge/이슈-149건-orange)
-![완료](https://img.shields.io/badge/Closed-149건-green)
+![이슈](https://img.shields.io/badge/이슈-154건-orange)
+![완료](https://img.shields.io/badge/Closed-154건-green)
 ![진행중](https://img.shields.io/badge/Open-0건-brightgreen)
-![리서치](https://img.shields.io/badge/리서치로그-52건-blueviolet)
-![교차검증](https://img.shields.io/badge/교차검증-51건-ff69b4)
+![리서치](https://img.shields.io/badge/리서치로그-53건-blueviolet)
+![교차검증](https://img.shields.io/badge/교차검증-52건-ff69b4)
 ![보강률](https://img.shields.io/badge/v0.2+_보강률-100%25-brightgreen)
 
 ### 🎯 프로젝트 목표 달성
 
 > **🏆 전체 Tier 1-5 완료! 핵심 문서 v0.2+ 보강률 100% 달성 (70/70)**
-> **🏆 전체 이슈 149건 Closed — 열린 이슈 0건 (2026-06-04)**
+> **🏆 전체 이슈 154건 Closed — 열린 이슈 0건 (2026-06-05)**
 > **🏆 프로젝트 목표일(2026-06-01) 달성 — 전 목표 조기 완료**
 
 ```mermaid
-pie title 이슈 상태 (총 144건)
-    "Closed (149)" : 149
+pie title 이슈 상태 (총 154건)
+    "Closed (154)" : 154
 ```
 
 ### 카테고리별 문서 분포
@@ -205,9 +205,25 @@ timeline
                : GUIDE-TRN-001 신규 (10_교육)
                : FDA CDS/Wellness 지침 분석
     2026-06-04 : 후속 모니터링 D+3
+    2026-06-05 : 후속 모니터링 D+4
+               : SOP-CAPA-001 v0.3 (QMSR CAPA 기록 강화)
+               : SOP-CC-001 v0.3 (EUDAMED 등록 갱신)
+               : SOP-CVD-001 v0.3 (FDA 사이버보안 2026-02)
                : SOP-IA-001 v0.3 (QMSR 내부감사 대응)
+    2026-06-05 : 후속 모니터링 D+4
+               : SOP-CAPA-001 v0.3 (QMSR CAPA 기록 강화)
+               : SOP-CC-001 v0.3 (EUDAMED 등록 갱신)
+               : SOP-CVD-001 v0.3 (FDA 사이버보안 2026-02)
                : SOP-MR-001 v0.3 (QMSR 경영검토 대응)
+    2026-06-05 : 후속 모니터링 D+4
+               : SOP-CAPA-001 v0.3 (QMSR CAPA 기록 강화)
+               : SOP-CC-001 v0.3 (EUDAMED 등록 갱신)
+               : SOP-CVD-001 v0.3 (FDA 사이버보안 2026-02)
                : SOP-SUP-001 v0.3 (QMSR 공급자감사 대응)
+    2026-06-05 : 후속 모니터링 D+4
+               : SOP-CAPA-001 v0.3 (QMSR CAPA 기록 강화)
+               : SOP-CC-001 v0.3 (EUDAMED 등록 갱신)
+               : SOP-CVD-001 v0.3 (FDA 사이버보안 2026-02)
 ```
 
 ### 프로젝트 완료 요약
@@ -218,8 +234,8 @@ timeline
 | 핵심 문서 | 70건 (10개 카테고리) |
 | 리서치 로그 | 52건 |
 | 교차검증 보고서 | 51건 |
-| 이슈 드래프트 | 149건 (전수 Closed) |
-| 보강률 | 100% (v0.2+, v0.3: 3건) |
+| 이슈 드래프트 | 154건 (전수 Closed) |
+| 보강률 | 100% (v0.2+, v0.3: 6건) |
 
 ### 시스템 헬스
 
