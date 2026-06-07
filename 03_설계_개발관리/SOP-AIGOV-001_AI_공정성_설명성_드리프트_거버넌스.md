@@ -2,20 +2,20 @@
 doc-id: SOP-AIGOV-001
 title: AI 공정성·설명성·드리프트 거버넌스
 type: SOP
-version: v0.2
+version: v0.3
 status: draft
 category: 03_설계_개발관리
 purpose: 의료용 X-ray AI 구성요소의 공정성·설명성·드리프트를 전 수명주기에 걸쳐 모니터링·통제하는 거버넌스 정의
-applicable: [ISO 13485:2016 §7.3, ISO 14971:2019, IEC 62304:2015, EU AI Act 2024/1689 Art.9/10/13/14/17, FDA PCCP Guidance 2024, MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, IMDRF AIMD N67]
+applicable: [ISO 13485:2016 §7.3, FDA QMSR §820.30/ISO13485 §7.3, ISO 14971:2019, IEC 62304:2015, EU AI Act 2024/1689 Art.9/10/13/14/17/50/72, FDA PCCP Guidance 2024, MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, ISO/IEC 42001:2023, IMDRF AIMD N67]
 forms: [F-AIGOV-001, F-AIGOV-002]
-related-docs: [SOP-AIDATA-001, AI_구성요소_단위_성능평가, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-PSUR-001, SOP-FSCA-001, 디지털의료제품법_SaMD_AI_요구, QC-IQ-001]
+related-docs: [SOP-AIDATA-001, AI_구성요소_단위_성능평가, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-PSUR-001, SOP-FSCA-001, SOP-SBOM-001, 디지털의료제품법_SaMD_AI_요구, QC-IQ-001, EU_AI_Act_MDR_중첩적용_매핑]
 related-issues: [20]
 owner: AI Governance Officer
-last-review: 2026-05-23
-review-due: 2027-05-23
+last-review: 2026-06-08
+review-due: 2027-06-08
 ---
 
-# AI 공정성·설명성·드리프트 거버넌스 — v0.2
+# AI 공정성·설명성·드리프트 거버넌스 — v0.3
 
 ## 1. 목적
 
@@ -46,6 +46,45 @@ review-due: 2027-05-23
 | 디지털의료제품법 | §40 | 구성요소 성능평가 |
 | ISO/IEC 23894:2023 | 전체 | AI 위험관리 |
 | ISO/IEC TS 12791:2024 | 전체 | 비의도적 편향 처리 |
+
+
+### 3.1 EU AI Act 시행 일정 업데이트 (v0.3 신설)
+
+2026년 초 유럽위원회의 Digital Omnibus 패키지 제안에 따라 의료기기 내장 AI 시스템의 고위험 AI 의무 시행 일정이 조정되었다.
+
+| 구분 | 당초 일정 | 조정 후 일정 | 비고 |
+|------|-----------|-------------|------|
+| 독립형(standalone) 고위험 AI | 2026-08-02 | 2027-12-02 | Digital Omnibus 제안 |
+| 의료기기 내장(embedded) AI | 2026-08-02 | 2028-08-02 | 규제 제품 특례 |
+| EU AI Database 등록 의무 | 미정 | 시행일과 동시 | EUDAMED 연계 검토 중 |
+| 금지 AI 관행(Art. 5) | 2025-02-02 | 2025-02-02 (변동 없음) | 이미 시행 |
+| AI 리터러시 의무(Art. 4) | 2025-02-02 | 2025-02-02 (변동 없음) | 이미 시행 |
+
+**실무 대응:**
+- 시행일 연기와 무관하게 본 SOP의 거버넌스 체계를 현재부터 적용하여 조기 준수 확보
+- EU AI Database 등록 시 EUDAMED UDI와의 교차 참조 체계 사전 설계
+- ISO/IEC 42001:2023(AI 경영시스템) 인증 준비를 QMS 경영검토(SOP-MR-001)에 통합
+
+### 3.2 QMSR AI 품질 관리 요구사항 (v0.3 신설)
+
+FDA QMSR(2026-02-02 시행)에 따라 AI 구성요소의 설계·개발은 ISO 13485:2016 §7.3 전체를 준수해야 한다.
+
+| QMSR 요구 | AI 거버넌스 대응 | 본 SOP 해당 절 |
+|-----------|-----------------|---------------|
+| §7.3.2 설계·개발 계획 | PCCP를 설계 계획에 포함 | §8.3 재학습 변경관리 경로 |
+| §7.3.3 설계 입력 | 학습 데이터 요구사항 문서화 | §6 공정성 + SOP-AIDATA-001 |
+| §7.3.4 설계 출력 | 모델 성능 사양, 공정성 기준 명시 | §6.2 공정성 평가 실행 |
+| §7.3.5 설계 검토 | AI 모델 검토에 임상 전문가 참여 필수 | §7.2 설명성 검증 |
+| §7.3.6 설계 검증 | 공정성·설명성 정량 검증 | §6.2, §7.2 |
+| §7.3.7 설계 확인 | 임상 환경 확인 시험 포함 | §6.2.4 임상 판정 |
+| §7.3.8 설계 이관 | AI 모델 프로덕션 배포 검증 (SOP-DT-001) | SOP-DT-001 §6.2 연계 |
+| §7.3.9 변경 관리 | 재학습·파라미터 변경 통제 | §8.3 + SOP-CC-001 |
+
+**QMSR 실사 대비 체크포인트:**
+- AI 모델의 DDF(설계·개발 파일)에 공정성 평가 기록(F-AIGOV-001)이 편입되어 있는가?
+- 드리프트 모니터링 기록(F-AIGOV-002)이 MDF에 포함되어 있는가?
+- PCCP 범위 정의가 SOP-CC-001과 정합하는가?
+- AI 부작용(AIE-XX) 보고 체계가 SOP-PSUR-001 및 SOP-FSCA-001과 연동되는가?
 
 ## 4. 용어 정의
 
@@ -268,6 +307,22 @@ AI Gov Officer:   ___________ 일자: ____-__-__
 | AI 부작용(AIE-XX) 보고 누락 | 0건 | 월 | QA |
 | 의료진 Override율 모니터링 | 추세 보고 | 분기 | Clinical Lead |
 
+## 10.1 EU AI Database 등록 연동 (v0.3 신설)
+
+EU AI Act Art. 72에 따라 고위험 AI 시스템은 EU AI Database에 등록해야 한다.
+
+| 항목 | 활동 | 담당 | 시기 |
+|------|------|------|------|
+| AI 시스템 등록 정보 준비 | 제조사명, AI 용도, 위험 분류, 적합성 평가 결과 | RA Lead | 시판 전 |
+| EUDAMED UDI 교차참조 | AI Database 등록 ID와 EUDAMED UDI-DI 매핑 | RA Lead | 등록 시 |
+| 등록 정보 갱신 | 재학습·변경 시 등록 정보 업데이트 판단 | AI Gov Officer | 변경 시 |
+| 시판후 모니터링 보고 | AI 부작용·드리프트 이벤트의 EU AI Database 보고 의무 검토 | RA Lead | 이벤트 발생 시 |
+
+**주의사항:**
+- EU AI Database는 2026년 6월 현재 미공개이나, 등록 데이터 항목은 AI Act Annex VIII에 정의됨
+- 사전 준비: Annex VIII 항목별 데이터를 DDF 내 AI 거버넌스 섹션에 축적
+- EUDAMED Actor Registration이 완료된 상태에서 AI Database 등록이 추가될 예정
+
 ## 11. 시판후 감시(PMS) 연동
 
 - 본 SOP의 KPI는 SOP-PSUR-001의 PSUR/PMCF 입력으로 활용
@@ -287,6 +342,8 @@ AI Gov Officer:   ___________ 일자: ____-__-__
 | SOP-FSCA-001 | FSCA 절차 | 위기 시 사용중지 |
 | QC-IQ-001 | 영상품질 QC | Hardware Drift 연동 |
 | 디지털의료제품법_SaMD_AI_요구 | 법규 요구사항 | §40 성능평가 근거 |
+| SOP-SBOM-001 | SBOM 관리 | AI 런타임 SBOM 연동 |
+| EU_AI_Act_MDR_중첩적용_매핑 | 법규 매핑 | AI Act-MDR 교차 요구사항 |
 
 ## 13. 변경 이력
 
@@ -294,3 +351,4 @@ AI Gov Officer:   ___________ 일자: ____-__-__
 |------|------|-----------|--------|
 | v0.1 | 2026-04-25 | 초안 작성 | 업무규칙 개발팀 |
 | v0.2 | 2026-05-23 | 보강 — 단계별 절차 표(수행자/판정기준), F-AIGOV-001/002 양식, X-ray 하드웨어 드리프트·Detector 유형별 공정성 평가, 트리거-조치 매트릭스, 상호참조 확충 | QA/RA |
+| v0.3 | 2026-06-08 | QMSR·EU AI Act 대응 — §3.1 EU AI Act Digital Omnibus 시행 일정 조정 반영, §3.2 QMSR AI 품질 관리 요구사항(ISO 13485 §7.3 전체 매핑) 신설, §10.1 EU AI Database 등록 연동(Art.72·Annex VIII) 신설, ISO/IEC 42001:2023 AIMS 인증 준비 연계, SOP-SBOM-001 AI 런타임 SBOM 상호참조 추가 | QA/RA |
