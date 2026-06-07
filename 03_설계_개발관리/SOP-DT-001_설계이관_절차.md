@@ -2,20 +2,20 @@
 doc-id: SOP-DT-001
 title: 설계이관(Design Transfer) 절차
 type: SOP
-version: v0.2
+version: v0.3
 status: draft
 category: 03_설계_개발관리
 purpose: 설계·개발 산출물을 제조 공정으로 이관하는 절차, 책임, 검증 기준을 정의하여 생산 준비 상태 보장
-applicable: [ISO13485:2016 §7.3.8, FDA QMSR §820.30(h), EU MDR 2017/745 Annex II §4, IEC 62304:2015 §5.8, IEC 60601-2-54:2022, ISO 14971:2019, IEC 62366-1:2015]
+applicable: [ISO13485:2016 §7.3.8, FDA QMSR (ISO13485 §7.3.8 편입 — 구 §820.30(h) 대체), EU MDR 2017/745 Annex II §4, IEC 62304:2015 §5.8, IEC 60601-2-54:2022, ISO 14971:2019, IEC 62366-1:2015, EU AI Act 2024/1689 Art.17]
 forms: [F-DT-001, F-DT-002]
-related-docs: [설계개발_프로세스, CHK-DR-001, SOP-VAL-001, SOP-CAL-001, SOP-PKG-001, SOP-IQ-001, SOP-CC-001, SOP-TRC-001, SOP-SBOM-001, QC-IQ-001]
+related-docs: [설계개발_프로세스, CHK-DR-001, SOP-VAL-001, SOP-CAL-001, SOP-PKG-001, SOP-IQ-001, SOP-CC-001, SOP-TRC-001, SOP-SBOM-001, SOP-AIGOV-001, SOP-AIDATA-001, QC-IQ-001]
 related-issues: []
 owner: 설계개발 Lead / 생산기술 Lead
-last-review: 2026-05-23
-review-due: 2027-05-23
+last-review: 2026-06-08
+review-due: 2027-06-08
 ---
 
-# 설계이관(Design Transfer) 절차 — v0.2
+# 설계이관(Design Transfer) 절차 — v0.3
 
 ## 1. 목적
 
@@ -34,7 +34,7 @@ review-due: 2027-05-23
 | 규제/표준 | 조항 | 핵심 요구 |
 |-----------|------|-----------|
 | ISO 13485:2016 | §7.3.8 | 설계·개발 출력의 제조 이관 절차 문서화, 이관 전 제조 적합성 검증 |
-| FDA QMSR | §820.30(h) 편입 | Design Transfer — 설계를 생산 사양으로 올바르게 변환 |
+| FDA QMSR (2026-02-02 시행) | ISO 13485 §7.3.8 편입 (구 §820.30(h) 대체) | Design Transfer — 설계를 생산 사양으로 올바르게 변환, 제조 적합성 객관적 증거(Objective Evidence) 요구 강화 |
 | EU MDR 2017/745 | Annex II §4 | 설계·제조 정보, 공정 밸리데이션 기술문서 포함 |
 | IEC 62304:2015 | §5.8 | SW 릴리스 관리 — 빌드 절차, 릴리스 노트 |
 | IEC 60601-2-54:2022 | 전체 | X-ray 장비 기본안전·필수성능 생산 시 유지 보장 |
@@ -324,6 +324,56 @@ QA Manager:   ___________ 일자: ____-__-__
 - ALARA 관련 기능(선량 표시, DAP 계산) 검증 절차
 - 방사선 차폐 구조 조립 검증 절차
 
+
+### 9.5 QMSR 설계이관 실사 대응 (v0.3 신설)
+
+FDA QMSR(2026-02-02 시행)은 구 QSR §820.30(h)를 ISO 13485:2016 §7.3.8로 대체하면서, 설계이관에 대한 객관적 증거(Objective Evidence) 요구를 강화하였다.
+
+#### 9.5.1 QMSR 실사 체크포인트
+
+| # | 실사 질문 (예상) | 준비 사항 | 해당 단계 |
+|---|-----------------|-----------|-----------|
+| 1 | 설계이관 절차서가 ISO 13485 §7.3.8을 충족하는가? | 본 SOP를 제시, §7.3.8 요구사항 매핑표 첨부 | 전체 |
+| 2 | DDF에서 MDF로의 전환 기록이 추적 가능한가? | DDF→MDF 전환 체크리스트(F-DT-001) 제시 | Phase 4 |
+| 3 | 제조 적합성 검증의 객관적 증거가 있는가? | IQ/OQ/PQ 보고서, Pilot Run 검사 기록 | Phase 2-3 |
+| 4 | SW/AI 구성요소의 빌드 재현성을 어떻게 보장하는가? | 빌드 해시 비교 기록, SBOM 확정본, CI/CD 로그 | Phase 2 §2.6-2.7 |
+| 5 | 설계변경 후 재이관 시 변경통제와 어떻게 연동하는가? | SOP-CC-001 변경 분류 → 재이관 트리거 기록 | §2 적용 범위 |
+
+#### 9.5.2 DHF/DMR에서 DDF/MDF로의 용어 전환
+
+| 구 QSR 용어 | QMSR/ISO 13485 용어 | 본 SOP 반영 상태 |
+|-------------|---------------------|-----------------|
+| DHF (Design History File) | DDF (Design and Development File) | ✓ v0.2부터 적용 |
+| DMR (Device Master Record) | MDF (Medical Device File) | ✓ v0.2부터 적용 |
+| DHR (Device History Record) | 생산 기록(Production Record) — ISO 13485 §7.5.1 | ✓ 본 절 명시 |
+| Design Transfer Verification | 제조 적합성 검증 (Manufacturing Suitability Verification) | ✓ Phase 3 강화 |
+
+#### 9.5.3 제조 준비도 증거(Manufacturing Readiness Evidence) 체계
+
+QMSR 하에서 설계이관은 단순 인수인계가 아니라, 설계 출력이 제조에 적합함을 입증하는 문서화된 검증 프로세스이다.
+
+| 증거 유형 | 산출물 | 담당 | 보존 위치 |
+|-----------|--------|------|-----------|
+| 공정 능력 증거 | Cpk ≥ 1.33 데이터 (Phase 2 PQ) | 생산기술 | MDF §7 |
+| SW 재현성 증거 | 빌드 해시 + SBOM 확정본 | SW Lead | MDF §8 |
+| AI 모델 재현성 증거 | 추론 결과 비교 기록 + 모델 카드 | ML Engineer | MDF §8 |
+| 방사선 안전 증거 | IEC 60601-2-54 형식시험 데이터 | QA | MDF §9 |
+| 임상 확인 증거 | 사용적합성 평가 보고서 (IEC 62366-1) | Clinical Lead | DDF §5 |
+| 공급자 적격성 증거 | 공급자 승인 기록 (F-SUP-001) | 구매 | MDF §10 |
+
+### 9.6 AI 모델 설계이관 QMSR 특수 요구 (v0.3 신설)
+
+EU AI Act Art. 17(품질관리시스템)과 FDA QMSR을 동시 준수하기 위한 AI 모델 이관 확장 요구사항.
+
+| 단계 | 수행자 | 활동 | 판정 기준 |
+|------|--------|------|-----------|
+| 9.6.1 | ML Engineer | AI 모델 이관 패키지 구성: 모델 가중치 + 추론 런타임 + 전처리 파이프라인 + 모델 카드 | 패키지 완결성 100% |
+| 9.6.2 | ML Engineer | 학습 환경 → 프로덕션 환경 추론 결과 동등성 확인 | 허용 오차 이내 (bit-exact 또는 ε ≤ 10⁻⁶) |
+| 9.6.3 | AI Gov Officer | 공정성·설명성 평가 기록(F-AIGOV-001)의 MDF 편입 확인 | 편입 완료 |
+| 9.6.4 | AI Gov Officer | PCCP 범위 정의 문서의 MDF 편입 (재학습 허용 범위 명시) | PCCP 문서 편입 |
+| 9.6.5 | Security Officer | AI 추론 라이브러리 SBOM(SOP-SBOM-001) MDF 편입 | SBOM 최신본 확인 |
+| 9.6.6 | QA | AI 모델 이관 결과의 DR5 검토 항목 추가: 모델 성능 재현성, 공정성, 설명성, SBOM | DR5 체크리스트 반영 |
+
 ## 10. 관련 문서
 
 | 문서 ID | 명칭 | 관계 |
@@ -341,6 +391,8 @@ QA Manager:   ___________ 일자: ____-__-__
 | QC-IQ-001 | 영상품질 QC 프로토콜 | 영상품질 합격 기준 |
 | F-TRN-001 | 교육훈련 기록양식 | 교육 완료 확인 |
 | F-SUP-001 | 공급자 평가양식 | 공급자 승인 확인 |
+| SOP-AIGOV-001 | AI 거버넌스 | AI 모델 이관 시 공정성·설명성 기록 연계 |
+| SOP-AIDATA-001 | AI 데이터셋 관리 | 학습 데이터 이관 관리 |
 
 ## 11. 변경 이력
 
@@ -348,3 +400,4 @@ QA Manager:   ___________ 일자: ____-__-__
 |------|------|----------|--------|
 | v0.1 | 2026-05-20 | 초안 작성 — 4-Phase 이관 절차, X-ray/SW/AI 특수 요구 반영 | QA/RA |
 | v0.2 | 2026-05-23 | 보강 — 단계별 수행자/판정기준 표 추가, F-DT-001/002 양식 본문 포함, X-ray 특수 고려사항 §9 신설, 상호참조 확충 | QA/RA |
+| v0.3 | 2026-06-08 | QMSR 설계이관 대응 — §9.5 QMSR 실사 체크포인트(ISO 13485 §7.3.8 매핑, DHF/DMR→DDF/MDF 용어 전환 확인, 제조 준비도 증거 체계) 신설, §9.6 AI 모델 설계이관 QMSR·EU AI Act Art.17 이중 준수 요구(모델 패키지·재현성·PCCP·SBOM MDF 편입) 신설, 규제 근거 표 QMSR 시행일 반영, SOP-AIGOV-001·SOP-AIDATA-001 상호참조 추가 | QA/RA |
