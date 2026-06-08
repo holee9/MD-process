@@ -1,8 +1,11 @@
 ---
-document-id: F-SUP-001
+doc-id: F-SUP-001
 title: 공급자 초기평가 양식
 version: v0.2
-status: effective
+type: Form
+category: 09_공급자_관리
+purpose: 신규 공급자 초기 적격성 평가용 품질기록 양식
+status: released
 author: holee9-automation
 last-review: 2026-05-30
 related-sop: SOP-SUP-001

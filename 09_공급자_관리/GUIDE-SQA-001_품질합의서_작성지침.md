@@ -1,7 +1,10 @@
 ---
-document-id: GUIDE-SQA-001
+doc-id: GUIDE-SQA-001
 title: 품질합의서(SQA) 작성지침
 version: v0.2
+type: Guide
+category: 09_공급자_관리
+purpose: 공급자 품질합의서(SQA) 작성·검토·체결을 위한 작성지침
 status: approved
 author: holee9-automation
 last-review: 2026-05-30

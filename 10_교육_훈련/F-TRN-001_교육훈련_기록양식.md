@@ -1,7 +1,10 @@
 ---
-document-id: F-TRN-001
+doc-id: F-TRN-001
 title: 교육훈련 기록양식 통합 패키지
 version: v0.2
+type: Form
+category: 10_교육_훈련
+purpose: 품질영향 업무 수행자 교육훈련 실시·평가 기록 통합 양식
 status: draft
 author: 품질보증팀
 last-review: 2026-05-30

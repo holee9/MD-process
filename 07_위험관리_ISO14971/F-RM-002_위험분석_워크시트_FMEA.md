@@ -1,7 +1,11 @@
 ---
-document-id: F-RM-002
+doc-id: F-RM-002
 title: 위험분석 워크시트 — FMEA (Failure Mode and Effects Analysis)
 version: v0.2
+type: Form
+status: draft
+category: 07_위험관리_ISO14971
+purpose: ISO 14971 FMEA 기반 위험분석 워크시트 양식 (X-ray 시스템·디텍터·SW)
 last-review: 2026-05-30
 product: 의료용 X-ray 시스템 / 평판 디텍터 / 진단 소프트웨어
 classification: ISO 14971 위험관리 파일(RMF) 구성 문서
