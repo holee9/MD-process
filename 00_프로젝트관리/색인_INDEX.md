@@ -3,7 +3,7 @@ doc-id: 색인_INDEX
 title: 프로젝트 자료 색인 (2026-04-21 기준, 4차 업데이트)
 type: Index
 version: v0.2
-status: draft
+status: obsolete
 category: 00_프로젝트관리
 purpose: 프로젝트 자료 색인 (2026-04-21 기준, 4차 업데이트) 관련 문서
 applicable: [EU AI Act, EU MDR 2017/745, EU MDR GSPR, EU MDR PRRC, FDA QMSR, FDA SBOM, IEC62304, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, UDI, 디지털의료제품법]
@@ -11,6 +11,8 @@ owner: TBD
 last-review: 2026-05-01
 review-due: 2027-05-01
 ---
+
+> ⚠️ DEPRECATED — 공식 색인은 [문서_매트릭스.md](문서_매트릭스.md). 본 파일은 더 이상 갱신되지 않음.
 
 # 프로젝트 자료 색인 (2026-04-21 기준, 4차 업데이트)
 
