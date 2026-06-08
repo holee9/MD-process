@@ -5,8 +5,8 @@ project:
   name: 의료기기 제조 업무규칙 개발
   repo: holee9/MD-process
   start_date: '2026-04-16'
-  goal_date: '2026-06-01'
-  goal_description: 핵심 문서 v0.2+ 보강 완료
+  goal_date: '2026-09-30'
+  goal_description: v0.3→v1.0 승인본 전환 및 규제변경 상시 추적
 
 # v0.2 보강 대상 카테고리 (로그·검증 제외, 실무 SOP·절차서·양식 위주)
 target_categories:
