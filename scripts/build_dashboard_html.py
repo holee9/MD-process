@@ -124,8 +124,207 @@ def daily_v02_velocity(days=5):
         return []
 
 # ---------- Main ----------
+STYLE = "<style>\n:root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--green:#4ade80;--yellow:#fbbf24;--red:#f87171;--purple:#a78bfa}\n*{margin:0;padding:0;box-sizing:border-box}\nbody{background:var(--bg);color:var(--text);font-family:'Segoe UI','Noto Sans KR',system-ui,sans-serif;padding:20px;line-height:1.5}\nh1{font-size:1.4rem;margin-bottom:4px}\n.subtitle{color:var(--muted);font-size:.85rem;margin-bottom:20px}\n.subtitle a{color:var(--accent);text-decoration:none}\n.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}\n.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}\n.kpi .value{font-size:1.8rem;font-weight:700;color:var(--accent)}\n.kpi .label{font-size:.75rem;color:var(--muted);margin-top:4px}\n.kpi.green .value{color:var(--green)}\n.kpi.yellow .value{color:var(--yellow)}\n.kpi.red .value{color:var(--red)}\n.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:16px}\n.card h2{font-size:1rem;margin-bottom:12px;color:var(--accent)}\ntable{width:100%;border-collapse:collapse;font-size:.82rem}\nth,td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border)}\nth{color:var(--muted);font-weight:600}\n.bar{display:inline-block;height:14px;border-radius:3px;background:var(--accent);transition:width .3s}\n.bar-bg{display:inline-block;width:100px;height:14px;border-radius:3px;background:var(--border)}\n.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600}\n.tag-green{background:#065f4620;color:var(--green)}\n.tag-yellow{background:#78350f20;color:var(--yellow)}\n.progress-overall{height:24px;background:var(--border);border-radius:12px;overflow:hidden;margin:8px 0}\n.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--bg);border-radius:12px}\n.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}\n@media(max-width:700px){.two-col{grid-template-columns:1fr}}\n.commit-list{list-style:none;font-size:.8rem}\n.commit-list li{padding:4px 0;border-bottom:1px solid var(--border)}\n.commit-list .date{color:var(--muted);margin-right:6px}\n.schedule-info{display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem}\n.schedule-info div{background:var(--bg);padding:8px 12px;border-radius:6px;border:1px solid var(--border)}\n.actions{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}\n.actions a,.actions button{background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.8rem;cursor:pointer}\n.actions a:hover,.actions button:hover{background:#2d3a52}\n@media print{\n  body{background:#fff;color:#000;padding:0}\n  .card,.kpi{background:#fff;color:#000;border:1px solid #ccc}\n  .subtitle,.muted,th{color:#666}\n  .actions,.schedule-info{display:none}\n  h2{color:#000 !important}\n}\n</style></head><body>"
+
+
+def last_commit_dates(paths):
+    """경로별 마지막 커밋일(YYYY-MM-DD). 단일 git log 패스."""
+    res = {}
+    try:
+        out = subprocess.check_output(
+            ['git','-c','core.quotepath=false','log','--pretty=format:%ad','--date=short','--name-only'],
+            stderr=subprocess.DEVNULL).decode('utf-8', errors='ignore')
+    except Exception:
+        return res
+    cur = None
+    for line in out.split('\n'):
+        line = line.strip()
+        if not line:
+            continue
+        if re.match(r'^\d{4}-\d{2}-\d{2}$', line):
+            cur = line
+            continue
+        if cur and line not in res:
+            res[line] = cur
+    return res
+
+def build_maintenance(config):
+    proj = config.get('project', {})
+    maint = config.get('maintenance', {}) or {}
+    target_cats = config.get('target_categories', [])
+    docs = collect_docs()
+    issues = collect_issues()
+    commits = git_commits(20)
+    today = datetime.date.today()
+    today_str = today.isoformat()
+    repo = proj.get('repo', 'holee9/MD-process')
+
+    core_docs = [d for d in docs if d.get('_category') in target_cats]
+    n_core = len(core_docs); n_total = len(docs)
+
+    def valid_fm(d):
+        t = str(d.get('type', '')).strip()
+        return bool(t) and t != '?'
+    fm_valid = sum(1 for d in docs if valid_fm(d))
+    fm_rate = round(fm_valid / max(1, n_total) * 100)
+    fm_invalid = n_total - fm_valid
+
+    log_ok = (issues['total'] > 0 and issues['mapped'] >= issues['total'])
+
+    regs = maint.get('regulations', []) or []
+    reg_threshold = int(maint.get('reg_check_days', 90))
+    reg_rows = []; reg_overdue = 0
+    for r in regs:
+        lc = str(r.get('last_checked', '') or '')
+        try:
+            ago = (today - datetime.date.fromisoformat(lc)).days
+        except Exception:
+            ago = None
+        overdue = (ago is None) or (ago > reg_threshold)
+        if overdue:
+            reg_overdue += 1
+        reg_rows.append({'id': r.get('id', '?'), 'last': lc or '-', 'ago': ago, 'overdue': overdue})
+
+    review_months = int(maint.get('review_cycle_months', 12))
+    review_days = review_months * 30
+    last_dates = last_commit_dates([d['_path'] for d in core_docs])
+    review_due = []
+    for d in core_docs:
+        ds = last_dates.get(d['_path'])
+        if not ds:
+            continue
+        try:
+            ago = (today - datetime.date.fromisoformat(ds)).days
+        except Exception:
+            continue
+        if ago > review_days:
+            review_due.append({'name': str(d.get('doc-id') or d['_name'])[:40],
+                               'cat': CATEGORY_LABELS.get(d.get('_category'), d.get('_category')),
+                               'last': ds, 'ago': ago})
+    review_due.sort(key=lambda x: -x['ago'])
+
+    cad = maint.get('cadence', {}) or {}
+    def next_weekly(t):
+        days = (7 - t.weekday()) % 7 or 7
+        return t + datetime.timedelta(days=days)
+    def next_monthly(t):
+        y, mo = (t.year, t.month + 1) if t.month < 12 else (t.year + 1, 1)
+        return datetime.date(y, mo, 1)
+    def next_quarterly(t):
+        for mo in (1, 4, 7, 10):
+            cand = datetime.date(t.year, mo, 1)
+            if cand > t:
+                return cand
+        return datetime.date(t.year + 1, 1, 1)
+    cad_rows = [
+        ('일일', '매일 03:18', cad.get('daily_last', '') or today_str, '매 실행'),
+        ('주간', '월요일', cad.get('weekly_last', '') or '-', next_weekly(today).isoformat()),
+        ('월간', '매월 1일', cad.get('monthly_last', '') or '-', next_monthly(today).isoformat()),
+        ('분기', '1·4·7·10월 1일', cad.get('quarterly_last', '') or '-', next_quarterly(today).isoformat()),
+    ]
+
+    def kc(cond_red):
+        return 'red' if cond_red else 'green'
+
+    H = []
+    H.append('<!DOCTYPE html>')
+    H.append('<script type="application/json" id="cowork-artifact-meta">')
+    H.append('{"name":"MD-process Dashboard","schemaVersion":1,"description":"유지보수 모드 — 규제 통화성·문서통제 정합성·리뷰 만기·케이던스"}')
+    H.append('</script>')
+    H.append('<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">')
+    H.append('<title>MD-process 대시보드 (유지보수)</title>')
+    H.append('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>')
+    H.append(STYLE)
+
+    H.append('<h1>의료기기 제조 업무규칙 — 유지보수 대시보드</h1>')
+    H.append(f'<p class="subtitle">마지막 갱신: <strong>{today_str}</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/{repo}">GitHub</a> · <a href="https://github.com/{repo}/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>')
+
+    H.append('<div class="actions">')
+    H.append('<button onclick="window.print()">\U0001f5a8 인쇄 / PDF 저장</button>')
+    H.append(f'<a href="https://github.com/{repo}/raw/main/docs/index.html" download="md-process-dashboard.html">\U0001f4be HTML 다운로드</a>')
+    H.append('</div>')
+
+    H.append('<div class="grid">')
+    H.append(f'<div class="kpi {kc(reg_overdue>0)}"><div class="value">{reg_overdue}/{len(regs)}</div><div class="label">규제 점검만기 경과</div></div>')
+    H.append(f'<div class="kpi {kc(fm_rate<100)}"><div class="value">{fm_rate}%</div><div class="label">frontmatter 유효율</div></div>')
+    H.append(f'<div class="kpi {kc(not log_ok)}"><div class="value">{"✓" if log_ok else "✗"}</div><div class="label">_log 정합 ({issues["mapped"]}/{issues["total"]})</div></div>')
+    H.append(f'<div class="kpi {kc(len(review_due)>0)}"><div class="value">{len(review_due)}</div><div class="label">리뷰 만기 문서</div></div>')
+    H.append(f'<div class="kpi {kc(issues["open"]>0)}"><div class="value">{issues["open"]}</div><div class="label">미해결 이슈</div></div>')
+    H.append(f'<div class="kpi"><div class="value">{n_core}</div><div class="label">통제 문서 (01~10)</div></div>')
+    H.append('</div>')
+
+    H.append('<div class="card"><h2>유지보수 케이던스 현황</h2><table>')
+    H.append('<tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>')
+    for name, when, last, nxt in cad_rows:
+        H.append(f'<tr><td>{name}</td><td>{when}</td><td>{last}</td><td>{nxt}</td></tr>')
+    H.append('</table></div>')
+
+    H.append('<div class="two-col">')
+    H.append('<div class="card"><h2>규제 추적 현황</h2><table>')
+    H.append('<tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>')
+    if reg_rows:
+        for r in reg_rows:
+            ago = '-' if r['ago'] is None else f"{r['ago']}일"
+            tag = '<span class="tag tag-yellow">점검 필요</span>' if r['overdue'] else '<span class="tag tag-green">최신</span>'
+            H.append(f'<tr><td>{html.escape(str(r["id"]))}</td><td>{html.escape(str(r["last"]))}</td><td>{ago}</td><td>{tag}</td></tr>')
+    else:
+        H.append('<tr><td colspan="4">규제 목록 미설정 (_dashboard_config.yml maintenance.regulations)</td></tr>')
+    H.append('</table></div>')
+
+    H.append('<div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>')
+    H.append(f'<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 {issues["total"]}건 중 {issues["closed"]}건 완료 · 미해결 {issues["open"]}건</p>')
+    H.append('</div></div>')
+
+    H.append(f'<div class="card"><h2>문서 정기검토 만기 ({len(review_due)}건, 주기 {review_months}개월)</h2><table>')
+    H.append('<tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>')
+    if review_due:
+        for d in review_due[:15]:
+            H.append(f'<tr><td>{html.escape(str(d["name"]))}</td><td>{html.escape(str(d["cat"]))}</td><td>{d["last"]}</td><td>{d["ago"]}일</td></tr>')
+        if len(review_due) > 15:
+            H.append(f'<tr><td colspan="4">…외 {len(review_due)-15}건</td></tr>')
+    else:
+        H.append('<tr><td colspan="4">만기 도래 문서 없음 — 전 문서 검토주기 내</td></tr>')
+    H.append('</table></div>')
+
+    H.append('<div class="card"><h2>문서통제 정합성</h2><table>')
+    H.append(f'<tr><td>frontmatter 유효 문서</td><td>{fm_valid}/{n_total} ({fm_rate}%)</td></tr>')
+    H.append(f'<tr><td>frontmatter 결함</td><td>{fm_invalid}건</td></tr>')
+    H.append(f'<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>{issues["mapped"]}/{issues["total"]} {"일치" if log_ok else "불일치(매핑 보정 필요)"}</td></tr>')
+    H.append('</table></div>')
+
+    H.append('<div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">')
+    for c in commits[:10]:
+        if len(c) < 3:
+            continue
+        sha, date, msg = c
+        H.append(f'<li><span class="date">{date[5:]}</span>{html.escape(msg)[:90]}</li>')
+    H.append('</ul></div>')
+
+    H.append('<div class="card"><h2>시스템 정보</h2><div class="schedule-info">')
+    H.append('<div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>')
+    H.append('<div>\U0001f4c5 주간: 월요일 · 월간: 1일 · 분기: 1·4·7·10월</div>')
+    H.append(f'<div>\U0001f4ca 리서치 로그: {sum(1 for d in docs if d.get("_category")=="11_일일_리서치로그")}건</div>')
+    H.append(f'<div>✅ 교차검증: {sum(1 for d in docs if d.get("_category")=="12_교차검증_보고서")}건</div>')
+    H.append('<div>\U0001f310 GitHub Pages 배포</div>')
+    H.append('</div></div>')
+
+    H.append(f"""<script>
+new Chart(document.getElementById('issueChart'), {{
+  type:'doughnut',
+  data:{{labels:['완료 (closed)','미해결 (open)'], datasets:[{{data:[{issues["closed"]}, {issues["open"]}], backgroundColor:['#4ade80','#fbbf24']}}]}},
+  options:{{responsive:true, plugins:{{legend:{{labels:{{color:'#94a3b8'}}}}}}}}
+}});
+</script></body></html>""")
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text('\n'.join(H), encoding='utf-8')
+    print(f'maintenance dashboard built: {OUT}  ({sum(len(l) for l in H)} bytes)')
+
+
 def build():
     config = parse_yaml(CONFIG_PATH.read_text(encoding='utf-8')) if CONFIG_PATH.exists() else {}
+    if str((config.get('maintenance') or {}).get('phase','')).lower() == 'maintenance':
+        return build_maintenance(config)
     proj = config.get('project', {})
     target_cats = config.get('target_categories', [])
     tiers = config.get('tiers', [])

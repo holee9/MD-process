@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <script type="application/json" id="cowork-artifact-meta">
-{"name":"MD-process Dashboard","schemaVersion":1,"description":"v0.2+ 보강 진행률, 카테고리별 현황, 이슈 상태, 일별 속도 추이"}
+{"name":"MD-process Dashboard","schemaVersion":1,"description":"유지보수 모드 — 규제 통화성·문서통제 정합성·리뷰 만기·케이던스"}
 </script>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MD-process 대시보드</title>
+<title>MD-process 대시보드 (유지보수)</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 <style>
 :root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--green:#4ade80;--yellow:#fbbf24;--red:#f87171;--purple:#a78bfa}
@@ -49,93 +49,75 @@ th{color:var(--muted);font-weight:600}
   h2{color:#000 !important}
 }
 </style></head><body>
-<h1>의료기기 제조 업무규칙 — 프로젝트 대시보드</h1>
-<p class="subtitle">마지막 갱신: <strong>2026-06-08</strong> · 자동 실행: 매일 03:18 KST · 연속 실행: 54일 · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/blob/main/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B4%80%EB%A6%AC/%EB%AC%B8%EC%84%9C_%EB%A7%A4%ED%8A%B8%EB%A6%AD%EC%8A%A4.md">매트릭스</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a></p>
+<h1>의료기기 제조 업무규칙 — 유지보수 대시보드</h1>
+<p class="subtitle">마지막 갱신: <strong>2026-06-09</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
-<a href="https://github.com/holee9/MD-process/blob/main/docs/index.html">📋 소스 보기</a>
 </div>
 <div class="grid">
-<div class="kpi"><div class="value">70</div><div class="label">핵심 문서 (01~10)</div></div>
-<div class="kpi green"><div class="value">70</div><div class="label">v0.2+ 보강 완료</div></div>
-<div class="kpi green"><div class="value">100%</div><div class="label">심화 보강률</div></div>
-<div class="kpi"><div class="value">189</div><div class="label">전체 파일 (로그 포함)</div></div>
-<div class="kpi"><div class="value">169</div><div class="label">이슈 드래프트</div></div>
-<div class="kpi green"><div class="value">169</div><div class="label">이슈 완료(closed)</div></div>
+<div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
+<div class="kpi green"><div class="value">100%</div><div class="label">frontmatter 유효율</div></div>
+<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (169/169)</div></div>
+<div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
+<div class="kpi green"><div class="value">0</div><div class="label">미해결 이슈</div></div>
+<div class="kpi"><div class="value">70</div><div class="label">통제 문서 (01~10)</div></div>
 </div>
-<div class="card">
-<h2>전체 진행률 (v0.2+ 보강 기준)</h2>
-<div class="progress-overall"><div class="progress-fill" style="width:100%">100% (70/70)</div></div>
-<p style="font-size:.78rem;color:var(--muted);margin-top:6px">목표: 2026-09-30 v0.3→v1.0 승인본 전환 및 규제변경 상시 추적 | 일정 소화율: 32% (54/168일) | 잔여 보강: 0문서 | 필요 속도: 0.0건/일 | 최근 5일 평균: 2.0건/일</p>
-</div>
-<div class="two-col">
-<div class="card"><h2>카테고리별 현황</h2><table>
-<tr><th>카테고리</th><th>문서</th><th>v0.2+</th><th>진행</th></tr>
-<tr><td>01 법규</td><td>12</td><td>12</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>02 QMS</td><td>13</td><td>13</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>03 설계</td><td>10</td><td>10</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>04 제조</td><td>6</td><td>6</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>05 검사</td><td>8</td><td>8</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>06 문서</td><td>4</td><td>4</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>07 위험</td><td>4</td><td>4</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>08 PMS</td><td>5</td><td>5</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>09 공급</td><td>4</td><td>4</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-<tr><td>10 교육</td><td>4</td><td>4</td><td><span class="bar-bg"><span class="bar" style="width:100%"></span></span> <span class="tag tag-green">완료</span></td></tr>
-</table></div>
-<div class="card"><h2>카테고리 성숙도 차트</h2><canvas id="catChart" height="220"></canvas></div>
-</div>
-<div class="card"><h2>Tier 진행 현황</h2><table>
-<tr><th>Tier</th><th>카테고리</th><th>상태</th><th>완료/목표</th></tr>
-<tr><td>1</td><td>02 QMS</td><td><span class="tag tag-green">완료</span></td><td>2026-05-22</td></tr>
-<tr><td>2</td><td>03 설계</td><td><span class="tag tag-green">완료</span></td><td>2026-05-24</td></tr>
-<tr><td>3</td><td>01 법규</td><td><span class="tag tag-green">완료</span></td><td>2026-05-26</td></tr>
-<tr><td>4</td><td>05 검사</td><td><span class="tag tag-green">완료</span></td><td>2026-05-28</td></tr>
-<tr><td>5</td><td>04 제조, 06 문서, 07 위험, 08 PMS, 09 공급, 10 교육</td><td><span class="tag tag-green">완료</span></td><td>2026-05-30</td></tr>
+<div class="card"><h2>유지보수 케이던스 현황</h2><table>
+<tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
+<tr><td>일일</td><td>매일 03:18</td><td>2026-06-09</td><td>매 실행</td></tr>
+<tr><td>주간</td><td>월요일</td><td>-</td><td>2026-06-15</td></tr>
+<tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-07-01</td></tr>
+<tr><td>분기</td><td>1·4·7·10월 1일</td><td>-</td><td>2026-07-01</td></tr>
 </table></div>
 <div class="two-col">
+<div class="card"><h2>규제 추적 현황</h2><table>
+<tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
+<tr><td>FDA_QMSR</td><td>2026-06-07</td><td>2일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-06-07</td><td>2일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-05</td><td>4일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-06</td><td>3일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-06</td><td>3일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-05-30</td><td>10일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-05-30</td><td>10일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-05-24</td><td>16일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-05-28</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
+</table></div>
+<div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 169건 중 169건 완료 · 미해결 0건</p>
+</div></div>
+<div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
+<tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
+<tr><td colspan="4">만기 도래 문서 없음 — 전 문서 검토주기 내</td></tr>
+</table></div>
+<div class="card"><h2>문서통제 정합성</h2><table>
+<tr><td>frontmatter 유효 문서</td><td>189/189 (100%)</td></tr>
+<tr><td>frontmatter 결함</td><td>0건</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>169/169 일치</td></tr>
+</table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">06-08</span>chore(build): 문서_매트릭스·docs/index.html·README 진행현황 자동 갱신</li>
+<li><span class="date">06-08</span>chore(dashboard): 목표 차기 단계(v1.0 승인본·규제추적 상시, 2026-09-30) 갱신</li>
+<li><span class="date">06-08</span>docs(01): EU MDR EUDAMED 05-28 발효 반영 v0.3, 일일 리서치·정합성 검증 로그 추가</li>
+<li><span class="date">06-08</span>fix(ci): auto-issue.yml push에 fetch/rebase 재시도 추가 (_log.json 영속화 실패 근본원인 교정)</li>
+<li><span class="date">06-08</span>fix(issue): _log.json 매핑 65→169 보정 (누락 104건 매핑, runaway 교정)</li>
+<li><span class="date">06-08</span>chore(index): 색인_INDEX deprecated 처리 (공식 색인=문서_매트릭스.md)</li>
+<li><span class="date">06-08</span>fix(frontmatter): 양식·지침 4건 필수필드 보강, 교차검증 8건 type→Report (validate 통과)</li>
 <li><span class="date">06-07</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 <li><span class="date">06-07</span>chore(dashboard): docs/index.html 2026-06-08 갱신</li>
 <li><span class="date">06-07</span>docs(readme): 2026-06-08 진행현황 갱신 — v0.3 15건, 이슈 169건</li>
-<li><span class="date">06-07</span>feat(issue): 161~165 신규 드래프트 (v0.3 보강 3건 + 리서치 + 교차검증)</li>
-<li><span class="date">06-07</span>docs(12): 교차검증 2026-06-08 — v0.3 3건 정합성 검증 (15/15 사실, 12/12 교차참조)</li>
-<li><span class="date">06-07</span>docs(11): 일일 리서치 2026-06-08 — QMSR SBOM·설계이관·EU AI Act Digital Omnibus</li>
-<li><span class="date">06-07</span>docs(03): SOP-DT-001 v0.3 — QMSR 설계이관 실사 대응·AI 모델 이관·제조 준비도 증거</li>
-<li><span class="date">06-07</span>docs(03): SOP-AIGOV-001 v0.3 — EU AI Act Digital Omnibus 일정·QMSR AI 품질관리·EU AI Database</li>
-<li><span class="date">06-07</span>docs(03): SOP-SBOM-001 v0.3 — QMSR 실사 대응·CSAF 취약점 연동·EU CRA 대비</li>
-<li><span class="date">06-06</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 </ul></div>
-<div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 169건 중 169건 완료 (100%)</p>
-</div></div>
-<div class="card"><h2>보강 속도 추이 (최근 5일)</h2><canvas id="velChart" height="140"></canvas></div>
-<div class="card"><h2>스케줄 & 시스템 정보</h2><div class="schedule-info">
-<div>⏰ 매일 03:18 KST 자동 실행</div>
-<div>📅 시작: 2026-04-16</div>
-<div>🎯 목표: 2026-09-30</div>
-<div>🔄 연속 54일 실행</div>
+<div class="card"><h2>시스템 정보</h2><div class="schedule-info">
+<div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
+<div>📅 주간: 월요일 · 월간: 1일 · 분기: 1·4·7·10월</div>
 <div>📊 리서치 로그: 57건</div>
 <div>✅ 교차검증: 56건</div>
 <div>🌐 GitHub Pages 배포</div>
 </div></div>
 <script>
-new Chart(document.getElementById('catChart'), {
-  type:'bar',
-  data:{labels:["01 법규", "02 QMS", "03 설계", "04 제조", "05 검사", "06 문서", "07 위험", "08 PMS", "09 공급", "10 교육"], datasets:[
-    {label:'전체 문서',data:[12, 13, 10, 6, 8, 4, 4, 5, 4, 4],backgroundColor:'#334155'},
-    {label:'v0.2+ 보강',data:[12, 13, 10, 6, 8, 4, 4, 5, 4, 4],backgroundColor:'#38bdf8'}
-  ]},
-  options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8',font:{size:11}}}}, scales:{x:{ticks:{color:'#94a3b8',font:{size:10}}}, y:{ticks:{color:'#94a3b8'}, grid:{color:'#1e293b'}}}}
-});
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','진행중 (open)'], datasets:[{data:[169, 0], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[169, 0], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
-});
-new Chart(document.getElementById('velChart'), {
-  type:'line',
-  data:{labels:["06-04", "06-05", "06-06", "06-07", "06-08"], datasets:[{label:'일별 v0.2+ 보강 건수',data:[1, 1, 4, 4, 0],borderColor:'#38bdf8',backgroundColor:'#38bdf820',fill:true,tension:0.3}]},
-  options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}, scales:{x:{ticks:{color:'#94a3b8'}}, y:{beginAtZero:true,ticks:{color:'#94a3b8'}, grid:{color:'#1e293b'}}}}
 });
 </script></body></html>
