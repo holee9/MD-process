@@ -2,7 +2,7 @@
 doc-id: EU_AI_Act_MDR_중첩적용_매핑
 title: "EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)"
 type: Matrix
-version: v0.2
+version: v0.3
 status: draft
 category: 01_법규_규제
 purpose: "EU AI Act(2024/1689)와 EU MDR(2017/745) 간 중첩 요건 식별, 단일 QMS/기술문서 통합 충족 전략 및 X-ray AI 영상 분석 시스템 적용 지침"
@@ -11,8 +11,8 @@ forms: [F-AIAMD-GAP-001]
 related-docs: [EU_MDR_2017_745, GSPR_정합표준_매핑표, GSPR_체크리스트_v0.2_템플릿, SOP-AIGOV-001, SOP-AIDATA-001, SOP-CC-001, SOP-RM-001, SOP-PSUR-001, 디지털의료제품법_SaMD_AI_요구]
 related-issues: [4, 7, 20, 21, 48, 58]
 owner: RA/QA Lead
-last-review: 2026-05-26
-review-due: 2027-05-26
+last-review: 2026-06-10
+review-due: 2027-06-10
 ---
 
 # EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)
@@ -61,6 +61,10 @@ review-due: 2027-05-26
 | 2027-08-02 | Art. 6(1) 경로 과도기 종료 | MDR 유지 | Class IIb/III + IVD C/D |
 
 **주의**: 2026-08-02부터 High-risk 의무가 본격 적용되나, MDR Annex I(GSPR) 제품의 경우 Art. 6(1) 경로는 2027-08-02까지 과도기가 인정될 수 있다. NB 선정 시 AI Act 지정 범위(designated scope) 포함 여부를 반드시 확인한다.
+
+> **⚠️ 2026 Omnibus 개정 동향 (2026-06-10 갱신):** 2026-03-13 EU 이사회는 고위험 AI 적용 시점을 연기하는 데 합의하였다 — 독립형 고위험(Annex III)은 **2027-12-02**, MDR/IVDR 등 규제 제품에 탑재된 고위험(Annex I, 의료기기 포함)은 **2028-08-02**로 이동(기존 2027-08-02 대비). 유럽의회 소관 위원회는 2026-03-18 이를 지지 의결하였고, 2026년 4월 기준 trilogue 협상 중이다. 단, **정식 채택 전까지 기존 일정(2026-08-02 / 2027-08-02)을 구속력 있는 기준선(baseline)으로 간주**하고 대비할 것. **AI 리터러시 의무(Art. 4)의 2026-08-02 시한은 Omnibus 결과와 무관하게 유지**된다.
+>
+> **고위험 분류 가이드라인 초안(2026-05-19):** 집행위는 Art. 6 고위험 AI 분류에 관한 *Draft Commission Guidelines*를 이해관계자 의견수렴용으로 공개하였다(의견수렴 **2026-06-23**까지, 정식 채택 일정 미정). 본 매핑의 분류 판단 절차(§2.1)는 가이드라인 확정 시 재검토 대상이다.
 
 ## 4. 요건 매핑 상세
 
@@ -174,6 +178,9 @@ AI 기능 설명:                     AI Act 분류:
 - FDA AI/ML-based SaMD Action Plan, PCCP Draft Guidance 2023
 - DQS Global — AI Act & AI-Enabled Medical Devices: Regulatory Status 2026
 - MedDeviceGuide — EU AI Act for Medical Devices Compliance Guide 2026
+- Gibson Dunn — EU AI Act Omnibus Agreement: Postponed High-Risk Deadlines (2026)
+- Bird & Bird — The Commission's Draft High-Risk AI Guidelines under the EU AI Act: A First Read (2026)
+- European Commission — Draft Commission Guidelines on classification of high-risk AI systems under Art. 6 (2026-05-19, 의견수렴 ~2026-06-23)
 
 ## 10. 개정 이력
 
@@ -181,3 +188,4 @@ AI 기능 설명:                     AI Act 분류:
 |------|------|------|
 | v0.1 | 2026-04-20 | 초안 작성 (High-risk 기준·요건 매핑·Gap) |
 | v0.2 | 2026-05-26 | 분류 판단 절차·적용 일정 구체화, X-ray 적용 예시 전면 보강, 양식 F-AIAMD-GAP-001 추가, 상호참조 확충, Gap 조치 매트릭스 상세화 |
+| v0.3 | 2026-06-10 | 2026 Omnibus 고위험 시점 연기(이사회 03-13: Annex III→2027-12-02, Annex I→2028-08-02) 및 집행위 고위험 분류 가이드라인 초안(05-19, 의견수렴 ~06-23) 반영. AI 리터러시(Art.4) 2026-08-02 유지 명시. 출처 보강 |
