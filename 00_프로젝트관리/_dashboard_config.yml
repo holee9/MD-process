@@ -54,17 +54,17 @@ maintenance:
   review_cycle_months: 12      # SOP 정기검토 주기(개월)
   reg_check_days: 90           # 규제 점검 만기 임계(일)
   regulations:
-    - {id: FDA_QMSR, last_checked: '2026-06-11'}
+    - {id: FDA_QMSR, last_checked: '2026-06-12'}
     - {id: EU_MDR_2017_745, last_checked: '2026-06-10'}
-    - {id: EU_AI_Act, last_checked: '2026-06-11'}
-    - {id: MFDS_디지털의료제품법, last_checked: '2026-06-11'}
+    - {id: EU_AI_Act, last_checked: '2026-06-12'}
+    - {id: MFDS_디지털의료제품법, last_checked: '2026-06-12'}
     - {id: 진단용방사선_안전관리규칙, last_checked: '2026-06-06'}
     - {id: ISO_13485_2016, last_checked: '2026-05-30'}
     - {id: ISO_14971_2019, last_checked: '2026-05-30'}
     - {id: IEC_62304, last_checked: '2026-06-10'}
     - {id: IEC_60601-2-54, last_checked: '2026-05-28'}
   cadence:                      # 케이던스별 마지막 실행일(스케줄이 자동 기록)
-    daily_last: '2026-06-11'
+    daily_last: '2026-06-12'
     weekly_last: ''
     monthly_last: ''
     quarterly_last: ''
