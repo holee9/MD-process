@@ -54,25 +54,25 @@ maintenance:
   reg_check_days: 90
   regulations:
   - id: FDA_QMSR
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: EU_MDR_2017_745
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: EU_AI_Act
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: MFDS_디지털의료제품법
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: 진단용방사선_안전관리규칙
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: ISO_13485_2016
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: ISO_14971_2019
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: IEC_62304
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   - id: IEC_60601-2-54
-    last_checked: '2026-06-14'
+    last_checked: '2026-06-15'
   cadence:
-    daily_last: '2026-06-14'
-    weekly_last: ''
+    daily_last: '2026-06-15'
+    weekly_last: '2026-06-15'
     monthly_last: ''
     quarterly_last: ''
