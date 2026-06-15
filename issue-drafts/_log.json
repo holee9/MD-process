@@ -175,5 +175,35 @@
   "203_03_SOP-DHF-001_설계개발파일_7.3.10.md": 1516,
   "204_09_SOP-SUP-001_구매조항_7.4_매핑_보강.md": 1517,
   "205_13_ISO13485_자체평가_체크리스트_신규.md": 1518,
-  "206_02_자원관리_6.1_6.3_6.4_조항갭.md": 1519
+  "206_02_자원관리_6.1_6.3_6.4_조항갭.md": 1519,
+  "207_02_F-QP-001_품질목표_KPI_추적_양식.md": {
+    "title": "[P2][forms] F-QP-001 품질목표 및 KPI 추적 양식 신규 작성",
+    "labels": "source:emergent,prio:P2,type:forms,risk:med,qms",
+    "date": "2026-06-15",
+    "cycle": "2026-06-15-실행"
+  },
+  "208_readiness_score_keyword_tuning.md": {
+    "title": "[P2][consistency] build_readiness.py ISO 13485 점수 과대평가 보정",
+    "labels": "source:emergent,prio:P2,type:consistency,risk:med",
+    "date": "2026-06-15",
+    "cycle": "2026-06-15-실행"
+  },
+  "CHK-ISO13485-001": {
+    "title": "ISO 13485:2016 자체평가 체크리스트 신규 작성",
+    "completed": "2026-06-15",
+    "issue": "#1518",
+    "DoD": "met"
+  },
+  "QM-001": {
+    "title": "품질매뉴얼 신규 작성 §4.2.2",
+    "completed": "2026-06-15",
+    "issue": "#1514",
+    "DoD": "met-conditional"
+  },
+  "SOP-QP-001": {
+    "title": "품질정책 및 목표관리 절차 §5.1·5.3·5.4",
+    "completed": "2026-06-15",
+    "issue": "#1515-partial",
+    "DoD": "met-conditional"
+  }
 }
