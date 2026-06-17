@@ -95,6 +95,13 @@ def collect_checklists():
 
 def score_item(item, all_docs):
     """1개 항목의 충족 점수 산출"""
+    # 체크리스트에 명시적으로 선언된 status 우선 적용 (#1521 버그 수정)
+    declared = item.get('status', '')
+    if declared == 'unmet':
+        return {'score': 0, 'status': '미충족(확인됨)', 'matches': []}
+    if declared == 'na':
+        return {'score': None, 'status': 'N/A', 'matches': []}
+
     keywords = item.get('applicable_keywords') or []
     if not keywords:
         return {'score': 0, 'status':'키워드 미정', 'matches':[]}
@@ -114,8 +121,13 @@ def score_item(item, all_docs):
     if ev_type in ('SOP','sop') and not any(m['type']=='SOP' for m in matches):
         return {'score':70, 'status':'부분(SOP 미작성)', 'matches':matches}
     if len(matches) >= 2:
-        return {'score':100, 'status':'충족', 'matches':matches}
-    return {'score':80, 'status':'부분(보강 권장)', 'matches':matches}
+        raw_score = 100
+    else:
+        raw_score = 80
+    # 선언된 partial 상태는 키워드 매칭 점수를 60으로 상한 (#1521)
+    if declared == 'partial':
+        return {'score': min(raw_score, 60), 'status': '부분충족(선언)', 'matches': matches}
+    return {'score': raw_score, 'status': '충족', 'matches': matches}
 
 def calculate_score(items, all_docs):
     if not items: return 0, []
@@ -124,6 +136,9 @@ def calculate_score(items, all_docs):
         sev = it.get('severity','should')
         w = SEVERITY_WEIGHT.get(sev, 0.5)
         r = score_item(it, all_docs)
+        if r['score'] is None:  # N/A 항목 — 가중치 합산 제외
+            details.append({**it, **r})
+            continue
         weighted += r['score'] * w
         total_w += w
         details.append({**it, **r})

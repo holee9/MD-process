@@ -205,5 +205,8 @@
     "completed": "2026-06-15",
     "issue": "#1515-partial",
     "DoD": "met-conditional"
-  }
+  },
+  "209_scripts_build_readiness_status_보정_완료.md": "209",
+  "210_02_F-QP-001_품질목표_KPI_완료.md": "210",
+  "211_02_SOP-ENV-001_인프라_작업환경_완료.md": "211"
 }
