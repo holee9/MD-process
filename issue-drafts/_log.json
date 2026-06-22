@@ -252,5 +252,9 @@
     "labels": "source:plan,prio:P1,type:depth,risk:high,qms",
     "date": "2026-06-22",
     "cycle": "2026-06-22-기획"
-  }
+  },
+  "907_AUDIT_ISO14971_상세_조항번호_사실오류.md": "1554",
+  "908_AUDIT_IEC62304_A2_2020_미존재_사실오류.md": "1555",
+  "909_AUDIT_진단용방사선_1122호_피폭기록_보존기간_사실오류.md": "1556",
+  "910_AUDIT_SOP-FSCA-001_IEC81001_5_1_CVSS기한_인용부정확.md": "1557"
 }
