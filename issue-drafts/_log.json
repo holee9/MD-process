@@ -239,5 +239,18 @@
   "903_AUDIT_SOP-PMS-001_EU_MDR_보고기한_사실오류.md": "1549",
   "904_AUDIT_SOP-PMS-001_FDA_MDR_보고기한_사실오류.md": "1550",
   "905_AUDIT_EU_AI_Act_Art4_리터러시_시점_사실오류.md": "1551",
-  "906_AUDIT_ISO13485_2016_재확정_날짜_인용부정확.md": "1552"
+  "906_AUDIT_ISO13485_2016_재확정_날짜_인용부정확.md": "1552",
+  "231_12_감사결함수정_검증_2026-06-22.md": {
+    "title": "[P0][audit] 감사 결함 수정 #900~#906 일괄 처리 및 정합성 검증",
+    "labels": "source:emergent,prio:P0,type:consistency,risk:high",
+    "date": "2026-06-22",
+    "cycle": "2026-06-22-감사수정",
+    "state": "closed"
+  },
+  "232_02_QM-001_v0.2_경영의지_5.1_5.2_5.3_5.4_통합보강.md": {
+    "title": "[P1][depth] QM-001 v0.2 — 경영의지·고객중심·품질정책·계획(§5.1~§5.4) 통합 보강",
+    "labels": "source:plan,prio:P1,type:depth,risk:high,qms",
+    "date": "2026-06-22",
+    "cycle": "2026-06-22-기획"
+  }
 }
