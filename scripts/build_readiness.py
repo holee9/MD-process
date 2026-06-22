@@ -94,13 +94,39 @@ def collect_checklists():
     return standards
 
 def score_item(item, all_docs):
-    """1개 항목의 충족 점수 산출"""
+    """1개 항목의 충족 점수 산출.
+
+    스코어링 규칙(우선순위):
+      1) declared status='unmet' 또는 'na' → 그대로 처리.
+      2) related_docs 필드가 명시적으로 제시된 경우(이슈 #208):
+           - related_docs == []  → score=0 (증빙 없음으로 단정)
+           - related_docs != []  → 그 목록의 doc-id 와만 매칭(키워드 over-match 차단)
+      3) related_docs 미지정 시 applicable_keywords 매칭(기존 로직).
+    """
     # 체크리스트에 명시적으로 선언된 status 우선 적용 (#1521 버그 수정)
     declared = item.get('status', '')
     if declared == 'unmet':
         return {'score': 0, 'status': '미충족(확인됨)', 'matches': []}
     if declared == 'na':
         return {'score': None, 'status': 'N/A', 'matches': []}
+
+    # related_docs 화이트리스트 (이슈 #208) — 명시 시 우선
+    if 'related_docs' in item:
+        rdocs = item.get('related_docs') or []
+        if not rdocs:
+            return {'score': 0, 'status': '미충족(증빙 없음)', 'matches': []}
+        matches = [d for d in all_docs if d.get('doc_id') in rdocs]
+        if not matches:
+            return {'score': 0, 'status': '미충족(증빙 미발견)', 'matches': []}
+        ev_type = item.get('evidence_type','')
+        if ev_type in ('form',) and not any(m['type']=='Form' for m in matches):
+            return {'score': 50, 'status':'부분(양식 없음)','matches':matches}
+        if ev_type in ('SOP','sop') and not any(m['type']=='SOP' for m in matches):
+            return {'score': 70, 'status':'부분(SOP 미작성)','matches':matches}
+        raw_score = 100 if len(matches) >= 2 else 80
+        if declared == 'partial':
+            return {'score': min(raw_score, 60), 'status':'부분충족(선언)','matches':matches}
+        return {'score': raw_score, 'status':'충족','matches':matches}
 
     keywords = item.get('applicable_keywords') or []
     if not keywords:

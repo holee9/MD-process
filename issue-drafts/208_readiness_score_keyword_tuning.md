@@ -2,6 +2,7 @@
 title: "[P2][consistency] build_readiness.py — ISO 13485 점수 과대평가 보정 (키워드 세분화)"
 labels: "source:emergent,prio:P2,type:consistency,risk:med"
 log-ref: CRV-2026-06-15-ISO13485-CHK
+state: closed
 ---
 
 ## 배경
