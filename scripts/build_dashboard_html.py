@@ -344,11 +344,7 @@ def build_maintenance(config):
         _labels = _json.dumps([f"{i+1}회차" for i in range(len(_al))])
         _data = _json.dumps([r['pass'] for r in _al])
         _meta = _json.dumps([{'d': r['date'], 'docs': r['docs'], 'cl': r['claims'], 'er': r['errors'], 'pass': r['pass']} for r in _al])
-        H.append("<script>var AUD_META=" + _meta + ";new Chart(document.getElementById('auditTrend'),{type:'line',"
-                 f"data:{{labels:{_labels},datasets:[{{label:'사실 통과율%',data:{_data},"
-                 "borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:.3}]},"
-                 "options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}}},"
-                 "scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>")
+        H.append("<script>var AUD_META=" + _meta + ";new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:" + _labels + ",datasets:[{label:'사실 통과율%',data:" + _data + ",borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>")
     # ── 사람 점검 (주간/월간 — 트리거 기반, GitHub에서 결정 반영) ──
     import urllib.parse as _up
     def _wk(ds):

@@ -77,7 +77,7 @@ th{color:var(--muted);font-weight:600}
 </table>
 <p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 0 / P1 13 / P2 9</p>
 </div>
-<script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
+<script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
 <div class="card" style="border-color:#2563eb">
 <h2 style="color:#5eb0ef">👤 사람 점검 (주간/월간 — 트리거 기반 · GitHub에서 바로 결정 반영)</h2>
 <table>
@@ -168,6 +168,7 @@ function submitIssueForm(){
 <tr><td>이슈 드래프트 ↔ _log 매핑</td><td>222/219 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">06-22</span>feat(dashboard): 감사 추세 차트 x축 &#x27;N회차&#x27;·점 hover에 날짜·표본·주장·오류 표시</li>
 <li><span class="date">06-22</span>feat(dashboard): 폼 유형 선택 시 자동 설명(onchange)·▶안내라벨 제거 — 모바일 친화, 동선 단일화</li>
 <li><span class="date">06-22</span>fix(dashboard): ▶유형 안내 3개 복원 — 클릭 액션 제거·hover 설명 유지(등록은 폼)</li>
 <li><span class="date">06-22</span>refactor(dashboard): 중복 ▶쓰기버튼 제거 — 등록은 폼 단일화, 🔗보기 링크 유지</li>
@@ -177,7 +178,6 @@ function submitIssueForm(){
 <li><span class="date">06-22</span>feat(dashboard): 사실성·신뢰도(독립감사) + 3소스 백로그 패널 — 사실 기반 신뢰도 추적으로 재편</li>
 <li><span class="date">06-22</span>chore(issues): update _log.json [skip ci]</li>
 <li><span class="date">06-22</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">06-22</span>build: dashboard refresh — audit #907~#910 반영</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
