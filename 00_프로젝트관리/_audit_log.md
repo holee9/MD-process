@@ -7,3 +7,4 @@
 |---|---|---|---|---|---|---|---|
 | 2026-06-22 | 2 | 9 | 4 | 0 | 1 | 44.4 | 첫 감사. audit 이슈 #900~904 등록. 표본: GUIDE-VIG-001 v0.2, SOP-PMS-001 v0.3 |
 | 2026-06-22 | 4 | 9 | 1 | 0 | 1 | 77.8 | 표본: EU_MDR_2017_745 v0.3, FDA_QMSR_2026 v0.2, EU_AI_Act_MDR_중첩매핑 v0.5, ISO13485_2016_요약 v0.2. audit #905(P0 Art.4 시점 사실오류) #906(P1 ISO13485 reconfirmed 날짜 인용부정확) 등록. FDA QMSR 2026-02-02·EUDAMED 2026-05-28·AI Act 발효·고위험·Omnibus(2027-12-02/2028-08-02) 일정 일치 확인. web_verification:yes |
+| 2026-06-22 | 1 | 4 | 4 | 0 | 0 | 0.0 | 표본: ISO14971_프로세스_상세 v0.2. ISO 14971:2019 §7 하위조항 번호 4건 사실오류 P0 (#907). web_verification:yes (ISO OBP + ANSI/AAMI 미리보기 + medicaldeviceacademy) |
