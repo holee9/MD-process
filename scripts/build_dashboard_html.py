@@ -347,6 +347,48 @@ def build_maintenance(config):
                  "borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:.3}]},"
                  "options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}}},"
                  "scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>")
+    # ── 사람 점검 (주간/월간 — 트리거 기반, GitHub에서 결정 반영) ──
+    import urllib.parse as _up
+    def _wk(ds):
+        try: return datetime.date.fromisoformat(ds).isocalendar()[:2]
+        except Exception: return None
+    _today = datetime.date.today()
+    _this_wk = _today.isocalendar()[:2]; _last_wk = (_today - datetime.timedelta(days=7)).isocalendar()[:2]
+    _wkr = [r for r in _al if _wk(r['date']) == _this_wk]; _lwr = [r for r in _al if _wk(r['date']) == _last_wk]
+    def _avg(rows): return round(sum(x['pass'] for x in rows) / len(rows), 1) if rows else None
+    _twa = _avg(_wkr); _lwa = _avg(_lwr)
+    if _twa is None or _lwa is None:
+        _trend = f'데이터 누적 중 ({len(_al)}사이클)'
+    else:
+        _arrow = '▲' if _twa >= _lwa else '▼'
+        _trend = f'{_twa}% (전주 {_lwa}% {_arrow}{abs(round(_twa - _lwa, 1))})'
+    _RU = f'https://github.com/{repo}'
+    def _ni(title, body, labels):
+        return f'{_RU}/issues/new?title={_up.quote(title)}&body={_up.quote(body)}&labels={_up.quote(labels)}'
+    _wk_btn = _ni('[주간점검] ' + _today.isoformat(),
+                  '## 주간 사람 점검\n- [ ] 통과율 추세 확인\n- [ ] 열린 audit P0 확인\n- [ ] 재감사 통과 확인\n- [ ] 해석범위/미확인 RA 판단\n\n결정/지시:\n', 'review,weekly')
+    _focus_btn = _ni('[P1][집중지시] (영역 기입)', 'source:plan 집중 보강 지시.\n대상 영역/조항:\n사유(예: 통과율 하락):\n', 'source:plan,prio:P1,review')
+    _ra_btn = _ni('[RA판단] 유권해석 범위 결정 (주제 기입)', '## RA 유권해석 판단 요청\n대상 문서/주장:\n해석이 갈리는 지점:\n1차 근거:\nRA 결정:\n', 'review,interpretation')
+    H.append('<div class="card" style="border-color:#2563eb">')
+    H.append('<h2 style="color:#5eb0ef">\U0001f464 사람 점검 (주간/월간 — 트리거 기반 · GitHub에서 바로 결정 반영)</h2>')
+    H.append('<table>')
+    H.append('<tr><th>주기</th><th>점검 항목</th><th>현재</th><th>결정 트리거</th></tr>')
+    H.append(f'<tr><td rowspan="3"><b>주간</b></td><td>사실 통과율 추세</td><td>{_trend}</td><td>하락 → 집중 지시</td></tr>')
+    H.append(f'<tr><td>열린 audit P0(미수정 사실오류)</td><td>{_bk["audit_p0_open"]}</td><td>&gt;0 지속 → 루프 점검</td></tr>')
+    H.append(f'<tr><td>해석범위·미확인(RA 판단)</td><td><a href="{_RU}/issues?q=is%3Aopen+label%3Areview" target="_blank">목록</a></td><td>RA만 결정 가능</td></tr>')
+    H.append(f'<tr><td rowspan="2"><b>월간</b></td><td>표본 누적(사실성 기준선)</td><td>{len(_al)} 사이클 / 누적 {_overall}%</td><td>충분 → 정식 게이트 재채점</td></tr>')
+    H.append(f'<tr><td>조항완전성(plan 백로그)</td><td>{_bk["plan_open"]} 열림</td><td>천장 근접 → 엔진완성 선언·조직통합</td></tr>')
+    H.append('</table>')
+    H.append('<div class="actions" style="margin-top:10px">')
+    H.append(f'<a href="{_wk_btn}" target="_blank">▶ 주간 점검 기록</a>')
+    H.append(f'<a href="{_focus_btn}" target="_blank">▶ 집중 영역 지시</a>')
+    H.append(f'<a href="{_ra_btn}" target="_blank">▶ RA 유권해석 판단</a>')
+    H.append(f'<a href="{_RU}/issues?q=is%3Aopen+label%3Aaudit%3Afactuality" target="_blank">\U0001f517 열린 사실오류</a>')
+    H.append(f'<a href="{_RU}/issues?q=is%3Aopen+label%3Asource%3Aplan" target="_blank">\U0001f517 plan 백로그</a>')
+    H.append(f'<a href="{_RU}/blob/main/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B4%80%EB%A6%AC/_audit_log.md" target="_blank">\U0001f517 감사 로그</a>')
+    H.append('</div>')
+    H.append('<p style="font-size:.74rem;color:var(--muted);margin-top:6px">버튼은 GitHub 이슈 작성 화면을 <b>미리 채워</b> 엽니다 — 제출하면 빌더/감사자가 백로그로 받아 반영합니다(정적 페이지가 GitHub 인증으로 안전하게 쓰기).</p>')
+    H.append('</div>')
     H.append('<div class="grid">')
     H.append(f'<div class="kpi {kc(reg_overdue>0)}"><div class="value">{reg_overdue}/{len(regs)}</div><div class="label">규제 점검만기 경과</div></div>')
     H.append(f'<div class="kpi {kc(fm_rate<100)}"><div class="value">{fm_rate}%</div><div class="label">frontmatter 유효율</div></div>')
