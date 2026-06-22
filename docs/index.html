@@ -58,7 +58,7 @@ th{color:var(--muted);font-weight:600}
 <div class="grid">
 <div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi green"><div class="value">100%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (218/215)</div></div>
+<div class="kpi red"><div class="value">✗</div><div class="label">_log 정합 (218/219)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
 <div class="kpi red"><div class="value">26</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">89</div><div class="label">통제 문서 (01~10)</div></div>
@@ -84,7 +84,7 @@ th{color:var(--muted);font-weight:600}
 <tr><td>IEC_60601-2-54</td><td>2026-06-15</td><td>7일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 215건 중 189건 완료 · 미해결 26건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 219건 중 193건 완료 · 미해결 26건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
@@ -93,19 +93,19 @@ th{color:var(--muted);font-weight:600}
 <div class="card"><h2>문서통제 정합성</h2><table>
 <tr><td>frontmatter 유효 문서</td><td>234/235 (100%)</td></tr>
 <tr><td>frontmatter 결함</td><td>1건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>218/215 일치</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>218/219 불일치(매핑 보정 필요)</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
-<li><span class="date">06-22</span>chore(issues): update _log.json [skip ci]</li>
-<li><span class="date">06-22</span>audit(01): EU AI Act Art.4 시점 + ISO13485 reconfirmed 날짜 — 사실오류 1건 P0, 인용결함 1건 P1 (#905~906</li>
-<li><span class="date">06-22</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-22</span>audit(03/01/08): 표본 4건·주장 13건 — 결함 3건(P0×2, P1×1)</li>
 <li><span class="date">06-22</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">06-22</span>audit(08): GUIDE-VIG-001·SOP-PMS-001 보고기한·보존기한 사실검증 — 사실오류 4건 P0, 인용결함 1건 P1 (#900~904)</li>
-<li><span class="date">06-21</span>chore(issues): update _log.json [skip ci]</li>
-<li><span class="date">06-21</span>build(2026-06-22): cadence.daily_last + 문서 매트릭스 + 대시보드 재생성</li>
-<li><span class="date">06-21</span>log/xver(2026-06-22): 기획 패스 — 조항완전성 갭 분석 + 적대적 자기검토(XVER)</li>
-<li><span class="date">06-21</span>plan(2026-06-22): 델타 이슈 7건 — §7.4 구매·§7.5.1b DHR·§5.6 MR양식·§7.3.10 DHF·§8.3.4 재작업·§8 KPI·§</li>
-<li><span class="date">06-20</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-22</span>build: dashboard refresh — audit fixes v0.3/v0.4/v0.6/v0.3 반영</li>
+<li><span class="date">06-22</span>plan(02): 신규 P1 시드 — QM-001 v0.2 §5.1~§5.4 통합 보강 (XVER FIN-02 후속)</li>
+<li><span class="date">06-22</span>docs(12): XVER 2026-06-22 감사수정 — audit #900-#906 정합성·1차출처 재확인 통과</li>
+<li><span class="date">06-22</span>fix(01): ISO13485_2016_요약 v0.3 reconfirmation 시작/종료/공지 분리 표기 — audit #906</li>
+<li><span class="date">06-22</span>fix(01): EU_AI_Act 매핑 v0.6 Art.4 적용 2025-02-02 / enforcement 2026-08-03 분리 — audit #905</li>
+<li><span class="date">06-22</span>fix(08): SOP-PMS-001 v0.4 EU 사망 10d·공중보건위협 2d 분리 / FDA 30cd 기본 — audit #903 #904</li>
+<li><span class="date">06-22</span>fix(08): GUIDE-VIG-001 v0.3 MFDS 사망 7d / FDA 보존 2y공통 / EU 보존 비임플란트 10y — audit #900 #901 #</li>
+<li><span class="date">06-22</span>audit(07): ISO14971_프로세스_상세 ISO14971:2019 §7 하위조항 번호 — 사실오류 4건 P0 (#907)</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
@@ -117,7 +117,7 @@ th{color:var(--muted);font-weight:600}
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[189, 26], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[193, 26], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>
