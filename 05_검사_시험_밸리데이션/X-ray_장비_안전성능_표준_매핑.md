@@ -2,7 +2,7 @@
 doc-id: X-ray_장비_안전성능_표준_매핑
 title: 의료용 X-ray 장비 안전·성능 표준 매핑
 type: Matrix
-version: v0.2
+version: v0.3
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 진단용 X-ray system/detector/SW의 국제·지역별 안전·성능 규제·표준을 단일 매핑표로 정리
@@ -89,7 +89,7 @@ review-due: 2027-05-28
 | 전자파 양립성(EMC) | IEC 60601-1-2:2014+A1:2020 (Ed.4.1) | EN 60601-1-2:2015+A1:2021 (Harmonized) | Recognized | KS C IEC 60601-1-2 |
 | 방사선 방호 | IEC 60601-1-3:2008+A1:2013+A2:2021 | EN 60601-1-3:2008+A1:2013+A2:2021 (Harmonized) | Recognized | KS C IEC 60601-1-3 |
 | 사용적합성 | IEC 62366-1:2015+A1:2020 | SoTA (OJEU 미등재) | Recognized (HFE Guidance 2016 병행) | 식약처 사용적합성 가이드라인(2017) |
-| SW 수명주기 | IEC 62304:2006+A1:2015+A2:2020 | SoTA (OJEU 미등재, EN 62304:2006/A1:2015만 존재) | Recognized (부분) | 식약처 SW밸리데이션 가이드라인 |
+| SW 수명주기 | IEC 62304:2006+AMD1:2015 (Edition 2 발행 예정 2026-08경) | SoTA (OJEU 미등재, EN 62304:2006/A1:2015) | Recognized (부분) | 식약처 SW밸리데이션 가이드라인 |
 | SW 보안(Product) | IEC 81001-5-1:2021 | SoTA (OJEU 미등재) | FDA Premarket Cybersecurity Guidance(2023-09) 참조 | 식약처 사이버보안 허가·심사 가이드라인(2022 개정) |
 | 진단 X-ray 개별 규격 | IEC 60601-2-54:2009+A1:2015+A2:2018 (촬영·투시) | EN 60601-2-54:2009+A1:2015+A2:2019 (Harmonized) | Recognized | KS C IEC 60601-2-54 |
 | 디지털 Detector 성능 | IEC 62220-1-1:2015 (DQE 측정) | SoTA | Recognized | KS C IEC 62220-1-1 |
