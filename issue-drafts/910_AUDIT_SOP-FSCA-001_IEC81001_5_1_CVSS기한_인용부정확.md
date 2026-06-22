@@ -1,6 +1,9 @@
 ---
 title: "[AUDIT P1] SOP-FSCA-001 — IEC 81001-5-1 §8.3 CVSS 정량기한(72h/14d) 인용부정확"
 labels: "audit:citation,prio:P1,risk:medium"
+state: closed
+closed-date: 2026-06-22
+closed-by: holee9-builder
 ---
 
 ## 대상 문서
