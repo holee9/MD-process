@@ -17,9 +17,9 @@ FULL_CATEGORIES = [
 ]
 LOG_CATEGORIES = ['11_일일_리서치로그','12_교차검증_보고서']
 
-EXCLUDE_NAMES = {'README.md','_TEMPLATE.md','문서_매트릭스.md'}
+EXCLUDE_NAMES = {'README.md','_TEMPLATE.md','문서_매트릭스.md','_audit_log.md'}
 
-VALID_TYPES = {'SOP','Procedure','Form','Checklist','Matrix','Plan','Report','Guide','Spec','JD','Index','Overview','Log'}
+VALID_TYPES = {'SOP','Procedure','Form','Checklist','Matrix','Plan','Report','Guide','Spec','JD','Index','Overview','Log','Manual'}
 VALID_STATUS = {'draft','review','approved','released','obsolete'}
 
 def parse_fm(text):

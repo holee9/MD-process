@@ -1,7 +1,7 @@
 ---
 doc-id: CRV-2026-06-18
 title: 교차검증 보고서 — SOP-ENV-001·F-QP-001·build_readiness 수정
-type: CrossValidation
+type: Report
 version: v0.1
 status: draft
 category: 12_교차검증_보고서
