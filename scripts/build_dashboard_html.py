@@ -390,6 +390,34 @@ def build_maintenance(config):
     H.append('</div>')
     H.append('<p style="font-size:.74rem;color:var(--muted);margin-top:6px">버튼은 GitHub 이슈 작성 화면을 <b>미리 채워</b> 엽니다 — 제출하면 빌더/감사자가 백로그로 받아 반영합니다(정적 페이지가 GitHub 인증으로 안전하게 쓰기).</p>')
     H.append('</div>')
+    # ── 이슈 등록 폼 (작성자 필수 · 필수칸 검증) ──
+    H.append('<style>#f_author,#f_target,#f_content,#f_ref,#f_type,#f_prio{background:#0b1020;color:#e2e8f0;border:1px solid #334155;border-radius:5px;padding:5px 7px;font-size:.82rem;margin-top:2px;font-family:inherit}.frm label{display:block;margin-bottom:8px;font-size:.82rem;color:var(--muted)}</style>')
+    H.append('<div class="card" style="border-color:#16a34a"><h2 style="color:#4ade80">\U0001f4dd 이슈 등록 폼 — Git 몰라도 OK (칸 채우고 등록)</h2>')
+    H.append('<div class="frm" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">')
+    H.append('<label>작성자 (이름/역할) <span style="color:#f87171">*</span><input id="f_author" placeholder="예: 홍길동 / RA" style="width:100%"></label>')
+    H.append('<label>유형 <span style="color:#f87171">*</span><select id="f_type" style="width:100%"><option value="weekly">주간 점검 기록</option><option value="focus">집중 영역 지시</option><option value="ra">RA 유권해석 판단</option><option value="defect">발생 결함 신고</option><option value="general">일반</option></select></label>')
+    H.append('<label>대상/주제 <span style="color:#f87171">*</span><input id="f_target" placeholder="예: SOP-PMS-001 §6.4 보고기한" style="width:100%"></label>')
+    H.append('<label>우선순위 (선택)<select id="f_prio" style="width:100%"><option value="">자동(유형 기본값)</option><option>P0</option><option>P1</option><option>P2</option><option>P3</option></select></label>')
+    H.append('</div>')
+    H.append('<div class="frm"><label>내용/사유 <span style="color:#f87171">*</span><textarea id="f_content" rows="3" placeholder="상세 내용·사유·결정" style="width:100%"></textarea></label>')
+    H.append('<label>관련 근거 (URL, 선택)<input id="f_ref" placeholder="1차 출처·관련 이슈 링크" style="width:100%"></label></div>')
+    H.append('<div style="margin-top:6px"><button onclick="submitIssueForm()" style="background:#16a34a;color:#fff;border:none;padding:8px 18px;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:600">GitHub 이슈로 등록 ▶</button> <span id="f_err" style="color:#f87171;font-size:.78rem;margin-left:8px"></span></div>')
+    H.append('<p style="font-size:.74rem;color:var(--muted);margin-top:8px"><b>*</b> 필수: 작성자·유형·대상·내용 — 채워야 등록됩니다. 등록 시 GitHub 로그인+제출 1번으로 <b>표준 템플릿 이슈</b>가 생성되며 작성자·라벨이 자동 포함됩니다.</p>')
+    H.append(f"""<script>
+function _v(id){{var e=document.getElementById(id);return e?(e.value||'').trim():'';}}
+function submitIssueForm(){{
+ var a=_v('f_author'),ty=_v('f_type'),tg=_v('f_target'),ct=_v('f_content'),pr=_v('f_prio'),rf=_v('f_ref');
+ var miss=[]; if(!a)miss.push('작성자'); if(!tg)miss.push('대상/주제'); if(!ct)miss.push('내용');
+ if(miss.length){{document.getElementById('f_err').textContent='필수 미입력: '+miss.join(', ');return;}}
+ document.getElementById('f_err').textContent='';
+ var M={{weekly:{{l:'review,weekly',p:'[주간점검]'}},focus:{{l:'source:plan,prio:'+(pr||'P1')+',review',p:'[집중지시]'}},ra:{{l:'review,interpretation',p:'[RA판단]'}},defect:{{l:'source:emergent,prio:'+(pr||'P2'),p:'[발생결함]'}},general:{{l:'review',p:'[일반]'}}}};
+ var m=M[ty]||M.general; var title=m.p+' '+tg;
+ var body='작성자: '+a+String.fromCharCode(10)+'유형: '+ty+String.fromCharCode(10)+'우선순위: '+(pr||'(유형 기본값)')+String.fromCharCode(10)+'대상/주제: '+tg+String.fromCharCode(10)+String.fromCharCode(10)+'## 내용'+String.fromCharCode(10)+ct+String.fromCharCode(10)+String.fromCharCode(10)+'관련 근거: '+(rf||'-')+String.fromCharCode(10)+String.fromCharCode(10)+'_등록경로: 대시보드 폼_';
+ var url='https://github.com/{repo}/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)+'&labels='+encodeURIComponent(m.l);
+ window.open(url,'_blank');
+}}
+</script>""")
+    H.append('</div>')
     H.append('<div class="grid">')
     H.append(f'<div class="kpi {kc(reg_overdue>0)}"><div class="value">{reg_overdue}/{len(regs)}</div><div class="label">규제 점검만기 경과</div></div>')
     H.append(f'<div class="kpi {kc(fm_rate<100)}"><div class="value">{fm_rate}%</div><div class="label">frontmatter 유효율</div></div>')
