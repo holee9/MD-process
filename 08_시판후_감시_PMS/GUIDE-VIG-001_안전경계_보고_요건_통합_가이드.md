@@ -2,7 +2,7 @@
 doc-id: GUIDE-VIG-001
 title: "의료기기 안전경계(Vigilance) 보고 요건 통합 가이드"
 type: Guide
-version: v0.2
+version: v0.3
 status: draft
 category: 08_시판후_감시_PMS
 purpose: MFDS·FDA·EU MDR 안전경계 보고 기한·기준·양식을 단일 문서로 통합하여 보고 누락 방지
@@ -17,7 +17,7 @@ forms: [F-VIG-001, F-PMS-001, F-PMS-002]
 related-docs: [SOP-PMS-001, SOP-FSCA-001, SOP-PSUR-001, PMS_개요]
 related-issues: []
 owner: RA/QA Lead
-last-review: 2026-06-03
+last-review: 2026-06-22
 review-due: 2027-06-03
 ---
 
@@ -52,13 +52,18 @@ review-due: 2027-06-03
 
 | 사건 유형 | MFDS | FDA | EU MDR |
 |-----------|------|-----|--------|
-| **사망** | 15일 이내 | 30 calendar days | 10 calendar days |
-| **중상해** | 15일 이내 | 30 calendar days | 15 calendar days |
-| **중상해 — 즉각 위험** | 15일 이내 | 5 work days (FDA 요청 시) | 2 calendar days (Initial) |
-| **공중보건 위협** | 15일 이내 | — | 2 calendar days (Initial) |
-| **오작동 (사망·중상해 가능)** | 15일 이내 | 30 calendar days | 15 calendar days |
-| **Trend (경향 보고)** | — | — | 15 calendar days (Art.88) |
+| **사망·생명위협** | **7일** (추가보고 8일 이내)¹ | 30 calendar days² | 10 calendar days³ |
+| **중상해(입원·장애·선천이상)** | 15일 이내¹ | 30 calendar days² | 15 calendar days³ |
+| **중상해 — 즉각 위험** | 15일 이내¹ | 5 work days (§803.53 발동 시)⁴ | 2 calendar days (Initial)³ |
+| **공중보건 위협(serious public health threat)** | 15일 이내¹ | — | **2 calendar days** (Initial)³ |
+| **오작동 (사망·중상해 가능)** | 15일 이내¹ | 30 calendar days² | 15 calendar days³ |
+| **Trend (경향 보고)** | — | — | 15 calendar days (Art.88)³ |
 | **FSCA/리콜** | 즉시 보고 | 10 work days (21 CFR 806) | 별도 FSCA 보고 (SOP-FSCA-001) |
+
+¹ 의료기기법 시행규칙 제51조①(사망·생명위협 7일, 추가 8일) / 의료기기 부작용 등 안전성 정보 관리에 관한 규정
+² 21 CFR 803.50(a)(1) — 30-day report 기본
+³ EU MDR 2017/745 Art.87(3) — 공중보건 위협 2일 / 사망 10일 / 기타 중대사고 15일
+⁴ 21 CFR 803.53 — remedial action 필요 사건 또는 FDA 서면 요청 시
 
 ### 3.2 보고 의무자
 
@@ -111,8 +116,8 @@ IEC 62304 Safety Classification 기반 SW 이상이 보고 대상인지 판단:
     │
     ├──[3] 규제 기관별 초기 보고
     │      ├── EU: 2일(즉각위험) / 10일(사망) / 15일(중상해·오작동)
-    │      ├── MFDS: 15일
-    │      └── FDA: 30일 (5 work days if requested)
+    │      ├── MFDS: 사망·생명위협 7일 / 중상해·기타 15일 (시행규칙 §51①)
+    │      └── FDA: 사망·중상·오작동 30 calendar days 기본 (§803.53 발동 시 5 work days)
     │
     ├──[4] 조사 및 근본원인 분석
     │      ├── CAPA 연계 (SOP-CAPA 참조)
@@ -133,7 +138,7 @@ IEC 62304 Safety Classification 기반 SW 이상이 보고 대상인지 판단:
 
 | 항목 | 요건 |
 |------|------|
-| 보고 기록 보존 기간 | MFDS: 5년, FDA: 2년(제조)/3년(수입), EU: 10년(Class III)/15년(임플란트) |
+| 보고 기록 보존 기간 | MFDS: 5년 / FDA: **2년 또는 기기 예상수명 中 더 긴 기간(제조자·수입자·User Facility 공통; 21 CFR 803.18)** / EU: **비임플란트 10년 / 임플란트 15년**(마지막 출하 기기 기준; EU MDR 2017/745 Art.10(8)) |
 | 기록 매체 | 전자 기록 허용 (21 CFR Part 11 / EU MDR Annex II §4 준수) |
 | 추적 대장 | 모든 안전경계 사건에 대해 고유 번호 부여, 진행 상태 추적 |
 | 경영진 보고 | 사망·중상해 사건은 경영진 즉시 보고 (Management Review 연계) |
@@ -163,3 +168,4 @@ IEC 62304 Safety Classification 기반 SW 이상이 보고 대상인지 판단:
 |------|------|-----------|
 | v0.1 | 2026-06-03 | 초안 작성 — MFDS/FDA/EU MDR 보고 기한·기준 통합 |
 | v0.2 | 2026-06-03 | X-ray 특수 고려사항, SW 사건 분류 기준, 보고 프로세스 흐름도 보강 |
+| v0.3 | 2026-06-22 | §3.1 MFDS 사망 보고기한 정정(15일→7일, 시행규칙 §51①), §3.1 EU 공중보건 위협(2일)·사망(10일) 분리 명시, §6 FDA 보존기한(2년 or 기기수명, 수입자 동일) 및 EU 보존기한(비임플란트 10년·임플란트 15년) 정정 — audit #900 #901 #902 |

@@ -5,6 +5,9 @@ audit-date: 2026-06-22
 auditor: holee9-auditor
 target-doc: 08_시판후_감시_PMS/GUIDE-VIG-001_안전경계_보고_요건_통합_가이드.md
 target-version: v0.2
+state: closed
+closed-date: 2026-06-22
+closed-by: holee9-builder
 ---
 
 # 감사 결과 — 사실 불일치 (P0)
