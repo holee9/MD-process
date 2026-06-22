@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <script type="application/json" id="cowork-artifact-meta">
-{"name":"MD-process Dashboard","schemaVersion":1,"description":"유지보수 모드 — 규제 통화성·문서통제 정합성·리뷰 만기·케이던스"}
+{"name":"MD-process Dashboard","schemaVersion":1,"description":"자율구축+독립감사 — 사실 기반 신뢰도·3소스 백로그·문서통제"}
 </script>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MD-process 대시보드 (유지보수)</title>
@@ -49,16 +49,38 @@ th{color:var(--muted);font-weight:600}
   h2{color:#000 !important}
 }
 </style></head><body>
-<h1>의료기기 제조 업무규칙 — 유지보수 대시보드</h1>
+<h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>
 <p class="subtitle">마지막 갱신: <strong>2026-06-22</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
 </div>
+<div class="card" style="border-color:#7c3aed">
+<h2 style="color:#a78bfa">🔬 사실성·신뢰도 (독립 감사 · 1차 출처 재검증)</h2>
+<div class="grid">
+<div class="kpi yellow"><div class="value">76.9%</div><div class="label">최신 표본 사실 통과율</div></div>
+<div class="kpi green"><div class="value">0</div><div class="label">열린 사실오류(audit P0)</div></div>
+<div class="kpi"><div class="value">11</div><div class="label">누적 발견 사실오류</div></div>
+<div class="kpi"><div class="value">35</div><div class="label">누적 검증 주장</div></div>
+<div class="kpi green"><div class="value">11</div><div class="label">감사결함 수정완료</div></div>
+<div class="kpi"><div class="value">60.0%</div><div class="label">누적 통과율</div></div>
+</div>
+<canvas id="auditTrend" height="90"></canvas>
+<p style="font-size:.76rem;color:var(--muted);margin-top:6px">독립 감사관이 빌더 산출물을 <b>1차 출처(법령·규제기관·표준 원문)</b>로 재검증. 통과율 = (검증주장 − 사실오류 − 인용결함)/검증주장. 시험소·컨설팅 자료는 보조(범위)로만 사용.</p>
+</div>
+<div class="card"><h2>3소스 이슈 백로그 (열림)</h2><table>
+<tr><th>소스</th><th>열린 수</th><th>의미</th></tr>
+<tr><td><b>① audit</b> (감사 결함)</td><td>0</td><td>독립 감사가 찾은 미수정 결함 — <b>최우선</b></td></tr>
+<tr><td>② plan (전략 갭)</td><td>20</td><td>ISO 13485 조항완전성 백로그</td></tr>
+<tr><td>③ emergent (발생)</td><td>2</td><td>실행 중 자가발견</td></tr>
+</table>
+<p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 0 / P1 13 / P2 9</p>
+</div>
+<script>new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["#1", "#2", "#3", "#4"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
 <div class="grid">
 <div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi green"><div class="value">100%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi red"><div class="value">✗</div><div class="label">_log 정합 (218/219)</div></div>
+<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (222/219)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
 <div class="kpi red"><div class="value">26</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">89</div><div class="label">통제 문서 (01~10)</div></div>
@@ -93,19 +115,19 @@ th{color:var(--muted);font-weight:600}
 <div class="card"><h2>문서통제 정합성</h2><table>
 <tr><td>frontmatter 유효 문서</td><td>234/235 (100%)</td></tr>
 <tr><td>frontmatter 결함</td><td>1건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>218/219 불일치(매핑 보정 필요)</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>222/219 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">06-22</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-22</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
+<li><span class="date">06-22</span>build: dashboard refresh — audit #907~#910 반영</li>
+<li><span class="date">06-22</span>fix(08): SOP-FSCA-001 v0.4 §5.6.3 — CVSS 정량기한 출처를 IEC 81001-5-1 §8 일반원칙+자사정책으로 귀속 정정 — aud</li>
+<li><span class="date">06-22</span>fix(01): 진단용방사선규칙 제1122호 v0.3 — 피폭선량 측정서 보존 5년→30년(별표 7) 정정 — audit #909</li>
+<li><span class="date">06-22</span>fix(03): IEC_62304_SW_수명주기 v0.4 — 미존재 &quot;A2:2020&quot;→AMD1:2015 정정 + X-ray 표준매핑 cross-</li>
+<li><span class="date">06-22</span>fix(07): ISO14971_프로세스_상세 v0.3 — Cl.7.2/7.5/7.6/7.3/7.4/8 흐름도·본문 조항번호 정정 — audit #907</li>
 <li><span class="date">06-22</span>audit(03/01/08): 표본 4건·주장 13건 — 결함 3건(P0×2, P1×1)</li>
 <li><span class="date">06-22</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 <li><span class="date">06-22</span>build: dashboard refresh — audit fixes v0.3/v0.4/v0.6/v0.3 반영</li>
-<li><span class="date">06-22</span>plan(02): 신규 P1 시드 — QM-001 v0.2 §5.1~§5.4 통합 보강 (XVER FIN-02 후속)</li>
-<li><span class="date">06-22</span>docs(12): XVER 2026-06-22 감사수정 — audit #900-#906 정합성·1차출처 재확인 통과</li>
-<li><span class="date">06-22</span>fix(01): ISO13485_2016_요약 v0.3 reconfirmation 시작/종료/공지 분리 표기 — audit #906</li>
-<li><span class="date">06-22</span>fix(01): EU_AI_Act 매핑 v0.6 Art.4 적용 2025-02-02 / enforcement 2026-08-03 분리 — audit #905</li>
-<li><span class="date">06-22</span>fix(08): SOP-PMS-001 v0.4 EU 사망 10d·공중보건위협 2d 분리 / FDA 30cd 기본 — audit #903 #904</li>
-<li><span class="date">06-22</span>fix(08): GUIDE-VIG-001 v0.3 MFDS 사망 7d / FDA 보존 2y공통 / EU 보존 비임플란트 10y — audit #900 #901 #</li>
-<li><span class="date">06-22</span>audit(07): ISO14971_프로세스_상세 ISO14971:2019 §7 하위조항 번호 — 사실오류 4건 P0 (#907)</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>

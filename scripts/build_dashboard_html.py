@@ -148,6 +148,69 @@ def last_commit_dates(paths):
             res[line] = cur
     return res
 
+
+def parse_audit_log():
+    """00_프로젝트관리/_audit_log.md 표 파싱 → 사이클별/누적 사실성 지표. 컬럼 위치 변동에 강건."""
+    import re as _re
+    p = REPO / '00_프로젝트관리' / '_audit_log.md'
+    rows = []
+    if not p.exists():
+        return rows
+    for line in p.read_text(encoding='utf-8').split('\n'):
+        line = line.strip()
+        if not line.startswith('| 20'):
+            continue
+        cells = [c.strip() for c in line.strip('|').split('|')]
+        if len(cells) < 6:
+            continue
+        def _n(x):
+            m = _re.search(r'-?\d+\.?\d*', x)
+            return float(m.group()) if m else 0.0
+        # 안정 인덱스: 0날짜 1표본 2주장 3사실오류 4노후 5인용결함 (해석범위/통과율은 뒤에 위치 변동)
+        claims = int(_n(cells[2])); errors = int(_n(cells[3])); cit = int(_n(cells[5]))
+        passpct = round((claims - errors - cit) / claims * 100, 1) if claims else 0.0
+        rows.append({'date': cells[0], 'docs': int(_n(cells[1])), 'claims': claims,
+                     'errors': errors, 'outdated': int(_n(cells[4])), 'citation': cit, 'pass': passpct})
+    return rows
+
+def count_issue_backlog():
+    """issue-drafts frontmatter 라벨로 3소스 백로그 집계."""
+    import re as _re
+    d = REPO / 'issue-drafts'
+    r = {'audit_open': 0, 'audit_closed': 0, 'plan_open': 0, 'emergent_open': 0,
+         'p0_open': 0, 'p1_open': 0, 'p2_open': 0, 'audit_p0_open': 0}
+    if not d.exists():
+        return r
+    for p in d.glob('*.md'):
+        if p.name in ('README.md', '_TEMPLATE.md'):
+            continue
+        try:
+            head = p.read_text(encoding='utf-8')[:700]
+        except Exception:
+            continue
+        closed = bool(_re.search(r'(?m)^state:\s*closed', head))
+        is_audit = 'audit:' in head
+        if is_audit:
+            if closed:
+                r['audit_closed'] += 1
+            else:
+                r['audit_open'] += 1
+                if 'prio:P0' in head:
+                    r['audit_p0_open'] += 1
+        if not closed:
+            if 'source:plan' in head:
+                r['plan_open'] += 1
+            if 'source:emergent' in head:
+                r['emergent_open'] += 1
+            if 'prio:P0' in head:
+                r['p0_open'] += 1
+            elif 'prio:P1' in head:
+                r['p1_open'] += 1
+            elif 'prio:P2' in head:
+                r['p2_open'] += 1
+    return r
+
+
 def build_maintenance(config):
     proj = config.get('project', {})
     maint = config.get('maintenance', {}) or {}
@@ -229,14 +292,14 @@ def build_maintenance(config):
     H = []
     H.append('<!DOCTYPE html>')
     H.append('<script type="application/json" id="cowork-artifact-meta">')
-    H.append('{"name":"MD-process Dashboard","schemaVersion":1,"description":"유지보수 모드 — 규제 통화성·문서통제 정합성·리뷰 만기·케이던스"}')
+    H.append('{"name":"MD-process Dashboard","schemaVersion":1,"description":"자율구축+독립감사 — 사실 기반 신뢰도·3소스 백로그·문서통제"}')
     H.append('</script>')
     H.append('<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">')
     H.append('<title>MD-process 대시보드 (유지보수)</title>')
     H.append('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>')
     H.append(STYLE)
 
-    H.append('<h1>의료기기 제조 업무규칙 — 유지보수 대시보드</h1>')
+    H.append('<h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>')
     H.append(f'<p class="subtitle">마지막 갱신: <strong>{today_str}</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/{repo}">GitHub</a> · <a href="https://github.com/{repo}/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>')
 
     H.append('<div class="actions">')
@@ -244,6 +307,46 @@ def build_maintenance(config):
     H.append(f'<a href="https://github.com/{repo}/raw/main/docs/index.html" download="md-process-dashboard.html">\U0001f4be HTML 다운로드</a>')
     H.append('</div>')
 
+    # ── 사실성·신뢰도 (독립 감사) — 신규 핵심 패널 ──
+    _al = parse_audit_log()
+    _bk = count_issue_backlog()
+    _latest = _al[-1]['pass'] if _al else None
+    _tc = sum(r['claims'] for r in _al); _te = sum(r['errors'] for r in _al); _tcit = sum(r['citation'] for r in _al)
+    _overall = round((_tc - _te - _tcit) / _tc * 100, 1) if _tc else 0
+    def _pk(v):
+        return 'green' if v >= 90 else ('yellow' if v >= 70 else 'red')
+    H.append('<div class="card" style="border-color:#7c3aed">')
+    H.append('<h2 style="color:#a78bfa">\U0001f52c 사실성·신뢰도 (독립 감사 · 1차 출처 재검증)</h2>')
+    H.append('<div class="grid">')
+    _lp = f'{_latest}%' if _latest is not None else '—'
+    H.append(f'<div class="kpi {_pk(_latest if _latest is not None else 0)}"><div class="value">{_lp}</div><div class="label">최신 표본 사실 통과율</div></div>')
+    H.append(f'<div class="kpi {kc(_bk["audit_p0_open"]>0)}"><div class="value">{_bk["audit_p0_open"]}</div><div class="label">열린 사실오류(audit P0)</div></div>')
+    H.append(f'<div class="kpi"><div class="value">{_te}</div><div class="label">누적 발견 사실오류</div></div>')
+    H.append(f'<div class="kpi"><div class="value">{_tc}</div><div class="label">누적 검증 주장</div></div>')
+    H.append(f'<div class="kpi green"><div class="value">{_bk["audit_closed"]}</div><div class="label">감사결함 수정완료</div></div>')
+    H.append(f'<div class="kpi"><div class="value">{_overall}%</div><div class="label">누적 통과율</div></div>')
+    H.append('</div>')
+    if len(_al) >= 2:
+        H.append('<canvas id="auditTrend" height="90"></canvas>')
+    H.append('<p style="font-size:.76rem;color:var(--muted);margin-top:6px">독립 감사관이 빌더 산출물을 <b>1차 출처(법령·규제기관·표준 원문)</b>로 재검증. 통과율 = (검증주장 − 사실오류 − 인용결함)/검증주장. 시험소·컨설팅 자료는 보조(범위)로만 사용.</p>')
+    H.append('</div>')
+    H.append('<div class="card"><h2>3소스 이슈 백로그 (열림)</h2><table>')
+    H.append('<tr><th>소스</th><th>열린 수</th><th>의미</th></tr>')
+    H.append(f'<tr><td><b>① audit</b> (감사 결함)</td><td>{_bk["audit_open"]}</td><td>독립 감사가 찾은 미수정 결함 — <b>최우선</b></td></tr>')
+    H.append(f'<tr><td>② plan (전략 갭)</td><td>{_bk["plan_open"]}</td><td>ISO 13485 조항완전성 백로그</td></tr>')
+    H.append(f'<tr><td>③ emergent (발생)</td><td>{_bk["emergent_open"]}</td><td>실행 중 자가발견</td></tr>')
+    H.append('</table>')
+    H.append(f'<p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 {_bk["p0_open"]} / P1 {_bk["p1_open"]} / P2 {_bk["p2_open"]}</p>')
+    H.append('</div>')
+    if len(_al) >= 2:
+        import json as _json
+        _labels = _json.dumps([f"#{i+1}" for i in range(len(_al))])
+        _data = _json.dumps([r['pass'] for r in _al])
+        H.append("<script>new Chart(document.getElementById('auditTrend'),{type:'line',"
+                 f"data:{{labels:{_labels},datasets:[{{label:'사실 통과율%',data:{_data},"
+                 "borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:.3}]},"
+                 "options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}}},"
+                 "scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>")
     H.append('<div class="grid">')
     H.append(f'<div class="kpi {kc(reg_overdue>0)}"><div class="value">{reg_overdue}/{len(regs)}</div><div class="label">규제 점검만기 경과</div></div>')
     H.append(f'<div class="kpi {kc(fm_rate<100)}"><div class="value">{fm_rate}%</div><div class="label">frontmatter 유효율</div></div>')
