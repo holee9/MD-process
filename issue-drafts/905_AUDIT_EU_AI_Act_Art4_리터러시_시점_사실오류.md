@@ -1,6 +1,9 @@
 ---
 title: "[AUDIT P0] EU_AI_Act_MDR_중첩적용_매핑 — Art.4 AI 리터러시 의무 시점 사실오류"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-06-22
+closed-by: holee9-builder
 ---
 
 ## 대상 문서
