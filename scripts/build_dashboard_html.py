@@ -381,21 +381,18 @@ def build_maintenance(config):
     H.append(f'<tr><td>조항완전성(plan 백로그)</td><td>{_bk["plan_open"]} 열림</td><td>천장 근접 → 엔진완성 선언·조직통합</td></tr>')
     H.append('</table>')
     H.append('<div class="actions" style="margin-top:10px">')
-    H.append('<a data-tip="매주 1회 — 통과율 추세·열린 audit P0·재감사 통과·해석범위 확인. 등록은 아래 폼에서 유형 주간 점검 기록(review·weekly) 선택." style="cursor:help">▶ 주간 점검 기록</a>')
-    H.append('<a data-tip="통과율 하락이나 특정 영역 보강이 필요할 때. 아래 폼에서 유형 집중 영역 지시(source:plan·P1) 선택, 대상·사유 입력." style="cursor:help">▶ 집중 영역 지시</a>')
-    H.append('<a data-tip="법 해석이 갈리는(유권해석 범위) 사안. 아래 폼에서 유형 RA 유권해석 판단(review·interpretation). 감사자는 사실오류가 아니라 해석범위로 분류." style="cursor:help">▶ RA 유권해석 판단</a>')
     H.append(f'<a href="{_RU}/issues?q=is%3Aopen+label%3Aaudit%3Afactuality" target="_blank" data-tip="독립 감사가 1차 출처(법령·규제기관·표준 원문)로 찾은 미수정 사실오류(audit:factuality) 필터 목록. 빌더가 최우선으로 수정합니다.">\U0001f517 열린 사실오류</a>')
     H.append(f'<a href="{_RU}/issues?q=is%3Aopen+label%3Asource%3Aplan" target="_blank" data-tip="ISO 13485 조항완전성 전략 백로그(source:plan) 열린 목록. 빌더가 표준에서 갭을 도출해 채웁니다.">\U0001f517 plan 백로그</a>')
     H.append(f'<a href="{_RU}/blob/main/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B4%80%EB%A6%AC/_audit_log.md" target="_blank" data-tip="_audit_log.md — 감사 사이클별 표본·검증주장·사실오류·통과율 시계열 원장.">\U0001f517 감사 로그</a>')
     H.append('</div>')
-    H.append('<p style="font-size:.74rem;color:var(--muted);margin-top:6px">▶ 항목은 <b>작업 유형 안내</b>입니다(마우스를 올리면 설명) — 실제 <b>등록</b>은 아래 <b>이슈 등록 폼</b>에서. \U0001f517 링크는 GitHub 목록·로그 보기.</p>')
+    H.append('<p style="font-size:.74rem;color:var(--muted);margin-top:6px">\U0001f517 링크는 GitHub 목록·로그 보기. 이슈 <b>등록</b>은 아래 <b>폼</b>에서 — 유형을 고르면 설명이 표시됩니다.</p>')
     H.append('</div>')
     # ── 이슈 등록 폼 (작성자 필수 · 필수칸 검증) ──
     H.append('<style>#f_author,#f_target,#f_content,#f_ref,#f_type,#f_prio{background:#0b1020;color:#e2e8f0;border:1px solid #334155;border-radius:5px;padding:5px 7px;font-size:.82rem;margin-top:2px;font-family:inherit}.frm label{display:block;margin-bottom:8px;font-size:.82rem;color:var(--muted)}</style>')
     H.append('<div class="card" style="border-color:#16a34a"><h2 style="color:#4ade80">\U0001f4dd 이슈 등록 폼 — Git 몰라도 OK (칸 채우고 등록)</h2>')
     H.append('<div class="frm" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">')
     H.append('<label>작성자 (이름/역할) <span style="color:#f87171">*</span><input id="f_author" placeholder="예: 홍길동 / RA" style="width:100%"></label>')
-    H.append('<label>유형 <span style="color:#f87171">*</span><select id="f_type" style="width:100%"><option value="weekly">주간 점검 기록</option><option value="focus">집중 영역 지시</option><option value="ra">RA 유권해석 판단</option><option value="defect">발생 결함 신고</option><option value="general">일반</option></select></label>')
+    H.append('<label>유형 <span style="color:#f87171">*</span><select id="f_type" onchange="updateTypeDesc()" style="width:100%"><option value="weekly">주간 점검 기록</option><option value="focus">집중 영역 지시</option><option value="ra">RA 유권해석 판단</option><option value="defect">발생 결함 신고</option><option value="general">일반</option></select><div id="type_desc" style="margin-top:5px;font-size:.74rem;color:#93c5fd;line-height:1.45;background:#0b1020;border:1px solid #334155;border-radius:5px;padding:6px 8px"></div></label>')
     H.append('<label>대상/주제 <span style="color:#f87171">*</span><input id="f_target" placeholder="예: SOP-PMS-001 §6.4 보고기한" style="width:100%"></label>')
     H.append('<label>우선순위 (선택)<select id="f_prio" style="width:100%"><option value="">자동(유형 기본값)</option><option>P0</option><option>P1</option><option>P2</option><option>P3</option></select></label>')
     H.append('</div>')
@@ -403,6 +400,11 @@ def build_maintenance(config):
     H.append('<label>관련 근거 (URL, 선택)<input id="f_ref" placeholder="1차 출처·관련 이슈 링크" style="width:100%"></label></div>')
     H.append('<div style="margin-top:6px"><button onclick="submitIssueForm()" style="background:#16a34a;color:#fff;border:none;padding:8px 18px;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:600">GitHub 이슈로 등록 ▶</button> <span id="f_err" style="color:#f87171;font-size:.78rem;margin-left:8px"></span></div>')
     H.append('<p style="font-size:.74rem;color:var(--muted);margin-top:8px"><b>*</b> 필수: 작성자·유형·대상·내용 — 채워야 등록됩니다. 등록 시 GitHub 로그인+제출 1번으로 <b>표준 템플릿 이슈</b>가 생성되며 작성자·라벨이 자동 포함됩니다.</p>')
+    H.append("""<script>
+var TYPE_DESC={weekly:'매주 1회 — 통과율 추세·열린 audit P0·재감사 통과·해석범위를 확인하고 결정/지시 기록 (라벨 review·weekly)',focus:'통과율 하락이나 특정 영역 보강이 필요할 때 — 대상 조항·영역과 사유 입력 (라벨 source:plan·P1)',ra:'법 해석이 갈리는(유권해석 범위) 사안 — 1차 근거·갈리는 지점 입력, RA가 결정 (라벨 review·interpretation)',defect:'실행·운영 중 발견한 결함 신고 (라벨 source:emergent, 기본 P2)',general:'그 외 일반 검토·요청 (라벨 review)'};
+function updateTypeDesc(){var e=document.getElementById('f_type'),d=document.getElementById('type_desc');if(e&&d)d.textContent=TYPE_DESC[e.value]||'';}
+document.addEventListener('DOMContentLoaded',updateTypeDesc);
+</script>""")
     H.append(f"""<script>
 function _v(id){{var e=document.getElementById(id);return e?(e.value||'').trim():'';}}
 function submitIssueForm(){{
