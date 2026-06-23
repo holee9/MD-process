@@ -2,7 +2,7 @@
 doc-id: IEC_81001-5-1_FDA_Cybersecurity_SW보안
 title: 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합
 type: Guide
-version: v0.2
+version: v0.3
 status: draft
 category: 03_설계_개발관리
 purpose: IEC 81001-5-1 및 FDA Cybersecurity Guidance 기반 의료기기 SW 사이버보안 수명주기 활동의 단계별 절차·책임·양식 제공
@@ -10,7 +10,7 @@ applicable:
   - IEC 81001-5-1:2021
   - IEC 62443-4-1 (참조)
   - FDA Guidance "Cybersecurity in Medical Devices" (2023-09-27)
-  - FDA §524B FDARA (2023-03-29)
+  - FD&C Act §524B (Consolidated Appropriations Act, 2023, P.L. 117-328 §3305 신설; 2023-03-29 시행)
   - EU MDR 2017/745 Annex I §17.2, §17.4
   - MDCG 2019-16 Rev.1
   - IEC 62304:2006/A1:2015
@@ -31,11 +31,11 @@ related-docs:
   - SOP-UDI-001
 related-issues: [11]
 owner: Security Officer / SW Lead
-last-review: 2026-05-24
+last-review: 2026-06-24
 review-due: 2027-05-24
 ---
 
-# 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 — v0.2
+# 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 — v0.3
 
 ## 1. 목적
 
@@ -255,3 +255,10 @@ review-due: 2027-05-24
 |------|------|----------|--------|
 | v0.1 | 2026-04-21 | 초안 — 표준·규제 매핑, 기본 구조 | RA/QA |
 | v0.2 | 2026-05-24 | 단계별 수행절차·책임·SLA 추가, X-ray 위협 시나리오 구체화, F-SEC-001 보안활동 체크리스트 포함, CVD 절차 상세화, FDA 제출물 매핑 보강, 상호참조 확충 | Security Officer/QA |
+
+
+## 개정 이력
+
+| 버전 | 일자 | 변경 내용 | 작성자 |
+|---|---|---|---|
+| v0.3 | 2026-06-24 | audit #913 frontmatter 법령 명칭 정정 (FDARA → CAA 2023 §3305) | QMS-Bot |

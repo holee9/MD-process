@@ -1,6 +1,10 @@
 ---
 title: "[AUDIT][P0] SOP-PSUR-001 §5.1 Class IIb PSUR 갱신주기 사실오류 — '최소 매 2년' → 정답 '최소 연 1회'(EU MDR Art.86(2))"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-at: 2026-06-24
+closed-by: QMS-Bot
+close-ref: audit-912-fixed-v0.x
 ---
 
 ## 대상 문서

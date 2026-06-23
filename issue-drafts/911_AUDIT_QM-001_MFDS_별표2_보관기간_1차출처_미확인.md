@@ -2,6 +2,10 @@
 title: "[AUDIT][P2] QM-001 §7 — MFDS 의료기기 제조 및 품질관리 기준 별표2 보관기간 1차 출처 미확인"
 labels: "audit:factuality,prio:P2,type:citation,risk:med,qms"
 log-ref: QM-001-v0.4-2026-06-23
+state: closed
+closed-at: 2026-06-24
+closed-by: QMS-Bot
+close-ref: audit-911-fixed-v0.x
 ---
 
 ## 배경

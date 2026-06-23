@@ -1,6 +1,10 @@
 ---
 title: "[AUDIT][P1] SOP-PSUR-001 §2 '단종 후 최소 15년' 보존기간 인용부정확 — EU MDR Art.10(8) 비이식형 10년과 불일치, 회사 자율 정책이면 출처 명시 필요"
 labels: "audit:citation,prio:P1,risk:medium"
+state: closed
+closed-at: 2026-06-24
+closed-by: QMS-Bot
+close-ref: audit-914-fixed-v0.x
 ---
 
 ## 대상 문서
