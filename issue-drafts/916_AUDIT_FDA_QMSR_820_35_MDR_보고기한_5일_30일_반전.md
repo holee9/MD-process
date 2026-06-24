@@ -1,6 +1,10 @@
 ---
 title: "[AUDIT][P0] FDA_QMSR_820.35_vs_ISO13485_4.2.5 §3.1 MDR 보고기한 사실오류 — '사망/중상=5영업일·기타=30일'은 반대로, 21 CFR 803.50/803.53과 불일치"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-06-25
+closed-by: holee9-builder
+close-ref: audit-915-916-fixed-v0.3
 ---
 
 ## 대상 문서
@@ -54,3 +58,16 @@ labels: "audit:factuality,prio:P0,risk:high"
 3. 특수 사례 4건(선량 과다 노출/AEC 오작동/영상 미표시/SW 오류) 각각의 기한을 §803.50 적용으로 통일하고, "remedial action 발동 여부" 별도 판정 분기 신설.
 4. F-QMSR-REC-001 양식의 보고 유형 체크박스를 ☐30 calendar days (§803.50) ☐5 work days (§803.53 trigger) 로 정정.
 5. v0.3 개정 이력에 "21 CFR 803.50/803.53 기한·트리거 정정(eCFR 1차 재확인)" 명시.
+
+## 종결 (Closure) — 2026-06-25
+
+- 대상 문서 `01_법규_규제/03_미국_FDA/FDA_QMSR_820.35_vs_ISO13485_4.2.5.md` v0.2→**v0.3** 정정.
+- §3 §820.35 하위항목 주제 eCFR 1차 재확인 동기화: (a)Records of complaints / (b)Records of servicing activities / (c)UDI / (d)Confidentiality.
+- §3.1.1 MDR 보고기한·결정 트리 21 CFR 803.50(30 calendar days) / 803.53(5 work days) 트리거 기준 재작성.
+- F-QMSR-REC-001 보고유형 체크박스 30cd(§803.50) / 5wd(§803.53 트리거)로 정정 + remedial action·FDA 서면요청 필드 신설.
+- Part 11 적용성을 §820.35와 분리하여 §3.5에 이관.
+- 동반 교정:
+  - `06_문서_기록관리/TF-TD-001_의료기기파일_기술문서_관리.md` v0.2→v0.3 §9.2·§9.3·§12.4
+  - `06_문서_기록관리/SOP-UDI-001_UDI_통합관리_초안.md` v0.2→v0.3 §1·§참조·§근거
+  - `05_검사_시험_밸리데이션/X-ray_장비_안전성능_표준_매핑.md` v0.3→v0.4 표준매핑 라인
+- Tier 1 재확인 출처: 21 CFR 820.35 (Source: 89 FR 7523, 2024-02-02; 시행 2026-02-02), 21 CFR 803.50, 21 CFR 803.53 — 모두 eCFR 현행본.

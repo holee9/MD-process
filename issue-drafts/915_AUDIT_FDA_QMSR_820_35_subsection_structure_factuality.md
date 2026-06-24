@@ -1,6 +1,10 @@
 ---
 title: "[AUDIT][P0] FDA_QMSR_820.35_vs_ISO13485_4.2.5 §820.35 하위항목 (a)(b)(c)(d) 구조 사실오류 — eCFR 본문과 불일치, 비실재 §820.35(d) Part 11 조항 신설"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-06-25
+closed-by: holee9-builder
+close-ref: audit-915-916-fixed-v0.3
 ---
 
 ## 대상 문서
@@ -61,3 +65,16 @@ labels: "audit:factuality,prio:P0,risk:high"
 2. §4 비교표·§5 SOP 갱신 권고도 재맵핑에 맞춰 갱신.
 3. Part 11 적용 여부는 §820.35와 분리하여 별도 절로 이관 — 모든 전자기록을 Part 11 자동 대상으로 분류하지 말고 predicate rule 기준 적용성 분석.
 4. v0.3 개정 이력에 "§820.35 하위항목 구조 정정(eCFR 1차 재확인)" 명시.
+
+## 종결 (Closure) — 2026-06-25
+
+- 대상 문서 `01_법규_규제/03_미국_FDA/FDA_QMSR_820.35_vs_ISO13485_4.2.5.md` v0.2→**v0.3** 정정.
+- §3 §820.35 하위항목 주제 eCFR 1차 재확인 동기화: (a)Records of complaints / (b)Records of servicing activities / (c)UDI / (d)Confidentiality.
+- §3.1.1 MDR 보고기한·결정 트리 21 CFR 803.50(30 calendar days) / 803.53(5 work days) 트리거 기준 재작성.
+- F-QMSR-REC-001 보고유형 체크박스 30cd(§803.50) / 5wd(§803.53 트리거)로 정정 + remedial action·FDA 서면요청 필드 신설.
+- Part 11 적용성을 §820.35와 분리하여 §3.5에 이관.
+- 동반 교정:
+  - `06_문서_기록관리/TF-TD-001_의료기기파일_기술문서_관리.md` v0.2→v0.3 §9.2·§9.3·§12.4
+  - `06_문서_기록관리/SOP-UDI-001_UDI_통합관리_초안.md` v0.2→v0.3 §1·§참조·§근거
+  - `05_검사_시험_밸리데이션/X-ray_장비_안전성능_표준_매핑.md` v0.3→v0.4 표준매핑 라인
+- Tier 1 재확인 출처: 21 CFR 820.35 (Source: 89 FR 7523, 2024-02-02; 시행 2026-02-02), 21 CFR 803.50, 21 CFR 803.53 — 모두 eCFR 현행본.
