@@ -2,7 +2,7 @@
 doc-id: X-ray_장비_안전성능_표준_매핑
 title: 의료용 X-ray 장비 안전·성능 표준 매핑
 type: Matrix
-version: v0.3
+version: v0.4
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 진단용 X-ray system/detector/SW의 국제·지역별 안전·성능 규제·표준을 단일 매핑표로 정리
@@ -37,10 +37,10 @@ related-docs:
   - IEC60601-2-54_형식시험_체크리스트
   - SOP-VAL-001
   - 외부_Pen-test_계획서
-related-issues: [10]
+related-issues: [10, 915]
 owner: RA/QA Lead
-last-review: 2026-05-28
-review-due: 2027-05-28
+last-review: 2026-06-25
+review-due: 2027-06-25
 ---
 
 # 의료용 X-ray 장비 안전·성능 표준 매핑
@@ -112,8 +112,8 @@ review-due: 2027-05-28
 - 510(k) 또는 De Novo 제출 시 Recognized Consensus Standards Declaration of Conformity
 - **21 CFR 1020.30/31 Radiation Performance Standards** 준수 보고
 - Premarket Cybersecurity Documentation (2023-09 Guidance): SBOM, Threat Model, Security Architecture, Vulnerability Management Plan, Cybersecurity Testing
-- 21 CFR 803 MDR, QMSR § 820.35(a) 불만·서비스 기록
-- 21 CFR 830 UDI (QMSR § 820.35(b))
+- 21 CFR 803 MDR; QMSR § 820.35(a) Records of complaints (불만 7항목), § 820.35(b) Records of servicing activities (서비스 6항목)
+- 21 CFR 830 UDI (QMSR § 820.35(c))
 
 ### 5.3 MFDS (국내)
 

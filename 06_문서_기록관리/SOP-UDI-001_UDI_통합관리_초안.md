@@ -2,16 +2,16 @@
 doc-id: SOP-UDI-001
 title: SOP-UDI-001 UDI 통합 관리 절차 (v0.2)
 type: SOP
-version: v0.2
+version: v0.3
 status: draft
 category: 06_문서_기록관리
 purpose: SOP-UDI-001 UDI 통합 관리 절차 (v0.2) 관련 문서
 applicable: [EU MDR 2017/745, EU MDR GSPR, EU MDR PRRC, FDA QMSR, MFDS, UDI]
 forms: [F-UDI-001, F-UDI-002]
-related-issues: [57]
+related-issues: [57, 915]
 owner: TBD
-last-review: 2026-05-04
-review-due: 2027-05-04
+last-review: 2026-06-25
+review-due: 2027-06-25
 ---
 
 # SOP-UDI-001 UDI 통합 관리 절차 (v0.2)
@@ -19,7 +19,7 @@ review-due: 2027-05-04
 > v0.2 — 2026-05-05: 절차 흐름도 추가, F-UDI-001/002 양식 추가, DI 재발급 판정 기준 상세화, X-ray 시스템 적용예시 보강
 
 ## 1. 목적
-본 SOP는 의료용 X-ray system / detector / SW 에 대해 미국 FDA(21 CFR Part 830, QMSR §820.35(b)), 유럽 EU MDR Art. 27–28(및 Annex VI), 한국 의료기기법 시행규칙 별표2의2·UDI 고시 요구를 통합 준수하기 위한 UDI (Unique Device Identification) 부여·등록·유지·변경관리 방식을 정의한다.
+본 SOP는 의료용 X-ray system / detector / SW 에 대해 미국 FDA(21 CFR Part 830, QMSR §820.35(c)), 유럽 EU MDR Art. 27–28(및 Annex VI), 한국 의료기기법 시행규칙 별표2의2·UDI 고시 요구를 통합 준수하기 위한 UDI (Unique Device Identification) 부여·등록·유지·변경관리 방식을 정의한다.
 
 ## 2. 적용 범위
 - 제품: 의료용 X-ray 고정형/이동형 시스템, 디지털 Detector, 관련 Workstation/SW (Class II 이상)
@@ -226,7 +226,7 @@ review-due: 2027-05-04
 | 승인자 서명/일자 | |
 
 ## 9. 규제 참조
-- FDA: 21 CFR Part 830, QMSR §820.35(b), FDA UDI Final Rule Preamble
+- FDA: 21 CFR Part 830, QMSR §820.35(c), FDA UDI Final Rule Preamble
 - EU: Regulation 2017/745 Art. 27–28, Annex VI Part C, MDCG 2018-1 rev. 4, MDCG 2019-4
 - KR: 의료기기법 시행규칙 별표2의2, MFDS UDI 고시 최신본
 - 표준: ISO 15223-1:2021, ISO/IEC 15459 시리즈
@@ -250,7 +250,7 @@ review-due: 2027-05-04
 
 ## 출처
 - 21 CFR Part 830 (UDI Rule)
-- FDA QMSR §820.35(b) (2026-02-02 시행)
+- FDA QMSR §820.35(c) (2026-02-02 시행)
 - EU MDR 2017/745 Art. 27–28, Annex VI
 - MDCG 2018-1 rev. 4
 - MDCG 2019-4 (UDI for SaMD)

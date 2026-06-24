@@ -4,9 +4,9 @@ title: 의료기기파일 및 기술문서 관리 절차
 type: Procedure
 category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
-version: v0.2
+version: v0.3
 status: draft
-last-review: 2026-05-30
+last-review: 2026-06-25
 owner: RA/QA
 applicable:
   - ISO 13485:2016
@@ -26,6 +26,7 @@ applicable:
 |------|------|-----------|-----------|
 | v0.1 | 2026-05-03 | 초안 — MDF 정의, DHF/DMR/DHR 개요, Annex II 기본 매핑 | holee9-automation |
 | v0.2 | 2026-05-30 | STED 매핑, MFDS 별표 상세, FDA QMSR 전환 반영, eDMS 요건, F-TD-002 상세화 | holee9-automation |
+| v0.3 | 2026-06-25 | §9.3 §820.35(a)(b)(c)(d) 하위항목 주제 eCFR 1차 재확인 정정 — (a)Records of complaints/(b)Records of servicing activities/(c)UDI/(d)Confidentiality; §9.2·§12.4 동반 정정; Part 11은 §820.35 외부 독립 Part로 표현 [audit #915] | holee9-builder |
 
 ---
 
@@ -251,16 +252,18 @@ STED는 IMDRF(구 GHTF) N4가 정의한 국제 기술문서 공통 형식으로,
 | 설계이력파일 | 21 CFR 820.30(j) | ISO 13485 7.3.10 설계개발파일 | DHF 구조 유지, 조항 번호 갱신 |
 | 내부감사 기록 | §820.180(c) 비공개 | 비공개 예외 폐지 — FDA 열람 가능 | 감사보고서 품질 상향, 객관적 증거 기재 |
 | 경영검토 기록 | §820.180(c) 비공개 | 비공개 예외 폐지 — FDA 열람 가능 | 경영검토 의사록 작성 기준 강화 |
-| 전자기록 | 21 CFR Part 11 | 21 CFR Part 11 유지 + §820.35(d) | eDMS Part 11 적합성 재검증 |
+| 전자기록 | 21 CFR Part 11 | 21 CFR Part 11 유지 (§820.35 외부 독립 Part) | eDMS Part 11 적합성 재검증 — predicate rule 기반 적용성 평가 |
 
-### 9.3 §820.35 추가 요건 대응
+### 9.3 §820.35 추가 요건 대응 (v0.3 정정 — eCFR 1차 재확인 [audit #915])
 
-| §820.35 항 | 요구사항 | MDF 반영 방법 |
-|------------|----------|-------------|
-| (a) MDR 기록 | 불만·서비스 정보, 보고/미보고 결정 근거 | PMS 기록 섹션에 MDR 결정 트리 포함 |
-| (b) UDI 기록 | UDI 발급·변경이력, GUDID 제출 기록 | SOP-UDI-001 연계, UDR 마스터 포함 |
-| (c) 기밀성 | FDA 송수신 기록 기밀성 분류 | 기밀 등급 라벨 체계 적용 |
-| (d) 전자서명 | 전자기록·전자서명 시 Part 11 준수 | eDMS Part 11 적합성 문서 참조 |
+| §820.35 항 | 정식 명칭 (eCFR) | 요구사항 | MDF 반영 방법 |
+|------------|------------------|----------|-------------|
+| (a) | Records of complaints (불만 기록) | 21 CFR Part 820 Subpart M에 따른 7항목(기기명·접수일·UDI/UPC·제기자·내용·조사/시정·회신) 기록 | PMS 기록 섹션에 SOP-PMS-001 결정 트리·F-QMSR-REC-001 7항목 매핑 |
+| (b) | Records of servicing activities (서비스 활동 기록) | 6항목(기기명·UDI/UPC·일자·수행자·내용·시험/검사 데이터) 기록 | 서비스 SOP·X-ray 출장정비 기록 양식 6항목 도입 |
+| (c) | Unique Device Identification (UDI 기록) | 21 CFR Part 830에 따른 UDI 발급·DI/PI 변경이력·GUDID 제출 기록 | SOP-UDI-001 연계, UDI 마스터 포함 |
+| (d) | Confidentiality (기밀성) | FDA 송수신 기록 공개 판단 보조 — 영업비밀/FOIA 처리 | 기밀 등급 라벨 체계 적용, "Confidential — Contains Trade Secrets" 헤더 |
+
+> v0.2에서 (a)=MDR 기록·(b)=UDI·(c)=기밀성·(d)=전자서명(Part 11)으로 기재했던 매핑은 eCFR 본문과 불일치하는 사실오류였음. **21 CFR Part 11은 §820.35의 하위항목이 아닌 독립 Part**이며, Part 11 적용성은 §9.4(외부 절)에서 별도 다룸 — 정정 [audit #915].
 
 ## 10. 전자문서관리시스템(eDMS) 요건
 
@@ -485,9 +488,11 @@ MDF (Medical Device File) 구성 문서의 완전성을 EU MDR Annex II 전 섹�
 | No. | 점검 항목 | 확인 기준 | Y/N/NA | 비고 |
 |-----|-----------|-----------|--------|------|
 | F.1 | MDF 구성 (ISO 13485 4.2.3) | 제품별 규제 요건 매핑 완료 | | |
-| F.2 | §820.35(a) MDR 기록 | 불만→보고/미보고 결정 근거 | | |
-| F.3 | §820.35(b) UDI 기록 | GUDID 제출 이력 완결 | | |
-| F.4 | §820.35(d) Part 11 적합 | eDMS 밸리데이션 현행 유효 | | |
+| F.2 | §820.35(a) Records of complaints | 불만 7항목(기기명·접수일·UDI·제기자·내용·조사/시정·회신) 기록 완결 | | |
+| F.3 | §820.35(b) Records of servicing activities | 서비스 6항목(기기명·UDI·일자·수행자·내용·시험데이터) 기록 완결 | | |
+| F.3-1 | §820.35(c) UDI 기록 | GUDID 제출·DI/PI 변경이력 완결 | | |
+| F.3-2 | §820.35(d) Confidentiality | FDA 송수신 기록 기밀 분류 체계 운영 | | |
+| F.4 | 21 CFR Part 11 적합 (§820.35 외부) | predicate rule 적용성 평가·eDMS 밸리데이션 현행 유효 | | |
 | F.5 | 내부감사 기록 열람 대비 | 객관적 증거 기재 수준 | | |
 | F.6 | 510(k) Summary/SE 보고서 | 최신 Predicate 비교 유효 | | |
 
