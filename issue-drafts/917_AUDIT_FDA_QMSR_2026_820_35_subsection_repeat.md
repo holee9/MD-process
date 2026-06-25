@@ -1,4 +1,7 @@
 ---
+state: closed
+closed-at: 2026-06-26
+closed-by: holee9-builder
 title: "[AUDIT][P0] FDA_QMSR_2026 §3.3 §820.35 하위항목 (a)(b)(c)(d) 구조 사실오류 + F-QMSR-READINESS-001 점검항목 동반 오류 — #915와 동일 패턴 재발(자매문서)"
 labels: "audit:factuality,prio:P0,risk:high"
 ---
