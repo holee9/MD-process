@@ -1,6 +1,9 @@
 ---
 title: "[AUDIT P0] EU_AI_Act_MDR_중첩적용_매핑 v0.6 — Art.113 하위항목·일반적용일 인용 사실오류 (Art.113(a)/(c) 혼동·2026-08-02 vs -03)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-06-27
+close-commits: ["TBD-this-execution"]
 ---
 
 ## 대상 문서

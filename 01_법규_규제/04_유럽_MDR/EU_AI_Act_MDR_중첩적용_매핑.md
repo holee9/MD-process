@@ -2,7 +2,7 @@
 doc-id: EU_AI_Act_MDR_중첩적용_매핑
 title: "EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)"
 type: Matrix
-version: v0.6
+version: v0.8
 status: draft
 category: 01_법규_규제
 purpose: "EU AI Act(2024/1689)와 EU MDR(2017/745) 간 중첩 요건 식별, 단일 QMS/기술문서 통합 충족 전략 및 X-ray AI 영상 분석 시스템 적용 지침"
@@ -11,8 +11,8 @@ forms: [F-AIAMD-GAP-001]
 related-docs: [EU_MDR_2017_745, GSPR_정합표준_매핑표, GSPR_체크리스트_v0.2_템플릿, SOP-AIGOV-001, SOP-AIDATA-001, SOP-CC-001, SOP-RM-001, SOP-PSUR-001, 디지털의료제품법_SaMD_AI_요구]
 related-issues: [4, 7, 20, 21, 48, 58, 1527]
 owner: RA/QA Lead
-last-review: 2026-06-22
-review-due: 2027-06-22
+last-review: 2026-06-27
+review-due: 2027-06-27
 ---
 
 # EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)
@@ -55,15 +55,15 @@ review-due: 2027-06-22
 | 시점 | AI Act 적용 내용 | MDR 상태 | 비고 |
 |------|-----------------|----------|------|
 | 2024-08-01 | AI Act 발효 | MDR 전면 적용 중 | |
-| **2025-02-02** | 금지 AI 관행(Chap.II) 적용 + **AI 리터러시 의무(Art.4) 적용일(applicability) — 이미 적용 중** | — | Art.113(b); 의료기기 운영·사용 인력 대상 |
+| **2025-02-02** | 금지 AI 관행(Chap.II) 적용 + **AI 리터러시 의무(Art.4) 적용일(applicability) — 이미 적용 중** | — | **Art.113(a)** — "Chapters I and II shall apply from 2 February 2025"(Art.4는 Chapter I 소재); 의료기기 운영·사용 인력 대상 |
 | 2025-08-02 | 범용 AI 모델(GPAI) 규칙 적용 | — | 의료기기 탑재 GPAI 해당 시 |
-| **2026-08-03** | **거버넌스·감독·과징금(Art.99 등) 적용일** — Art.4 등 기적용 의무에 대한 enforcement 개시 | MDR 전면 적용 | Art.113(c). Art.4 의무는 2025-02-02부터 이미 적용 중이므로 본 시점은 enforcement 트리거 |
+| **2026-08-02** | **거버넌스·감독·과징금(Art.99 등) 적용일** — Art.4 등 기적용 의무에 대한 enforcement 개시 | MDR 전면 적용 | **Art.113 본문(chapeau, 일반 적용일)** — "It shall apply from 2 August 2026". Art.4 의무는 2025-02-02부터 이미 적용 중이므로 본 시점은 enforcement 트리거 |
 | **2026-08-02→2028-08-02** | **High-risk 조항 본격 적용**(Omnibus 잠정 합의 시 MDR/IVDR 탑재형은 2028-08-02로 이동) | MDR 전면 적용 | **핵심 마일스톤** — §3 Omnibus 단서 참조 |
 | 2027-08-02 | Art. 6(1) 경로 과도기 종료 | MDR 유지 | Class IIb/III + IVD C/D |
 
 **주의**: 2026-08-02부터 High-risk 의무가 본격 적용되나, MDR Annex I(GSPR) 제품의 경우 Art. 6(1) 경로는 2027-08-02까지 과도기가 인정될 수 있다. NB 선정 시 AI Act 지정 범위(designated scope) 포함 여부를 반드시 확인한다.
 
-> **⚠️ 2026 Omnibus 개정 동향 (2026-06-11 갱신):** 2026-03-13 EU 이사회는 고위험 AI 적용 시점을 연기하는 데 합의하였다 — 독립형 고위험(Annex III)은 **2027-12-02**, MDR/IVDR 등 규제 제품에 탑재된 고위험(Annex I, 의료기기 포함)은 **2028-08-02**로 이동(기존 2027-08-02 대비). 유럽의회 소관 위원회는 2026-03-18 이를 지지 의결하였고, **2026-05-07 3자(이사회·의회·집행위) 협의에서 잠정 합의(provisional agreement)에 도달**하였다. 정식 채택은 2026년 6월, 관보 게재는 7월로 예상된다(2026-06-13 확인: 정식 채택 6월 예상, 관보 7월 게재 예상 — 미완료 확인). 단, **정식 채택 전까지 기존 일정(2026-08-02 / 2027-08-02)을 구속력 있는 기준선(baseline)으로 간주**하고 대비할 것. **AI 리터러시 의무(Art. 4)는 2025-02-02부터 이미 적용 중**이며(Reg. 2024/1689 Art. 113(b)), 감독·집행(Art.99 등)은 2026-08-03부터(Art. 113(c)). Omnibus 개정과 무관.
+> **⚠️ 2026 Omnibus 개정 동향 (2026-06-11 갱신):** 2026-03-13 EU 이사회는 고위험 AI 적용 시점을 연기하는 데 합의하였다 — 독립형 고위험(Annex III)은 **2027-12-02**, MDR/IVDR 등 규제 제품에 탑재된 고위험(Annex I, 의료기기 포함)은 **2028-08-02**로 이동(기존 2027-08-02 대비). 유럽의회 소관 위원회는 2026-03-18 이를 지지 의결하였고, **2026-05-07 3자(이사회·의회·집행위) 협의에서 잠정 합의(provisional agreement)에 도달**하였다. 정식 채택은 2026년 6월, 관보 게재는 7월로 예상된다(2026-06-13 확인: 정식 채택 6월 예상, 관보 7월 게재 예상 — 미완료 확인). 단, **정식 채택 전까지 기존 일정(2026-08-02 / 2027-08-02)을 구속력 있는 기준선(baseline)으로 간주**하고 대비할 것. **AI 리터러시 의무(Art. 4)는 2025-02-02부터 이미 적용 중**이며(Reg. 2024/1689 Art. 113(a) — Chapters I, II from 2 February 2025), 감독·집행(Art.99 등)은 **2026-08-02**부터(Art. 113 본문 chapeau, 일반 적용일). Omnibus 개정과 무관.
 >
 > **고위험 분류 가이드라인 초안(2026-05-19):** 집행위는 Art. 6 고위험 AI 분류에 관한 *Draft Commission Guidelines*를 이해관계자 의견수렴용으로 공개하였다(의견수렴 **2026-06-23**까지, 정식 채택 일정 미정). 본 매핑의 분류 판단 절차(§2.1)는 가이드라인 확정 시 재검토 대상이다.
 
@@ -121,7 +121,7 @@ review-due: 2027-06-22
 | AI Act Art. 43(4) | 사전 계획된 변경(재학습) → "substantial modification" 예외 허용 | SOP-CC-001에 PCCP 섹션: 사전 승인 범위, 성능 기준, 검증 방법 명시 |
 | MDR | 중요 변경 시 NB 보고 | PCCP 범위 내 변경 → NB 사전 합의, 범위 외 → 변경 인증 |
 | 디지털의료제품법 | 변경관리 계획(CMP) 제출 가능 | CMP와 PCCP 구조 통합 (단일 문서) |
-| FDA | PCCP Draft Guidance (2023) | 동일 프레임워크 활용, 미국 제출용 별도 섹션 |
+| FDA | **PCCP Final Guidance — Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions** (Final; latest content August 2025; Docket FDA-2022-D-2628; original final issued December 2024) | 동일 프레임워크 활용, 미국 제출용 별도 섹션 — Final 기준 **AI-enabled device software functions 전반**으로 범위 확대(ML 한정 아님), modifications 설명·labeling 고려사항·diversity 고려·intended use 명확화 반영 |
 
 ## 6. Gap → 조치 매트릭스
 
@@ -176,7 +176,8 @@ AI 기능 설명:                     AI Act 분류:
 - MDCG 2019-11 (소프트웨어 분류), MDCG 2019-16 Rev.1 (사이버보안), MDCG 2020-3 (significant changes)
 - IEC 62304:2006/A1:2015, IEC 62366-1:2015/A1:2020, IEC 81001-5-1:2021
 - ISO 14971:2019/A11:2021
-- FDA AI/ML-based SaMD Action Plan, PCCP Draft Guidance 2023
+- FDA — AI/ML-based SaMD Action Plan (2021)
+- FDA — **Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions, Final Guidance** (Final; latest content current as of 2025-08-18; Docket FDA-2022-D-2628; original final issued December 2024)
 - DQS Global — AI Act & AI-Enabled Medical Devices: Regulatory Status 2026
 - MedDeviceGuide — EU AI Act for Medical Devices Compliance Guide 2026
 - Gibson Dunn — EU AI Act Omnibus Agreement: Postponed High-Risk Deadlines (2026)
@@ -184,20 +185,20 @@ AI 기능 설명:                     AI Act 분류:
 - European Commission — Draft Commission Guidelines on classification of high-risk AI systems under Art. 6 (2026-05-19, 의견수렴 ~2026-06-23)
 
 
-## 12. AI 리터러시(Art.4) 갭점검 매트릭스 — Enforcement(2026-08-03) 대비 (2026-06-22 기준 — v0.6)
+## 12. AI 리터러시(Art.4) 갭점검 매트릭스 — Enforcement(2026-08-02) 대비 (2026-06-27 기준 — v0.7)
 
-> **사실관계 정정 (audit #905):** Art.4 AI 리터러시 의무의 **적용일(applicability)은 2025-02-02**로 이미 약 16개월 전부터 적용 중이다. 2026-08-03은 **감독·집행(enforcement, Art.99 등)** 적용일이며, 본 매트릭스는 enforcement 적용 전 잔존 갭을 제거하기 위한 자가점검이다. 이전 v0.5에서 "발효 2026-08-02 = D-43"으로 기재한 표현은 사실오류였으며, 의무는 이미 적용 중임을 명시한다.
+> **사실관계 정정 (audit #905·#919):** Art.4 AI 리터러시 의무의 **적용일(applicability)은 2025-02-02**(Art.113(a))로 이미 약 17개월 전부터 적용 중이다. **2026-08-02**(Art.113 본문 chapeau, 일반 적용일)는 **감독·집행(enforcement, Art.99 등)** 적용일이며, 본 매트릭스는 enforcement 적용 전 잔존 갭을 제거하기 위한 자가점검이다. v0.5에서 "발효 2026-08-02 = D-43"으로 적용일과 enforcement를 혼동한 표현은 사실오류였고(v0.6에서 분리), v0.6에서 enforcement 일자를 "2026-08-03" 및 Art.113(b)/(c)로 기재한 것 역시 1차 출처와 불일치하여 v0.7에서 정정.
 
-> **현재 위치:** 2026-06-22. Art.4 의무는 **2025-02-02부터 이미 적용 중**(Art.113(b)). Enforcement(Art.99 등) 적용일까지 **D-42**(2026-08-03). 본 매트릭스는 enforcement 적용 전 갭 제거를 위한 운영 점검이다. Omnibus는 고위험 의무를 연기하나 **Art.4 적용일·enforcement 일정에는 영향 없음**.
+> **현재 위치:** 2026-06-27. Art.4 의무는 **2025-02-02부터 이미 적용 중**(Art.113(a)). Enforcement(Art.99 등) 적용일까지 **D-36**(2026-08-02). 본 매트릭스는 enforcement 적용 전 갭 제거를 위한 운영 점검이다. Omnibus는 고위험 의무를 연기하나 **Art.4 적용일·enforcement 일정에는 영향 없음**.
 
 ### 12.1 Art.4 갭 — 즉시 충족 대상 (이미 적용 중)
 
 | 의무 | 출처 | 책임 | 산출물 | 완료 SLA | 상태 |
 |---|---|---|---|---|---|
-| AI 시스템 운영·사용 인력에 대한 충분한 AI 리터러시 보장 | Art.4 | QA·HR | 교육 커리큘럼·교육 기록 (F-TRN-001) | D-30(2026-07-22) | ☐ Pending |
-| GPAI 사용 시 모델 제공자 의무 인식 교육 | Art.4 + Chap. V | RA | 내부 가이드(GUIDE-AI-002 신규 검토) | D-20(2026-08-02) | ☐ Pending |
-| AI 위험·한계·인간감독 시나리오 교육 (의료영상 판독자 대상) | Art.4 + Art.14 | RA·임상 | 교육 자료 + 평가시험 | D-15 | ☐ Pending |
-| 외부 협력자(MR/PRRC, NB 보조인력)에게도 적용 | Art.4 | HR·QA | 외부 교육 합의서 | D-10 | ☐ Pending |
+| AI 시스템 운영·사용 인력에 대한 충분한 AI 리터러시 보장 | Art.4 | QA·HR | 교육 커리큘럼·교육 기록 (F-TRN-001) | D-30(2026-07-03) | ☐ Pending |
+| GPAI 사용 시 모델 제공자 의무 인식 교육 | Art.4 + Chap. V | RA | 내부 가이드(GUIDE-AI-002 신규 검토) | D-20(2026-07-13) | ☐ Pending |
+| AI 위험·한계·인간감독 시나리오 교육 (의료영상 판독자 대상) | Art.4 + Art.14 | RA·임상 | 교육 자료 + 평가시험 | D-15(2026-07-18) | ☐ Pending |
+| 외부 협력자(MR/PRRC, NB 보조인력)에게도 적용 | Art.4 | HR·QA | 외부 교육 합의서 | D-10(2026-07-23) | ☐ Pending |
 
 ### 12.2 High-risk 의무 — Omnibus 시나리오 (Art.4와는 별개 트랙)
 
@@ -207,32 +208,32 @@ AI 기능 설명:                     AI Act 분류:
 
 | 의무 | (B) 시 SLA | 현 충족 수준 |
 |---|---|---|
-| Art.9 Risk Management 통합 (Risk File에 AI 위험 카탈로그) | D-43 | 갭 #1 진행 중 (목표 2026 Q3) |
-| Art.10 Data Governance SOP-AIDATA-001 | D-43 | 갭 #2 v0.2 완료 (충족) |
-| Art.11 Technical Documentation Annex IV 매핑 | D-43 | 갭 #5 진행 중 |
-| Art.12 추론 로그 설계 | D-43 | 일부 충족 — 보강 필요 |
-| Art.13 IFU(투명성) | D-43 | TF-TD-001 v0.2 일부 충족 |
-| Art.14 Human Oversight | D-43 | 사용적합성 파일 보강 필요 |
-| Art.15 정확도·견고성·사이버보안 | D-43 | 일부 충족 |
-| Art.16-17 QMS 확장 | D-43 | 충족 (SOP-AIGOV-001) |
-| Art.43 적합성평가 NB 범위 확인 | D-43 | 갭 #6 미완 (목표 2026 Q4) |
+| Art.9 Risk Management 통합 (Risk File에 AI 위험 카탈로그) | D-36 | 갭 #1 진행 중 (목표 2026 Q3) |
+| Art.10 Data Governance SOP-AIDATA-001 | D-36 | 갭 #2 v0.2 완료 (충족) |
+| Art.11 Technical Documentation Annex IV 매핑 | D-36 | 갭 #5 진행 중 |
+| Art.12 추론 로그 설계 | D-36 | 일부 충족 — 보강 필요 |
+| Art.13 IFU(투명성) | D-36 | TF-TD-001 v0.2 일부 충족 |
+| Art.14 Human Oversight | D-36 | 사용적합성 파일 보강 필요 |
+| Art.15 정확도·견고성·사이버보안 | D-36 | 일부 충족 |
+| Art.16-17 QMS 확장 | D-36 | 충족 (SOP-AIGOV-001) |
+| Art.43 적합성평가 NB 범위 확인 | D-36 | 갭 #6 미완 (목표 2026 Q4) |
 | Art.49 EU DB 등록 | 시판 전 | 미해당 (시판 전 단계) |
-| Art.61-62 PMS·중대사고 보고 통합 | D-43 | SOP-PSUR-001·Vigilance 통합 충족 |
+| Art.61-62 PMS·중대사고 보고 통합 | D-36 | SOP-PSUR-001·Vigilance 통합 충족 |
 
-**Worst case 분석(시나리오 B):** D-43 내 100% 충족 불가능. 위험 완화책:
+**Worst case 분석(시나리오 B):** D-36 내 100% 충족 불가능. 위험 완화책:
 1. 정식 채택·관보 게재 즉시 시나리오 (A) 적용 자동 발동.
 2. (B) 지속 시 시판 일정 재검토 + NB 사전 협의(고위험 적합성평가 경로 명확화).
-3. AI 리터러시(Art.4) 의무는 **이미 적용 중**이므로 즉시 갭 제거(교육 이수)하고, 2026-08-03 enforcement 이전까지 증빙(F-TRN-001) 완비.
+3. AI 리터러시(Art.4) 의무는 **이미 적용 중**이므로 즉시 갭 제거(교육 이수)하고, 2026-08-02 enforcement 이전까지 증빙(F-TRN-001) 완비.
 
 ### 12.3 Enforcement 대비 액션 플랜 (영업일 단위)
 
 | 영업일 D-day | 활동 | 책임 | 산출물 | 종속성 |
 |---|---|---|---|---|
-| D-43~D-35 | AI 리터러시 커리큘럼 초안·교육자료 작성 | QA·HR | 교육 슬라이드, 평가시험 | — |
-| D-35~D-30 | 내부 교육 1차 실시(전 직원 대상) | HR | F-TRN-001 기록 | 커리큘럼 확정 |
-| D-30~D-25 | 외부 협력자 교육 합의서 발송 | HR·법무 | 외부 합의서 회신 | 내부 교육 사례 |
-| D-25~D-20 | GPAI 사용 인식 가이드 발행 | RA | GUIDE-AI-002 | — |
-| D-20~D-15 | Omnibus 관보 게재 모니터링 + 시나리오 (A)/(B) 결정 | RA | 결정 메모 | EU 공식 발표 |
+| D-36~D-30 | AI 리터러시 커리큘럼 초안·교육자료 작성 | QA·HR | 교육 슬라이드, 평가시험 | — |
+| D-30~D-25 | 내부 교육 1차 실시(전 직원 대상) | HR | F-TRN-001 기록 | 커리큘럼 확정 |
+| D-25~D-20 | 외부 협력자 교육 합의서 발송 | HR·법무 | 외부 합의서 회신 | 내부 교육 사례 |
+| D-20~D-15 | GPAI 사용 인식 가이드 발행 | RA | GUIDE-AI-002 | — |
+| D-15~D-12 | Omnibus 관보 게재 모니터링 + 시나리오 (A)/(B) 결정 | RA | 결정 메모 | EU 공식 발표 |
 | D-15~D-10 | (시나리오 B 채택 시) 고위험 의무 보강 작업 가속 | RA·QA·SW | 갭 #1·#5·#6 종결 시도 | — |
 | D-10~D-5 | 내부 점검·자체 감사 | QA Lead | 자체 감사 보고서 | 모든 준비 완료 |
 | D-5~D-0 | 잔여 조치·고객·NB 통보 | RA·CEO | 외부 통보 메모 | 자체 감사 통과 |
@@ -244,14 +245,14 @@ AI 기능 설명:                     AI Act 분류:
 | AI 리터러시 교육 이수율 (대상 인원) | 100% | 2026-08-02 기준 |
 | GPAI 사용 부서 인식 교육 완료 | 100% | D-15 기준 |
 | Omnibus 시나리오 결정 메모 발행 | 1건 | D-15 기준 |
-| 고위험 의무 D-43 충족률 (시나리오 B 시) | ≥ 80% | D-5 기준 |
+| 고위험 의무 D-36 충족률 (시나리오 B 시) | ≥ 80% | D-5 기준 |
 | 외부 협력자 교육 합의서 회신율 | ≥ 90% | D-5 기준 |
 
-### 12.5 적대적 자기검토 (D-43 관점)
-- Q: "Art.4 AI 리터러시 의무의 적용 시점은?" → A: **2025-02-02부터 이미 적용**(Reg. 2024/1689 Art.113(b)). Enforcement(Art.99 등)는 2026-08-03부터. Omnibus와 무관(§3 단서·§12 본문).
+### 12.5 적대적 자기검토 (D-36 관점)
+- Q: "Art.4 AI 리터러시 의무의 적용 시점은?" → A: **2025-02-02부터 이미 적용**(Reg. 2024/1689 Art.113(a) — Chapters I, II from 2 February 2025). Enforcement(Art.99 등)는 **2026-08-02**부터(Art.113 본문 chapeau, 일반 적용일). Omnibus와 무관(§3 단서·§12 본문).
 - Q: "시나리오 (B) 발생 시 시판 영향 평가는?" → A: §12.2 worst case 완화책 §2.
 - Q: "교육 대상은 자사 직원만인가, 외부 협력자도 포함하는가?" → A: §12.1 4번째 행(외부 협력자 포함).
-- Q: "교육 효과성 측정은?" → A: 평가시험(§12.3 D-43~D-35) + 이수율 KPI(§12.4).
+- Q: "교육 효과성 측정은?" → A: 평가시험(§12.3 D-36~D-30) + 이수율 KPI(§12.4).
 
 
 ## 10. 개정 이력
@@ -264,3 +265,5 @@ AI 기능 설명:                     AI Act 분류:
 | v0.4 | 2026-06-11 | 2026 Omnibus 입법 진행상황 갱신 — 2026-05-07 trilogue 잠정 합의 도달, 정식 채택 6월·관보 게재 7월 예상 반영. 기존 baseline(2026-08-02/2027-08-02) 대비 유지. 출처(Gibson Dunn·Inside Privacy) 보강 |
 | v0.5 | 2026-06-20 | §12 D-43 AI 리터러시(Art.4) 발효 준비도 매트릭스 신규 (이슈 #1527). 시나리오 (A) Omnibus 채택 / (B) baseline 분기, 영업일 단위 액션 플랜, KPI 5종, 적대적 자기검토 4항목 |
 | v0.6 | 2026-06-22 | **사실오류 정정** — Art.4 AI 리터러시 의무의 적용일을 **2025-02-02(이미 적용 중)**로, enforcement(Art.99 등)를 **2026-08-03**으로 명확히 분리. §3 일정 표·단서, §12 제목·헤더·자기검토 재구성 — audit #905 |
+| v0.7 | 2026-06-27 | **1차 출처 정합화 (audit #919)** — (1) Art.4 적용 근거를 Art.113(b)→**Art.113(a)** 정정(Art.4는 Chapter I 소재). (2) Enforcement(Art.99 등) 일자를 **2026-08-03→2026-08-02** 정정(Art.113 본문 chapeau "It shall apply from 2 August 2026"; Art.113(c)는 Art.6(1) 고위험 의무로 2027-08-02 적용이므로 enforcement 근거가 될 수 없음). (3) §12 D-Day를 **D-36(2026-06-27 기준 → 2026-08-02)** 로 재계산, §12.1 SLA 일자·§12.3 영업일 표·§12.4 KPI·§12.5 자기검토 일괄 갱신. EUR-Lex Reg. 2024/1689 Art.113 원문 및 European Commission AI Literacy Q&A로 직접 재확인 |
+| v0.8 | 2026-06-27 | **노후 인용 갱신 (audit #920)** — §5 PCCP 행 및 §9 출처를 "FDA PCCP **Draft** Guidance (2023)"→"**Final Guidance** — Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions (Final; 2025-08-18 현재 본; Docket FDA-2022-D-2628; original final issued December 2024)"으로 갱신. 범위를 ML→**AI-enabled device software functions 전반**으로 보정. FDA Guidance 페이지(2025-08-18 current)로 직접 재확인. 사내 SOP-AIGOV-001 v0.3 "FDA PCCP Guidance 2024" 표기와 정합 회복 |

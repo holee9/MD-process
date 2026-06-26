@@ -1,6 +1,9 @@
 ---
 title: "[AUDIT P1] EU_AI_Act_MDR_중첩적용_매핑 v0.6 — FDA PCCP Draft Guidance (2023) 노후 인용 (최종본 2024-12-03 미반영)"
 labels: "audit:currency,prio:P1,risk:medium"
+state: closed
+closed-date: 2026-06-27
+close-commits: ["TBD-this-execution"]
 ---
 
 ## 대상 문서
