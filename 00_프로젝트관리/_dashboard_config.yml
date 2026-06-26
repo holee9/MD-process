@@ -72,7 +72,7 @@ maintenance:
   - id: IEC_60601-2-54
     last_checked: '2026-06-15'
   cadence:
-    daily_last: '2026-06-26'
+    daily_last: '2026-06-27'
     weekly_last: '2026-06-15'
     monthly_last: ''
     quarterly_last: ''
