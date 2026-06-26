@@ -2,20 +2,20 @@
 doc-id: SOP-AIGOV-001
 title: AI 공정성·설명성·드리프트 거버넌스
 type: SOP
-version: v0.3
+version: v0.4
 status: draft
 category: 03_설계_개발관리
 purpose: 의료용 X-ray AI 구성요소의 공정성·설명성·드리프트를 전 수명주기에 걸쳐 모니터링·통제하는 거버넌스 정의
-applicable: [ISO 13485:2016 §7.3, FDA QMSR §820.30/ISO13485 §7.3, ISO 14971:2019, IEC 62304:2015, EU AI Act 2024/1689 Art.9/10/13/14/17/50/72, FDA PCCP Guidance 2024, MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, ISO/IEC 42001:2023, IMDRF AIMD N67]
+applicable: [ISO 13485:2016 §7.3, FDA QMSR §820.10(c) → ISO 13485:2016 §7.3 (incorporation by reference; §820.30은 Reserved), ISO 14971:2019, IEC 62304:2015, EU AI Act 2024/1689 Art.9/10/13/14/17/50/72, FDA PCCP Final Guidance (Final, Marketing Submission Recommendations for a PCCP for AI-Enabled Device Software Functions; Docket FDA-2022-D-2628; latest content 2025-08), MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, ISO/IEC 42001:2023, IMDRF AIMD N67]
 forms: [F-AIGOV-001, F-AIGOV-002]
 related-docs: [SOP-AIDATA-001, AI_구성요소_단위_성능평가, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-PSUR-001, SOP-FSCA-001, SOP-SBOM-001, 디지털의료제품법_SaMD_AI_요구, QC-IQ-001, EU_AI_Act_MDR_중첩적용_매핑]
 related-issues: [20]
 owner: AI Governance Officer
-last-review: 2026-06-08
-review-due: 2027-06-08
+last-review: 2026-06-27
+review-due: 2027-06-27
 ---
 
-# AI 공정성·설명성·드리프트 거버넌스 — v0.3
+# AI 공정성·설명성·드리프트 거버넌스 — v0.4
 
 ## 1. 목적
 
@@ -65,9 +65,9 @@ review-due: 2027-06-08
 - EU AI Database 등록 시 EUDAMED UDI와의 교차 참조 체계 사전 설계
 - ISO/IEC 42001:2023(AI 경영시스템) 인증 준비를 QMS 경영검토(SOP-MR-001)에 통합
 
-### 3.2 QMSR AI 품질 관리 요구사항 (v0.3 신설)
+### 3.2 QMSR AI 품질 관리 요구사항 (v0.3 신설 · v0.4 정정)
 
-FDA QMSR(2026-02-02 시행)에 따라 AI 구성요소의 설계·개발은 ISO 13485:2016 §7.3 전체를 준수해야 한다.
+FDA QMSR(2026-02-02 시행)에 따라 AI 구성요소의 설계·개발은 ISO 13485:2016 §7.3 전체를 준수해야 한다. **QMSR는 §820.30(Design controls)을 Reserved 처리하고**, **§820.10(c)** 가 ISO 13485:2016 §7.3(설계관리)을 incorporation by reference로 적용한다 — 따라서 본 SOP의 설계관리 인용 경로는 "§820.10(c) → ISO 13485:2016 §7.3"이며 "§820.30"은 인용하지 않는다.
 
 | QMSR 요구 | AI 거버넌스 대응 | 본 SOP 해당 절 |
 |-----------|-----------------|---------------|
@@ -352,3 +352,4 @@ EU AI Act Art. 72에 따라 고위험 AI 시스템은 EU AI Database에 등록�
 | v0.1 | 2026-04-25 | 초안 작성 | 업무규칙 개발팀 |
 | v0.2 | 2026-05-23 | 보강 — 단계별 절차 표(수행자/판정기준), F-AIGOV-001/002 양식, X-ray 하드웨어 드리프트·Detector 유형별 공정성 평가, 트리거-조치 매트릭스, 상호참조 확충 | QA/RA |
 | v0.3 | 2026-06-08 | QMSR·EU AI Act 대응 — §3.1 EU AI Act Digital Omnibus 시행 일정 조정 반영, §3.2 QMSR AI 품질 관리 요구사항(ISO 13485 §7.3 전체 매핑) 신설, §10.1 EU AI Database 등록 연동(Art.72·Annex VIII) 신설, ISO/IEC 42001:2023 AIMS 인증 준비 연계, SOP-SBOM-001 AI 런타임 SBOM 상호참조 추가 | QA/RA |
+| v0.4 | 2026-06-27 | **인용 정정 (audit #921)** — frontmatter `applicable:` 의 "FDA QMSR §820.30/ISO13485 §7.3"를 **"FDA QMSR §820.10(c) → ISO 13485:2016 §7.3 (incorporation by reference; §820.30은 Reserved)"** 로 정정(QMSR 21 CFR Part 820 eCFR 원문 직접 재확인 — §820.30 Reserved, §820.10(c)가 ISO 13485 §7.3 incorporate). §3.2 도입에 Reserved/incorporation by reference 단서 1줄 추가. PCCP 인용도 Final Guidance(Docket FDA-2022-D-2628)로 보강(audit #920 정합) | QA/RA |

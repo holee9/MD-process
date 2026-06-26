@@ -1,6 +1,9 @@
 ---
 title: "[AUDIT P1] SOP-AIGOV-001 v0.3 — applicable 'FDA QMSR §820.30/ISO13485 §7.3' 인용부정확 (§820.30은 QMSR에서 Reserved)"
 labels: "audit:citation,prio:P1,risk:medium"
+state: closed
+closed-date: 2026-06-27
+close-commits: ["TBD-this-execution"]
 ---
 
 ## 대상 문서
