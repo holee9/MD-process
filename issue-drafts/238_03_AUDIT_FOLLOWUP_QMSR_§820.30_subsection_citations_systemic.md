@@ -1,8 +1,9 @@
 ---
 title: "[AUDIT-FOLLOWUP P1] QMSR §820.30(f)/(g)/(i)/(j) subsection-letter 인용 사내 전반 잔존 — Reserved 사실과 불일치, ISO 13485:2016 §7.3 하위절로 일괄 전환 필요"
 labels: "source:emergent,type:audit-followup,audit:citation,prio:P1,risk:high,규제,QMSR,설계관리"
-state: open
+state: closed
 parent-audit: [921]
+closed-at: 2026-06-28
 ---
 
 ## 배경
