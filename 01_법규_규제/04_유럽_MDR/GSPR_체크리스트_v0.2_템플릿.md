@@ -2,14 +2,14 @@
 doc-id: GSPR_체크리스트_v0.2_템플릿
 title: QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿)
 type: Checklist
-version: v0.2
+version: v0.3
 status: draft
 category: 01_법규_규제
 purpose: QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿) 관련 문서
 applicable: [EU AI Act, EU MDR 2017/745, EU MDR GSPR, IEC60601-1, IEC60601-2-54, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019]
 related-issues: [5, 40, 46, 48, 49, 51, 53, 54, 56, 57, 58, 60, 62, 63]
 owner: TBD
-last-review: 2026-04-20
+last-review: 2026-06-28
 review-due: 2027-04-20
 ---
 
@@ -40,7 +40,7 @@ review-due: 2027-04-20
 | 9 | 물질·디바이스 통합 | | | ISO 10993 시리즈 | H | 생체적합성 평가 | |
 | 10 | 물질 (발암성·변이원성·생식독성·내분비교란) | | | ISO 10993-1 | H | 재료 Declaration | |
 | 11 | 방사선 보호 | | | IEC 60601-1-3, IEC 60601-2-54 (X-ray) | H | 방사선 안전 시험 | |
-| 12 | 프로그래머블 전자시스템 (SW) | | | IEC 62304:2006/A2:2015, IEC 82304-1:2016 | S | SW 개발 파일 | |
+| 12 | 프로그래머블 전자시스템 (SW) | | | IEC 62304:2006+AMD1:2015 (Ed.1.1), IEC 82304-1:2016 | S | SW 개발 파일 | |
 | 13 | 에너지·물질 공급 기기 | | | IEC 60601-1 | H | 전기안전 시험 | |
 | 14 | 일반적 구성·제작 | | | IEC 60601-1 | H | 기계·전기 설계문서 | |
 | 15 | 측정기능을 갖는 기기 | | | IEC 60601-1, OIML | H | 계측정확도 시험 | |
