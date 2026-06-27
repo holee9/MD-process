@@ -2,15 +2,15 @@
 doc-id: SOP-DVV-001
 title: SOP-DVV-001 — 설계개발 검증 및 유효성확인 절차 (Design Verification & Validation)
 type: SOP
-version: v0.1
+version: v0.2
 status: draft
 category: 03_설계_개발관리
 purpose: ISO 13485:2016 §7.3.6·§7.3.7 설계개발 검증(V&V) 프로세스 — 계획·실시·기록·승인 절차
 applicable:
   - ISO 13485:2016 §7.3.6, §7.3.7, §7.3.9
-  - FDA QMSR §820.30(f)(g)(i) (2026-02-02 발효)
+  - FDA QMSR §820.10(c) (2026-02-02 발효) → ISO 13485:2016 §7.3.6/§7.3.7/§7.3.9
   - EU MDR 2017/745 Annex II §6.1, Annex VII §4.5
-  - IEC 62304:2015+A1:2025 §5.6, §5.7
+  - IEC 62304:2006+AMD1:2015+A1:2025 §5.6, §5.7
   - IEC 62366-1:2015+A1:2020 (사용적합성 유효성확인)
   - ISO 14971:2019 §7 (위험관리 → V&V 입력)
   - IEC 60601-1:2005+A2 (HW 안전 검증)
@@ -19,7 +19,7 @@ forms: [F-DVV-001, F-DVV-002, F-DVV-003]
 related-docs: [SOP-DT-001, SOP-CC-001, SOP-DHF-001, CHK-DR-001, IEC_62304_SW_수명주기, IEC_62366-1_사용적합성_엔지니어링_계획서_v0.1, IEC60601-2-54_형식시험_체크리스트]
 related-issues: [1524]
 owner: TBD
-last-review: 2026-06-20
+last-review: 2026-06-28
 review-due: 2027-06-20
 ---
 
@@ -28,7 +28,7 @@ review-due: 2027-06-20
 > **본 절차는 표준 조항 기반 독립 작성됨 — 회사 실운영 문서 미참고.**
 
 ## 1. 목적
-ISO 13485:2016 §7.3.6(설계 검증)과 §7.3.7(설계 유효성확인)을 단일 V&V 프레임으로 통합 운영하여, FDA QMSR §820.30(f)(g) 및 EU MDR Annex I GSPR 충족을 위한 객관적 증거를 생성·DHF에 축적한다.
+ISO 13485:2016 §7.3.6(설계 검증)과 §7.3.7(설계 유효성확인)을 단일 V&V 프레임으로 통합 운영하여, FDA QMSR §820.10(c) → ISO 13485:2016 §7.3.6/§7.3.7 및 EU MDR Annex I GSPR 충족을 위한 객관적 증거를 생성·DHF에 축적한다.
 
 ## 2. 범위
 - 의료용 X-ray system(HW), detector(HW+SW), SaMD(Class B/C IEC 62304)를 포함하는 신규 설계·중대 변경(SOP-CC-001 분류 Major) 시 적용.
@@ -100,7 +100,7 @@ ISO 13485:2016 §7.3.6(설계 검증)과 §7.3.7(설계 유효성확인)을 단�
 **단계:**
 1. V&V 결과 패키지 합본 → 설계검토(CHK-DR-001 마일스톤) → R&D Lead·QA·RA 다중 서명.
 2. SOP-DHF-001에 따라 DHF에 등록 — 색인·버전·증빙 일관성 점검.
-3. EU MDR Technical Documentation Annex II §6.1, FDA Design History File §820.30(j) 동시 충족 확인.
+3. EU MDR Technical Documentation Annex II §6.1, FDA QMSR §820.10(c) → ISO 13485:2016 §7.3.10 (Design History File) 동시 충족 확인.
 4. 다음 단계(설계이관 SOP-DT-001) 게이트 통과.
 
 ### 5.5 변경 시 재 V&V 평가 (§7.3.9 + SOP-CC-001)

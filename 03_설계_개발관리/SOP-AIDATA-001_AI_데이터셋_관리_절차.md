@@ -2,16 +2,16 @@
 doc-id: SOP-AIDATA-001
 title: AI/ML 데이터셋 관리 절차
 type: SOP
-version: v0.2
+version: v0.3
 status: draft
 category: 03_설계_개발관리
 purpose: AI/ML 기반 의료기기의 학습·검증·시험 데이터셋 수집, 라벨링, 버전관리, 편향관리, 보존 절차 정의
-applicable: [ISO 13485:2016 §7.3, IEC 62304:2015 §5.2, ISO 14971:2019 §5, FDA GMLP 2021, FDA PCCP Guidance 2024, MFDS AI 의료기기 허가심사 가이드 2024, EU AI Act Art.10, MDCG 2025-6, 디지털의료제품법 §40]
+applicable: [ISO 13485:2016 §7.3, IEC 62304:2006+AMD1:2015 §5.2, ISO 14971:2019 §5, FDA GMLP 2021, FDA PCCP Guidance 2024, MFDS AI 의료기기 허가심사 가이드 2024, EU AI Act Art.10, MDCG 2025-6, 디지털의료제품법 §40]
 forms: [F-AIDATA-001, F-AIDATA-002]
 related-docs: [AI_구성요소_단위_성능평가, SOP-AIGOV-001, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-VAL-001, 디지털의료제품법_SaMD_AI_요구, 디지털의료기기_GMP_적합판정_신청_패키지]
 related-issues: [34]
 owner: Data Steward / AI/ML Lead
-last-review: 2026-05-23
+last-review: 2026-06-28
 review-due: 2027-05-23
 ---
 
@@ -32,7 +32,7 @@ AI/ML 기반 의료기기(X-ray 영상 결절 검출, 골밀도 추정, 선량 �
 | 규격/가이드 | 관련 요구 |
 |------------|-----------|
 | ISO 13485:2016 §7.3 | 설계개발 입력·검증·확인 — 데이터를 설계 입력으로 관리 |
-| IEC 62304:2015 §5.2 | SW 요구사항 (데이터 의존성 포함) |
+| IEC 62304:2006+AMD1:2015 §5.2 | SW 요구사항 (데이터 의존성 포함) |
 | ISO 14971:2019 §5 | 위험 분석 — 데이터 편향 → 진단 오류 위험 |
 | FDA GMLP (2021) | Good Machine Learning Practice 10원칙 |
 | FDA PCCP Guidance (2024) | 사전결정 변경관리 계획 — 데이터 재학습 포함 |

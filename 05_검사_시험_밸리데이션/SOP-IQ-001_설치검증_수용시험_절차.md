@@ -17,7 +17,7 @@ applicable:
   - FDA QMSR (21 CFR 820 → ISO 13485 alignment)
   - MFDS GMP 별표2
   - 진단용방사선발생장치의안전관리에관한규칙(제1122호) 제4조, 별표1
-  - IEC 62304:2015 §6.3.2 (SW 릴리스)
+  - IEC 62304:2006+AMD1:2015 §6.3.2 (SW 릴리스)
 forms: [F-IQ-001, F-IQ-002, F-IQ-003]
 related-docs:
   - SOP-CAL-001_교정관리_절차

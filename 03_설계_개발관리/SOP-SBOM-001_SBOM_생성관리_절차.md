@@ -2,7 +2,7 @@
 doc-id: SOP-SBOM-001
 title: SBOM 생성·관리 절차
 type: SOP
-version: v0.3
+version: v0.4
 status: draft
 category: 03_설계_개발관리
 purpose: 의료용 X-ray 시스템 SW 구성요소의 SBOM 생성·유지·취약점 관리 절차를 정의
@@ -11,7 +11,7 @@ forms: [F-SBOM-001, F-SBOM-002]
 related-docs: [SOP-CC-001, SOP-DT-001, SOP-CVD-001, IEC_81001-5-1_FDA_Cybersecurity_SW보안, SOP-VAL-001, IEC_62304_SW_수명주기, SOP-PSUR-001, SOP-FSCA-001, SOP-AIGOV-001]
 related-issues: [13, 17]
 owner: SW Lead / Security Officer
-last-review: 2026-06-08
+last-review: 2026-06-28
 review-due: 2027-06-08
 ---
 
@@ -259,7 +259,7 @@ C. X-ray 특수 구성요소 포함 확인
 | 문서/표준 | 관계 |
 |-----------|------|
 | IEC 81001-5-1:2021 | 사이버보안 SBOM 요구 (§7.SR) |
-| IEC 62304:2015 | SW 구성 관리 (§8) |
+| IEC 62304:2006+AMD1:2015 | SW 구성 관리 (§8) |
 | SOP-CC-001 | 취약점 패치 시 변경관리 |
 | SOP-DT-001 | 이관 시 SBOM 확정본 전달 |
 | SOP-PSUR-001 | 시판후 취약점 보고 |

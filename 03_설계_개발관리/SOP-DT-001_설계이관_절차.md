@@ -2,16 +2,16 @@
 doc-id: SOP-DT-001
 title: 설계이관(Design Transfer) 절차
 type: SOP
-version: v0.3
+version: v0.4
 status: draft
 category: 03_설계_개발관리
 purpose: 설계·개발 산출물을 제조 공정으로 이관하는 절차, 책임, 검증 기준을 정의하여 생산 준비 상태 보장
-applicable: [ISO13485:2016 §7.3.8, FDA QMSR (ISO13485 §7.3.8 편입 — 구 §820.30(h) 대체), EU MDR 2017/745 Annex II §4, IEC 62304:2015 §5.8, IEC 60601-2-54:2022, ISO 14971:2019, IEC 62366-1:2015, EU AI Act 2024/1689 Art.17]
+applicable: [ISO13485:2016 §7.3.8, FDA QMSR (ISO13485 §7.3.8 편입 — 구 §820.30(h) 대체), EU MDR 2017/745 Annex II §4, IEC 62304:2006+AMD1:2015 §5.8, IEC 60601-2-54:2022, ISO 14971:2019, IEC 62366-1:2015, EU AI Act 2024/1689 Art.17]
 forms: [F-DT-001, F-DT-002]
 related-docs: [설계개발_프로세스, CHK-DR-001, SOP-VAL-001, SOP-CAL-001, SOP-PKG-001, SOP-IQ-001, SOP-CC-001, SOP-TRC-001, SOP-SBOM-001, SOP-AIGOV-001, SOP-AIDATA-001, QC-IQ-001]
 related-issues: []
 owner: 설계개발 Lead / 생산기술 Lead
-last-review: 2026-06-08
+last-review: 2026-06-28
 review-due: 2027-06-08
 ---
 
@@ -36,7 +36,7 @@ review-due: 2027-06-08
 | ISO 13485:2016 | §7.3.8 | 설계·개발 출력의 제조 이관 절차 문서화, 이관 전 제조 적합성 검증 |
 | FDA QMSR (2026-02-02 시행) | ISO 13485 §7.3.8 편입 (구 §820.30(h) 대체) | Design Transfer — 설계를 생산 사양으로 올바르게 변환, 제조 적합성 객관적 증거(Objective Evidence) 요구 강화 |
 | EU MDR 2017/745 | Annex II §4 | 설계·제조 정보, 공정 밸리데이션 기술문서 포함 |
-| IEC 62304:2015 | §5.8 | SW 릴리스 관리 — 빌드 절차, 릴리스 노트 |
+| IEC 62304:2006+AMD1:2015 | §5.8 | SW 릴리스 관리 — 빌드 절차, 릴리스 노트 |
 | IEC 60601-2-54:2022 | 전체 | X-ray 장비 기본안전·필수성능 생산 시 유지 보장 |
 | ISO 14971:2019 | §7, §10 | 잔여 위험 수용 확인 후 이관 승인 |
 | IEC 62366-1:2015 | §5.9 | 사용적합성 평가 완료 후 이관 |

@@ -13,7 +13,7 @@ applicable:
   - FDA QMSR §820.50 (Purchasing controls)
   - EU MDR 2017/745 Art.10(9)(f)
   - IEC 81001-5-1:2021 §6.2 (공급망 보안)
-  - IEC 62304:2015 §5.2 (SW 외주 요구사항)
+  - IEC 62304:2006+AMD1:2015 §5.2 (SW 외주 요구사항)
   - MFDS GMP 별표2 §7.4
 forms:
   - F-SUP-001 (공급자 초기평가 양식)

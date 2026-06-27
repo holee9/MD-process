@@ -2,16 +2,16 @@
 doc-id: SOP-AIGOV-001
 title: AI 공정성·설명성·드리프트 거버넌스
 type: SOP
-version: v0.4
+version: v0.5
 status: draft
 category: 03_설계_개발관리
 purpose: 의료용 X-ray AI 구성요소의 공정성·설명성·드리프트를 전 수명주기에 걸쳐 모니터링·통제하는 거버넌스 정의
-applicable: [ISO 13485:2016 §7.3, FDA QMSR §820.10(c) → ISO 13485:2016 §7.3 (incorporation by reference; §820.30은 Reserved), ISO 14971:2019, IEC 62304:2015, EU AI Act 2024/1689 Art.9/10/13/14/17/50/72, FDA PCCP Final Guidance (Final, Marketing Submission Recommendations for a PCCP for AI-Enabled Device Software Functions; Docket FDA-2022-D-2628; latest content 2025-08), MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, ISO/IEC 42001:2023, IMDRF AIMD N67]
+applicable: [ISO 13485:2016 §7.3, FDA QMSR §820.10(c) → ISO 13485:2016 §7.3 (incorporation by reference; §820.30은 Reserved), ISO 14971:2019, IEC 62304:2006+AMD1:2015, EU AI Act 2024/1689 Art.9/10/13/14/17/50/72, FDA PCCP Final Guidance (Final, Marketing Submission Recommendations for a PCCP for AI-Enabled Device Software Functions; Docket FDA-2022-D-2628; latest content 2025-08), MFDS AI 허가심사 가이드 2025, 디지털의료제품법 §40, ISO/IEC 23894:2023, ISO/IEC TS 12791:2024, ISO/IEC 42001:2023, IMDRF AIMD N67]
 forms: [F-AIGOV-001, F-AIGOV-002]
 related-docs: [SOP-AIDATA-001, AI_구성요소_단위_성능평가, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-PSUR-001, SOP-FSCA-001, SOP-SBOM-001, 디지털의료제품법_SaMD_AI_요구, QC-IQ-001, EU_AI_Act_MDR_중첩적용_매핑]
 related-issues: [20]
 owner: AI Governance Officer
-last-review: 2026-06-27
+last-review: 2026-06-28
 review-due: 2027-06-27
 ---
 

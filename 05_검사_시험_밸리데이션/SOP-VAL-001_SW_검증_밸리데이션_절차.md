@@ -7,7 +7,7 @@ status: draft
 category: 05_검사_시험_밸리데이션
 purpose: IEC 62304 기반 의료기기 소프트웨어의 검증(Verification) 및 밸리데이션(Validation) 활동을 체계적으로 수행하기 위한 절차를 정의한다
 applicable:
-  - IEC 62304:2015 §5.5, §5.6, §5.7, §5.8
+  - IEC 62304:2006+AMD1:2015 §5.5, §5.6, §5.7, §5.8
   - ISO 13485:2016 §7.3.6, §7.3.7, §7.5.6
   - FDA QMSR (21 CFR 820 → ISO 13485 alignment)
   - EU MDR 2017/745 Annex I §17
