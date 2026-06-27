@@ -2,19 +2,19 @@
 doc-id: F-DVV-001
 title: F-DVV-001 — 설계 검증 계획·결과서 (DVP/DVR)
 type: Form
-version: v0.1
+version: v0.2
 status: draft
 category: 03_설계_개발관리
 purpose: ISO 13485 §7.3.6 설계 검증 계획·결과 기록 통합 양식
 applicable:
   - ISO 13485:2016 §7.3.6
-  - FDA QMSR §820.30(f)
+  - FDA QMSR §820.10(c) → ISO 13485:2016 §7.3.6 (설계 검증)
   - IEC 62304 §5.6
   - IEC 60601-1, 60601-2-54
 related-docs: [SOP-DVV-001, SOP-DHF-001, F-DVV-003]
 related-issues: [1524]
 owner: TBD
-last-review: 2026-06-20
+last-review: 2026-06-28
 review-due: 2027-06-20
 ---
 

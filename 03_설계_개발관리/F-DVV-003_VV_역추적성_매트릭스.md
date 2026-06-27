@@ -2,18 +2,18 @@
 doc-id: F-DVV-003
 title: F-DVV-003 — V&V 역추적성 매트릭스
 type: Form
-version: v0.1
+version: v0.2
 status: draft
 category: 03_설계_개발관리
 purpose: 설계입력 ↔ 위험통제 ↔ 검증/유효성확인 ID 1:N 매핑
 applicable:
   - ISO 13485:2016 §7.3.6 §7.3.7
-  - FDA QMSR §820.30(j) DHF
+  - FDA QMSR §820.10(c) → ISO 13485:2016 §7.3.10 (DHF)
   - ISO 14971:2019 §10 위험관리 출력
 related-docs: [SOP-DVV-001, F-DVV-001, F-DVV-002, SOP-DHF-001]
 related-issues: [1524]
 owner: TBD
-last-review: 2026-06-20
+last-review: 2026-06-28
 review-due: 2027-06-20
 ---
 

@@ -2,20 +2,20 @@
 doc-id: F-DVV-002
 title: F-DVV-002 — 설계 유효성확인 보고서 (VVR)
 type: Form
-version: v0.1
+version: v0.2
 status: draft
 category: 03_설계_개발관리
 purpose: ISO 13485 §7.3.7 설계 유효성확인 보고서 양식
 applicable:
   - ISO 13485:2016 §7.3.7
-  - FDA QMSR §820.30(g)
+  - FDA QMSR §820.10(c) → ISO 13485:2016 §7.3.7 (설계 유효성확인)
   - EU MDR 2017/745 Annex II §6.1 b), Art.61
   - IEC 62366-1 §5.9
   - IEC 62304 §5.7
 related-docs: [SOP-DVV-001, SOP-DHF-001, F-DVV-003]
 related-issues: [1524]
 owner: TBD
-last-review: 2026-06-20
+last-review: 2026-06-28
 review-due: 2027-06-20
 ---
 
