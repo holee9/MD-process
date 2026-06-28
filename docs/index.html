@@ -51,7 +51,7 @@ th{color:var(--muted);font-weight:600}
 </style></head><body>
 <style>.actions a[data-tip]{position:relative}.actions a[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:128%;width:290px;white-space:normal;text-align:left;background:#0b1020;color:#e2e8f0;border:1px solid #475569;border-radius:7px;padding:9px 11px;font-size:.72rem;line-height:1.5;font-weight:400;z-index:30;box-shadow:0 8px 22px rgba(0,0,0,.5)}.actions a[data-tip]:hover::before{content:"";position:absolute;left:16px;top:118%;border:6px solid transparent;border-bottom-color:#475569;z-index:30}</style>
 <h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>
-<p class="subtitle">마지막 갱신: <strong>2026-06-27</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
+<p class="subtitle">마지막 갱신: <strong>2026-06-28</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
@@ -59,33 +59,33 @@ th{color:var(--muted);font-weight:600}
 <div class="card" style="border-color:#7c3aed">
 <h2 style="color:#a78bfa">🔬 사실성·신뢰도 (독립 감사 · 1차 출처 재검증)</h2>
 <div class="grid">
-<div class="kpi yellow"><div class="value">77.8%</div><div class="label">최신 표본 사실 통과율</div></div>
-<div class="kpi green"><div class="value">0</div><div class="label">열린 사실오류(audit P0)</div></div>
-<div class="kpi"><div class="value">22</div><div class="label">누적 발견 사실오류</div></div>
-<div class="kpi"><div class="value">85</div><div class="label">누적 검증 주장</div></div>
+<div class="kpi red"><div class="value">55.6%</div><div class="label">최신 표본 사실 통과율</div></div>
+<div class="kpi red"><div class="value">4</div><div class="label">열린 사실오류(audit P0)</div></div>
+<div class="kpi"><div class="value">26</div><div class="label">누적 발견 사실오류</div></div>
+<div class="kpi"><div class="value">94</div><div class="label">누적 검증 주장</div></div>
 <div class="kpi green"><div class="value">25</div><div class="label">감사결함 수정완료</div></div>
-<div class="kpi"><div class="value">65.9%</div><div class="label">누적 통과율</div></div>
+<div class="kpi"><div class="value">64.9%</div><div class="label">누적 통과율</div></div>
 </div>
 <canvas id="auditTrend" height="90"></canvas>
 <p style="font-size:.76rem;color:var(--muted);margin-top:6px">독립 감사관이 빌더 산출물을 <b>1차 출처(법령·규제기관·표준 원문)</b>로 재검증. 통과율 = (검증주장 − 사실오류 − 인용결함)/검증주장. 시험소·컨설팅 자료는 보조(범위)로만 사용.</p>
 </div>
 <div class="card"><h2>3소스 이슈 백로그 (열림)</h2><table>
 <tr><th>소스</th><th>열린 수</th><th>의미</th></tr>
-<tr><td><b>① audit</b> (감사 결함)</td><td>0</td><td>독립 감사가 찾은 미수정 결함 — <b>최우선</b></td></tr>
+<tr><td><b>① audit</b> (감사 결함)</td><td>4</td><td>독립 감사가 찾은 미수정 결함 — <b>최우선</b></td></tr>
 <tr><td>② plan (전략 갭)</td><td>23</td><td>ISO 13485 조항완전성 백로그</td></tr>
 <tr><td>③ emergent (발생)</td><td>1</td><td>실행 중 자가발견</td></tr>
 </table>
-<p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 1 / P1 15 / P2 11</p>
+<p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 5 / P1 15 / P2 11</p>
 </div>
-<script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-23", "docs": 3, "cl": 7, "er": 2, "pass": 57.1}, {"d": "2026-06-24", "docs": 3, "cl": 9, "er": 2, "pass": 77.8}, {"d": "2026-06-25", "docs": 3, "cl": 12, "er": 4, "pass": 58.3}, {"d": "2026-06-26", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-27", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28", "5\ud68c\ucc28", "6\ud68c\ucc28", "7\ud68c\ucc28", "8\ud68c\ucc28", "9\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9, 57.1, 77.8, 58.3, 76.9, 77.8],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
+<script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-23", "docs": 3, "cl": 7, "er": 2, "pass": 57.1}, {"d": "2026-06-24", "docs": 3, "cl": 9, "er": 2, "pass": 77.8}, {"d": "2026-06-25", "docs": 3, "cl": 12, "er": 4, "pass": 58.3}, {"d": "2026-06-26", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-27", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-28", "docs": 2, "cl": 9, "er": 4, "pass": 55.6}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28", "5\ud68c\ucc28", "6\ud68c\ucc28", "7\ud68c\ucc28", "8\ud68c\ucc28", "9\ud68c\ucc28", "10\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9, 57.1, 77.8, 58.3, 76.9, 77.8, 55.6],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
 <div class="card" style="border-color:#2563eb">
 <h2 style="color:#5eb0ef">👤 사람 점검 (주간/월간 — 트리거 기반 · GitHub에서 바로 결정 반영)</h2>
 <table>
 <tr><th>주기</th><th>점검 항목</th><th>현재</th><th>결정 트리거</th></tr>
-<tr><td rowspan="3"><b>주간</b></td><td>사실 통과율 추세</td><td>데이터 누적 중 (9사이클)</td><td>하락 → 집중 지시</td></tr>
-<tr><td>열린 audit P0(미수정 사실오류)</td><td>0</td><td>&gt;0 지속 → 루프 점검</td></tr>
+<tr><td rowspan="3"><b>주간</b></td><td>사실 통과율 추세</td><td>데이터 누적 중 (10사이클)</td><td>하락 → 집중 지시</td></tr>
+<tr><td>열린 audit P0(미수정 사실오류)</td><td>4</td><td>&gt;0 지속 → 루프 점검</td></tr>
 <tr><td>해석범위·미확인(RA 판단)</td><td><a href="https://github.com/holee9/MD-process/issues?q=is%3Aopen+label%3Areview" target="_blank">목록</a></td><td>RA만 결정 가능</td></tr>
-<tr><td rowspan="2"><b>월간</b></td><td>표본 누적(사실성 기준선)</td><td>9 사이클 / 누적 65.9%</td><td>충분 → 정식 게이트 재채점</td></tr>
+<tr><td rowspan="2"><b>월간</b></td><td>표본 누적(사실성 기준선)</td><td>10 사이클 / 누적 64.9%</td><td>충분 → 정식 게이트 재채점</td></tr>
 <tr><td>조항완전성(plan 백로그)</td><td>23 열림</td><td>천장 근접 → 엔진완성 선언·조직통합</td></tr>
 </table>
 <div class="actions" style="margin-top:10px">
@@ -130,66 +130,66 @@ function submitIssueForm(){
 <div class="grid">
 <div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi green"><div class="value">100%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (244/241)</div></div>
+<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (253/250)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
-<div class="kpi red"><div class="value">31</div><div class="label">미해결 이슈</div></div>
+<div class="kpi red"><div class="value">39</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">89</div><div class="label">통제 문서 (01~10)</div></div>
 </div>
 <div class="card"><h2>유지보수 케이던스 현황</h2><table>
 <tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
-<tr><td>일일</td><td>매일 03:18</td><td>2026-06-28</td><td>매 실행</td></tr>
+<tr><td>일일</td><td>매일 03:18</td><td>2026-06-29</td><td>매 실행</td></tr>
 <tr><td>주간</td><td>월요일</td><td>2026-06-15</td><td>2026-06-29</td></tr>
 <tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-07-01</td></tr>
-<tr><td>분기</td><td>1·4·7·10월 1일</td><td>-</td><td>2026-07-01</td></tr>
+<tr><td>분기</td><td>1·4·7·10월 1일</td><td>2026-06-28</td><td>2026-07-01</td></tr>
 </table></div>
 <div class="two-col">
 <div class="card"><h2>규제 추적 현황</h2><table>
 <tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
-<tr><td>FDA_QMSR</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_MDR_2017_745</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>ISO_14971_2019</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_62304</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_60601-2-54</td><td>2026-06-15</td><td>12일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>FDA_QMSR</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-06-15</td><td>13일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 241건 중 210건 완료 · 미해결 31건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 250건 중 211건 완료 · 미해결 39건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
 <tr><td colspan="4">만기 도래 문서 없음 — 전 문서 검토주기 내</td></tr>
 </table></div>
 <div class="card"><h2>문서통제 정합성</h2><table>
-<tr><td>frontmatter 유효 문서</td><td>241/242 (100%)</td></tr>
+<tr><td>frontmatter 유효 문서</td><td>246/247 (100%)</td></tr>
 <tr><td>frontmatter 결함</td><td>1건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>244/241 일치</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>253/250 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
-<li><span class="date">06-26</span>chore(issues): update _log.json [skip ci]</li>
-<li><span class="date">06-26</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">06-26</span>audit(925-926): GSPR_체크리스트 IEC 62304/A2:2015 미존재(P0) + IEC 62304:2015 표기 사내 광범위(P1) — 2026</li>
-<li><span class="date">06-26</span>chore(dashboard): cadence.daily_last 2026-06-27 갱신 + dashboard rebuild [skip ci]</li>
-<li><span class="date">06-26</span>issue(238 P1 emergent): QMSR §820.30(f)/(g)/(i)/(j) subsection-letter 인용 사내 13개 위치 잔존 — 차기</li>
-<li><span class="date">06-26</span>audit(921) fix: SOP-AIGOV-001 v0.3→v0.4 — frontmatter applicable &#x27;FDA QMSR §820.30/IS</li>
-<li><span class="date">06-26</span>audit(919,920) fix: EU_AI_Act_MDR_중첩적용_매핑 v0.6→v0.8 — (919) Art.113(b)→(a)·enforcement 202</li>
-<li><span class="date">06-26</span>chore(issues): update _log.json [skip ci]</li>
-<li><span class="date">06-26</span>report(weekly): 주간 갭분석 2026-06-26</li>
-<li><span class="date">06-25</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-28</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-28</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
+<li><span class="date">06-28</span>report(quarterly): 분기 종합 2026-Q2</li>
+<li><span class="date">06-27</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-27</span>audit(927-930): PMS_개요 IEC62304 §9/EU AI Act Art.72/EU MDR Art.87 + IEC_62366-1 디지털의료제품법 법</li>
+<li><span class="date">06-27</span>build(cadence): daily_last 2026-06-28 갱신 + 매트릭스/대시보드/readiness 재빌드 [skip ci]</li>
+<li><span class="date">06-27</span>chore(issues): close #925 #926 #238 (state=closed, closed-at=2026-06-28)</li>
+<li><span class="date">06-27</span>docs(xver-2026-06-28): 교차검증 보고서 — audit #925/#926/#238 정정 검증 (v1.0)</li>
+<li><span class="date">06-27</span>fix(audit-238): F-DVV-001/002/003 §820.30(letter) → §820.10(c)→ISO 13485 §7.3.x</li>
+<li><span class="date">06-27</span>fix(audit-926): IEC 62304:2015(단축형) → IEC 62304:2006+AMD1:2015 사내 일괄 정정</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
 <div>📅 주간: 월요일 · 월간: 1일 · 분기: 1·4·7·10월</div>
-<div>📊 리서치 로그: 73건</div>
-<div>✅ 교차검증: 69건</div>
+<div>📊 리서치 로그: 74건</div>
+<div>✅ 교차검증: 73건</div>
 <div>🌐 GitHub Pages 배포</div>
 </div></div>
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[210, 31], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[211, 39], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>
