@@ -4,9 +4,9 @@ title: 의료기기파일 및 기술문서 관리 절차
 type: Procedure
 category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
-version: v0.3
+version: v0.4
 status: draft
-last-review: 2026-06-25
+last-review: 2026-06-29
 owner: RA/QA
 applicable:
   - ISO 13485:2016
@@ -16,6 +16,8 @@ applicable:
   - IEC 62304
   - IEC 60601-2-54
   - IEC 81001-5-1
+  - FDA 510(k) Program Guidance (2014-07-28)
+  - FDA SSXI 510(k) Guidance (2016-09-01)
 ---
 
 # TF-TD-001 의료기기파일 및 기술문서 관리 절차
@@ -27,6 +29,7 @@ applicable:
 | v0.1 | 2026-05-03 | 초안 — MDF 정의, DHF/DMR/DHR 개요, Annex II 기본 매핑 | holee9-automation |
 | v0.2 | 2026-05-30 | STED 매핑, MFDS 별표 상세, FDA QMSR 전환 반영, eDMS 요건, F-TD-002 상세화 | holee9-automation |
 | v0.3 | 2026-06-25 | §9.3 §820.35(a)(b)(c)(d) 하위항목 주제 eCFR 1차 재확인 정정 — (a)Records of complaints/(b)Records of servicing activities/(c)UDI/(d)Confidentiality; §9.2·§12.4 동반 정정; Part 11은 §820.35 외부 독립 Part로 표현 [audit #915] | holee9-builder |
+| v0.4 | 2026-06-29 | §18 N:M Substantial Equivalence 비교 매트릭스 양식 신설(predicate 최대 5 × model variant cross-product: scintillator×substrate×portability), §18.4 Reference Device 항 분리, §18.5 적합성 표준 일괄 매핑, §18.6 SE 결론문 양식; §17에 F-TD-005 추가; §16 교차참조에 12_벤치마크 3건 추가 [plan #934] | holee9-builder |
 
 ---
 
@@ -566,6 +569,10 @@ MDF (Medical Device File) 구성 문서의 완전성을 EU MDR Annex II 전 섹�
 | 05_검사/IEC60601-2-54_형식시험_체크리스트 | 방사선 성능 시험 체크리스트 |
 | 07_위험관리/ISO14971_프로세스_상세 | RMF 구성·관리 |
 | 08_PMS/SOP-PMS-001 | PMS 기록 → MDF 연계 |
+| 12_교차검증/벤치마크_2026-Q2_K243734 | Special 510(k) Reference Device 3건 패턴·DQE/MTF/Sensitivity 정량 |
+| 12_교차검증/벤치마크_2026-Q2_K250211 | Multi-predicate 4건·다중 UI 변형 패턴 |
+| 12_교차검증/벤치마크_2026-Q2_K243171 | 단일 510(k) 8개 모델(CsI×GOS×Glass×Non-Glass×Wireless/Wired) |
+| 13_규제평가/FDA_510k_RTA | Section C1 Non-clinical Bench Performance·SE 비교 매트릭스 RTA 충족 |
 
 ## 17. 관련 양식 목록
 
@@ -575,8 +582,150 @@ MDF (Medical Device File) 구성 문서의 완전성을 EU MDR Annex II 전 섹�
 | F-TD-002 | MDF 완전성 검증 체크리스트 | 인허가 제출 전·정기 검토 시 (본 문서 §12) |
 | F-TD-003 | 기술문서 갱신 이력 로그 | 갱신 트리거·변경 내용·승인 기록 |
 | F-TD-004 | eDMS 접근권한 신청·변경서 | eDMS 사용자 권한 관리 |
+| F-TD-005 | SE 비교 매트릭스(Substantial Equivalence Matrix) | 510(k) Predicate×Model variant N:M 비교표·SE 결론문(본 문서 §18) |
 | F-DOC-001 | 문서관리대장 | 문서_기록관리_개요 §10 참조 |
 | F-DOC-002 | 외부문서 관리대장 | 문서_기록관리_개요 §11 참조 |
+
+
+## 18. N:M Substantial Equivalence 비교 매트릭스 양식 [v0.4 신설, plan #934]
+
+### 18.1 목적·적용 범위
+
+본 §은 FDA 510(k) Premarket Notification(21 CFR 807 Subpart E)·Special 510(k)·De Novo 제출 시 Substantial Equivalence(SE) 입증을 위한 **N:M(N predicate × M model variant) 비교 매트릭스 양식**을 정의한다. 적용 제품군은 자사 디지털 X-ray Flat Panel Detector(FPD) 및 X-ray System(Product Code MQB, 21 CFR 892.1680)으로 한다. 본 §은 양식·작성 안내만 제공하며, 실제 비교값은 제품별 510(k) dossier 작성 시 F-TD-005에 채운다.
+
+### 18.2 Predicate vs Reference Device 구분
+
+FDA 510(k) Program Guidance(2014-07-28)·SSXI Guidance(2016-09-01) 기준 용어를 다음과 같이 구분한다.
+
+| 구분 | FDA 정의(요지) | 자사 매트릭스 적용 |
+|------|---------------|------------------|
+| **Predicate device** | 동일한 의도된 사용(intended use)을 가진 합법적 시판 기기. SE 입증의 직접 근거. (FDA 510(k) Program Guidance 2014, §6) | §18.3 Predicate columns(최대 5건 동시 비교) |
+| **Reference device** | Predicate가 아니며, **과학적 방법론·표준 기준값·시험 방법** 등을 보조 지원하는 합법적 시판 기기. SE 단독 근거로 사용 불가. (FDA 510(k) Program Guidance 2014, §7) | §18.4 Reference columns(별도 표) |
+
+> 주: Multi-predicate(>1)는 동일 의도된 사용 전제 하에 기술적 특성의 일부씩을 각각의 predicate에 매칭하는 패턴이며, FDA에서 명시적으로 허용한다(FDA Guidance §6). 자사는 최대 5건 동시 비교 셀을 양식 한도로 한다.
+
+### 18.3 §SE-1 Predicate 비교 매트릭스 (N predicate × M model variant)
+
+비교축은 **Model variant Row × Predicate Column**으로 구성하며, **Model variant**는 다음 3차원의 cross-product로 정의한다.
+
+| 차원 | 값 |
+|------|-----|
+| Scintillator | CsI / GOS |
+| Substrate | Glass / Non-Glass PET |
+| Portability | Wireless / Wired / Non-portable |
+
+> Cross-product 최대 조합 수 = 2 × 2 × 3 = **12 model variants**. 단일 510(k)에서 실제로 등록할 변형 수는 RA 전략에 따라 부분 집합을 선택한다(자사 표 한도 12 row).
+
+**비교 매트릭스 표(공란 양식, 채움은 F-TD-005)**
+
+| Model Variant ID | Scintillator | Substrate | Portability | Subject Device 값 | Predicate-1 (K#####) | Predicate-2 (K#####) | Predicate-3 (K#####) | Predicate-4 (K#####) | Predicate-5 (K#####) | SE 판정 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| MV-01 | CsI | Glass | Wireless | | | | | | | |
+| MV-02 | CsI | Glass | Wired | | | | | | | |
+| MV-03 | CsI | Glass | Non-portable | | | | | | | |
+| MV-04 | CsI | Non-Glass PET | Wireless | | | | | | | |
+| MV-05 | CsI | Non-Glass PET | Wired | | | | | | | |
+| MV-06 | CsI | Non-Glass PET | Non-portable | | | | | | | |
+| MV-07 | GOS | Glass | Wireless | | | | | | | |
+| MV-08 | GOS | Glass | Wired | | | | | | | |
+| MV-09 | GOS | Glass | Non-portable | | | | | | | |
+| MV-10 | GOS | Non-Glass PET | Wireless | | | | | | | |
+| MV-11 | GOS | Non-Glass PET | Wired | | | | | | | |
+| MV-12 | GOS | Non-Glass PET | Non-portable | | | | | | | |
+
+비교 대상 기술적 특성(rows 내 Subject/Predicate 셀에 채울 항목)은 다음과 같다(SSXI Guidance 2016-09-01 §VII 항목 + K243171/K250211/K243734 벤치마크 공통 항목).
+
+| 분류 | 비교 항목 |
+|------|----------|
+| 의도된 사용 | Indications for Use, Contraindications, Patient population, Use environment |
+| 디텍터 코어 | Scintillator type/thickness(μm), Substrate, Pixel pitch(μm), Pixel matrix, Active area(cm), A/D bit depth |
+| 영상 성능 | DQE(0.5/1/2 lp/mm), MTF(0.5/1/2 lp/mm), Sensitivity(LSB/μGy), Resolution(lp/mm), Dynamic range, Lag |
+| 인터페이스 | Wired interface(Gigabit Ethernet 등), Wireless interface(Wi-Fi 802.11ac/ax 등), Tethering |
+| 전원 | Battery type/capacity, AC adapter, Charger |
+| 환경 | Operating temp/humidity, IP rating, Drop/load-bearing |
+| SW | SW Level of Concern(Basic/Moderate/Major), OTS components, Cybersecurity controls |
+| Biocompat | Patient-contact materials, ISO 10993 결과 |
+| Accessories | Battery, Cable, Adapter, Dongle, Charger, Software apps |
+
+### 18.4 §SE-2 Reference Device 표 (Predicate와 분리)
+
+Reference device는 **SE 단독 근거가 아니며, 과학적 방법론·표준 기준값을 보조**한다(FDA 510(k) Program Guidance 2014, §7). 자사 양식에서는 Predicate 표와 **물리적으로 분리된 별도 표**로 작성한다.
+
+| Reference ID | K-Number | 신청인/Trade Name | 인용 목적(예: scintillator 두께 표준값·DQE 측정 방법론) | 적용 모델 변형 | SE 단독 근거 사용 여부 |
+|---|---|---|---|---|---|
+| REF-01 | | | | | **불가**(고정) |
+| REF-02 | | | | | **불가**(고정) |
+| REF-03 | | | | | **불가**(고정) |
+
+> SSXI 디텍터의 reference device 적용 예: K243734(Allengers, Special 510k)는 K201528/K210988/K220510(InnoCare) 3건을 reference로 인용. K201528 등은 동일 신청인의 predicate가 아니며 scintillator 두께·DQE 표준값 보조용. (BMK-2026Q2-K243734 §1·§3)
+
+### 18.5 §SE-3 적합성 표준 일괄 매핑 양식
+
+K243734/K250211/K243171 3건 벤치마크 공통 표준 패턴이며, SE 매트릭스와 함께 510(k) §VII Performance Data에 일괄 매핑한다.
+
+| 분류 | 표준·가이던스 | 적용 부위 | 자사 산출물 |
+|------|--------------|----------|------------|
+| 전기안전 | AAMI/ANSI ES60601-1 (FDA Recognized Consensus Standard — 판본은 X-ray 표준매핑 v0.4 참조) | 시스템·디텍터 전기안전 | 전기안전 시험성적서 |
+| 일반 안전·성능 | IEC 60601-1 (판본은 X-ray 표준매핑 v0.4 참조) | 시스템·디텍터 일반 안전 | IEC 60601-1 형식시험 보고서 |
+| EMC | IEC 60601-1-2 (판본은 X-ray 표준매핑 v0.4 참조) | 방출·내성 | EMC 시험성적서 |
+| 사용적합성 | IEC 60601-1-6 + IEC 62366-1:2015+AMD1:2020 | HF/사용적합성 | UEF (IEC_62366-1_계획서) |
+| HFE 보조 | ANSI/AAMI HE75 (판본은 X-ray 표준매핑 v0.4 참조) | 일반 HFE 가이드 | UEF 부속 |
+| 방사선 성능 | IEC 60601-2-54 Ed.2 (2022-09-26) | X-ray 영상기기 안전·성능 | IEC60601-2-54_형식시험_체크리스트 |
+| 영상 성능(DQE) | IEC 62220-1-1 (DQE 측정 방법, 판본은 X-ray 표준매핑 v0.4 참조) | DQE 측정 방법 | DQE 시험 보고서(F-IQ-001 예정, plan #932) |
+| 영상 성능(MTF) | IEC 62220-1-3 (MTF 측정 방법, 판본은 X-ray 표준매핑 v0.4 참조) | MTF 측정 방법 | MTF 시험 보고서(F-IQ-001 예정, plan #932) |
+| SW 수명주기 | IEC 62304:2006+AMD1:2015 (Ed.1.1) [audit #908/#925 정정 패턴 적용 — 'A2:2020' 미존재 표준 인용 금지] | SW 수명주기 프로세스 | IEC_62304_SW_수명주기 |
+| SW 사이버보안 | IEC 81001-5-1:2021 + FDA Premarket Cybersecurity Guidance 2023-09-27 | SW 사이버보안 | IEC_81001-5-1_FDA_Cybersecurity_SW보안, SBOM |
+| FDA SW | FDA "Content of Premarket Submissions for Device Software Functions" (2023-06-14) | SW 문서 수준 | SW Level of Concern 평가서 |
+| FDA SSXI | FDA "Solid State X-ray Imaging Devices 510(k) Guidance" (2016-09-01) | SSXI 510(k) 일반 | 본 §18 + X-ray 표준매핑 |
+| 위험관리 | ISO 14971:2019 | 위험관리 프로세스 | RMF, ISO14971_프로세스_상세 |
+| 생체적합성 | ISO 10993-1:2018 + 시리즈 | 환자 접촉부 | ISO 10993 시험기록(F 양식 예정, plan #933) |
+| 라벨링 | ISO 15223-1:2021, ISO 20417:2021 | 라벨·IFU 기호 | DMR 라벨링 |
+
+### 18.6 §SE-4 Substantial Equivalence 결론문 표준 양식
+
+FDA 510(k) Program Guidance(2014-07-28) §6·§9에 따른 SE 결론은 다음 4요건의 충족 결과를 명시한다.
+
+| SE 요건(2014 Guidance Decision Flow) | 충족 진술 양식 |
+|---|---|
+| Decision 1 — Predicate 식별 | "The subject device {Trade Name} is being compared to legally marketed predicate device(s) K_____ (Predicate-1)[, K_____ (Predicate-2), …]." |
+| Decision 2 — Same intended use | "The subject device has the **same intended use** as the predicate(s) — diagnostic X-ray imaging for {populations}, in {environment}, used by {user qualifications}." |
+| Decision 3 — Same technological characteristics? | (Same case) "The subject device has **the same technological characteristics** as the predicate(s)." / (Different case) "The subject device has **different technological characteristics** in the following items: {list}; however, **these differences do not raise different questions of safety and effectiveness** based on §SE-1 comparison and §SE-3 standards-based performance testing." |
+| Decision 4/5 — Performance data 입증 | "Performance data demonstrate that the subject device is **as safe and effective** as the predicate(s) — see §SE-3 standards mapping and accompanying test reports (전기안전·EMC·DQE/MTF·SW V&V·cybersecurity·biocompat)." |
+| 최종 결론문 | "Therefore, the subject device is **substantially equivalent** to the identified predicate device(s) within the meaning of 21 CFR 807.100(b). The technological differences identified **raise no new/different questions of safety and effectiveness**." |
+
+> 표준 결론문 중 "raise no new/different questions of safety and effectiveness"는 FDA 21 CFR 807.100(b)(2)(ii)(B) 및 2014 Guidance §6의 표현을 직접 인용한 양식이며, 실제 dossier 작성 시 가감 없이 사용한다.
+
+### 18.7 §SE-5 매트릭스 작성·점검 절차
+
+| 단계 | 수행 | 책임 | 산출물 |
+|------|------|------|--------|
+| 1. Predicate 후보 검색 | FDA 510(k) Database(accessdata, openFDA) 검색, Product Code(예: MQB)·Regulation(21 CFR 892.1680)·intended use 일치 K-number 후보 5건 이상 추출 | RA Lead | Predicate 후보 long-list |
+| 2. Best practice 적용 | FDA "Best Practices for Selecting a Predicate Device" (2023-09) 기준 평가: ① 동일 product code ② 최근 SE 결정 ③ 시판 중 ④ recall/safety issue 부재 | RA Lead | Predicate short-list 5건 이하 |
+| 3. Reference device 결정 | Scientific methodology·표준 기준값 보조 필요 시 §18.4 별도 표 작성. SE 단독 근거 사용 금지 | RA Lead | Reference list |
+| 4. §SE-1 채움 | F-TD-005에 Subject·Predicate 컬럼 정량/정성값 기재. Source 셀에 K-number, Summary 페이지 인용 | RA Lead + 설계 Lead | F-TD-005 작성본 |
+| 5. §SE-3 표준 매핑 | §18.5 표 채움. 각 표준에 대응하는 시험성적서·V&V 문서 ID 기재 | QA + 설계 Lead | §SE-3 채움본 |
+| 6. §SE-4 결론문 작성 | §18.6 양식에 따라 SE 결론문 작성. Decision 1~5 진술 누락 없음 확인 | RA Lead | SE Conclusion Statement |
+| 7. 동반 문서 정합성 점검 | TF-TD-001 §12 F-TD-002 체크리스트 항목 §C/F/F.6 동시 충족 확인. ALARA_지원기능_설계명세·X-ray 표준매핑·IEC_62304_SW_수명주기 cross-ref 유효성 확인 | QA | F-TD-002 통과 기록 |
+| 8. PRRC/RA 최종 승인 | EU 동시 신청 시 PRRC 확인 후 510(k) §III/§VI/§VII 패키지 봉인 | PRRC + RA 팀장 | 승인 기록 |
+
+### 18.8 비적용·예외
+
+| 사례 | 처리 |
+|------|------|
+| De Novo classification 경로 | §18.3 Predicate 컬럼 공란. §SE-4 결론 대신 "De Novo classification request — no predicate, classification rationale separately" 진술 |
+| 단일 model variant 단일 predicate(1:1) | §18.3 표는 1 row × 1 predicate column으로 축소. 양식 자체는 동일 |
+| Special 510(k)(설계 변경 자기 predicate) | Predicate를 동일 신청인 K-number로 명시. §SE-3 표준은 변경 영향 부위만 갱신 |
+| Multi-predicate 5건 초과 | RA Lead 사전 승인 필요. 표 한도 5건 유지하되 별첨 부속표로 분리 |
+
+### 18.9 양식 부적합 시 조치
+
+| 부적합 사례 | 조치 |
+|------------|------|
+| Subject vs Predicate 정량값 차이 사유 미기재 | §18.5 해당 표준 시험 결과로 보강. 보강 불가 시 De Novo 경로 재평가 |
+| Reference device를 SE 단독 근거로 사용한 흔적 | §18.4 표시 위반 — 즉시 정정. RA 팀장 보고 |
+| §SE-4 결론문 "different questions" 진술 누락 | dossier 봉인 차단. §18.6 양식 강제 적용 |
+| Cross-ref 문서 폐지·갱신 미반영 | SOP-CC-001 변경통제 트리거. F-TD-002 §C/F 재실행 |
+
 
 ## 출처
 
@@ -588,4 +737,11 @@ MDF (Medical Device File) 구성 문서의 완전성을 EU MDR Annex II 전 섹�
 - MFDS 의료기기법 시행규칙 별표 (기술문서 심사자료)
 - IEC 62304:2006+A1:2015, IEC 60601-2-54:2022, IEC 81001-5-1:2021
 - IEC 62366-1:2015+Amd1:2020, ISO 14971:2019
-- 확인일: 2026-05-30
+- 확인일: 2026-05-30 (v0.3 기준)
+- FDA "The 510(k) Program: Evaluating Substantial Equivalence in Premarket Notifications [510(k)]" Guidance (2014-07-28) — Decision Flow, Predicate vs Reference 구분, "different questions of safety and effectiveness" 표현
+- FDA "Best Practices for Selecting a Predicate Device to Support a Premarket Notification [510(k)] Submission" Guidance (2023-09)
+- FDA "Solid State X-ray Imaging Devices 510(k) Submissions" Guidance (2016-09-01)
+- 21 CFR 807.100(b) Determination of Substantial Equivalence
+- IEC 62220-1-1:2015 (DQE), IEC 62220-1-3:2008 (MTF), AAMI/ANSI ES60601-1, ANSI/AAMI HE75:2009/R2018
+- BMK-2026Q2-K243734 / BMK-2026Q2-K250211 / BMK-2026Q2-K243171 (자사 분기 종합 벤치마크)
+- 확인일(v0.4 추가): 2026-06-29
