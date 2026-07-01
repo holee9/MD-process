@@ -4,9 +4,9 @@ title: 의료기기파일 및 기술문서 관리 절차
 type: Procedure
 category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
-version: v0.4
+version: v0.5
 status: draft
-last-review: 2026-06-29
+last-review: 2026-07-02
 owner: RA/QA
 applicable:
   - ISO 13485:2016
@@ -30,6 +30,7 @@ applicable:
 | v0.2 | 2026-05-30 | STED 매핑, MFDS 별표 상세, FDA QMSR 전환 반영, eDMS 요건, F-TD-002 상세화 | holee9-automation |
 | v0.3 | 2026-06-25 | §9.3 §820.35(a)(b)(c)(d) 하위항목 주제 eCFR 1차 재확인 정정 — (a)Records of complaints/(b)Records of servicing activities/(c)UDI/(d)Confidentiality; §9.2·§12.4 동반 정정; Part 11은 §820.35 외부 독립 Part로 표현 [audit #915] | holee9-builder |
 | v0.4 | 2026-06-29 | §18 N:M Substantial Equivalence 비교 매트릭스 양식 신설(predicate 최대 5 × model variant cross-product: scintillator×substrate×portability), §18.4 Reference Device 항 분리, §18.5 적합성 표준 일괄 매핑, §18.6 SE 결론문 양식; §17에 F-TD-005 추가; §16 교차참조에 12_벤치마크 3건 추가 [plan #934] | holee9-builder |
+| v0.5 | 2026-07-02 | audit 정정: §18.5 FDA Cyber Guidance 2023-09-27 → **2026-02 Final** (Docket FDA-2021-D-1158, 2회 supersede) [audit #938]; §18.6 §807.100(b)(2)(ii)(B) → **(C)** 정정, (B)는 "as safe and as effective" 근거 별기록 [audit #936]; §18.7·§출처 Best Practices Predicate Draft 상태·Docket FDA-2023-D-3134 명시 [audit #937] | holee9-builder |
 
 ---
 
@@ -674,7 +675,7 @@ K243734/K250211/K243171 3건 벤치마크 공통 표준 패턴이며, SE 매트�
 | 영상 성능(DQE) | IEC 62220-1-1 (DQE 측정 방법, 판본은 X-ray 표준매핑 v0.4 참조) | DQE 측정 방법 | DQE 시험 보고서(F-IQ-001 예정, plan #932) |
 | 영상 성능(MTF) | IEC 62220-1-3 (MTF 측정 방법, 판본은 X-ray 표준매핑 v0.4 참조) | MTF 측정 방법 | MTF 시험 보고서(F-IQ-001 예정, plan #932) |
 | SW 수명주기 | IEC 62304:2006+AMD1:2015 (Ed.1.1) [audit #908/#925 정정 패턴 적용 — 'A2:2020' 미존재 표준 인용 금지] | SW 수명주기 프로세스 | IEC_62304_SW_수명주기 |
-| SW 사이버보안 | IEC 81001-5-1:2021 + FDA Premarket Cybersecurity Guidance 2023-09-27 | SW 사이버보안 | IEC_81001-5-1_FDA_Cybersecurity_SW보안, SBOM |
+| SW 사이버보안 | IEC 81001-5-1:2021 + FDA Final Guidance "Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions" (**February 2026**, Docket FDA-2021-D-1158; supersedes 2025-06-27 및 2023-09-27 final) | SW 사이버보안 | IEC_81001-5-1_FDA_Cybersecurity_SW보안, SBOM |
 | FDA SW | FDA "Content of Premarket Submissions for Device Software Functions" (2023-06-14) | SW 문서 수준 | SW Level of Concern 평가서 |
 | FDA SSXI | FDA "Solid State X-ray Imaging Devices 510(k) Guidance" (2016-09-01) | SSXI 510(k) 일반 | 본 §18 + X-ray 표준매핑 |
 | 위험관리 | ISO 14971:2019 | 위험관리 프로세스 | RMF, ISO14971_프로세스_상세 |
@@ -693,14 +694,14 @@ FDA 510(k) Program Guidance(2014-07-28) §6·§9에 따른 SE 결론은 다음 4
 | Decision 4/5 — Performance data 입증 | "Performance data demonstrate that the subject device is **as safe and effective** as the predicate(s) — see §SE-3 standards mapping and accompanying test reports (전기안전·EMC·DQE/MTF·SW V&V·cybersecurity·biocompat)." |
 | 최종 결론문 | "Therefore, the subject device is **substantially equivalent** to the identified predicate device(s) within the meaning of 21 CFR 807.100(b). The technological differences identified **raise no new/different questions of safety and effectiveness**." |
 
-> 표준 결론문 중 "raise no new/different questions of safety and effectiveness"는 FDA 21 CFR 807.100(b)(2)(ii)(B) 및 2014 Guidance §6의 표현을 직접 인용한 양식이며, 실제 dossier 작성 시 가감 없이 사용한다.
+> 표준 결론문 중 "raise no new/different questions of safety and effectiveness"는 FDA **21 CFR 807.100(b)(2)(ii)(C)** 및 2014 Guidance §6의 표현을 직접 인용한 양식이며, 실제 dossier 작성 시 가감 없이 사용한다. (참고: "as safe and as effective" 표현의 근거는 21 CFR 807.100(b)(2)(ii)(B).) [audit #936]
 
 ### 18.7 §SE-5 매트릭스 작성·점검 절차
 
 | 단계 | 수행 | 책임 | 산출물 |
 |------|------|------|--------|
 | 1. Predicate 후보 검색 | FDA 510(k) Database(accessdata, openFDA) 검색, Product Code(예: MQB)·Regulation(21 CFR 892.1680)·intended use 일치 K-number 후보 5건 이상 추출 | RA Lead | Predicate 후보 long-list |
-| 2. Best practice 적용 | FDA "Best Practices for Selecting a Predicate Device" (2023-09) 기준 평가: ① 동일 product code ② 최근 SE 결정 ③ 시판 중 ④ recall/safety issue 부재 | RA Lead | Predicate short-list 5건 이하 |
+| 2. Best practice 적용 | FDA **Draft Guidance** "Best Practices for Selecting a Predicate Device" (September 2023, Docket FDA-2023-D-3134, *Not for implementation. Contains non-binding recommendations.*) **권고 사항 참고 평가** (자사 RA 정책으로 Draft 권고 채택): ① 동일 product code ② 최근 SE 결정 ③ 시판 중 ④ recall/safety issue 부재 | RA Lead | Predicate short-list 5건 이하 |
 | 3. Reference device 결정 | Scientific methodology·표준 기준값 보조 필요 시 §18.4 별도 표 작성. SE 단독 근거 사용 금지 | RA Lead | Reference list |
 | 4. §SE-1 채움 | F-TD-005에 Subject·Predicate 컬럼 정량/정성값 기재. Source 셀에 K-number, Summary 페이지 인용 | RA Lead + 설계 Lead | F-TD-005 작성본 |
 | 5. §SE-3 표준 매핑 | §18.5 표 채움. 각 표준에 대응하는 시험성적서·V&V 문서 ID 기재 | QA + 설계 Lead | §SE-3 채움본 |
@@ -739,9 +740,10 @@ FDA 510(k) Program Guidance(2014-07-28) §6·§9에 따른 SE 결론은 다음 4
 - IEC 62366-1:2015+Amd1:2020, ISO 14971:2019
 - 확인일: 2026-05-30 (v0.3 기준)
 - FDA "The 510(k) Program: Evaluating Substantial Equivalence in Premarket Notifications [510(k)]" Guidance (2014-07-28) — Decision Flow, Predicate vs Reference 구분, "different questions of safety and effectiveness" 표현
-- FDA "Best Practices for Selecting a Predicate Device to Support a Premarket Notification [510(k)] Submission" Guidance (2023-09)
+- FDA **Draft Guidance** "Best Practices for Selecting a Predicate Device to Support a Premarket Notification [510(k)] Submission" (**September 2023, Docket FDA-2023-D-3134, Not for implementation. Contains non-binding recommendations**) — 2026-06 시점 미확정 [audit #937]
 - FDA "Solid State X-ray Imaging Devices 510(k) Submissions" Guidance (2016-09-01)
 - 21 CFR 807.100(b) Determination of Substantial Equivalence
 - IEC 62220-1-1:2015 (DQE), IEC 62220-1-3:2008 (MTF), AAMI/ANSI ES60601-1, ANSI/AAMI HE75:2009/R2018
 - BMK-2026Q2-K243734 / BMK-2026Q2-K250211 / BMK-2026Q2-K243171 (자사 분기 종합 벤치마크)
 - 확인일(v0.4 추가): 2026-06-29
+- 확인일(v0.5 audit 정정): 2026-07-02 — eCFR §807.100 (last amended 2026-06-11), FDA Cybersecurity Final Guidance 페이지 (Feb 2026, Docket FDA-2021-D-1158), FDA Best Practices Draft Guidance 페이지 (Docket FDA-2023-D-3134)

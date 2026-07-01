@@ -1,6 +1,11 @@
 ---
 title: "[AUDIT P0] PMS_개요 v0.2 §3 — IEC 62304:2006+A1 §9 = 'SW 유지보수' 사실오류 (정답: §6 = Maintenance Process / §9 = Problem Resolution Process)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-07-02
+closed-by: holee9-builder
+closed-summary: |
+  08_시판후_감시_PMS/PMS_개요.md v0.3 §3 표: IEC 62304 §6 Maintenance / §9 Problem Resolution 별도 매핑으로 정정
 ---
 
 ## 대상 문서

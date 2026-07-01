@@ -1,6 +1,11 @@
 ---
 title: "[AUDIT P0] PMS_개요 v0.2 §3 + §8.1 — EU AI Act Art.72 '심각 사고 보고' 사실오류 (정답: Art.73 = Reporting of serious incidents / Art.72 = Post-market monitoring by providers)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-07-02
+closed-by: holee9-builder
+closed-summary: |
+  08_시판후_감시_PMS/PMS_개요.md v0.3 §3 표 및 §8.1: EU AI Act Art.72(PMM) 유지 + Art.73(Serious Incident 보고) 추가·정정
 ---
 
 ## 대상 문서

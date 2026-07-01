@@ -1,6 +1,11 @@
 ---
 title: "[AUDIT P0] TF-TD-001 v0.4 §18.6 — '21 CFR 807.100(b)(2)(ii)(B)' 사실오류 (정답: (b)(2)(ii)(C)) — 'subsection-letter' 사내 재발 패턴 (#915/#917)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-07-02
+closed-by: holee9-builder
+closed-summary: |
+  06_문서_기록관리/TF-TD-001 v0.5 §18.6 주: 21 CFR 807.100(b)(2)(ii)(C) 정정, (B)는 'as safe and as effective' 근거 별기록
 ---
 
 ## 대상 문서

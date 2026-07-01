@@ -9,7 +9,7 @@ purpose: IEC 81001-5-1 및 FDA Cybersecurity Guidance 기반 의료기기 SW 사
 applicable:
   - IEC 81001-5-1:2021
   - IEC 62443-4-1 (참조)
-  - FDA Guidance "Cybersecurity in Medical Devices" (2023-09-27)
+  - FDA Final Guidance "Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions" (February 2026, Docket FDA-2021-D-1158; supersedes 2025-06-27 및 2023-09-27 final) [audit #938]
   - FD&C Act §524B (Consolidated Appropriations Act, 2023, P.L. 117-328 §3305 신설; 2023-03-29 시행)
   - EU MDR 2017/745 Annex I §17.2, §17.4
   - MDCG 2019-16 Rev.1

@@ -1,6 +1,11 @@
 ---
 title: "[AUDIT P1] TF-TD-001 v0.4 §18.7 / §출처 — FDA 'Best Practices for Selecting a Predicate Device' Guidance (2023-09) Draft 상태 미표시 인용부정확"
 labels: "audit:citation,prio:P1,risk:medium"
+state: closed
+closed-date: 2026-07-02
+closed-by: holee9-builder
+closed-summary: |
+  06_문서_기록관리/TF-TD-001 v0.5 §18.7·§출처: FDA Draft Guidance 상태·Docket FDA-2023-D-3134·Not for implementation 명시, 자사 정책 귀속(Draft 권고 채택)
 ---
 
 ## 대상 문서

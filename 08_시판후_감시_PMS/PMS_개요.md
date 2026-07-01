@@ -1,23 +1,24 @@
 ---
 doc-id: PMS_개요
-title: 시판후 감시 (Post-Market Surveillance) — v0.2
+title: 시판후 감시 (Post-Market Surveillance) — v0.3
 type: Overview
-version: v0.2
+version: v0.3
 status: draft
 category: 08_시판후_감시_PMS
-purpose: 시판후 감시 (Post-Market Surveillance) — v0.2 관련 문서
+purpose: 시판후 감시 (Post-Market Surveillance) — v0.3 관련 문서
 applicable: [EU AI Act, EU MDR 2017/745, FDA QMSR, IEC62304, IEC81001-5-1, ISO13485:2016, MFDS, UDI]
 forms: [F-PMS-001]
 related-issues: [22]
 owner: TBD
-last-review: 2026-05-02
-review-due: 2027-05-02
+last-review: 2026-07-02
+review-due: 2027-07-02
 ---
 
-# 시판후 감시 (Post-Market Surveillance) — v0.2
+# 시판후 감시 (Post-Market Surveillance) — v0.3
 
-> **버전**: v0.2 | **최종 갱신**: 2026-05-03 | **작성**: holee9-automation
-> v0.1(2026-04-17) 개요 작성 → v0.2 절차흐름·양식·X-ray 적용예시·PSUR 구조 추가
+> **버전**: v0.3 | **최종 갱신**: 2026-07-02 | **작성**: holee9-automation
+> v0.1(2026-04-17) 개요 작성 → v0.2(2026-05-03) 절차흐름·양식·X-ray 적용예시·PSUR 구조 추가
+> v0.3(2026-07-02) audit #927/#928/#929 정정: IEC 62304 §6/§9 분리 (Maintenance/Problem Resolution), EU AI Act Art.72→Art.73 (Serious Incident 보고 근거), EU MDR Art.87 보고기한 3버킷 분리(사망 10일/공중보건 위협 2일/기타 15일)
 
 ---
 
@@ -41,9 +42,11 @@ review-due: 2027-05-02
 | FDA QMSR (21 CFR 820) | ISO 13485 §8.2.1–8.2.2 참조편입 | 피드백·불만처리 |
 | 의료기기법 | 제31조, 시행규칙 | 부작용 보고 의무 |
 | ISO 13485:2016 | 8.2.1, 8.2.2, 8.2.3, 8.5 | 피드백·불만·CAPA |
-| IEC 62304:2006+A1 | §9 | SW 유지보수 |
+| IEC 62304:2006+AMD1:2015 (Ed.1.1) | §6 | Software Maintenance Process (시판후 유지보수 계획) |
+| IEC 62304:2006+AMD1:2015 (Ed.1.1) | §9 | Software Problem Resolution Process (문제 해결·시정 환류) |
 | IEC 81001-5-1:2021 | §8 | 보안 사고 대응 |
-| EU AI Act | Art. 72 | 심각 사고 보고 |
+| EU AI Act (Reg. (EU) 2024/1689) | Art. 72 | 공급자의 시판후 모니터링 및 PMM 계획 (Post-market monitoring by providers) |
+| EU AI Act (Reg. (EU) 2024/1689) | Art. 73 | 심각한 사고(Serious Incident) 보고 의무 (인지 후 15일 / 사망 가능 시 10일 / 광범위 침해·중대 인프라 붕괴 시 2일) |
 
 ## 4. PMS 절차 흐름
 
@@ -101,7 +104,7 @@ review-due: 2027-05-02
 
 | 지역 | 중대 부작용 | 비중대/기타 | 정기 보고 |
 |------|-------------|-------------|-----------|
-| **EU** | 15일 (사망·심각한 건강 위협은 2일 이내) | 경향 보고 | PSUR — Class IIa: 최소 2년마다 갱신 |
+| **EU** | Art. 87(3) 사망·예기치 않은 심각한 건강 악화: **10일**<br>Art. 87(2) 공중보건에 대한 심각한 위협: **2일**<br>Art. 87(4) 기타 심각한 사건: **15일** | 경향 보고(Art. 88) | PSUR — Class IIa: 최소 2년마다 갱신 / IIb·III: 연 1회(Art. 86) |
 | **US (FDA)** | 30 calendar days (사망·중상은 5 work days) | 말펑션 30일 | 연간(해당 시) |
 | **KR (MFDS)** | 7일(사망·중대위해), 15일(중대 부작용) | 기한 없음(내부 기록) | 재평가 보고서(3~5년) |
 
@@ -109,7 +112,7 @@ review-due: 2027-05-02
 
 | 사고 유형 | 보고 판정 | 근거 |
 |-----------|-----------|------|
-| X-ray 튜브 파열 → 환자·사용자 노출 | **즉시 보고** (EU 2일 / KR 7일) | 방사선 과피폭 = 중대 위해 |
+| X-ray 튜브 파열 → 환자·사용자 노출 | **즉시 보고** (EU: 단일 환자 사망·심각 건강 악화 = Art.87(3) **10일**, 광범위 공중보건 위협 = Art.87(2) **2일** / KR 7일) | 방사선 과피폭 = 중대 위해 |
 | 선량표시 오류(SW 버그) → 과선량 가능성 | 위험평가 후 결정 (CVSS 적용) | AI/SW 오작동 → 잠재 위해 |
 | FPD 화소 불량 → 영상품질 저하 | 경향 분석 대상, 빈도에 따라 FSCA 검토 | 진단 영향도 평가 |
 | 콜리메이터 오작동 → 조사야 제한 불가 | **즉시 보고** | 방사선 과피폭 위험 |
@@ -135,7 +138,7 @@ Class IIa 이상 제품에 대해 아래 구조로 PSUR 작성:
 ### 8.1 근거 (추가)
 - FDA Postmarket Cybersecurity Guidance (2016, 2023 갱신)
 - IEC 81001-5-1:2021 §8 — 보안 사고 대응·교훈 기록
-- EU AI Act Art. 72 — 심각한 사고(Serious Incident) 보고 의무
+- EU AI Act Art. 73 — 심각한 사고(Serious Incident) 보고 의무 (인지 후 15일 / 사망 가능 시 10일 / 광범위 침해·중대 인프라 붕괴 시 2일). PMS 계획·PMM 자체 근거는 Art. 72.
 - MFDS 사이버보안 허가심사 가이드 (2025) — 시판후 취약점 관리
 
 ### 8.2 사이버보안 사고 PMS 연계
@@ -256,4 +259,7 @@ Class IIa 이상 제품에 대해 아래 구조로 PSUR 작성:
 - FDA QMSR Final Rule (2024-01-31 공표, 2026-02-02 시행)
 - 의료기기법 제31조, 시행규칙
 - ISO 13485:2016 §8.2.1–8.2.3, 8.5
-- 확인일: 2026-05-03
+- 확인일: 2026-07-02
+- EUR-Lex Regulation (EU) 2017/745 Art. 87 (보고기한 3버킷 근거)
+- EUR-Lex Regulation (EU) 2024/1689 Art. 72/73 (PMM vs Serious Incident)
+- IEC 62304:2006+AMD1:2015 Ed.1.1 §6/§9 (Maintenance vs Problem Resolution)

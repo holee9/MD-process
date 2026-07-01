@@ -1,6 +1,11 @@
 ---
 title: "[AUDIT P0] PMS_개요 v0.2 §6 표 — 'EU 사망·심각한 건강 위협 2일 이내' 사실오류 (정답: 사망/심각한 건강 악화 = 10일, 공중보건 심각한 위협 = 2일)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed-date: 2026-07-02
+closed-by: holee9-builder
+closed-summary: |
+  08_시판후_감시_PMS/PMS_개요.md v0.3 §6·§6.1: EU MDR Art.87(2)공중보건위협 2일 / 87(3)사망 10일 / 87(4)기타 15일 3버킷 분리
 ---
 
 ## 대상 문서

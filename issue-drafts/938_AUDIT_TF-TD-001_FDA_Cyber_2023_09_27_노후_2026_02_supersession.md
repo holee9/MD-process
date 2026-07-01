@@ -1,6 +1,11 @@
 ---
 title: "[AUDIT P0] TF-TD-001 v0.4 §18.5 — FDA Premarket Cybersecurity Guidance '2023-09-27' 노후 (정답: 2026-02 Final, 2023-09-27/2025-06-27 2회 supersede)"
 labels: "audit:currency,prio:P0,risk:high"
+state: closed
+closed-date: 2026-07-02
+closed-by: holee9-builder
+closed-summary: |
+  06_문서_기록관리/TF-TD-001 v0.5 §18.5 및 자매 03_설계/IEC_81001-5-1_FDA_Cybersecurity_SW보안.md frontmatter: FDA Cyber Final Guidance February 2026 (Docket FDA-2021-D-1158, 2회 supersede) 반영
 ---
 
 ## 대상 문서
