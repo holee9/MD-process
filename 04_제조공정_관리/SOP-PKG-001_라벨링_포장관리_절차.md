@@ -2,7 +2,7 @@
 doc-id: SOP-PKG-001
 title: 라벨링 및 포장 관리 절차
 type: SOP
-version: v0.2
+version: v0.2.1
 status: draft
 category: 04_제조공정_관리
 purpose: 의료용 X-ray 시스템·Detector·SW의 라벨 작성·검증·부착 및 포장 공정을 통제하여 규제 적합성과 제품 추적성을 보장한다
@@ -304,7 +304,7 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 
 1. **한국 MFDS 리콜 규정**
    - 「의료기기법」 제36조(회수·파기 등) 및 「의료기기 회수에 관한 규정」(식약처 고시)에 따라 회수등급(1~3등급) 결정
-   - 회수 사유 발생 시 15일 이내 MFDS에 회수 계획서 제출
+   - 회수 계획서 제출 기한(회수등급별): 1등급(완치 불가능한 중대 부작용·사망 위험) **5일 이내**, 2등급(완치 가능한 일시적·의학적 부작용) **15일 이내**, 3등급(기준규격 부적합) **15일 이내** (「의료기기 회수에 관한 규정」 근거)
    - 회수 대상 제품의 UDI·S/N 기반 추적, 회수 실적 보고
 
 2. **미국 FDA 리콜 규정**
@@ -336,3 +336,4 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 |------|------|----------|----------|
 | v0.1 | 2026-05-16 | 신규 작성 | — |
 | v0.2 | 2026-05-29 | 포장 무결성 시험·전자 IFU·다국어 라벨 QA·Detector ESD/MSL 보강 | holee9-automation |
+| v0.2.1 | 2026-07-09 | audit-drain C2(보고기한) — §9.1 MFDS 회수계획서 제출기한 오류 정정: 일괄 "15일"→회수등급별 5일(1등급)/15일(2·3등급) | md-process-auditor |
