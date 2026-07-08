@@ -1,7 +1,7 @@
 ---
 title: "[PLAN] FDA_QMSR_2026 §820.35 하위항목 (a)(b)(c)(d) 인용 정밀점검"
 labels: "source:plan,type:audit-followup,prio:P2,risk:med,규제"
-state: open
+state: closed
 created: 2026-06-25
 created-by: holee9-builder
 related-issues: [915]
@@ -22,3 +22,6 @@ audit #915로 `FDA_QMSR_820.35_vs_ISO13485_4.2.5` v0.3 §820.35 (a)(b)(c)(d) 하
 
 ## 우선순위
 P2 — 적용 시점은 이미 시행됐고 다른 FDA 가이드와의 사내 정합성 확보 필요.
+
+## 종결 처리 (2026-07-09, md-process-auditor)
+재확인 결과 `FDA_QMSR_2026.md`는 이미 v0.3(2026-06-26, audit #917 close 커밋)에서 §3.3 및 §6 F-QMSR-READINESS-001 표의 §820.35(a)(b)(c)(d) 하위항목을 eCFR 원문(complaints/servicing/UDI/confidentiality)대로 정정 완료한 상태였음을 확인. Part 11도 §3.6으로 독립 분리되어 있어 DoD 4개 항목 모두 충족. 추가 조치 불요 — closed.
