@@ -1,6 +1,7 @@
 ---
 title: "audit(03): CHK-DR-001 §6 row 0-2 — EU MDR Annex VIII Rule 5/9 (X-ray 분류) 사실오류 → 정답 Rule 10 (+ Rule 17)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
 ---
 
 ## 대상

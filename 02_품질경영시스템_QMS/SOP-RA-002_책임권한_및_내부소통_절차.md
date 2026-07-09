@@ -2,7 +2,7 @@
 doc-id: SOP-RA-002
 title: SOP-RA-002 — 책임·권한 및 내부소통 절차 (Responsibility, Authority & Internal Communication)
 type: SOP
-version: v0.1
+version: v0.1.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: ISO 13485:2016 §5.5.1·§5.5.2·§5.5.3에 따라 QMS 책임·권한·내부소통 프로세스를 정의·문서화·운영
@@ -11,12 +11,12 @@ applicable:
   - FDA QMSR §820.20(b)(1), (b)(3), (b)(5) (2026-02-02 발효)
   - EU MDR 2017/745 Article 15 (PRRC), Article 10(9)(a)
   - MFDS GMP 별표2 §5.5
-  - 의료기기법 시행규칙 제13조 (제조관리책임자)
+  - 의료기기법 시행규칙 제11조 (품질책임자 자격·배치); 제13조 (품질책임자 교육, 별개 조항)
 forms: [F-RA-001, F-RA-002, F-RA-003]
 related-docs: [QM-001, JD-RA-001, SOP-QP-001, SOP-MR-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [1523]
 owner: TBD
-last-review: 2026-06-20
+last-review: 2026-07-10
 review-due: 2027-06-20
 ---
 
@@ -33,7 +33,7 @@ ISO 13485:2016 §5.5에 따라 QMS 전반에 걸친 책임·권한을 명확히 
 ## 3. 용어 정의
 - **MR (Management Representative, 경영대리인):** 최고경영자가 지명, QMS 유지·규제 보고 책임을 가진 자(§5.5.2)
 - **PRRC (Person Responsible for Regulatory Compliance):** EU MDR Article 15에 따른 규제준수책임자
-- **제조관리책임자:** 의료기기법 시행규칙 제13조에 따른 국내 책임자
+- **품질책임자:** 의료기기법 시행규칙 제11조에 따른 제조소별 배치 의무자(현행 법정 용어. 舊 "제조관리책임자" 용어는 현행 법령에 부존재하여 정정)
 - **QMS 효과성 소통(Effective Communication):** §5.5.3에 따른 정책·목표·결과·개선 정보의 양방향 전달
 
 ## 4. 책임 및 권한 (RACI)
@@ -124,7 +124,7 @@ ISO 13485:2016 §5.5에 따라 QMS 전반에 걸친 책임·권한을 명확히 
 | 본 SOP § | ISO 13485:2016 | FDA QMSR §820.20 | EU MDR | MFDS GMP |
 |---|---|---|---|---|
 | §4, §5.1 | 5.5.1 | (b)(3) | Art.10(9)(a) | 별표2 §5.5.1 |
-| §5.2 | 5.5.2 | (b)(3) | Art.15 (PRRC) | 시행규칙 제13조 |
+| §5.2 | 5.5.2 | (b)(3) | Art.15 (PRRC) | 시행규칙 제11조 (배치); 제13조 (교육) |
 | §5.3, §5.4 | 5.5.3 | (b)(5) | Art.10(9)(b) | 별표2 §5.5.3 |
 
 ## 7. 실행 양식·기록
@@ -151,3 +151,4 @@ ISO 13485:2016 §5.5에 따라 QMS 전반에 걸친 책임·권한을 명확히 
 
 ## 10. 변경 이력
 - v0.1 (2026-06-20): 신규 작성. ISO 13485 §5.5 전 조항·FDA QMSR §820.20(b)·EU MDR Art.15 통합 절차.
+- v0.1.1 (2026-07-10): **audit #955 정정** — frontmatter·§3 용어정의·§6 매핑표 '제조관리책임자(시행규칙 제13조)'를 '품질책임자(시행규칙 제11조 배치, 제13조는 교육)'로 정정(3개소).

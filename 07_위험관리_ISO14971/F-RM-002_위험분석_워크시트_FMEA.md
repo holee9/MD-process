@@ -1,12 +1,12 @@
 ---
 doc-id: F-RM-002
 title: 위험분석 워크시트 — FMEA (Failure Mode and Effects Analysis)
-version: v0.2
+version: v0.2.1
 type: Form
 status: draft
 category: 07_위험관리_ISO14971
 purpose: ISO 14971 FMEA 기반 위험분석 워크시트 양식 (X-ray 시스템·디텍터·SW)
-last-review: 2026-05-30
+last-review: 2026-07-10
 product: 의료용 X-ray 시스템 / 평판 디텍터 / 진단 소프트웨어
 classification: ISO 14971 위험관리 파일(RMF) 구성 문서
 applicable-standards:
@@ -33,6 +33,7 @@ applicable-standards:
 |------|------|-----------|--------|
 | v0.1 | 2026-04-25 | 초안 작성 — 설계 FMEA 양식, 심각성·발생도·검출도 기준, 기록 예시 3건 | holee9-automation |
 | v0.2 | 2026-05-30 | pFMEA·사이버보안·AI/ML·사용오류 FMEA 추가, 잔여위험 종합평가 양식, 추가 예시 | holee9-automation |
+| v0.2.1 | 2026-07-10 | **audit #942 정정** — §12 항목5 'ISO 14971 Clause 7.6'→'7.5' 정정 + 항목6 신설(§7.6 완전성 확인, 자매문서 #907 패턴 재발 방지) | md-process-auditor |
 
 ---
 
@@ -751,7 +752,9 @@ UI 설계 특성 → 사용오류(Use Error) → 위험상황(Hazardous Situatio
 
 4. **잔여위험 H 이상 시:** 반드시 편익-위험 분석서와 연계하고, §10 종합평가에 반영한다.
 
-5. **신규 위해 확인:** 위험 통제 조치가 새로운 위해요인을 유발하는지 확인하고, 유발 시 해당 위해요인을 별도 항목으로 추가 분석한다 (ISO 14971 Clause 7.6).
+5. **신규 위해 확인:** 위험 통제 조치가 새로운 위해요인을 유발하는지 확인하고, 유발 시 해당 위해요인을 별도 항목으로 추가 분석한다 (ISO 14971 Clause 7.5).
+
+6. **위험 통제 완전성 확인:** 모든 식별된 위해요인에 대해 위험 통제 조치가 계획·구현·검증되었는지 완전성을 확인한다 (ISO 14971 Clause 7.6). §10 종합평가 전 필수 게이트로 운용한다.
 
 ### 12.2 FMEA 유형별 주의사항
 

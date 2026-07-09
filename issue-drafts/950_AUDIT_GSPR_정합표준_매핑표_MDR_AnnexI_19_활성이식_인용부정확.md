@@ -1,6 +1,7 @@
 ---
 title: "audit(01): GSPR_정합표준_매핑표 v0.3 §5 매핑 표 — MDR Annex I §19 주제 오인 (기재: '무선·전자기기(EMC)' / 정답: 'Particular requirements for active implantable devices')"
 labels: "audit:citation,prio:P1,risk:high"
+state: closed
 ---
 
 ## 대상

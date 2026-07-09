@@ -1,6 +1,7 @@
 ---
 title: "audit(C1): 디지털의료제품법_요구사항_매트릭스 DR-02 '법 제11조' 사실오류 — 제조업허가는 법 제8조, 제11조는 변경허가"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
 ---
 
 ## 대상

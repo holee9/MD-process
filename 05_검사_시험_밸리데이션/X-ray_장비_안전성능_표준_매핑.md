@@ -2,7 +2,7 @@
 doc-id: X-ray_장비_안전성능_표준_매핑
 title: 의료용 X-ray 장비 안전·성능 표준 매핑
 type: Matrix
-version: v0.4
+version: v0.4.1
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 진단용 X-ray system/detector/SW의 국제·지역별 안전·성능 규제·표준을 단일 매핑표로 정리
@@ -39,7 +39,7 @@ related-docs:
   - 외부_Pen-test_계획서
 related-issues: [10, 915]
 owner: RA/QA Lead
-last-review: 2026-06-25
+last-review: 2026-07-10
 review-due: 2027-06-25
 ---
 
@@ -90,7 +90,7 @@ review-due: 2027-06-25
 | 방사선 방호 | IEC 60601-1-3:2008+A1:2013+A2:2021 | EN 60601-1-3:2008+A1:2013+A2:2021 (Harmonized) | Recognized | KS C IEC 60601-1-3 |
 | 사용적합성 | IEC 62366-1:2015+A1:2020 | SoTA (OJEU 미등재) | Recognized (HFE Guidance 2016 병행) | 식약처 사용적합성 가이드라인(2017) |
 | SW 수명주기 | IEC 62304:2006+AMD1:2015 (Edition 2 발행 예정 2026-08경) | SoTA (OJEU 미등재, EN 62304:2006/A1:2015) | Recognized (부분) | 식약처 SW밸리데이션 가이드라인 |
-| SW 보안(Product) | IEC 81001-5-1:2021 | SoTA (OJEU 미등재) | FDA Premarket Cybersecurity Guidance(2023-09) 참조 | 식약처 사이버보안 허가·심사 가이드라인(2022 개정) |
+| SW 보안(Product) | IEC 81001-5-1:2021 | SoTA (OJEU 미등재) | FDA Final Guidance (February 2026, Docket FDA-2021-D-1158) 참조 | 식약처 사이버보안 허가·심사 가이드라인(2022 개정) |
 | 진단 X-ray 개별 규격 | IEC 60601-2-54:2009+A1:2015+A2:2018 (촬영·투시) | EN 60601-2-54:2009+A1:2015+A2:2019 (Harmonized) | Recognized | KS C IEC 60601-2-54 |
 | 디지털 Detector 성능 | IEC 62220-1-1:2015 (DQE 측정) | SoTA | Recognized | KS C IEC 62220-1-1 |
 | 사용자 방호·선량(DAP/AED) | IEC 60580:2019 (DAP meter) | SoTA | — | KS C IEC 60580 |
@@ -111,7 +111,7 @@ review-due: 2027-06-25
 
 - 510(k) 또는 De Novo 제출 시 Recognized Consensus Standards Declaration of Conformity
 - **21 CFR 1020.30/31 Radiation Performance Standards** 준수 보고
-- Premarket Cybersecurity Documentation (2023-09 Guidance): SBOM, Threat Model, Security Architecture, Vulnerability Management Plan, Cybersecurity Testing
+- Premarket Cybersecurity Documentation (FDA Final Guidance, February 2026, Docket FDA-2021-D-1158): SBOM, Threat Model, Security Architecture, Vulnerability Management Plan, Cybersecurity Testing
 - 21 CFR 803 MDR; QMSR § 820.35(a) Records of complaints (불만 7항목), § 820.35(b) Records of servicing activities (서비스 6항목)
 - 21 CFR 830 UDI (QMSR § 820.35(c))
 
@@ -238,3 +238,4 @@ review-due: 2027-06-25
 |------|------|--------|------|
 | v0.1 | 2026-04-30 | 의료기기 업무규칙 개발팀 | 초안 작성 |
 | v0.2 | 2026-05-28 | QA/RA | 활용 절차(§3) 추가, 설계 입력 체크포인트 표 구조화(§6), 양식 F-STD-MAP-001 추가, 상호참조 보강, 오픈 이슈 정리 |
+| v0.4.1 | 2026-07-10 | md-process-auditor | **audit #948 정정** — SW 보안(Product) 행 및 §5.2 FDA Cyber Guidance '2023-09'→2026-02 Final(Docket FDA-2021-D-1158) 정정(2개소) |

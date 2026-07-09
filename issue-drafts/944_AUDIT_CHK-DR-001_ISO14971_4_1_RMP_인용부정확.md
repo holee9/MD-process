@@ -1,6 +1,7 @@
 ---
 title: "audit(03): CHK-DR-001 §6 row 0-6 — 위험관리 계획(RMP) 조항 ISO 14971 §4.1 → §4.4 인용부정확"
 labels: "audit:citation,prio:P1,risk:medium"
+state: closed
 ---
 
 ## 대상

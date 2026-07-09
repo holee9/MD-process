@@ -2,7 +2,7 @@
 doc-id: IEC_81001-5-1_FDA_Cybersecurity_SW보안
 title: 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합
 type: Guide
-version: v0.3
+version: v0.3.1
 status: draft
 category: 03_설계_개발관리
 purpose: IEC 81001-5-1 및 FDA Cybersecurity Guidance 기반 의료기기 SW 사이버보안 수명주기 활동의 단계별 절차·책임·양식 제공
@@ -16,7 +16,7 @@ applicable:
   - IEC 62304:2006/A1:2015
   - ISO 14971:2019
   - MFDS 사이버보안 허가심사 가이드라인
-  - 디지털의료제품법 (법률 제20722호)
+  - 디지털의료제품법 (법률 제20139호, 2024-01-23 제정, 2025-01-24 시행)
 forms:
   - F-SEC-001
 related-docs:
@@ -31,7 +31,7 @@ related-docs:
   - SOP-UDI-001
 related-issues: [11]
 owner: Security Officer / SW Lead
-last-review: 2026-06-24
+last-review: 2026-07-10
 review-due: 2027-05-24
 ---
 
@@ -39,7 +39,7 @@ review-due: 2027-05-24
 
 ## 1. 목적
 
-의료기기 SW(X-ray system SW, Detector firmware, 영상처리 SaMD)의 사이버보안 수명주기 활동을 단일 체계로 통합 관리한다. IEC 62304 SDLC, ISO 14971 위험관리, IEC 81001-5-1 제품 보안, FDA Premarket Cybersecurity Guidance(2023-09) 요구사항을 한 개의 Security Management Plan으로 연결한다.
+의료기기 SW(X-ray system SW, Detector firmware, 영상처리 SaMD)의 사이버보안 수명주기 활동을 단일 체계로 통합 관리한다. IEC 62304 SDLC, ISO 14971 위험관리, IEC 81001-5-1 제품 보안, FDA Final Guidance "Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions" (February 2026, Docket FDA-2021-D-1158, supersedes 2025-06-27 및 2023-09-27 final) 요구사항을 한 개의 Security Management Plan으로 연결한다.
 
 ## 2. 적용 범위
 
@@ -262,3 +262,4 @@ review-due: 2027-05-24
 | 버전 | 일자 | 변경 내용 | 작성자 |
 |---|---|---|---|
 | v0.3 | 2026-06-24 | audit #913 frontmatter 법령 명칭 정정 (FDARA → CAA 2023 §3305) | QMS-Bot |
+| v0.3.1 | 2026-07-10 | **audit #947/#948 정정** — frontmatter 디지털의료제품법 '법률 제20722호'→'법률 제20139호' 정정; §1 본문 FDA Cyber Guidance(2023-09)→2026-02 Final(Docket FDA-2021-D-1158) 정정(frontmatter-본문 자체모순 해소) | md-process-auditor |

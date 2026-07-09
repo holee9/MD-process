@@ -2,7 +2,7 @@
 doc-id: CHK-DR-001
 title: 설계검토(Design Review) 체크리스트
 type: Checklist
-version: v0.2
+version: v0.2.1
 status: draft
 category: 03_설계_개발관리
 purpose: 설계 단계별 게이트 검토(DR0~DR5) 시 확인 항목 정의 및 실무 수행 절차를 규정하여 체계적 설계검토 보장
@@ -30,7 +30,7 @@ related-docs:
   - ALARA_지원기능_설계명세
 related-issues: [18]
 owner: 설계개발 Lead
-last-review: 2026-05-24
+last-review: 2026-07-10
 review-due: 2027-05-24
 ---
 
@@ -118,11 +118,11 @@ ISO 13485 §7.3.5 준수: 각 검토에는 검토 대상 설계 단계와 관련
 | # | 확인 항목 | 근거 | X-ray 맥락 | 확인 |
 |---|----------|------|------------|------|
 | 0-1 | 의도된 사용 목적(Intended Use) 및 적응증 명확히 정의 | ISO 13485 §7.3.2 | 촬영 부위·대상(성인/소아), 이동형/고정형 구분 | ☐ |
-| 0-2 | 규제 분류 경로 확정 (MFDS 등급, FDA Class, EU MDR Rule) | EU MDR Art.51, MFDS | X-ray: MFDS 3등급, FDA Class II 510(k), EU MDR Rule 5/9 | ☐ |
+| 0-2 | 규제 분류 경로 확정 (MFDS 등급, FDA Class, EU MDR Rule) | EU MDR Annex VIII Ch.III §6.2(Rule 10)/§7.4(Rule 17) | X-ray 시스템: MFDS 3등급, FDA Class II(510(k), Product Code MQB), EU MDR Rule 10→Class IIb; 평판 디텍터: Rule 17→Class IIa; 부속 SW: §3.3 구동기기 동일등급 또는 Rule 11 개별적용 | ☐ |
 | 0-3 | 설계·개발 계획서(DDP) 작성 및 승인 | ISO 13485 §7.3.2 | HW/Detector/SW/AI 각 모듈 개발 단계 포함 | ☐ |
 | 0-4 | 프로젝트 팀 구성, 역할·책임 정의 | ISO 13485 §7.3.2(b) | 방사선안전관리자 지정 확인 | ☐ |
 | 0-5 | 적용 표준·법규 목록(GSPR 매핑 포함) 작성 | EU MDR Annex I | IEC 60601-1/-2-54, IEC 62304, 방사선안전관리규칙 | ☐ |
-| 0-6 | 초기 위험관리 계획(RMP) 수립 | ISO 14971 §4.1 | 방사선 위해, 전기안전 위해 우선 식별 | ☐ |
+| 0-6 | 초기 위험관리 계획(RMP) 수립 | ISO 14971 §4.4 | 범위·수용성 기준·검증 방법·시판 후 정보 수집 계획 포함(§4.4 요구 요소), 방사선 위해·전기안전 위해 우선 식별 | ☐ |
 | 0-7 | SW 안전 등급 사전 분류 (IEC 62304 Class A/B/C) | IEC 62304 §4.3 | 노출제어 SW → Class C, 영상뷰어 → Class B | ☐ |
 | 0-8 | 사이버보안 위험 사전 평가 계획 | IEC 81001-5-1 | DICOM 네트워크, 원격 서비스 포트 위협 | ☐ |
 | 0-9 | 예산·일정·자원 계획 수립 | ISO 13485 §7.3.2(e) | — | ☐ |
@@ -285,3 +285,4 @@ ISO 13485 §7.3.5 준수: 각 검토에는 검토 대상 설계 단계와 관련
 |------|------|----------|--------|
 | v0.1 | 2026-05-20 | 초안 — DR0~DR5 게이트별 체크항목 정의 | QA/RA |
 | v0.2 | 2026-05-24 | 수행절차(§4) 추가, 판정기준 구체화, F-DR-001 양식 본문 포함, X-ray 맥락 컬럼 추가, 상호참조 보강 | QA/RA |
+| v0.2.1 | 2026-07-10 | **audit #943/#944 정정** — DR0 0-2행 EU MDR 'Rule 5/9'→'Rule 10(Class IIb)+Rule 17(Class IIa)' 정정, DR0 0-6행 ISO 14971 '§4.1'→'§4.4'(RMP 조항) 정정 | md-process-auditor |

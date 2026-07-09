@@ -1,6 +1,7 @@
 ---
 title: "audit(C1): SOP-CVD-001 §524B(b)(2) 인용부정확 — CVD 계획 근거는 §524B(b)(1)"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
 ---
 
 ## 대상

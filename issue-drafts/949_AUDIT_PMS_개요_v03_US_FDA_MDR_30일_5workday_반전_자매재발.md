@@ -1,6 +1,7 @@
 ---
 title: "audit(08): PMS_개요 v0.3 §6 — US(FDA) 표 '30 calendar days (사망·중상은 5 work days)' 반전 사실오류 (정답: §803.50 사망/중상/오작동 30일 · §803.53 remedial action 필요 시 5 work day) — audit #916 자매재발"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
 ---
 
 ## 대상

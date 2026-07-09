@@ -2,12 +2,12 @@
 doc-id: 외부_Pen-test_계획서
 title: 외부 침투시험(Penetration Test) 계획서
 type: Plan
-version: v0.2
+version: v0.2.1
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 의료용 X-ray 시스템·SW에 대한 외부 보안 침투시험 발주·수행·결과보고 계획 수립
 applicable:
-  - FDA Premarket Cybersecurity Guidance (2023-09-26) §V.D, §VI.D
+  - FDA Final Guidance (February 2026, Docket FDA-2021-D-1158) — 구 §V.D/§VI.D 대응 조항 재매핑 필요(미확인)
   - MFDS 의료기기 사이버보안 허가·심사 가이드라인 (2025-01-10) 제6장
   - IEC 81001-5-1:2021 §7.4
   - IEC TR 60601-4-5:2021
@@ -28,7 +28,7 @@ related-docs:
   - X-ray_장비_안전성능_표준_매핑
 related-issues: [11, 25, 26, 34]
 owner: Security Officer / QA/RA Lead
-last-review: 2026-05-28
+last-review: 2026-07-10
 review-due: 2027-05-28
 ---
 
@@ -43,7 +43,7 @@ review-due: 2027-05-28
 
 의료용 X-ray 시스템(콘솔·검출기·서버·클라우드 연계 SW)에 대한 외부 보안 침투시험을 발주·수행·결과보고하기 위한 계획을 수립한다.
 
-본 계획은 FDA Premarket Cybersecurity Guidance(2023-09-26) §V.D, §VI.D의 "security testing" 의무 및 MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제6장의 시험요구를 충족하는 외부 검증 산출물을 확보한다.
+본 계획은 FDA Final Guidance(February 2026, Docket FDA-2021-D-1158, 2회 supersede: 2023-09-27→2025-06-27→2026-02)의 "security testing" 의무(구 2023-09판 §V.D/§VI.D 대응 조항은 판본대조 미완 — 미확인) 및 MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제6장의 시험요구를 충족하는 외부 검증 산출물을 확보한다.
 
 ## 2. 규제·표준 근거
 
@@ -338,3 +338,4 @@ review-due: 2027-05-28
 |------|------|--------|------|
 | v0.1 | 2026-04-26 | 의료기기 업무규칙 개발팀 | 초안 작성 |
 | v0.2 | 2026-05-28 | QA/RA | 절차 흐름 상세화, X-ray 안전 취약점 판정 기준 추가, 양식(F-PEN-001~003) 추가, 상호참조 보강 |
+| v0.2.1 | 2026-07-10 | md-process-auditor | **audit #948 정정** — frontmatter·본문 FDA Cyber Guidance '2023-09-26 §V.D/§VI.D'→2026-02 Final(Docket FDA-2021-D-1158) 정정(구 조항 대응은 판본대조 미완 — 미확인 표기) |

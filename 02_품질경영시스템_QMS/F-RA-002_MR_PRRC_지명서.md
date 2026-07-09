@@ -2,7 +2,7 @@
 doc-id: F-RA-002
 title: F-RA-002 — 경영대리인(MR)·PRRC 지명서 양식
 type: Form
-version: v0.1
+version: v0.1.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: ISO 13485 §5.5.2·EU MDR Art.15 MR/PRRC 지명 기록
@@ -13,7 +13,7 @@ applicable:
 related-docs: [SOP-RA-002, JD-RA-001]
 related-issues: [1523]
 owner: TBD
-last-review: 2026-06-20
+last-review: 2026-07-10
 review-due: 2027-06-20
 ---
 
@@ -57,7 +57,12 @@ review-due: 2027-06-20
 ## 외부 등록
 - [ ] Eudamed Actor 등록(EU MDR Art.31)
 - [ ] FDA Owner/Operator 등록(해당 시)
-- [ ] MFDS 제조관리책임자 신고(의료기기법 시행규칙 제13조)
+- [ ] MFDS 품질책임자 배치(의료기기법 시행규칙 제11조 — 제조업허가 신청 시 자격서류 제출로 갈음; 제13조는 배치 후 6개월 이내 이수하는 교육 조항으로 별개)
 
 ## 보관
 - 보관 기간: 영구(제품 단종 후 15년)
+
+## 개정 이력
+| 버전 | 일자 | 변경 내용 | 작성자 |
+|------|------|-----------|--------|
+| v0.1.1 | 2026-07-10 | **audit #955 정정** — 외부 등록 항목 'MFDS 제조관리책임자 신고(시행규칙 제13조)'를 '품질책임자 배치(시행규칙 제11조)'로 정정, 제13조는 교육 조항으로 별개 명시 | md-process-auditor |

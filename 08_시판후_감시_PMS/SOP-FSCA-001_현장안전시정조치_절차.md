@@ -2,7 +2,7 @@
 doc-id: SOP-FSCA-001
 title: 현장안전시정조치(FSCA) 절차
 type: SOP
-version: v0.4.1
+version: v0.4.2
 status: draft
 category: 08_시판후_감시_PMS
 purpose: 시판 후 안전 문제 발견 시 현장안전시정조치 개시·실행·보고·종결 절차 수립
@@ -27,7 +27,7 @@ related-docs:
   - SOP-RM-001
 related-issues: []
 owner: RA/QA Lead
-last-review: 2026-06-22
+last-review: 2026-07-10
 review-due: 2027-06-22
 ---
 
@@ -217,7 +217,7 @@ SW 결함에 의한 FSCA의 경우 아래 추가 절차를 적용한다.
 
 #### 5.6.3 사이버보안 긴급 패치 (IEC 81001-5-1 §8 취약점 관리; **정량 기한은 자사 정책**)
 
-> **인용 정정 (audit #910):** IEC 81001-5-1:2021 §8.3 본문은 *Timeliness is driven by authorities, applicable legislation, regulatory policy, product safety, and market forces* 라는 **일반 원칙**만 명시하며, CVSS 등급별 정량 기한(72h/14d)을 직접 규정하지 않는다. 아래 정량 기한은 IEC 81001-5-1 §8(취약점 관리) 일반 원칙 + **자사 사이버보안 정책(SOP-CVD-001 연계)** 에서 도출된 사내 결정이며, FDA *Cybersecurity in Medical Devices*(2023-09), CISA KEV·NIS2 권고를 보조 기준으로 채택한다.
+> **인용 정정 (audit #910):** IEC 81001-5-1:2021 §8.3 본문은 *Timeliness is driven by authorities, applicable legislation, regulatory policy, product safety, and market forces* 라는 **일반 원칙**만 명시하며, CVSS 등급별 정량 기한(72h/14d)을 직접 규정하지 않는다. 아래 정량 기한은 IEC 81001-5-1 §8(취약점 관리) 일반 원칙 + **자사 사이버보안 정책(SOP-CVD-001 연계)** 에서 도출된 사내 결정이며, FDA *Cybersecurity in Medical Devices* Final Guidance(February 2026, Docket FDA-2021-D-1158), CISA KEV·NIS2 권고를 보조 기준으로 채택한다.
 
 - 사이버보안 취약점(CVE 등)이 FSCA 트리거인 경우, IEC 81001-5-1 §8(취약점 관리) 원칙에 따라 처리하며, 정량 기한은 본 SOP 및 SOP-CVD-001 정책에 따른다:
   - **Critical (CVSS ≥9.0)**: 인지 후 **72시간** 이내 긴급 패치 또는 완화조치 배포 (자사 정책)
@@ -225,7 +225,7 @@ SW 결함에 의한 FSCA의 경우 아래 추가 절차를 적용한다.
   - **Medium (CVSS 4.0–6.9)**: 정기 업데이트 주기에 포함 (자사 정책)
 - 네트워크 격리 등 임시 완화조치를 패치 배포 전 선행 적용
 - 영향 받는 의료기관 IT 부서에 별도 기술 권고문(Technical Advisory) 배포
-- 보조 외부 근거: FDA *Content of Premarket Submissions for Management of Cybersecurity in Medical Devices* (2023-09), CISA KEV, NIS2 Directive (EU) 2022/2555
+- 보조 외부 근거: FDA *Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions* Final Guidance (February 2026, Docket FDA-2021-D-1158), CISA KEV, NIS2 Directive (EU) 2022/2555
 
 ### 5.7 다중 규제관할권 동시 보고 절차
 
@@ -380,3 +380,4 @@ Vigilance 모듈 의무화 확정 시 아래 전환을 6개월 이내 완료한�
 | v0.3 | 2026-06-07 | QMSR CP 7382.850 FSCA 실사 대응(§5.11), EUDAMED 의무화 FSCA 보고 경로 전환(§5.12), Market Surveillance 모듈 활용 | holee9-automation |
 | v0.4 | 2026-06-22 | §5.6.3 인용 정정 — CVSS 정량기한(72h/14d)을 IEC 81001-5-1 §8.3에 귀속시킨 표현 제거, §8(취약점 관리) 일반 원칙 + 자사 정책으로 귀속 명시 — audit #910 |
 | v0.4.1 | 2026-07-09 | audit-drain C2(보고기한) — §5.2.3·§5.7.1 MFDS 보고기한 오류 정정: "사망=15일"→"사망·생명위협=7일"(추가보고 8일) 분리, 기타 중대 이상사례 15일 유지 (의료기기법 시행규칙 제51조제1항, MFDS 부작용 등 안전성정보 업무처리 지침 붙임1 근거) | md-process-auditor |
+| v0.4.2 | 2026-07-10 | **audit #948 자매재발 정정** — §5.6.3 보조 근거 FDA Cyber Guidance '2023-09'→2026-02 Final(Docket FDA-2021-D-1158) 정정(2개소, 동일 오류클래스 일괄교정) | md-process-auditor |

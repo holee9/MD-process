@@ -2,7 +2,7 @@
 doc-id: SOP-CVD-001
 title: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책
 type: SOP
-version: v0.3
+version: v0.3.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: 보안 취약점의 조정된 공개·접수·처리·공시 절차를 수립하여 제품 사이버보안 유지
@@ -11,7 +11,7 @@ forms: [F-CVD-001]
 related-docs: [SOP-SBOM-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [19]
 owner: TBD
-last-review: 2026-06-05
+last-review: 2026-07-10
 review-due: 2027-05-21
 ---
 
@@ -28,8 +28,8 @@ review-due: 2027-05-21
 조정된 절차로 접수·평가·해결·공시하기 위한 정책을 수립한다.
 
 본 정책은 다음 규제·표준 요구를 충족한다.
-- FDA FD&C Act §524B(b)(2): "have a plan to monitor, identify, and address ... vulnerabilities and exploits"
-- FDA Premarket Cybersecurity Guidance(2023-09-26): SBOM·VEX·CVD plan 제출 의무
+- FDA FD&C Act §524B(b)(1): "have a plan to monitor, identify, and address ... vulnerabilities and exploits" (CVD 포함)
+- FDA Final Guidance "Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions" (February 2026, Docket FDA-2021-D-1158, supersedes 2025-06-27 및 2023-09-27 final): SBOM·VEX·CVD plan 제출 의무 (Attachment 1/2 신·구 판본 조항 대응표는 별도 확인 필요 — 미확인)
 - MFDS 의료기기 사이버보안 허가·심사 가이드라인(2025-01-10) 제5장
 - 디지털의료기기 전자적 침해행위 보안지침 제18조
 - ISO/IEC 29147:2018 (Vulnerability Disclosure)
@@ -135,7 +135,7 @@ PGP 키는 매 12개월 갱신, 채널은 24/7 모니터링.
 
 ## 15A. FDA 사이버보안 지침 2026-02 개정 대응 (v0.3 추가)
 
-> **배경**: FDA가 2026-02-03 사이버보안 지침을 재발행하여 QSR → QMSR 참조를 전면 교체했다. CVD 계획은 FD&C Act §524B(b)(2)에 따라 "cyber device"의 시판 전 제출 의무 문서이며, QMSR 하에서 QMS 문서로 명시적으로 편입된다.
+> **배경**: FDA가 2026-02-03 사이버보안 지침을 재발행하여 QSR → QMSR 참조를 전면 교체했다. CVD 계획은 FD&C Act §524B(b)(1)에 따라 "cyber device"의 시판 전 제출 의무 문서이며, QMSR 하에서 QMS 문서로 명시적으로 편입된다.
 
 ### 15A.1 QMSR 하 CVD 계획의 QMS 편입
 
@@ -183,6 +183,7 @@ X-ray 시스템은 "cyber device"로서 다음 취약점 유형에 대한 CVD �
 ## 14. 개정 이력
 | 버전 | 날짜 | 변경 내용 | 작성 |
 |------|------|-----------|------|
+| v0.3.1 | 2026-07-10 | **audit #954/#948 정정** — §524B(b)(2)→(b)(1) 인용부정확 정정(2개소, CVD 계획 근거), FDA Cyber Guidance 판본 '2023-09-26'→2026-02 Final(Docket FDA-2021-D-1158) 정정 | md-process-auditor |
 | v0.3 | 2026-06-05 | v0.3 보강 — FDA 사이버보안 지침 2026-02 개정 반영, QMSR CVD 계획 QMS 편입, CVSS v4.0 전면 적용 |
 | v0.2 | 2026-05-21 | v0.2 보강 — forms·related-docs 추가, applicable 규격 보강, frontmatter 정규화, 양식 템플릿(F-CVD-001) 추가 |
 | v0.1 | 2026-04-25 | 초안 작성 | 자동화 세션 |

@@ -1,6 +1,7 @@
 ---
 title: "audit(C1): F-RA-002/SOP-RA-002 '의료기기법 시행규칙 제13조(제조관리책임자)' 사실오류 — 제13조는 품질책임자 교육 조항, 현행 법정 용어는 품질책임자"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
 ---
 
 ## 대상
