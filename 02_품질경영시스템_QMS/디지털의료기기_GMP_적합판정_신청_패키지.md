@@ -2,7 +2,7 @@
 doc-id: 디지털의료기기_GMP_적합판정_신청_패키지
 title: 디지털의료기기 GMP 적합판정 신청 패키지
 type: Guide
-version: v0.2
+version: v0.2.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: MFDS 디지털의료기기 GMP 적합판정 신청을 위한 제출 패키지 구성 및 절차 가이드
@@ -11,7 +11,7 @@ forms: [F-GMP-001]
 related-docs: [QMS_구축_핵심요소, IEC_62366-1_사용적합성_엔지니어링_계획서_v0.1, 디지털의료제품법_요구사항_매트릭스, SOP-CC-001, SOP-SBOM-001, SOP-AIGOV-001, IEC_62304_SW_수명주기, IEC_81001-5-1_FDA_Cybersecurity_SW보안, SOP-RM-001]
 related-issues: [33]
 owner: RA Lead
-last-review: 2026-05-22
+last-review: 2026-07-11
 review-due: 2027-05-22
 ---
 
@@ -60,7 +60,7 @@ MFDS는 디지털의료기기 GMP를 8가지 유형군으로 구분한다:
        └── 각 유형별 추가 요구사항 모두 충족 필요
 ```
 
-**판정 기준**: 유형 판정이 불분명한 경우 MFDS 사전상담(법 제13조)을 통해 확인. 유형 8은 구성 유형 각각의 요구사항을 합산 적용.
+**판정 기준**: 유형 판정이 불분명한 경우 MFDS 사전상담(법 제39조, 허가·신고 등의 사전 검토)을 통해 확인. 유형 8은 구성 유형 각각의 요구사항을 합산 적용.
 
 ## 5. 심사 유형별 절차
 

@@ -2,7 +2,7 @@
 doc-id: SOP-NC-001
 title: 부적합 제품 관리 절차
 type: SOP
-version: v0.3
+version: v0.3.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: 부적합 제품의 식별·격리·처분·통지를 규정하여 비의도적 사용·출하를 방지
@@ -11,7 +11,7 @@ forms: [F-NC-001, F-NC-002, F-NC-003]
 related-docs: [SOP-CAPA-001, SOP-CC-001, SOP-MFG-001, SOP-PMS-001, SOP-SUP-001]
 related-issues: []
 owner: QA Lead
-last-review: 2026-06-06
+last-review: 2026-07-11
 review-due: 2027-05-21
 ---
 
@@ -129,7 +129,7 @@ ISO 13485 §8.3.3에 따라 인도 또는 사용 개시 후 부적합 발견 시
 2. 환자·사용자 안전 영향 평가
 3. **권고적 통지(Advisory Notice)** 발행 여부 결정 (F-NC-003)
 4. 규제 보고 판단:
-   - MFDS: 안전성 정보 보고 (의료기기법 시행규칙 제48조)
+   - MFDS: 안전성 정보 보고 (의료기기법 시행규칙 제51조, 부작용 보고 등 — 사망·생명위협 7일 이내+추가보고 8일 이내, 기타 중대 이상사례 15일 이내)
    - FDA: MDR(Medical Device Report) 21 CFR 803 해당 여부
    - EU: Vigilance 보고 (EU MDR Art.87~92) → SOP-PMS-001 연계
 5. 시정조치 필요 시 SOP-CAPA-001 연계 개시
@@ -208,6 +208,7 @@ ISO 13485 §8.3.3에 따라 인도 또는 사용 개시 후 부적합 발견 시
 
 | 버전 | 일자 | 변경 내용 | 작성자 |
 |------|------|-----------|--------|
+| v0.3.1 | 2026-07-11 | audit-drain(#958) — §6.6 MFDS 보고기한 근거조항 오류 정정: "의료기기법 시행규칙 제48조"(품질관리심사기관 지정, 안전성보고와 무관)→"제51조"(부작용 보고 등, 사망·생명위협 7일+추가 8일/기타 중대 15일). 2026-07-09 자매재발 정정 스윕 누락분 | md-process-auditor |
 | v0.3 | 2026-06-06 | v0.3 보강 — FDA QMSR CP 7382.850 실사 대응 강화, EUDAMED Market Surveillance 연동, 부적합 에스컬레이션 매트릭스 추가, ISO 13485 §8.3 기반 concession 절차 QMSR 정합 |
 | v0.2 | 2026-05-21 | v0.2 보강 — 양식 템플릿(F-NC-001~003) 추가, X-ray 선량·Detector 부적합 처분 판정 기준 상세화 |
 | v0.1 | 2026-05-09 | 초판 작성 | QA Lead |
