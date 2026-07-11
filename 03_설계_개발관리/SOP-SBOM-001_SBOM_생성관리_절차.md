@@ -2,24 +2,24 @@
 doc-id: SOP-SBOM-001
 title: SBOM 생성·관리 절차
 type: SOP
-version: v0.4
+version: v0.4.1
 status: draft
 category: 03_설계_개발관리
 purpose: 의료용 X-ray 시스템 SW 구성요소의 SBOM 생성·유지·취약점 관리 절차를 정의
-applicable: [ISO 13485:2016 §4.2.4, FDA QMSR §820.180/ISO13485 §4.2.5, FDA Section 524B, FDA Cybersecurity Guidance 2026-02, EU MDR 2017/745 Annex II, EU CRA 2024/2847, IEC 81001-5-1:2021 §7.SR, MFDS 사이버보안 가이드라인, 디지털의료제품법 §16, NTIA SBOM Minimum Elements, CISA CSAF 2.0]
+applicable: [ISO 13485:2016 §4.2.4, FDA QMSR §820.180/ISO13485 §4.2.5, FDA Section 524B, FDA Cybersecurity Guidance 2026-02, EU MDR 2017/745 Annex II, EU CRA 2024/2847, IEC 81001-5-1:2021 §7.SR, MFDS 사이버보안 가이드라인, 디지털의료제품법 §14, NTIA SBOM Minimum Elements, CISA CSAF 2.0]
 forms: [F-SBOM-001, F-SBOM-002]
 related-docs: [SOP-CC-001, SOP-DT-001, SOP-CVD-001, IEC_81001-5-1_FDA_Cybersecurity_SW보안, SOP-VAL-001, IEC_62304_SW_수명주기, SOP-PSUR-001, SOP-FSCA-001, SOP-AIGOV-001]
 related-issues: [13, 17]
 owner: SW Lead / Security Officer
-last-review: 2026-06-28
+last-review: 2026-07-12
 review-due: 2027-06-08
 ---
 
-# SBOM 생성·관리 절차 — v0.3
+# SBOM 생성·관리 절차 — v0.4.1
 
 ## 1. 목적
 
-의료용 X-ray 시스템(Generator 제어 FW, Detector FW, Workstation SW, AI 추론 엔진 포함)에 탑재·사용되는 모든 소프트웨어 구성요소를 식별·추적하여 FDA Section 524B, MDCG 2019-16, MFDS 사이버보안 가이드라인, 디지털의료제품법 제16조에 부합하는 SBOM을 생성·유지·관리한다.
+의료용 X-ray 시스템(Generator 제어 FW, Detector FW, Workstation SW, AI 추론 엔진 포함)에 탑재·사용되는 모든 소프트웨어 구성요소를 식별·추적하여 FDA Section 524B, MDCG 2019-16, MFDS 사이버보안 가이드라인, 디지털의료제품법 제14조(전자적 침해행위로부터의 보호 조치)에 부합하는 SBOM을 생성·유지·관리한다.
 
 ## 2. 적용 범위
 
@@ -275,3 +275,4 @@ C. X-ray 특수 구성요소 포함 확인
 | v0.1 | 2026-04-22 | 초안 작성 | 업무규칙 개발팀 |
 | v0.2 | 2026-05-23 | 보강 — 단계별 절차 표(수행자/판정기준), F-SBOM-001/002 양식, X-ray 특수 구성요소·취약점 우선순위, 상호참조 확충 | QA/RA |
 | v0.3 | 2026-06-08 | QMSR 실사 대응 — §5.8 사이버보안 파일 MDF 편입·실사 체크포인트 신설, §5.9 CSAF 기반 취약점 자동 연동 신설, EU CRA 2024/2847 사전 대비(SPDX 3.0/CycloneDX 1.6 전환 계획), QMSR §820.180 기록 관리 연동, SOP-CVD-001·SOP-FSCA-001 상호참조 추가 | QA/RA |
+| v0.4.1 | 2026-07-12 | **audit #962 정정** — frontmatter applicable 및 §1 목적 "디지털의료제품법 제16조"(우수 관리체계 인증, SBOM과 무관) 오귀속 → "제14조"(전자적 침해행위로부터의 보호 조치, 보안지침 준수)로 정정. Tier1: 국가법령정보센터 디지털의료제품법(법률 제20139호) 원문. | md-process-auditor |
