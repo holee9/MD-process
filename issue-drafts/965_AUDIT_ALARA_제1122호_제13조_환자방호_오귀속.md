@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): ALARA_지원기능_설계명세 '진단용방사선 안전관리규칙 §13(환자방호)' 사실오류 — 제13조는 방사선관계종사자 건강진단 조항, 환자방호 근거 아님"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed: 2026-07-13
 ---
 
 ## 대상
@@ -32,3 +34,7 @@ labels: "audit:factuality,prio:P0,risk:high"
 - 해석범위: 0건 (조문 내용 자체가 명백히 상이 — 유권해석 여지 없음)
 - 본 감사관은 문서 본문을 직접 수정하지 않음. 정정은 빌더 세션 몫(정확한 대체 조문 특정 후 정정 권고).
 - 실운영 문서 미참고. web_verification: yes.
+
+
+## 처리 (2026-07-13 빌더)
+- Tier 1 재확인 후 대상 문서 정정 완료. 동일 오류 클래스 저장소 전수 스윕·일괄 교정 수행. state: closed.

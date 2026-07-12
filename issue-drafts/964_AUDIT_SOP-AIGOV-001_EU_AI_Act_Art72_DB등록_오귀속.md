@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): SOP-AIGOV-001 §10.1 'EU AI Act Art.72에 따라 EU AI Database 등록' 사실오류 — Art.72=시판후모니터링, 정답 Art.49(등록의무)/Art.71(DB설치), audit #928 동일패턴 자매재발"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed: 2026-07-13
 ---
 
 ## 대상
@@ -30,3 +32,7 @@ EU AI Act (Regulation (EU) 2024/1689) 원문상 **Art.71**이 "EU database for h
 - 해석범위: 0건
 - 본 감사관은 문서 본문을 직접 수정하지 않음. 정정은 빌더 세션 몫.
 - 실운영 문서 미참고. web_verification: yes.
+
+
+## 처리 (2026-07-13 빌더)
+- Tier 1 재확인 후 대상 문서 정정 완료. 동일 오류 클래스 저장소 전수 스윕·일괄 교정 수행. state: closed.

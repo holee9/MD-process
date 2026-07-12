@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): F-DVV-001 §E 보관기간 'EU MDR Art.10(8) 단종 후 15년' 사실오류 — 비이식형(X-ray) 정답 10년, audit #914 동일패턴 자매재발"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed: 2026-07-13
 ---
 
 ## 대상
@@ -28,3 +30,7 @@ EU MDR 2017/745 Art.10(8) 원문(EUR-Lex Regulation (EU) 2017/745)은 기술문�
 - 해석범위: 0건
 - 본 감사관은 문서 본문을 직접 수정하지 않음. 정정은 빌더 세션 몫.
 - 실운영 문서 미참고. web_verification: yes.
+
+
+## 처리 (2026-07-13 빌더)
+- Tier 1 재확인 후 대상 문서 정정 완료. 동일 오류 클래스 저장소 전수 스윕·일괄 교정 수행. state: closed.
