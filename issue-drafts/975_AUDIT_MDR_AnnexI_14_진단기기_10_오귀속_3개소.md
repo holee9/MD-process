@@ -1,0 +1,27 @@
+---
+title: "audit(C1): MDR Annex I GSPR 조항 오귀속 — §14를 '진단기기'로 표기(정답 §15), 영상품질·검사개요의 §10 오귀속 포함 3개소"
+labels: "audit:factuality,prio:P1,risk:medium"
+---
+
+## 대상
+- `05_검사_시험_밸리데이션/X-ray_장비_안전성능_표준_매핑.md` L105(§5.1 "GSPR Annex I §14 (진단기기), §16.2 (방사선), §17 (전자 프로그래머블 시스템)")
+- `05_검사_시험_밸리데이션/영상품질_QC_프로토콜.md` L15(frontmatter 근거 "EU MDR 2017/745 Annex I §10")
+- `05_검사_시험_밸리데이션/검사_시험_밸리데이션_개요.md` L28(§2 표 "공정관리·검사 | … | Annex I §10")
+- 클래스: C1 (조항번호/주제 귀속)
+
+## 결함
+EUR-Lex 원문(CELEX 02017R0745-20260101) Annex I 장 구조:
+- **§10 = Chemical, physical and biological properties**(화학·물리·생물학적 특성 — 독성·생체적합성 등)
+- **§14 = Construction of devices and interaction with their environment**(기기 구성·환경 상호작용)
+- **§15 = Devices with a diagnostic or measuring function**(진단·측정 기능 기기 — 정확도·정밀도·안정성)
+- §16 = 방사선 방호 ✓, §17 = 전자 프로그래머블 시스템 ✓(두 건은 정확)
+
+1) 매핑 L105: '진단기기' GSPR은 **§15**이며 §14가 아님 — 조항번호 오귀속.
+2) 영상품질 L15: 영상품질(정확도·안정성) QC의 GSPR 근거로 §10(화학·물리·생물학적 특성)은 무관 — 정답 계열 §15(및 §16/§17).
+3) 검사개요 L28: 공정관리·검사의 EU 근거로 §10 무관 — 공정·검사 관련 GSPR·Annex IX QMS 심사 계열로 재귀속 필요.
+
+## Tier1
+EUR-Lex Regulation (EU) 2017/745 consolidated(02017R0745-20260101) Annex I 원문 직접 열람(Chrome 렌더링) — §10/§14/§15/§16/§17 제목 전수 대조.
+
+## 판정
+P1, 3개소(2~3문서). §16.2·§17·§17.2·Annex IX §2.3 등 인접 인용은 PASS 또는 해석범위. 감사관 본문 미수정. 실운영 문서 미참고. web_verification: yes.
