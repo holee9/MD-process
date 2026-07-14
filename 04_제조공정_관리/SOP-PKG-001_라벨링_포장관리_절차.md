@@ -2,14 +2,14 @@
 doc-id: SOP-PKG-001
 title: 라벨링 및 포장 관리 절차
 type: SOP
-version: v0.2.1
+version: v0.2.2
 status: draft
 category: 04_제조공정_관리
 purpose: 의료용 X-ray 시스템·Detector·SW의 라벨 작성·검증·부착 및 포장 공정을 통제하여 규제 적합성과 제품 추적성을 보장한다
 applicable:
   - ISO13485:2016 §7.5.1(e)
   - ISO13485:2016 §7.5.1.1
-  - FDA QMSR (21 CFR 820.120, 820.130)
+  - FDA QMSR §820.45 라벨링·포장 통제 (구 QSR §820.120/§820.130 폐지)
   - EU MDR 2017/745 Annex I Ch.III §23
   - EU MDR 2017/745 Art.27 (UDI)
   - MFDS 의료기기 표시·기재 등에 관한 규정
@@ -21,7 +21,7 @@ forms: [F-PKG-001, F-PKG-002, F-PKG-003]
 related-docs: [SOP-MFG-001, SOP-UDI-001, SOP-DOC-001, SOP-CC-001]
 related-issues: []
 owner: Production/QA Lead
-last-review: 2026-05-29
+last-review: 2026-07-15
 review-due: 2027-05-16
 ---
 
@@ -94,7 +94,7 @@ review-due: 2027-05-16
 
 1. **규제 요구사항 수집**: RA Lead는 대상 시장별 라벨 필수 항목을 정리한다.
 
-   **공통 필수 항목** (ISO 13485 §7.5.1(e) / FDA QMSR 820.120):
+   **공통 필수 항목** (ISO 13485 §7.5.1(e) / FDA QMSR §820.45):
    - 제조업자명·주소
    - 제품명·모델번호
    - 시리얼 번호(S/N) 또는 로트 번호
@@ -124,7 +124,7 @@ review-due: 2027-05-16
    - 의료기기 기호 (MDR Annex I §23.2(a))
    - UDI 캐리어 (Art.27)
    - 유효기한 또는 제조 후 사용기한 (해당 시)
-   - 전자 IFU 규정 (EU MDR 2017/745 Art.23.1(f) 및 Commission Implementing Regulation (EU) 2021/2226):
+   - 전자 IFU 규정 (EU MDR 2017/745 Annex I §23.1(f) 및 Commission Implementing Regulation (EU) 2021/2226):
      - 전자 IFU 제공 가능 조건: 위험 평가 완료, 사용자 접근성 보장, 종이 IFU 요청 시 무상 제공
      - 전자 IFU 웹사이트 요구사항: EU 역내 접근 가능, 제품 수명 종료 후 최소 15년 유지
      - 라벨에 전자 IFU 접근 방법(URL·QR코드) 및 "전자 사용설명서 제공" 기호(ISO 15223-1:2021 기호 5.4.3) 표기 필수
@@ -224,7 +224,7 @@ review-due: 2027-05-16
 
 ### 5.6 전자 라벨링(e-Labeling)
 
-1. SW 제품 또는 SW 업데이트는 전자 IFU 제공 가능 (EU MDR Art.23.1(f), Commission Implementing Regulation (EU) 2021/2226, FDA 21 CFR 801.128 Guidance)
+1. SW 제품 또는 SW 업데이트는 전자 IFU 제공 가능 (EU MDR Annex I §23.1(f), Commission Implementing Regulation (EU) 2021/2226, FDA 21 CFR 801.128 Guidance)
 2. 전자 IFU URL은 라벨에 인쇄; 접근 가능성 검증 (EU 2021/2226 Art.3 요건 충족 확인)
 3. 전자 IFU 버전 관리: SOP-DOC-001에 따라 통제
 4. EU 시장 전자 IFU 제공 시 §5.1의 EU 2021/2226 요구사항을 준수하고, IFU 웹사이트 가용성을 분기별로 모니터링한다.
@@ -337,3 +337,4 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 | v0.1 | 2026-05-16 | 신규 작성 | — |
 | v0.2 | 2026-05-29 | 포장 무결성 시험·전자 IFU·다국어 라벨 QA·Detector ESD/MSL 보강 | holee9-automation |
 | v0.2.1 | 2026-07-09 | audit-drain C2(보고기한) — §9.1 MFDS 회수계획서 제출기한 오류 정정: 일괄 "15일"→회수등급별 5일(1등급)/15일(2·3등급) | md-process-auditor |
+| v0.2.2 | 2026-07-15 | audit #967/#971 정정 — QMSR 820.120/820.130(구 QSR, 폐지)→§820.45 라벨링·포장 통제(2개소); eIFU 근거 'Art.23.1(f)'(Art.23=Parts and components)→Annex I §23.1(f)(2개소) | QMS-Bot |

@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): SOP-DHF-001 L309 'EU MDR Art.87 임상조사 규정' 오귀속 — Art.87 = 중대사고·FSCA 보고(비질런스)"
 labels: "audit:factuality,prio:P1,risk:medium"
+state: closed
+closed: 2026-07-15
 ---
 
 ## 대상

@@ -2,14 +2,14 @@
 doc-id: SOP-SVC-001
 title: 서비스 활동 절차
 type: SOP
-version: v0.2
+version: v0.2.1
 status: draft
 category: 04_제조공정_관리
 purpose: 의료용 X-ray 장비의 설치·수리·유지보수·해체 서비스 활동에 대한 절차를 수립하여 제품 요구사항 지속 충족을 보장한다
 applicable:
   - ISO 13485:2016 §7.5.4
   - FDA QMSR (21 CFR Part 820 → ISO 13485 편입)
-  - EU MDR 2017/745 Art.2(39), Art.10(10)
+  - EU MDR 2017/745 Art.10(10)
   - IEC 60601-1
   - IEC 60601-2-54
   - IEC 81001-5-1:2021
@@ -34,7 +34,7 @@ related-docs:
   - X-ray_장비_안전성능_표준_매핑
 related-issues: []
 owner: Service/Engineering Lead
-last-review: 2026-05-28
+last-review: 2026-07-15
 review-due: 2027-05-28
 ---
 
@@ -342,3 +342,4 @@ review-due: 2027-05-28
 |------|------|-----------|--------|
 | v0.1 | 2026-05-11 | 초안 작성 | QA/RA |
 | v0.2 | 2026-05-28 | 절차 흐름 표 구조화(단계별 who/what/판정기준), X-ray 설치 검증 항목 추가, 양식 F-SVC-001~003 실무 양식 추가, 측정 장비·위탁 업체 관리 보강, 상호참조 보강 |
+| v0.2.1 | 2026-07-15 | audit #970 정정 — frontmatter MDR Art.2(39)('reprocessing' 정의, 서비스활동 무관) 인용 삭제, Art.10(10) 유지 | QMS-Bot |

@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): SOP-PKG-001 eIFU 근거 'EU MDR Art.23.1(f)' 오귀속 — 정답 Annex I §23.1(f) (Art.23 = Parts and components, 2개소)"
 labels: "audit:factuality,audit:citation,prio:P1,risk:medium"
+state: closed
+closed: 2026-07-15
 ---
 
 ## 대상

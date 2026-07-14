@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): FDA QMSR 미존재 조항(§820.50/70(e)/120/130/180/198) 인용 — eCFR 원문 확인, 03·04 카테고리 6개 문서 ~13개소 (audit #951 자매재발 패턴)"
 labels: "audit:factuality,audit:citation,prio:P0,risk:high"
+state: closed
+closed: 2026-07-15
 ---
 
 ## Tier1 근거 (eCFR 직접 열람, 2026-07-13, Chrome)

@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): SOP-CA-001 'EU MDR Art.10(9)(g) (고객 데이터 보호)' 오귀속 — (g) = product realisation, MDR Art.10(9)에 데이터보호 항목 없음 (3개소)"
 labels: "audit:factuality,prio:P1,risk:medium"
+state: closed
+closed: 2026-07-15
 ---
 
 ## 대상

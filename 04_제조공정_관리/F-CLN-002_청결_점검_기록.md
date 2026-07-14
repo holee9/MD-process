@@ -8,7 +8,7 @@ category: 04_제조공정_관리
 purpose: SOP-CLN-001 §5.3·§5.4·§5.5·§5.7에서 발생하는 청결 점검·배치 결정·출하 점검·서비스 반환 기록을 통합 양식으로 관리
 applicable:
   - ISO 13485:2016 §6.4.2, §7.5.2, §4.2.5
-  - FDA QMSR §820.70(e)
+  - FDA QMSR §820.10/ISO 13485 §6.4.2 편입 (구 QSR §820.70(e) 폐지)
   - EU MDR Art.10(8)
 forms: []
 related-docs: [SOP-CLN-001, F-CLN-001, SOP-NC-001, F-ENV-001]

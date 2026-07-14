@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): SOP-DHF-001·SOP-DVV-001 'EU MDR Art.10(8) 단종 후 15년' 사실오류 — 비이식형 정답 10년, audit #914/#963 자매재발 잔존 3개소"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed: 2026-07-15
 ---
 
 ## 대상

@@ -2,16 +2,16 @@
 doc-id: SOP-SBOM-001
 title: SBOM 생성·관리 절차
 type: SOP
-version: v0.4.1
+version: v0.4.2
 status: draft
 category: 03_설계_개발관리
 purpose: 의료용 X-ray 시스템 SW 구성요소의 SBOM 생성·유지·취약점 관리 절차를 정의
-applicable: [ISO 13485:2016 §4.2.4, FDA QMSR §820.180/ISO13485 §4.2.5, FDA Section 524B, FDA Cybersecurity Guidance 2026-02, EU MDR 2017/745 Annex II, EU CRA 2024/2847, IEC 81001-5-1:2021 §7.SR, MFDS 사이버보안 가이드라인, 디지털의료제품법 §14, NTIA SBOM Minimum Elements, CISA CSAF 2.0]
+applicable: [ISO 13485:2016 §4.2.4, FDA QMSR §820.35/ISO13485 §4.2.5, FDA Section 524B, FDA Cybersecurity Guidance 2026-02, EU MDR 2017/745 Annex II, EU CRA 2024/2847, IEC 81001-5-1:2021 §7.SR, MFDS 사이버보안 가이드라인, 디지털의료제품법 §14, NTIA SBOM Minimum Elements, CISA CSAF 2.0]
 forms: [F-SBOM-001, F-SBOM-002]
 related-docs: [SOP-CC-001, SOP-DT-001, SOP-CVD-001, IEC_81001-5-1_FDA_Cybersecurity_SW보안, SOP-VAL-001, IEC_62304_SW_수명주기, SOP-PSUR-001, SOP-FSCA-001, SOP-AIGOV-001]
 related-issues: [13, 17]
 owner: SW Lead / Security Officer
-last-review: 2026-07-12
+last-review: 2026-07-15
 review-due: 2027-06-08
 ---
 
@@ -135,7 +135,7 @@ FDA QMSR(2026-02-02 시행)에 따라 SBOM 관련 기록은 ISO 13485:2016 §4.2
 
 | 단계 | 수행자 | 활동 | 판정 기준 |
 |------|--------|------|-----------|
-| 5.8.1 | QA Manager | SBOM·VEX·VDR을 MDF 내 사이버보안 파일(Cybersecurity File)로 편입 | QMSR §820.180 준수 |
+| 5.8.1 | QA Manager | SBOM·VEX·VDR을 MDF 내 사이버보안 파일(Cybersecurity File)로 편입 | QMSR §820.35/ISO 13485 §4.2.5 준수 |
 | 5.8.2 | QA Manager | SBOM 변경 이력의 추적성 확보 — 빌드 ID↔SBOM↔VEX 삼중 연결 | 1:1:1 대응 확인 |
 | 5.8.3 | RA Lead | FDA 실사 시 SBOM 즉시 제시 가능 상태 유지 (전자 서명 포함) | 2시간 내 제출 가능 |
 | 5.8.4 | Security Officer | QMSR 감사 관점 자체 점검 — SBOM 갱신 이력, VEX 판정 근거, 패치 타임라인 문서화 | 분기 자체감사 완료 |
@@ -250,7 +250,7 @@ C. X-ray 특수 구성요소 포함 확인
 ## 8. 기록·이력 관리
 
 - SBOM, VEX, VDR 모두 DDF 및 MDF에 편입 (ISO 13485 §4.2.4 / §4.2.5)
-- 보존 기간: 제품 수명 + 15년 (MDR Annex IX) 또는 제품 수명 + 2년 (QMSR §820.180) 중 긴 기간
+- 보존 기간: 제품 단종 후 최소 10년 (EU MDR Art.10(8)/Annex IX Ch.III §7 — 비이식형 기준) 이상, 사내 자율정책으로 연장 가능. FDA: QMSR §820.35 + ISO 13485 §4.2.5 기록통제 적용 (구 QSR §820.180(b) '제품 수명+2년' 폐지)
 - QMSR 실사 대비: 사이버보안 파일(Cybersecurity File)을 MDF 내 독립 섹션으로 유지, FDA 실사 시 2시간 내 제출 가능 상태
 - 변경 시 SOP-CC-001 변경통제 연동 판정
 
@@ -276,3 +276,4 @@ C. X-ray 특수 구성요소 포함 확인
 | v0.2 | 2026-05-23 | 보강 — 단계별 절차 표(수행자/판정기준), F-SBOM-001/002 양식, X-ray 특수 구성요소·취약점 우선순위, 상호참조 확충 | QA/RA |
 | v0.3 | 2026-06-08 | QMSR 실사 대응 — §5.8 사이버보안 파일 MDF 편입·실사 체크포인트 신설, §5.9 CSAF 기반 취약점 자동 연동 신설, EU CRA 2024/2847 사전 대비(SPDX 3.0/CycloneDX 1.6 전환 계획), QMSR §820.180 기록 관리 연동, SOP-CVD-001·SOP-FSCA-001 상호참조 추가 | QA/RA |
 | v0.4.1 | 2026-07-12 | **audit #962 정정** — frontmatter applicable 및 §1 목적 "디지털의료제품법 제16조"(우수 관리체계 인증, SBOM과 무관) 오귀속 → "제14조"(전자적 침해행위로부터의 보호 조치, 보안지침 준수)로 정정. Tier1: 국가법령정보센터 디지털의료제품법(법률 제20139호) 원문. | md-process-auditor |
+| v0.4.2 | 2026-07-15 | audit #966/#967 정정 — frontmatter·§5.8·§8 QMSR §820.180(폐지)→§820.35/ISO 13485 §4.2.5; §8 보존기간 '수명+15년(Annex IX)'→단종 후 최소 10년(Art.10(8)/Annex IX Ch.III §7 비이식형) | QMS-Bot |

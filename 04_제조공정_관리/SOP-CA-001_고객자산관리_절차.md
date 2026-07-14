@@ -2,14 +2,13 @@
 doc-id: SOP-CA-001
 title: SOP-CA-001 — 고객자산 관리 절차 (Customer Property Control Procedure)
 type: SOP
-version: v0.2
+version: v0.2.1
 status: draft
 category: 04_제조공정_관리
 purpose: ISO 13485:2016 §7.5.10에 따라 고객이 제공하거나 고객 소유인 자산(장비·소프트웨어·임상 영상 데이터·문서)을 식별·검증·보호·보관·반환하고, 이상 발생 시 고객에 보고하며 기록을 유지하는 절차. X-ray 시스템 제조·서비스 맥락에서 임상 영상 데이터와 고객 보유 교정장비를 특화 통제.
 applicable:
   - ISO 13485:2016 §7.5.10 고객 자산
-  - FDA QMSR §820.50 (구매 통제) + §820.198 (불만 — 고객자산 이상 시 트리거)
-  - EU MDR 2017/745 Art.10(9)(g) (고객 데이터 보호)
+  - FDA QMSR §820.10 → ISO 13485 §7.4 구매, §8.2.2 불만처리 편입 + 21 CFR 803 (구 QSR §820.50/§820.198 폐지)
   - EU GDPR Art.32 (개인정보 보안 처리) — 임상 영상 데이터 대상
   - HIPAA Privacy Rule (미국 고객 임상 데이터 — Business Associate Agreement 적용 시)
   - 개인정보보호법 (국내) + 의료기기법 시행규칙 (서비스 기록)
@@ -18,7 +17,7 @@ forms: [F-CA-001]
 related-docs: [SOP-MFG-001, SOP-TRC-001, SOP-NC-001, SOP-SVC-001, SOP-CVD-001, SOP-SBOM-001, SOP-CC-001, SOP-CLN-001]
 related-issues: [1530, 212]
 owner: QA Manager
-last-review: 2026-06-20
+last-review: 2026-07-15
 review-due: 2027-06-20
 ---
 
@@ -147,7 +146,7 @@ review-due: 2027-06-20
 | PHI 침해 | GDPR Art.33 | 72시간 | 감독기관 양식 |
 | 미국 환자 PHI 침해 | HIPAA Breach Notification | 60일 | OCR 양식 |
 | 국내 개인정보 침해 | 개인정보보호법 §34 | 72시간 | 개인정보보호위원회 |
-| 자산이 시판 의료기기 부품 | FDA QMSR §820.198 불만 | 사건 발생 시 | MDR 검토 |
+| 자산이 시판 의료기기 부품 | ISO 13485 §8.2.2 불만처리 (QMSR §820.10 편입; 구 §820.198 폐지) + 21 CFR 803 | 사건 발생 시 | MDR 검토 |
 
 ### 5.7 임상 영상 데이터 특수 통제 (X-ray 특화 — v0.2 신규)
 **입력:** 고객 제공 DICOM 데이터(서비스·시험·검증 목적), Business Associate Agreement(미국 고객 시).
@@ -207,8 +206,7 @@ review-due: 2027-06-20
 | ISO 13485 §7.5.10 (식별·검증·보호·보관·이상보고·기록) | **5.1, 5.2, 5.3, 5.5, 5.6 + §7 기록 — 완전 충족** |
 | ISO 13485 §4.2.5 기록 관리 | §7.2 표 (5년/CAPA 연계) |
 | ISO 13485 §7.4 구매(연계 제외 명시) | §2 제외 절 |
-| FDA QMSR §820.50 / §820.198 | 5.6 트리거 표 |
-| EU MDR Art.10(9)(g) | 5.7 임상 데이터 |
+| FDA QMSR §820.10 → ISO 13485 §7.4/§8.2.2 (구 §820.50/§820.198 폐지) | 5.6 트리거 표 |
 | GDPR Art.32/33/44 | 5.6, 5.7 |
 | HIPAA Privacy Rule + Breach Notification | 5.7 |
 | 개인정보보호법 §28(국외이전), §34(신고) | 5.7, 5.6 |
@@ -251,10 +249,11 @@ review-due: 2027-06-20
 - **상위:** QM-001 §7.5
 - **연계 SOP:** SOP-SVC-001(서비스 활동, 자산 반입 다수 발생), SOP-CLN-001(반환자산 청결), SOP-CVD-001(사이버보안 사고), SOP-SBOM-001(SW 자산 SBOM 검증), SOP-CC-001(변경통제), SOP-NC-001(부적합), SOP-CAPA-001(시정조치)
 - **양식:** F-CA-001
-- **표준:** ISO 13485:2016 §7.5.10, FDA QMSR §820.50/198, EU MDR Art.10(9)(g), GDPR Art.32/33/44, HIPAA, IEC 81001-5-1
+- **표준:** ISO 13485:2016 §7.5.10, FDA QMSR §820.10(ISO 13485 §7.4/§8.2.2 편입), GDPR Art.32/33/44, HIPAA, IEC 81001-5-1
 
 ## 12. 개정 이력
 | 버전 | 날짜 | 내용 | 작성자 |
 |---|---|---|---|
 | v0.1 | 2026-06-19 | 초안 — §7.5.10 UNMET 해소 (이슈 212) | QMS-Architect-Bot |
 | v0.2 | 2026-06-20 | 임상 영상 데이터 PHI 통제(§5.7), 교정장비 SLA(§5.8), SBOM·CVD 연계(§5.9), KPI(§7.1), 적대적 검토 8항목 — 이슈 #1530 PARTIAL→MET 전환 | QMS-Architect-Bot |
+| v0.2.1 | 2026-07-15 | audit #967/#969 정정 — QMSR §820.50/§820.198(구 QSR, 폐지)→§820.10·ISO 13485 §7.4/§8.2.2 편입 표기(4개소); MDR Art.10(9)(g)=product realisation로 '고객 데이터 보호' 오귀속 3개소 삭제(GDPR 근거 유지) | QMS-Bot |

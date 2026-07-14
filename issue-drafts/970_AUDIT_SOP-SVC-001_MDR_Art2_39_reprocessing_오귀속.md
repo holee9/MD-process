@@ -1,6 +1,8 @@
 ---
 title: "audit(C1): SOP-SVC-001 frontmatter 'EU MDR Art.2(39)' 오귀속 — 제2조(39) = 'reprocessing'(재처리), 서비스활동 정의 아님"
 labels: "audit:factuality,prio:P1,risk:medium"
+state: closed
+closed: 2026-07-15
 ---
 
 ## 대상

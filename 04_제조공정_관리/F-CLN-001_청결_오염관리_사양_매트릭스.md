@@ -8,7 +8,7 @@ category: 04_제조공정_관리
 purpose: 제품군별 잠재 오염원·청결 사양·세척불필요 근거를 단일 매트릭스로 관리
 applicable:
   - ISO 13485:2016 §6.4.2, §7.5.2
-  - FDA QMSR §820.70(e)
+  - FDA QMSR §820.10/ISO 13485 §6.4.2 편입 (구 QSR §820.70(e) 폐지)
   - EU MDR Annex I §10.3
 forms: []
 related-docs: [SOP-CLN-001, SOP-MFG-002, F-CLN-002]
