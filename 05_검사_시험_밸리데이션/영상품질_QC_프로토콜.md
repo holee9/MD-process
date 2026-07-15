@@ -12,7 +12,7 @@ applicable:
   - IEC 62220-1-1:2015
   - ISO 13485:2016 §7.6, §8.2.5
   - FDA QMSR (21 CFR 820 → ISO 13485 alignment)
-  - EU MDR 2017/745 Annex I §10
+  - EU MDR 2017/745 Annex I §15
   - MFDS GMP
   - 진단용방사선발생장치의안전관리에관한규칙(제1122호) 별표1
   - AAPM TG-272 (2022)
