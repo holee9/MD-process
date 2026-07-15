@@ -49,7 +49,7 @@ review-due: 2027-05-28
 
 | 근거 | 조항 | 요구사항 요약 |
 |------|------|-------------|
-| FD&C Act §524B(b)(1)(B) | — | "reasonable assurance that the device and related systems are cybersecure" |
+| FD&C Act §524B(b)(2) | — | "reasonable assurance that the device and related systems are cybersecure" |
 | FDA Premarket Cybersecurity Guidance | §V.D, §VI.D | Vulnerability Testing, Penetration Testing 의무 |
 | MFDS 사이버보안 가이드라인 | 제6장 | 시험 결과 제출 의무 |
 | 디지털의료기기 보안지침 | 제15조 | 취약점 점검 의무 |
