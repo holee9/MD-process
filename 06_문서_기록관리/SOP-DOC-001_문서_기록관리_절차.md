@@ -2,7 +2,7 @@
 doc-id: SOP-DOC-001
 title: 문서 및 기록 관리 절차
 type: SOP
-version: v0.2
+version: v0.3
 status: draft
 category: 06_문서_기록관리
 purpose: QMS 운영에 필요한 문서의 작성·검토·승인·배포·개정·폐기 및 품질기록의 식별·수집·보관·보호·검색·보존기한·폐기 절차를 정의한다
@@ -188,7 +188,7 @@ review-due: 2027-05-15
 | 기록 유형 | 최소 보존기한 | 근거 |
 |-----------|---------------|------|
 | DHF/DHR/DMR | 제품 수명 + 5년 | ISO 13485 §4.2.5, MFDS GMP |
-| 위험관리파일(RMF) | 제품 수명 + 5년 | ISO 14971 §3.5 |
+| 위험관리파일(RMF) | 제품 수명 + 5년 | ISO 14971:2019 §4.5 |
 | CAPA 기록 | 완료일로부터 5년 | ISO 13485 §8.5.2 |
 | 교육 기록 | 해당 인원 재직 기간 + 3년 | ISO 13485 §6.2 |
 | 불만/부작용 보고 | 10년 (EU MDR) / 제품 수명 + 2년 (MFDS) | EU MDR Art.10(8), MFDS |
@@ -334,3 +334,4 @@ EU Annex 11에 따라 전자기록 시스템(EDMS 포함)에 대해 다음 밸�
 |------|------|-----------|--------|
 | v0.1 | 2026-05-15 | 초안 작성 — ISO 13485 §4.2.4/§4.2.5, FDA QMSR, EU MDR Annex IX §2 반영 | holee9-automation |
 | v0.2 | 2026-05-29 | ALCOA+ 데이터 무결성·EDMS 보안·AI/ML 데이터 기록관리 보강 | holee9-automation |
+| v0.3 | 2026-07-17 | §6.4 보존기한표 RMF 근거 'ISO 14971 §3.5'(용어정의 조항) → 정답 '§4.5 Risk management file' 정정 — §3=Terms and definitions, §4.1~4.5(General/Management responsibilities/Competence/RM plan/RM file) 구조 확인 [audit #977] | md-process-auditor |
