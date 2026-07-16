@@ -4,7 +4,7 @@ title: 의료기기파일 및 기술문서 관리 절차
 type: Procedure
 category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
-version: v0.5
+version: v0.6
 status: draft
 last-review: 2026-07-02
 owner: RA/QA
@@ -31,6 +31,7 @@ applicable:
 | v0.3 | 2026-06-25 | §9.3 §820.35(a)(b)(c)(d) 하위항목 주제 eCFR 1차 재확인 정정 — (a)Records of complaints/(b)Records of servicing activities/(c)UDI/(d)Confidentiality; §9.2·§12.4 동반 정정; Part 11은 §820.35 외부 독립 Part로 표현 [audit #915] | holee9-builder |
 | v0.4 | 2026-06-29 | §18 N:M Substantial Equivalence 비교 매트릭스 양식 신설(predicate 최대 5 × model variant cross-product: scintillator×substrate×portability), §18.4 Reference Device 항 분리, §18.5 적합성 표준 일괄 매핑, §18.6 SE 결론문 양식; §17에 F-TD-005 추가; §16 교차참조에 12_벤치마크 3건 추가 [plan #934] | holee9-builder |
 | v0.5 | 2026-07-02 | audit 정정: §18.5 FDA Cyber Guidance 2023-09-27 → **2026-02 Final** (Docket FDA-2021-D-1158, 2회 supersede) [audit #938]; §18.6 §807.100(b)(2)(ii)(B) → **(C)** 정정, (B)는 "as safe and as effective" 근거 별기록 [audit #936]; §18.7·§출처 Best Practices Predicate Draft 상태·Docket FDA-2023-D-3134 명시 [audit #937] | holee9-builder |
+| v0.6 | 2026-07-17 | §10.1 Part 11 요건표 '§11.10(k)(1)' 요구사항 오기술 정정 — eCFR 원문(§11.10(k)(1): 시스템 문서 배포·접근·이용 통제) 확인, 기존 '문서 유효성 기간 관리'(§11.10(c) 영역과 혼동)는 오기술 [audit #978] | md-process-auditor |
 
 ---
 
@@ -281,7 +282,7 @@ STED는 IMDRF(구 GHTF) N4가 정의한 국제 기술문서 공통 형식으로,
 | §11.10(d) | 시스템 접근 제한 | 역할 기반 접근제어 (RBAC), 계정 관리 SOP |
 | §11.10(e) | 감사 추적 (Audit Trail) | 변경 이력 자동 기록 (Who, What, When, Why) |
 | §11.10(g) | 권한 확인 | 전자서명 전 사용자 인증 (ID + 암호) |
-| §11.10(k)(1) | 문서 유효성 기간 관리 | 유효판/폐지판 자동 상태 관리 |
+| §11.10(k)(1) | 시스템 문서(eDMS 운영·유지보수 문서)의 배포·접근·이용 통제 | 시스템 문서 배포이력·접근권한·버전 관리 (eDMS 운영 매뉴얼·SOP 배포판 관리) |
 | §11.50 | 전자서명 표시 | 서명자 이름, 일시, 서명 의미 표시 |
 | §11.70 | 전자서명-기록 연결 | 서명과 기록의 변경 불가 결합 |
 | §11.100 | 전자서명 통제 | 개인별 고유 서명, 재사용 금지 |
