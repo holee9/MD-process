@@ -34,3 +34,10 @@ P1. 정답 확정은 표준 원문 확보 후 후속(빌더: IEC 60601-2-54:2022
 - WebSearch 재시도("IEC 60601-2-54" clause 201.12.1.101 kVp / 203.6 / 203.7 AEC) — IEC Webstore·iTeh 카탈로그 페이지만 반환, 조항 본문 발췌 없음. 표준 원문(유료) 미확보 상태 불변.
 - **판정 유지: 미확인. 상태: open 유지.** 5개 문서(검사_시험_밸리데이션_개요·IEC60601-2-54_형식시험_체크리스트·X-ray_장비_안전성능_표준_매핑·SOP-IQ-001·SOP-CAL-001)의 조항번호는 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 대조.
 - 실운영 문서 미참고. web_verification: attempted-paywalled(재확인 2026-07-17).
+
+## 재확인 시도 (2026-07-18, 드레인 스프린트 3차)
+- WebSearch 재시도(clause 201.12.1.101/203.6/203.7 kVp·AEC 특정 조항) — IEC Webstore/iTeh 카탈로그·무관 표준(60601-2-25/-27/-7 등)만 반환, 조항 본문 미확보.
+- MITA "21 CFR Subchapter J to IEC Comparison Table" PDF(medicalimaging.org) — 링크 만료(NEMA 홈페이지로 리다이렉트), 접근 불가.
+- FDA Guidance "Medical X-Ray Imaging Devices: Conformance with IEC Standards"(fda.gov/media/99466, 2023-02-21) 직접 열람 — IEC 60601-2-54가 21 CFR 1020.31 등에 상응함은 확인되나, kVp/AEC 세부 조항번호(§203.6/§201.12.1/§201.6 등) 본문 발췌는 미포함. 해소에 불충분.
+- **판정 유지: 미확인. 상태: open 유지.** 대상 5개 문서 조항번호 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 대조.
+- 실운영 문서 미참고. web_verification: attempted-paywalled(3차 재확인 2026-07-18).
