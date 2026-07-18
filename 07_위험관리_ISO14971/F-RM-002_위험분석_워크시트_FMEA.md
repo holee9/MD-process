@@ -1,7 +1,7 @@
 ---
 doc-id: F-RM-002
 title: 위험분석 워크시트 — FMEA (Failure Mode and Effects Analysis)
-version: v0.2.1
+version: v0.2.2
 type: Form
 status: draft
 category: 07_위험관리_ISO14971
@@ -34,6 +34,7 @@ applicable-standards:
 | v0.1 | 2026-04-25 | 초안 작성 — 설계 FMEA 양식, 심각성·발생도·검출도 기준, 기록 예시 3건 | holee9-automation |
 | v0.2 | 2026-05-30 | pFMEA·사이버보안·AI/ML·사용오류 FMEA 추가, 잔여위험 종합평가 양식, 추가 예시 | holee9-automation |
 | v0.2.1 | 2026-07-10 | **audit #942 정정** — §12 항목5 'ISO 14971 Clause 7.6'→'7.5' 정정 + 항목6 신설(§7.6 완전성 확인, 자매문서 #907 패턴 재발 방지) | md-process-auditor |
+| v0.2.2 | 2026-07-19 | **audit #982 정정** — §12.2 FMEA유형별 주의사항 표 '사이버보안' 행 'IEC 81001-5-1 §5.5 보안 시험 결과'→'§5.7'(5.7.1 SECURITY requirements testing) 정정 | md-process-auditor |
 
 ---
 
@@ -762,7 +763,7 @@ UI 설계 특성 → 사용오류(Use Error) → 위험상황(Hazardous Situatio
 |-----------|---------|
 | dFMEA | 단일 고장 조건(Single Fault Condition) 분석 의무 (IEC 60601-1 §4.7). Essential Performance 영향 평가 포함 |
 | pFMEA | 특수공정(본딩, 납땜, 멸균 등)은 공정 밸리데이션(04_제조/공정_밸리데이션.md) 결과와 연계 |
-| 사이버보안 | SBOM 기반 취약점(CVE) 목록 정기 갱신. IEC 81001-5-1 §5.5 보안 시험 결과 반영 |
+| 사이버보안 | SBOM 기반 취약점(CVE) 목록 정기 갱신. IEC 81001-5-1 §5.7 보안 시험 결과 반영(5.7.1 SECURITY requirements testing 등, audit #982 정정 — §5.5는 구현·검증 단계이며 시험은 §5.7) |
 | AI/ML | SOP-AIGOV-001의 드리프트 모니터링·재학습 절차와 연계. IEC 62304 SW 안전등급 결정에 입력 |
 | 사용오류 | IEC 62366-1 사용적합성 시험(Formative/Summative) 결과를 D(검출도) 평가에 반영 |
 

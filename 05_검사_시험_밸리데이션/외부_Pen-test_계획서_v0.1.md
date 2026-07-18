@@ -2,14 +2,14 @@
 doc-id: 외부_Pen-test_계획서
 title: 외부 침투시험(Penetration Test) 계획서
 type: Plan
-version: v0.2.1
+version: v0.2.2
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 의료용 X-ray 시스템·SW에 대한 외부 보안 침투시험 발주·수행·결과보고 계획 수립
 applicable:
   - FDA Final Guidance (February 2026, Docket FDA-2021-D-1158) — 구 §V.D/§VI.D 대응 조항 재매핑 필요(미확인)
   - MFDS 의료기기 사이버보안 허가·심사 가이드라인 (2025-01-10) 제6장
-  - IEC 81001-5-1:2021 §7.4
+  - IEC 81001-5-1:2021 §5.7(5.7.4 Penetration testing)
   - IEC TR 60601-4-5:2021
   - AAMI TIR57:2016
   - NIST SP 800-115
@@ -54,7 +54,7 @@ review-due: 2027-05-28
 | MFDS 사이버보안 가이드라인 | 제6장 | 시험 결과 제출 의무 |
 | 디지털의료기기 보안지침 | 제15조 | 취약점 점검 의무 |
 | AAMI TIR57:2016 | 전체 | 의료기기 보안 위험관리 원칙 |
-| IEC 81001-5-1:2021 | §7.4 | Security testing 요구 |
+| IEC 81001-5-1:2021 | §5.7(5.7.4 Penetration testing) | Security testing 요구 (§7.4는 위험통제(Risk Control) 조항이며 시험 조항 아님, audit #982 동일오류클래스 정정) |
 | IEC TR 60601-4-5:2021 | 전체 | ME 기기 보안 역량 |
 | NIST SP 800-115 | 전체 | 정보보안 시험 기술 가이드 |
 | OWASP WSTG v4.2 | 전체 | 웹 보안 시험 가이드 |
@@ -339,3 +339,4 @@ review-due: 2027-05-28
 | v0.1 | 2026-04-26 | 의료기기 업무규칙 개발팀 | 초안 작성 |
 | v0.2 | 2026-05-28 | QA/RA | 절차 흐름 상세화, X-ray 안전 취약점 판정 기준 추가, 양식(F-PEN-001~003) 추가, 상호참조 보강 |
 | v0.2.1 | 2026-07-10 | md-process-auditor | **audit #948 정정** — frontmatter·본문 FDA Cyber Guidance '2023-09-26 §V.D/§VI.D'→2026-02 Final(Docket FDA-2021-D-1158) 정정(구 조항 대응은 판본대조 미완 — 미확인 표기) |
+| v0.2.2 | 2026-07-19 | md-process-auditor | frontmatter·§2 표 'IEC 81001-5-1 §7.4(위험통제)'→'§5.7(5.7.4 Penetration testing, 시험 조항)' 정정 — audit #982 동일오류클래스 일괄교정 |

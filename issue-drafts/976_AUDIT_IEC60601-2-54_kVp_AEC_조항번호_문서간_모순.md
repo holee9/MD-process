@@ -41,3 +41,9 @@ P1. 정답 확정은 표준 원문 확보 후 후속(빌더: IEC 60601-2-54:2022
 - FDA Guidance "Medical X-Ray Imaging Devices: Conformance with IEC Standards"(fda.gov/media/99466, 2023-02-21) 직접 열람 — IEC 60601-2-54가 21 CFR 1020.31 등에 상응함은 확인되나, kVp/AEC 세부 조항번호(§203.6/§201.12.1/§201.6 등) 본문 발췌는 미포함. 해소에 불충분.
 - **판정 유지: 미확인. 상태: open 유지.** 대상 5개 문서 조항번호 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 대조.
 - 실운영 문서 미참고. web_verification: attempted-paywalled(3차 재확인 2026-07-18).
+
+## 재확인 시도 (2026-07-19, 드레인 스프린트 4차)
+- WebSearch 재시도(clause 201.12.1.101 kVp / 203.7 AEC 특정 조항) — 표준 원문 발췌 미확보(동일 카탈로그 페이지만 반환), 4차 시도에도 paywalled 상태 불변.
+- 부분적 정황 증거(Tier1 아님, 참고용): IEC 60601-2-54 조항번호 체계는 IEC 60601-1:2005 기반 particular standard 관례상 "201.x"는 모(母)표준 Clause x에 대응(예: Clause 12 = "Accuracy of controls and instruments and protection against hazardous output") — 이 구조적 관례에 따르면 "§201.12.1"(kVp 정확도)은 Clause 12 계열과 구조적으로 부합하나, "§201.6"(Clause 6 = Classification 계열)은 부합하지 않음. 단, 이는 일반 넘버링 관례 추론이며 IEC 60601-2-54:2022 본문 직접 확인이 아니므로 **정답 확정 근거로 사용하지 않음**(추정 배제 원칙).
+- **판정 유지: 미확인. 상태: open 유지.** 대상 5개 문서 조항번호 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 대조.
+- 실운영 문서 미참고. web_verification: attempted-paywalled(4차 재확인 2026-07-19).

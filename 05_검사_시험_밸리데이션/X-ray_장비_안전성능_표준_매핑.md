@@ -2,7 +2,7 @@
 doc-id: X-ray_장비_안전성능_표준_매핑
 title: 의료용 X-ray 장비 안전·성능 표준 매핑
 type: Matrix
-version: v0.4.1
+version: v0.4.2
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 진단용 X-ray system/detector/SW의 국제·지역별 안전·성능 규제·표준을 단일 매핑표로 정리
@@ -204,7 +204,7 @@ review-due: 2027-06-25
 | 5 | IEC 62220-1-1 | §5 DQE | ☐ 적용 ☐ N/A | ☐ 내부 ☐ 공인 | | |
 | 6 | IEC 62304 | 전체 | ☐ 적용 ☐ N/A | ☐ 내부 | | SW 클래스: ___ |
 | 7 | IEC 62366-1 | 전체 | ☐ 적용 ☐ N/A | ☐ 내부 | | |
-| 8 | IEC 81001-5-1 | §7.4 | ☐ 적용 ☐ N/A | ☐ 내부 ☐ 외부 Pen-test | | |
+| 8 | IEC 81001-5-1 | §5.7(5.7.4 Penetration testing) | ☐ 적용 ☐ N/A | ☐ 내부 ☐ 외부 Pen-test | | |
 | 9 | ISO 14971 | 전체 | ☐ 적용 | ☐ 내부 | | |
 | 10 | 21 CFR 1020.30/31 | 전체 | ☐ 적용 ☐ N/A (비미국) | | | |
 | 11 | 방사선안전관리규칙 | 별표 | ☐ 적용 ☐ N/A (비한국) | ☐ 정기검사 연계 | | |
@@ -239,3 +239,4 @@ review-due: 2027-06-25
 | v0.1 | 2026-04-30 | 의료기기 업무규칙 개발팀 | 초안 작성 |
 | v0.2 | 2026-05-28 | QA/RA | 활용 절차(§3) 추가, 설계 입력 체크포인트 표 구조화(§6), 양식 F-STD-MAP-001 추가, 상호참조 보강, 오픈 이슈 정리 |
 | v0.4.1 | 2026-07-10 | md-process-auditor | **audit #948 정정** — SW 보안(Product) 행 및 §5.2 FDA Cyber Guidance '2023-09'→2026-02 Final(Docket FDA-2021-D-1158) 정정(2개소) |
+| v0.4.2 | 2026-07-19 | md-process-auditor | §6 체크리스트 No.8 'IEC 81001-5-1 §7.4(위험통제)'→'§5.7(5.7.4 Penetration testing)' 정정 — Pen-test 근거조항 오귀속, audit #982 동일오류클래스 일괄교정 |

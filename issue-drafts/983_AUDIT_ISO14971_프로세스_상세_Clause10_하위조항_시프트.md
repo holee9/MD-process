@@ -1,6 +1,7 @@
 ---
 title: "audit(factuality): ISO14971_프로세스_상세.md §3.7 표 — ISO 14971:2019 Clause 10 하위조항(10.1~10.4) 전체 시프트 오류"
 labels: "audit:factuality,prio:P1,risk:medium"
+state: closed
 ---
 
 ## 대상 (C1×07_위험관리_ISO14971 전수 스윕)
@@ -30,3 +31,8 @@ web_verification: yes — ISO 14971:2019 Clause 10 구조 관련 복수 독립 �
 ## 판정
 
 P1. 감사관 본문 미수정. 실운영 문서 미참고.
+
+## 정정 완료 (2026-07-19, 드레인 스프린트)
+`07_위험관리_ISO14971/ISO14971_프로세스_상세.md` §3.7 표: Clause 10 하위조항(10.1~10.4) off-by-one 시프트 정정 — 10.1 General(신설)/10.2 정보수집/10.3 정보검토/10.4 조치(CAPA 환류 포함)로 재배정. 존재하지 않던 "10.4 CAPA 환류" 별도항목 삭제(10.4 Actions에 포함 명시). v0.3→v0.4.
+실운영 문서 미참고. web_verification: 기존 확보 Tier1(복수 독립 소스 + 슬로베니아 국가채택판 병기) 재사용.
+

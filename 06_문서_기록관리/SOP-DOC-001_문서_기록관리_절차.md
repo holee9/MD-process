@@ -2,7 +2,7 @@
 doc-id: SOP-DOC-001
 title: 문서 및 기록 관리 절차
 type: SOP
-version: v0.3
+version: v0.3.1
 status: draft
 category: 06_문서_기록관리
 purpose: QMS 운영에 필요한 문서의 작성·검토·승인·배포·개정·폐기 및 품질기록의 식별·수집·보관·보호·검색·보존기한·폐기 절차를 정의한다
@@ -284,7 +284,7 @@ EU Annex 11에 따라 전자기록 시스템(EDMS 포함)에 대해 다음 밸�
 ### 9.3 AI/ML 모델 학습 데이터 기록 관리 *(v0.2 추가)*
 
 의료기기에 AI/ML(인공지능/머신러닝) 기술이 적용되는 경우, 학습 데이터에 대한 기록을 다음과 같이 관리한다.  
-**참조 규격**: IEC 81001-5-1 §5.7 (AI/ML 관련 보안 고려), FDA "Artificial Intelligence/Machine Learning (AI/ML)-Based Software as a Medical Device (SaMD) Action Plan"
+**참조 규격**: IEC 81001-5-1(SW 보안 전반; AI/ML 특정 세부조항은 표준 목차상 미확인 — §5.7은 Software system testing 조항으로 AI/ML 보안 고려사항 전담 조항 아님, audit #982 동일오류클래스 정정), FDA "Artificial Intelligence/Machine Learning (AI/ML)-Based Software as a Medical Device (SaMD) Action Plan"
 
 #### 9.3.1 학습 데이터셋 버전 관리
 
@@ -305,7 +305,7 @@ EU Annex 11에 따라 전자기록 시스템(EDMS 포함)에 대해 다음 밸�
 | 기록 유형 | 최소 보존기한 | 근거 |
 |-----------|---------------|------|
 | 학습 데이터셋 및 메타데이터 | 제품 수명 + 5년 | IEC 81001-5-1, FDA AI/ML SaMD Guidance |
-| 모델 학습·검증 기록 | 제품 수명 + 5년 | IEC 62304, IEC 81001-5-1 §5.7 |
+| 모델 학습·검증 기록 | 제품 수명 + 5년 | IEC 62304, IEC 81001-5-1(세부조항 미확인) |
 | 편향 평가 기록 | 제품 수명 + 5년 | FDA AI/ML SaMD Guidance |
 | 시판 후 모델 성능 모니터링 기록 | 제품 수명 + 5년 | EU MDR Art.83, FDA Total Product Lifecycle |
 
@@ -335,3 +335,4 @@ EU Annex 11에 따라 전자기록 시스템(EDMS 포함)에 대해 다음 밸�
 | v0.1 | 2026-05-15 | 초안 작성 — ISO 13485 §4.2.4/§4.2.5, FDA QMSR, EU MDR Annex IX §2 반영 | holee9-automation |
 | v0.2 | 2026-05-29 | ALCOA+ 데이터 무결성·EDMS 보안·AI/ML 데이터 기록관리 보강 | holee9-automation |
 | v0.3 | 2026-07-17 | §6.4 보존기한표 RMF 근거 'ISO 14971 §3.5'(용어정의 조항) → 정답 '§4.5 Risk management file' 정정 — §3=Terms and definitions, §4.1~4.5(General/Management responsibilities/Competence/RM plan/RM file) 구조 확인 [audit #977] | md-process-auditor |
+| v0.3.1 | 2026-07-19 | §9.3 'IEC 81001-5-1 §5.7(AI/ML 관련 보안 고려)' 인용 정정 — §5.7은 Software system testing 조항(AI/ML 보안 전담 조항 아님), Tier1 미확인 세부조항은 '미확인'으로 표기(추정배제) — audit #982 동일오류클래스 정정 | md-process-auditor |
