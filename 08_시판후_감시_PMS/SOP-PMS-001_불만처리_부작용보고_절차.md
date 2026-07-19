@@ -2,7 +2,7 @@
 doc-id: SOP-PMS-001
 title: 불만처리 및 부작용보고 절차
 type: SOP
-version: v0.4
+version: v0.4.1
 status: draft
 category: 08_시판후_감시_PMS
 purpose: 고객 불만 접수부터 조사·판정·규제 당국 보고·종결까지의 절차를 정하고, 부작용 발생 시 보고 기한·양식·판정 기준을 명확히 한다
@@ -17,7 +17,7 @@ forms: [F-PMS-001, F-PMS-002]
 related-docs: [SOP-FSCA-001, SOP-PSUR-001, SOP-CAPA-001, SOP-NC-001, SOP-RM-001, PRO-DA-001]
 related-issues: [52]
 owner: QA/PMS 담당
-last-review: 2026-06-22
+last-review: 2026-07-20
 review-due: 2027-06-22
 ---
 
@@ -134,9 +134,9 @@ review-due: 2027-06-22
 
 | 지역 | 보고 유형 | 기한 | 양식/시스템 | 근거 |
 |------|-----------|------|------------|------|
-| **EU** | **심각한 공중보건 위협(serious public health threat)** | **2일** (즉시, 늦어도 2일) | EUDAMED MIR v7.3.1 | EU MDR Art.87(3)(a) |
-| **EU** | **사망·예상치 못한 심각한 건강악화** | **10일** (즉시, 늦어도 10일) | EUDAMED MIR v7.3.1 | EU MDR Art.87(3)(b) |
-| **EU** | 기타 중대사고(serious incident) | **15일** | EUDAMED MIR v7.3.1 | EU MDR Art.87(3)(c) |
+| **EU** | **심각한 공중보건 위협(serious public health threat)** | **2일** (즉시, 늦어도 2일) | EUDAMED MIR v7.3.1 | EU MDR Art.87(4) |
+| **EU** | **사망·예상치 못한 심각한 건강악화** | **10일** (즉시, 늦어도 10일) | EUDAMED MIR v7.3.1 | EU MDR Art.87(5) |
+| **EU** | 기타 중대사고(serious incident) | **15일** | EUDAMED MIR v7.3.1 | EU MDR Art.87(3) |
 | **EU** | 경향 보고(Trend) | 인지 후 즉시 | EUDAMED | EU MDR Art.88 |
 | **US** | **사망·중상·중대오작동(일반)** | **30 calendar days** | FDA eMDR (MedWatch 3500A) | 21 CFR 803.50(a)(1) |
 | **US** | **§803.53 발동(remedial action 필요 또는 FDA 서면 요청)** | **5 work days** | FDA eMDR (MedWatch 3500A) | 21 CFR 803.53(a)(1)(2) |
@@ -337,6 +337,7 @@ Vigilance 모듈 미의무화 기간 동안:
 | v0.2 | 2026-05-03 | X-ray 특화 판정 기준, KPI, 양식(F-PMS-002) 보강 | PMS 담당 |
 | v0.3 | 2026-06-07 | QMSR CP 7382.850 불만처리 실사 대응(§7), EUDAMED 연계(§8), 교차참조 강화 | holee9-automation |
 | v0.4 | 2026-06-22 | §6.4.1 보고기한 표 정정 — EU 사망 2일→10일 / 공중보건 위협 2일 분리 명시(EU MDR Art.87(3)), FDA 사망·중상 5wd→30cd 기본 정정 및 5 work days를 §803.53 한정 명시(21 CFR 803.50/803.53), KR 행 3분기 정비 — audit #903 #904 | holee9-builder |
+| v0.4.1 | 2026-07-20 | §6.4.1 EU 열 조항번호(a)/(b)/(c) 하위문자 표기(원문 미존재) 삭제, 독립 paragraph로 정정 — 공중보건 Art.87(4)/사망 Art.87(5)/기타 Art.87(3) — audit #985 | md-process-auditor |
 
 ## 출처
 

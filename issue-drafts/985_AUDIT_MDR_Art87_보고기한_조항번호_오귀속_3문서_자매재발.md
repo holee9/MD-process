@@ -1,7 +1,8 @@
 ---
 title: "audit(factuality): EU MDR Art.87 보고기한 조항번호 오귀속 — (2)/(3)/(4) 오배정, 실제는 (3)일반15일/(4)공중보건2일/(5)사망10일 (3문서 자매재발, audit #929 기 '정정' 자체 오류)"
 labels: "audit:factuality,prio:P0,risk:high"
-state: open
+state: closed
+closed: 2026-07-20
 ---
 
 ## 대상 (C1×08_시판후_감시_PMS 전수 스윕)
@@ -46,3 +47,16 @@ Regulation (EU) 2017/745 Art.87 원문(구조):
 ## 참고
 - Tier1: https://eur-lex.europa.eu/eli/reg/2017/745/oj/eng (Art.87 원문)
 - 보조(원문 재게시, 조문 전문 대조용): https://www.medical-device-regulation.eu/2019/07/16/mdr-article-87-reporting-of-serious-incidents-and-field-safety-corrective-actions/
+
+## 종결 메모 (2026-07-20)
+
+Tier1 재확인: legislation.gov.uk 게재 Regulation (EU) 2017/745 Art.87 원문(Point in time 2017-04-05, EU 공식 채택본 그대로) 직접 대조 — paragraph 3="not later than 15 days"(일반), paragraph 4="Notwithstanding paragraph 3...serious public health threat...not later than 2 days", paragraph 5="Notwithstanding paragraph 3...death or unanticipated serious deterioration...not later than 10 days". WebSearch 독립 교차확인 결과도 동일 구조(Paragraph 4=2일/Paragraph 5=10일/Paragraph 3=15일) 일치.
+
+정정 반영:
+- `08_시판후_감시_PMS/PMS_개요.md` L108, L116 — (3)/(2)/(4) → (5)/(4)/(3)로 재배정. v0.3.1→v0.3.2.
+- `08_시판후_감시_PMS/GUIDE-VIG-001_안전경계_보고_요건_통합_가이드.md` L65 각주³ — 단일 Art.87(3) 뭉뚱그림 인용을 공중보건(4)/사망(5)/기타(3)로 분리. v0.3→v0.3.1.
+- `08_시판후_감시_PMS/SOP-PMS-001_불만처리_부작용보고_절차.md` L137-139 — 원문 미존재 (3)(a)/(3)(b)/(3)(c) 하위문자 표기 삭제, 독립 paragraph (4)/(5)/(3)로 교체. v0.4→v0.4.1.
+
+동일 오류 클래스 일괄 점검(repo 전수 grep "Art.87"/"Article 87"): `00_프로젝트관리/증거기준_Evidence_Standard.md` §5 예시표에서도 동일 클래스 오류(Art.87(3)을 사망10일·공중보건2일 두 항목의 근거로 병기) 발견 — 공중보건=Art.87(4)/사망=Art.87(5)로 분리 정정(살아있는 참조 문서이므로 정정 대상; 날짜 고정 스냅샷 성격의 11_일일_리서치로그·12_교차검증_보고서·_audit_log.md 과거 기록은 시점 기록 보존 원칙에 따라 미수정).
+
+일수(2일/10일/15일) 자체는 원래도 정확 — 조항번호(paragraph 식별자)만의 오류였음. 실운영 문서 미참고. web_verification: yes.

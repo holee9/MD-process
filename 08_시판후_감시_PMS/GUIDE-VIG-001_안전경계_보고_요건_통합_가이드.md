@@ -2,7 +2,7 @@
 doc-id: GUIDE-VIG-001
 title: "의료기기 안전경계(Vigilance) 보고 요건 통합 가이드"
 type: Guide
-version: v0.3
+version: v0.3.1
 status: draft
 category: 08_시판후_감시_PMS
 purpose: MFDS·FDA·EU MDR 안전경계 보고 기한·기준·양식을 단일 문서로 통합하여 보고 누락 방지
@@ -17,7 +17,7 @@ forms: [F-VIG-001, F-PMS-001, F-PMS-002]
 related-docs: [SOP-PMS-001, SOP-FSCA-001, SOP-PSUR-001, PMS_개요]
 related-issues: []
 owner: RA/QA Lead
-last-review: 2026-06-22
+last-review: 2026-07-20
 review-due: 2027-06-03
 ---
 
@@ -62,7 +62,7 @@ review-due: 2027-06-03
 
 ¹ 의료기기법 시행규칙 제51조①(사망·생명위협 7일, 추가 8일) / 의료기기 부작용 등 안전성 정보 관리에 관한 규정
 ² 21 CFR 803.50(a)(1) — 30-day report 기본
-³ EU MDR 2017/745 Art.87(3) — 공중보건 위협 2일 / 사망 10일 / 기타 중대사고 15일
+³ EU MDR 2017/745 — 공중보건 위협 2일: Art.87(4) / 사망·예기치 않은 심각한 건강악화 10일: Art.87(5) / 기타 중대사고(일반) 15일: Art.87(3)
 ⁴ 21 CFR 803.53 — remedial action 필요 사건 또는 FDA 서면 요청 시
 
 ### 3.2 보고 의무자
@@ -169,3 +169,4 @@ IEC 62304 Safety Classification 기반 SW 이상이 보고 대상인지 판단:
 | v0.1 | 2026-06-03 | 초안 작성 — MFDS/FDA/EU MDR 보고 기한·기준 통합 |
 | v0.2 | 2026-06-03 | X-ray 특수 고려사항, SW 사건 분류 기준, 보고 프로세스 흐름도 보강 |
 | v0.3 | 2026-06-22 | §3.1 MFDS 사망 보고기한 정정(15일→7일, 시행규칙 §51①), §3.1 EU 공중보건 위협(2일)·사망(10일) 분리 명시, §6 FDA 보존기한(2년 or 기기수명, 수입자 동일) 및 EU 보존기한(비임플란트 10년·임플란트 15년) 정정 — audit #900 #901 #902 |
+| v0.3.1 | 2026-07-20 | §3.1 각주³ EU MDR Art.87 조항번호 오귀속 정정 — 단일 Art.87(3) 인용을 공중보건(Art.87(4))/사망(Art.87(5))/기타(Art.87(3))로 분리 재배정 — audit #985 |
