@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{"name":"MD-process Dashboard","schemaVersion":1,"description":"유지보수 모드 — 규제 통화성·문서통제 정합성·리뷰 만기·케이던스"}
+</script>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MD-process 대시보드 (유지보수)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--green:#4ade80;--yellow:#fbbf24;--red:#f87171;--purple:#a78bfa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Noto Sans KR',system-ui,sans-serif;padding:20px;line-height:1.5}
+h1{font-size:1.4rem;margin-bottom:4px}
+.subtitle{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+.subtitle a{color:var(--accent);text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.kpi .value{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.kpi .label{font-size:.75rem;color:var(--muted);margin-top:4px}
+.kpi.green .value{color:var(--green)}
+.kpi.yellow .value{color:var(--yellow)}
+.kpi.red .value{color:var(--red)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:16px}
+.card h2{font-size:1rem;margin-bottom:12px;color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th,td{padding:6px 8px;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:600}
+.bar{display:inline-block;height:14px;border-radius:3px;background:var(--accent);transition:width .3s}
+.bar-bg{display:inline-block;width:100px;height:14px;border-radius:3px;background:var(--border)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600}
+.tag-green{background:#065f4620;color:var(--green)}
+.tag-yellow{background:#78350f20;color:var(--yellow)}
+.progress-overall{height:24px;background:var(--border);border-radius:12px;overflow:hidden;margin:8px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--bg);border-radius:12px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.commit-list{list-style:none;font-size:.8rem}
+.commit-list li{padding:4px 0;border-bottom:1px solid var(--border)}
+.commit-list .date{color:var(--muted);margin-right:6px}
+.schedule-info{display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem}
+.schedule-info div{background:var(--bg);padding:8px 12px;border-radius:6px;border:1px solid var(--border)}
+.actions{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.actions a,.actions button{background:var(--card);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:6px;text-decoration:none;font-size:.8rem;cursor:pointer}
+.actions a:hover,.actions button:hover{background:#2d3a52}
+@media print{
+  body{background:#fff;color:#000;padding:0}
+  .card,.kpi{background:#fff;color:#000;border:1px solid #ccc}
+  .subtitle,.muted,th{color:#666}
+  .actions,.schedule-info{display:none}
+  h2{color:#000 !important}
+}
+</style></head><body>
+<h1>의료기기 제조 업무규칙 — 유지보수 대시보드</h1>
+<p class="subtitle">마지막 갱신: <strong>2026-06-13</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
+<div class="actions">
+<button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
+<a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
+</div>
+<div class="grid">
+<div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
+<div class="kpi green"><div class="value">100%</div><div class="label">frontmatter 유효율</div></div>
+<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (171/171)</div></div>
+<div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
+<div class="kpi red"><div class="value">1</div><div class="label">미해결 이슈</div></div>
+<div class="kpi"><div class="value">70</div><div class="label">통제 문서 (01~10)</div></div>
+</div>
+<div class="card"><h2>유지보수 케이던스 현황</h2><table>
+<tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
+<tr><td>일일</td><td>매일 03:18</td><td>2026-06-14</td><td>매 실행</td></tr>
+<tr><td>주간</td><td>월요일</td><td>-</td><td>2026-06-15</td></tr>
+<tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-07-01</td></tr>
+<tr><td>분기</td><td>1·4·7·10월 1일</td><td>-</td><td>2026-07-01</td></tr>
+</table></div>
+<div class="two-col">
+<div class="card"><h2>규제 추적 현황</h2><table>
+<tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
+<tr><td>FDA_QMSR</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-06-14</td><td>-1일</td><td><span class="tag tag-green">최신</span></td></tr>
+</table></div>
+<div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 171건 중 170건 완료 · 미해결 1건</p>
+</div></div>
+<div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
+<tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
+<tr><td colspan="4">만기 도래 문서 없음 — 전 문서 검토주기 내</td></tr>
+</table></div>
+<div class="card"><h2>문서통제 정합성</h2><table>
+<tr><td>frontmatter 유효 문서</td><td>197/197 (100%)</td></tr>
+<tr><td>frontmatter 결함</td><td>0건</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>171/171 일치</td></tr>
+</table></div>
+<div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">06-12</span>chore(dashboard): docs/index.html 및 문서_매트릭스.md 갱신 (2026-06-13)</li>
+<li><span class="date">06-12</span>chore(config): regulations last_checked 및 cadence.daily_last 갱신 (2026-06-13)</li>
+<li><span class="date">06-12</span>docs: 규제변경 반영 — EU AI Act Omnibus 날짜 확인, IEC 62304 Edition 2 예고 노트 추가 (2026-06-13)</li>
+<li><span class="date">06-12</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">06-12</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
+<li><span class="date">06-12</span>feat(phase2): 마스터 이슈 + 평가 프레임 + FDA 510(k) RTA 1차 + 갭분석 자동화</li>
+<li><span class="date">06-11</span>chore(dashboard): 문서_매트릭스·docs/index.html 자동 갱신 (유지보수 뷰)</li>
+<li><span class="date">06-11</span>chore(config): regulations last_checked 3건(EU_AI_Act/FDA_QMSR/MFDS)·cadence.daily_last 202</li>
+<li><span class="date">06-11</span>docs(11): 일일리서치 2026-06-12 — 규제 3종 감시(EU AI Act/QMSR/MFDS) 변경 없음·정합성 3종 통과</li>
+<li><span class="date">06-10</span>chore(dashboard): 문서_매트릭스(193건)·docs/index.html 자동 갱신 (유지보수 뷰)</li>
+</ul></div>
+<div class="card"><h2>시스템 정보</h2><div class="schedule-info">
+<div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
+<div>📅 주간: 월요일 · 월간: 1일 · 분기: 1·4·7·10월</div>
+<div>📊 리서치 로그: 62건</div>
+<div>✅ 교차검증: 58건</div>
+<div>🌐 GitHub Pages 배포</div>
+</div></div>
+<script>
+new Chart(document.getElementById('issueChart'), {
+  type:'doughnut',
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[170, 1], backgroundColor:['#4ade80','#fbbf24']}]},
+  options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
+});
+</script></body></html>

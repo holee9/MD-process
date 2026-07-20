@@ -13,3 +13,6 @@ Thumbs.db
 .git/index.lock
 .git/index.new
 .git/*.bak
+
+# 로컬 전용 회의록(비공개·AQP 포함) — origin 푸시 금지
+회의록/
