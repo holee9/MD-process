@@ -1,7 +1,7 @@
 ---
 title: "audit(factuality): SOP-SUP-001 FDA QMSR §820.50 (Purchasing controls) 오귀속 — 현행 QMSR에서 §820.50은 [Reserved], 구매통제는 §820.10(c)→ISO 13485 §7.4로 편입 (audit #951/#967/#972 동일 오류클래스 자매재발)"
 labels: "audit:factuality,prio:P0,risk:high"
-state: open
+state: closed
 ---
 
 ## 대상 (C1×09_공급자_관리 전수 스윕)
