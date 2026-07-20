@@ -1,7 +1,7 @@
 ---
 title: "audit(factuality): GUIDE-TRN-001 frontmatter 'EU MDR GSPR Annex I §23.4' 를 인력 역량/교육 근거로 오귀속 — §23.4는 '사용설명서(IFU) 기재사항'(라벨링) 조항으로 인력 역량과 무관"
 labels: "audit:factuality,prio:P1,risk:medium"
-state: open
+state: closed
 ---
 
 ## 대상 (C1×10_교육_훈련 전수 스윕)
