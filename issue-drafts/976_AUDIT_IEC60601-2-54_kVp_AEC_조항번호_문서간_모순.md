@@ -47,3 +47,10 @@ P1. 정답 확정은 표준 원문 확보 후 후속(빌더: IEC 60601-2-54:2022
 - 부분적 정황 증거(Tier1 아님, 참고용): IEC 60601-2-54 조항번호 체계는 IEC 60601-1:2005 기반 particular standard 관례상 "201.x"는 모(母)표준 Clause x에 대응(예: Clause 12 = "Accuracy of controls and instruments and protection against hazardous output") — 이 구조적 관례에 따르면 "§201.12.1"(kVp 정확도)은 Clause 12 계열과 구조적으로 부합하나, "§201.6"(Clause 6 = Classification 계열)은 부합하지 않음. 단, 이는 일반 넘버링 관례 추론이며 IEC 60601-2-54:2022 본문 직접 확인이 아니므로 **정답 확정 근거로 사용하지 않음**(추정 배제 원칙).
 - **판정 유지: 미확인. 상태: open 유지.** 대상 5개 문서 조항번호 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 대조.
 - 실운영 문서 미참고. web_verification: attempted-paywalled(4차 재확인 2026-07-19).
+
+## 재확인 시도 (2026-07-22, 드레인 스프린트 5차)
+- WebSearch 재시도(clause 201.12.1.101/203.6.4.101 kVp 정확도, AEC clause 번호, IECEE TRF 60601-2-54I:2023) — MEDTEQ·iTeh·IEC Webstore 카탈로그만 반환. 검색엔진 자체 합성 응답이 "§203.6.4.2/§203.6.4.101(X-ray 상태·부하상태 표시 관련)"을 언급했으나 kVp 정확도 조항이 아니며 Tier1 원문 인용 아님(추정 배제 원칙에 따라 채택하지 않음).
+- MITA "21 CFR Subchapter J to IEC Comparison Table" PDF(medicalimaging.org) — 링크가 이제 NEMA 새 사이트(makeitelectric.org)로 완전 리다이렉트, 문서 자체 접근 불가(전차 사이클 대비 악화: 이전엔 404/리다이렉트, 현재는 완전히 다른 사이트로 이전).
+- IECEE TRF 60601-2-54I:2023 (IEC Webstore #85675) — 시험성적서 양식은 조항별 세부 발췌를 포함할 가능성이 있어 유망한 Tier1 인접 경로로 식별했으나, web_fetch 빈 응답(JS 렌더링 또는 접근 차단) — 확보 실패.
+- **판정 유지: 미확인. 상태: open 유지(5차 시도 종료).** 5개 문서 조항번호 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 또는 IECEE TRF 60601-2-54I:2023 구매 후 대조.
+- 실운영 문서 미참고. web_verification: attempted-paywalled(5차 재확인 2026-07-22). 신규 리드: IECEE TRF 60601-2-54I:2023(다음 사이클 구매/접근 경로 우선 시도 권고).
