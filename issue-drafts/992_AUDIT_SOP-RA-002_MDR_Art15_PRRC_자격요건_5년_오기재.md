@@ -1,0 +1,31 @@
+---
+title: "audit(factuality): SOP-RA-002 §5.2/§9 — EU MDR Art.15 PRRC 자격요건 '학위+5년/경력5년' 수치 오기재(정답 학위+1년 또는 무학위 경력4년)"
+labels: "audit:factuality,prio:P1,risk:high"
+state: open
+github-issue: 1640
+---
+
+## 대상 (C2×02_품질경영시스템_QMS 전수 스윕)
+
+`02_품질경영시스템_QMS/SOP-RA-002_책임권한_및_내부소통_절차.md`
+- §5.2 절차 본문 L68: "EU MDR Article 15 자격(학위/경력 5년+)"
+- §9 적대적 자기검토 표 L144: "EU MDR Art.15(2) 학위+5년 경력 인용 명확"
+
+## 결함
+
+EU MDR Art.15(1) 원문: 학위+**1년** 경력 OR 학위없이 **4년** 경력. 저장소는 "학위+5년"이라는 존재하지 않는 조합을 창작했고, 조항번호도 자격요건 조항(15(1))이 아닌 예외조항(15(2))으로 오귀속.
+
+본 저장소 자체 감사이력(2026-06-24, 2026-07-22 PASS)이 이미 "Art.15(1) 학위+1년·경력4년"을 Tier1 확정한 바 있어 자매문서 F-RA-002(정확 표기: "1년 이상 경력+학위, 혹은 무학위 4년")와도 정면 모순.
+
+## 부차 발견
+F-RA-002.md 헤더 "자격 확인(EU MDR Art.15(2))" — 수치는 정확하나 조항번호 15(2)→정답 15(1) (C1 영역, 별도 트래킹 권고).
+
+## 근거
+- medical-device-regulation.eu, tuvsud.com PRRC 해설 교차확인(WebSearch 2026-07-23)
+- 본 저장소 audit log 2026-06-24/2026-07-22 PASS 기록
+
+## 분류
+C2(수치 역치) 주 결함. Tier1(EU MDR 원문 구조 복수 독립 해설 교차확인) + 자체 저장소 기확정 사실.
+실운영 문서 미참고.
+
+GitHub Issue: https://github.com/holee9/MD-process/issues/1640
