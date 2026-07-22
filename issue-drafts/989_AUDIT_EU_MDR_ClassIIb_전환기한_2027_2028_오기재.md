@@ -1,6 +1,8 @@
 ---
 title: "audit(factuality): EU_MDR_2017_745.md §2 — Class IIb(비이식형) MDD 인증서 전환 기한 2027-12-31 오기재, 정답 2028-12-31(Reg. 2023/607 Art.120(3a)(b))"
 labels: "audit:factuality,prio:P0,risk:high"
+state: closed
+closed: 2026-07-23
 ---
 
 ## 대상 (C2×01_법규_규제 전수 스윕)

@@ -1,6 +1,8 @@
 ---
 title: "audit(factuality): 진단용_방사선_발생장치_안전관리규칙_제1122호.md §3.2/§4 — '선량 재현성 CV≤10%' 오기재(정답 CV≤5%) + 별표1에 없는 '관전압 재현성' 항목 신설 오귀속"
 labels: "audit:factuality,prio:P1,risk:high"
+state: closed
+closed: 2026-07-23
 ---
 
 ## 대상 (C2×01_법규_규제 전수 스윕)
