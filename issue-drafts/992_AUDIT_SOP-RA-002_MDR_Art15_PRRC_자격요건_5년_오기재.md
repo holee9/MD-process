@@ -1,7 +1,8 @@
 ---
 title: "audit(factuality): SOP-RA-002 §5.2/§9 — EU MDR Art.15 PRRC 자격요건 '학위+5년/경력5년' 수치 오기재(정답 학위+1년 또는 무학위 경력4년)"
 labels: "audit:factuality,prio:P1,risk:high"
-state: open
+state: closed
+closed: 2026-07-24
 github-issue: 1640
 ---
 
@@ -29,3 +30,9 @@ C2(수치 역치) 주 결함. Tier1(EU MDR 원문 구조 복수 독립 해설 �
 실운영 문서 미참고.
 
 GitHub Issue: https://github.com/holee9/MD-process/issues/1640
+
+## 정정 완료 (2026-07-24, 드레인 스프린트)
+- `SOP-RA-002_책임권한_및_내부소통_절차.md` L68: "EU MDR Article 15 자격(학위/경력 5년+)" → "EU MDR Article 15(1) 자격(학위+1년 경력, 또는 무학위 4년 경력)"
+- 동 문서 §9 자기검토표 L144: "⚠️ EU MDR Art.15(2) 학위+5년 경력 인용 명확" → "✅ EU MDR Art.15(1) 학위+1년 또는 무학위+4년 경력 인용 명확(2026-07-24 정정, audit #992)"
+- `F-RA-002_MR_PRRC_지명서.md` L31 헤더: "자격 확인 (EU MDR Art.15(2))" → "자격 확인 (EU MDR Art.15(1))" (부차 발견 동시 정정, 체크리스트 항목 수치 자체는 원래 정확)
+- Tier1: 본 저장소 기확정 감사이력(2026-06-24, 2026-07-22 PASS — EU MDR Art.15(1) 원문 학위+1년/무학위4년) 재확인 사용. 실운영 문서 미참고.
