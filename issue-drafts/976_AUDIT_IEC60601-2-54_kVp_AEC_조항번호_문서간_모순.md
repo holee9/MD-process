@@ -47,3 +47,26 @@ P1. 정답 확정은 표준 원문 확보 후 후속(빌더: IEC 60601-2-54:2022
 - 부분적 정황 증거(Tier1 아님, 참고용): IEC 60601-2-54 조항번호 체계는 IEC 60601-1:2005 기반 particular standard 관례상 "201.x"는 모(母)표준 Clause x에 대응(예: Clause 12 = "Accuracy of controls and instruments and protection against hazardous output") — 이 구조적 관례에 따르면 "§201.12.1"(kVp 정확도)은 Clause 12 계열과 구조적으로 부합하나, "§201.6"(Clause 6 = Classification 계열)은 부합하지 않음. 단, 이는 일반 넘버링 관례 추론이며 IEC 60601-2-54:2022 본문 직접 확인이 아니므로 **정답 확정 근거로 사용하지 않음**(추정 배제 원칙).
 - **판정 유지: 미확인. 상태: open 유지.** 대상 5개 문서 조항번호 임의 수정하지 않음. 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 대조.
 - 실운영 문서 미참고. web_verification: attempted-paywalled(4차 재확인 2026-07-19).
+
+## 재확인 시도 (2026-07-24, 드레인 스프린트 6차)
+
+**신규 확보(Tier1급, Ed.1.1/2009+AMD1:2015 CSV 한정)**: iTeh Standards 무료 미리보기 PDF(`https://cdn.standards.iteh.ai/samples/15163/5a770dc1ca1e43aebecc0c9e4880a364/IEC-60601-2-54-2009.pdf`, IEC 공식 배포 미리보기 — Foreword+목차 전문)를 web_fetch로 확보. Foreword에 조항번호 체계 규칙이 명시됨: "the numbering of clauses ... corresponds to that of the general standard with the prefix '201' ... or applicable collateral standard with the prefix '20x' where x is the final digit(s) of the collateral standard document number (e.g. 203.4 ... addresses ... Clause 4 of the IEC 60601-1-3 collateral standard)". 목차상 `201.6 Classification`(분류, kVp정확도와 무관), `201.12 Accuracy of controls and instruments and protection against hazardous outputs`(제어기·계기 정확도 — kVp정확도 후보), `Table 203.102 – Loadings for testing AUTOMATIC EXPOSURE CONTROLS`(AEC시험, Clause 203=IEC 60601-1-3 산하 확인)를 확인 — 5차(2026-07-19)에서 이미 확보한 근거와 동일선상.
+
+**신규 발견 1(Tier1급 — IEC 자체 배포 채널, Ed.2:2022 대상)**: IECEE(IEC 산하 적합성평가 공식기구, iecee.org) 및 AFNOR EDITIONS(프랑스 국가표준기관 공식 판매채널, boutique.afnor.org) 두 독립 공식 채널에서 **동일한 IEC 60601-2-54:2022 Foreword "Significant technical changes" 원문 a)~f)**을 확보(web_fetch 직접 열람, 두 소스 완전 일치 — 상호검증). 핵심: "d) the subclause 201.11.101 'Protection against excessive temperatures of X-ray tube assemblies' has been removed from this document" — Ed.2:2022에서도 `201.x.10x` particular-standard 서브조항 넘버링 관행이 실제로 유지됨을 **2022년판 원문 자체로 최초 확인**(5차까지는 Ed.1.1 추론에 불과했음). 단, kVp/AEC/투시경보 조항번호 자체는 이 Foreword 발췌에 포함되지 않아 직접 확정 불가.
+
+**신규 발견 2(Tier2, 참고용 — 실무자 인용, Ed.1:2009 대상)**: elsmar.com(품질규격 전문 포럼) 2022-10-16 게시물에서 실제 표준 소지자가 "IEC 60601-2-54:2009 → **203.6.4.3.104.6** Accuracy of CURRENT TIME PRODUCT(mAs 정확도), 판정기준 ±(10% + 0.2 mAs)"를 직접 인용. 이는 `203.6.x`가 "부하계수(loading factor: kV·mA·시간·mAs) 정확도" 패밀리 조항군임을 시사하며, 5개 문서 중 `검사_시험_밸리데이션_개요.md`의 "§203.6, kVp ±5%" 표기와 **구조적으로 상당히 부합**(동일 상위조항 산하 형제 서브조항 존재 확인). 그러나 (a) Tier2(포럼 게시물, 1차 출처 직접 열람 아님) (b) Ed.1:2009 기준이며 Ed.2:2022는 "technical revision"으로 서브조항 재번호 가능성 있음 — 정답 확정 근거로 사용하지 않음.
+
+**iTeh 2022년판 미리보기 PDF 직접 열람 재시도(4차)**: 카탈로그 페이지에서 확보한 두 링크(`.../a4ed6bfb.../IEC-60601-2-54-2022.pdf`, `.../d6093f55.../IEC-60601-2-54-2022.pdf`[RLV=redline판])를 Chrome으로 열람 — 두 URL 모두 `document.contentType == application/pdf` 확인(유효한 PDF 로드)되나, `get_page_text`는 "No text content found"(캔버스 렌더링), `screenshot`은 대기시간 연장(6~8초) 및 재로드·클릭 시도에도 **3개 사이클 연속 동일하게 완전 회색 빈 화면**만 캡처됨(PDFium 별도 프로세스 렌더링 추정, CDP 캡처 범위 밖 가능성). `read_network_requests`·`read_page` 접근도 콘텐츠 미확보. web_fetch는 두 URL 모두 "URL not in provenance set"(WebSearch 결과에 정확한 URL 미포함)으로 거부 — WebSearch 쿼리 재구성(수 회) 시도했으나 정확한 sample-PDF 직접링크는 검색결과에 노출되지 않음(카탈로그 페이지·webstore.iec.ch 개요 페이지만 반환, 두 페이지 모두 JS-렌더링 SPA로 본문 텍스트 미확보).
+
+**mdcpp.com 전문 PDF 링크 발견(미사용)**: WebSearch 결과에 `mdcpp.com`(비공식 3자 사이트)의 IEC 60601-2-54-2022 전문 PDF 직접다운로드 링크가 노출되었으나, **IEC/공식 재판매채널이 아닌 출처 미상 사이트이므로 Tier1 원칙 및 신뢰할 수 없는 출처 다운로드 금지 원칙에 따라 접근하지 않음**(의도적 미사용, 저작권/출처신뢰성 문제).
+
+**판정 유지: 미확인. 상태: open 유지.** 대상 5개 문서(검사_시험_밸리데이션_개요·IEC60601-2-54_형식시험_체크리스트·X-ray_장비_안전성능_표준_매핑·SOP-IQ-001·SOP-CAL-001)의 조항번호는 이번 사이클도 임의 수정하지 않음. 구조적 정황(2건)이 "§203.6"(검사_시험_밸리데이션_개요) 표기에 유리하게 축적되고 있으나 — (1) Ed.2:2022 원문 직접 대조 실패 지속, (2) Ed.1→Ed.2 technical revision에 따른 서브조항 재번호 리스크 미배제, (3) "§201.12.1"(형식시험_체크리스트·X-ray_매핑, Clause 12=Accuracy of controls, 일반표준측) 역시 여전히 구조적으로 배제 불가 — **추정 배제 원칙에 따라 정답 확정 보류**. 해소 조건 불변: IEC 60601-2-54:2022 원문(유료, 정식 채널) 구매·직접 대조 후 단일화.
+
+실운영 문서 미참고. web_verification: yes(IECEE·AFNOR EDITIONS 공식 Foreword 원문 직접열람 — 상호검증 2소스 일치, 신규 확보) + attempted-blocked(iTeh 2022 PDF 캔버스 렌더링 6차 연속 실패) + Tier2 보조(elsmar.com 실무자 인용).
+
+**클러스터 확장 발견(C2×03_설계_개발관리 스윕 중 grep 확산 — 신규 자매문서 4건 추가 확인, 정정 없이 기록만)**: 기존 5개 문서(05 카테고리) 외에 `03_설계_개발관리` 폴더에서도 동일 파라미터가 재차 인용됨을 확인:
+- `설계개발_프로세스.md` L117-119: kVp정확도 "§203.6.4"(±5%), mAs재현성 "§203.6.5"(CV≤5%), HVL "§203.6.3" — **§203.6 계열 서브조항**으로, `검사_시험_밸리데이션_개요.md`의 "§203.6"(상위조항)과 **정합**(자매 상위/하위 관계로 해석 가능, 상호모순 아님).
+- `CHK-DR-001_설계검토_체크리스트.md` L180, `ALARA_지원기능_설계명세.md` L11/L51: AEC "§203.7.8" — `IEC60601-2-54_형식시험_체크리스트.md`의 기존 "§203.7.8"과 **정합**(3개 문서 일치), `검사_시험_밸리데이션_개요.md`의 "§203.7"(상위조항 표기)과도 정합 가능성. SOP-IQ-001의 "§201.12"만 이 그룹과 불일치.
+- `SOP-DT-001_설계이관_절차.md` L116: kVp±5%/mAs±10%(구체 조항번호 미기재, "IEC 60601-2-54"만 인용) — 결함 아님(조항번호 주장 없음).
+
+**해석**: "§203.6.x"(kVp) / "§203.7.8"(AEC) 계열이 저장소 내 독립 작성된 4개 이상 문서에서 수렴하는 반면, "§201.12.1"(형식시험_체크리스트·X-ray_매핑)·"§201.6"(SOP-IQ-001·SOP-CAL-001)·"§201.12"(SOP-IQ AEC)는 소수 문서에 국한됨 — **정황상 "§203.6.x/§203.7.8" 계열의 확률적 개연성이 다수결로는 더 높으나, 이는 Tier1 근거가 아니라 저장소 내부 합의(consensus) 관찰에 불과**하며 추정 배제 원칙상 정답 확정 근거로 사용하지 않음. 5개 문서(원 클러스터) 임의 수정은 이번 사이클도 보류. 신규 확인된 4개 문서(설계개발_프로세스·CHK-DR-001·ALARA_지원기능_설계명세·SOP-DT-001)는 서로 정합적이므로 별도 정정 불필요(PASS, 클러스터 확장 기록만).
