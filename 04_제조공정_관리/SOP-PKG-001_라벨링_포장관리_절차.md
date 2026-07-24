@@ -2,7 +2,7 @@
 doc-id: SOP-PKG-001
 title: 라벨링 및 포장 관리 절차
 type: SOP
-version: v0.2.2
+version: v0.2.3
 status: draft
 category: 04_제조공정_관리
 purpose: 의료용 X-ray 시스템·Detector·SW의 라벨 작성·검증·부착 및 포장 공정을 통제하여 규제 적합성과 제품 추적성을 보장한다
@@ -318,7 +318,7 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
    - 현장안전시정조치(FSCA) 수행 시 관련 회원국 관할 당국에 통보
    - EUDAMED을 통한 안전 시정 조치 등록 (시스템 가동 시)
 
-4. **리콜 기록**: 리콜 관련 일체의 기록(위험 평가, 회수 계획, 통보 서신, 회수 실적, 유효성 점검 결과)을 제품 수명 + 15년 보존
+4. **리콜 기록**: 리콜 관련 일체의 기록(위험 평가, 회수 계획, 통보 서신, 회수 실적, 유효성 점검 결과)을 제품 단종 후 최소 10년 보존 (EU MDR Art.10(8) 비이식형)
 
 ## 10. 기록 보존
 
@@ -338,3 +338,4 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 | v0.2 | 2026-05-29 | 포장 무결성 시험·전자 IFU·다국어 라벨 QA·Detector ESD/MSL 보강 | holee9-automation |
 | v0.2.1 | 2026-07-09 | audit-drain C2(보고기한) — §9.1 MFDS 회수계획서 제출기한 오류 정정: 일괄 "15일"→회수등급별 5일(1등급)/15일(2·3등급) | md-process-auditor |
 | v0.2.2 | 2026-07-15 | audit #967/#971 정정 — QMSR 820.120/820.130(구 QSR, 폐지)→§820.45 라벨링·포장 통제(2개소); eIFU 근거 'Art.23.1(f)'(Art.23=Parts and components)→Annex I §23.1(f)(2개소) | QMS-Bot |
+| v0.2.3 | 2026-07-25 | audit #996 정정 — §9 리콜 기록 보존기간 '제품수명+15년'(오기재)→'제품 단종 후 최소 10년(EU MDR Art.10(8) 비이식형)' | md-process-auditor |
