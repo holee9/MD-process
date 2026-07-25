@@ -1,7 +1,7 @@
 ---
 title: "audit #1000 (citation): SOP-CAL-001 §5.7·SOP-IQ-001 §7 — 기록보존 '10년' 근거를 'FDA QMSR, MFDS GMP'로 기재하나 두 규정 모두 특정 연수 미규정(정답 근거는 EU MDR Art.10(8) 비이식형 10년으로 추정, 근거조항 오귀속/누락)"
 labels: "audit:citation,prio:P1,risk:med"
-state: open
+state: closed
 ---
 
 ## 대상 (C2×05_검사_시험_밸리데이션 스윕)

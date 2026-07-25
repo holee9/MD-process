@@ -1,7 +1,7 @@
 ---
 title: "audit #1001 (citation): SOP-CAL-001 §5.3.3 — 교정용 선량계(계측기) 정확도 '±5% — 진단용방사선안전관리규칙 제4조' 인용, 제4조/별표1은 X-ray 장치 자체의 재현성시험(CV≤0.05)만 규정하며 계측기 자체 정확도 규정 아님(범주 오귀속 가능성)"
 labels: "audit:citation,prio:P2,risk:low"
-state: open
+state: closed
 ---
 
 ## 대상 (C2×05_검사_시험_밸리데이션 스윕)
