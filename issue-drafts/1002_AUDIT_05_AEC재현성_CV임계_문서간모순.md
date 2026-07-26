@@ -26,3 +26,10 @@ IEC 60601-2-54:2022 원문 유료 — 정답 값 미확인(web:attempted-paywall
 ## 판정
 
 P1. 정답 확정은 표준 원문 확보 후 후속. 빌더: 표준 원문 대조로 단일화 + 시험 단계별 차등이라면 근거 명기 권고. 감사관 문서 미수정. 실운영 문서 미참고.
+
+## 재확인 시도 및 부분 해소 (2026-07-27, 드레인 스프린트 7차)
+- **신규 Tier1 확보**: VDE(IEC 공식 리셀러) 배포 IEC 60601-2-54:2022 RLV 미리보기 PDF(vde-verlag.de, WebSearch 경유 직접 열람 — EN/FR 목차 전문). Clause **203.6 RADIATION management**(pp.33–48)에 Table 203.101(reproducibility and linearity)·Table 203.102(LOADINGS for testing AUTOMATIC EXPOSURE CONTROLS) 소속 확인. §201.6=Classification, §201.12=Accuracy of controls(1쪽 분량), §203.7=RADIATION QUALITY.
+- **조항 귀속 정정 완료**(#976과 동일 클래스 일괄): AEC 인용 조항을 4개 문서 모두 §203.6 (Table 203.102)로 단일화(개요 §203.7→, SOP-IQ·SOP-CAL §201.12→). 조항 모순은 해소.
+- **CV 역치(5% vs 10%)는 미해소**: Table 203.102의 판정값 본문은 미리보기에 미포함(paywalled). 참고 정황(Tier1, 타법역): 21 CFR 1020.31(b) 재현성 CV≤0.05 — 단 IEC 요구값과 동일하다는 근거 없음. 추정 배제 원칙에 따라 역치 임의 통일하지 않음.
+- **상태: open 유지.** 해소 조건: IEC 60601-2-54:2022 원문(유료) 구매 후 Table 203.102 판정값 대조·역치 단일화(또는 시험 단계별 차등 근거 명기).
+- 실운영 문서 미참고. web_verification: yes(VDE RLV 목차 Tier1 신규).
