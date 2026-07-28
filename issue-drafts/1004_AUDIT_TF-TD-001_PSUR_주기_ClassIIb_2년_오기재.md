@@ -1,6 +1,7 @@
 ---
 title: "audit(factuality): TF-TD-001 §13 체크리스트 — PSUR 갱신주기 'Class IIa 이상: 최소 2년 주기' 오기재 (정답: Class IIb/III 연 1회, IIa만 2년 — 자사 Class IIb 직접 해당)"
 labels: "audit:factuality,prio:P1,risk:high"
+state: closed
 ---
 
 ## 대상 (C2×06_문서_기록관리 스윕)
@@ -31,3 +32,8 @@ EU MDR 2017/745 **Art.86(1)** 원문(Tier1, 조문 전문 직접 열람):
 
 ## 근거 (Tier1)
 - EU MDR 2017/745 Art.86(1) 조문 전문 (medical-device-regulation.eu 전문 게재본 + WebSearch 독립 교차확인)
+
+## 해소 (2026-07-29, 드레인 스프린트)
+- TF-TD-001 §13 L487 'Class IIa 이상: 최소 2년 주기' → 'Class IIb/III: 연 1회 이상, Class IIa: 최소 2년마다(필요 시 수시) — EU MDR Art.86(1)' 정정(v0.7).
+- 전 저장소 grep: 잔여 'Class IIa 이상' 2건(EU_MDR_2017_745.md L137, PMS_개요.md L126)은 PSUR **작성 의무 대상** 서술로 정답 — 정정 불요. PSUR 주기 수치 전 문서 정합 재확인.
+- Tier1: EU MDR Art.86(1) 조문(기확보 재사용). 실운영 문서 미참고.

@@ -38,3 +38,7 @@ P1. 정답 확정은 표준 원문 확보 후 후속. 빌더: 표준 원문 대�
 - 추가 무료 Tier1 미리보기 2종 열람: (1) iTeh 배포 IEC 60601-2-54:2009+AMD1:2015 CSV 미리보기 PDF — p.10(§201.3 정의부)에서 절단, Table 203.101(p.31)·203.102(p.33) 본문 미포함. (2) elstandard.se 배포 SS-EN IEC 60601-2-54:2025(=IEC 2022 Ed.2) 미리보기 — 목차·서문까지만 포함, Table 203.101(p.37)·203.102(p.38) 본문 미포함.
 - 보조 검색: AAPM Report(비규범, Tier2) 계열에서 AEC 재현성 CV<5% 관행 언급 확인되나, IEC 60601-2-54 규범값과 동일하다는 Tier1 근거 없음 — 추정 배제 원칙 유지, 역치 단일화 보류.
 - **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — 표준 원문 구매 후 Table 203.101/203.102 판정값 대조. 실운영 문서 미참고. web_verification: yes(무료 미리보기 2종 신규 열람, 판정값 미포함 확인).
+
+## 재확인 시도 4차 (2026-07-29, 드레인 스프린트)
+- WebSearch 재시도(IEC 60601-2-54:2022 §203.6.4 loading factors accuracy) — 카탈로그(iTeh·IEC Webstore·IECEE)·elsmar 포럼 결과만 반환, Table 203.101/203.102 판정값 본문 미확보. elsmar 스레드(#68968) 직접 열람 시도 — 본문 미반환.
+- **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 Table 203.101/203.102 대조. 역치 임의 통일하지 않음(추정 배제). 실운영 문서 미참고. web_verification: attempted-paywalled(4차).

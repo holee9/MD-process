@@ -32,6 +32,7 @@ applicable:
 | v0.4 | 2026-06-29 | §18 N:M Substantial Equivalence 비교 매트릭스 양식 신설(predicate 최대 5 × model variant cross-product: scintillator×substrate×portability), §18.4 Reference Device 항 분리, §18.5 적합성 표준 일괄 매핑, §18.6 SE 결론문 양식; §17에 F-TD-005 추가; §16 교차참조에 12_벤치마크 3건 추가 [plan #934] | holee9-builder |
 | v0.5 | 2026-07-02 | audit 정정: §18.5 FDA Cyber Guidance 2023-09-27 → **2026-02 Final** (Docket FDA-2021-D-1158, 2회 supersede) [audit #938]; §18.6 §807.100(b)(2)(ii)(B) → **(C)** 정정, (B)는 "as safe and as effective" 근거 별기록 [audit #936]; §18.7·§출처 Best Practices Predicate Draft 상태·Docket FDA-2023-D-3134 명시 [audit #937] | holee9-builder |
 | v0.6 | 2026-07-17 | §10.1 Part 11 요건표 '§11.10(k)(1)' 요구사항 오기술 정정 — eCFR 원문(§11.10(k)(1): 시스템 문서 배포·접근·이용 통제) 확인, 기존 '문서 유효성 기간 관리'(§11.10(c) 영역과 혼동)는 오기술 [audit #978] | md-process-auditor |
+| v0.7 | 2026-07-29 | audit #1004/#1005 정정: §13 PSUR 주기 'Class IIa 이상: 최소 2년'→'IIb/III 연 1회·IIa 2년'(EU MDR Art.86(1)); §14 PMS 기록 보존 '5년(803, EU MDR)'→EU 10년(Art.10(8)·Annex III)/FDA 803.18('2년 또는 기기 예상수명 중 긴 기간') | md-process-auditor |
 
 ---
 
@@ -484,7 +485,7 @@ MDF (Medical Device File) 구성 문서의 완전성을 EU MDR Annex II 전 섹�
 | No. | 점검 항목 | 확인 기준 | Y/N/NA | 비고 |
 |-----|-----------|-----------|--------|------|
 | 8.1 | PMS 계획서 승인 | Annex III 요건 포함 | | |
-| 8.2 | PSUR 작성 (해당 시) | Class IIa 이상: 최소 2년 주기 | | |
+| 8.2 | PSUR 작성 (해당 시) | Class IIb/III: 연 1회 이상, Class IIa: 최소 2년마다(필요 시 수시) — EU MDR Art.86(1) | | |
 | 8.3 | PMCF 계획 (해당 시) | Art. 61(11) 요건 | | |
 | 8.4 | 불만·부작용 처리 기록 | SOP-PMS-001 연계 | | |
 
@@ -543,7 +544,7 @@ MDF (Medical Device File) 구성 문서의 완전성을 EU MDR Annex II 전 섹�
 | RMF | 제품 수명 + 최소 2년 | ISO 14971 |
 | UEF | 제품 수명 + 최소 2년 | IEC 62366-1 |
 | 규제 제출물 사본 | 인허가 유효 기간 + 5년 | 각 규제기관 요구 |
-| PMS 기록 | 5년 이상 | FDA 21 CFR 803, EU MDR |
+| PMS 기록 | EU: 최종 기기 출시 후 최소 10년(기술문서 구성요소) / FDA: MDR event file 2년 또는 기기 예상수명 중 긴 기간 | EU MDR Art.10(8)·Annex III, FDA 21 CFR 803.18 |
 | 사이버보안 파일 | SW 수명 + 최소 2년 | IEC 81001-5-1 |
 | eDMS 감사추적 로그 | 해당 기록 보존 기간과 동일 | 21 CFR Part 11 §11.10(e) |
 
