@@ -1,7 +1,7 @@
 ---
 title: "audit(currency): GSPR_정합표준_매핑표 §23.1 — 철회 표준 EN 1041:2008+A1:2013을 MDR 정합표준 'H'로 인용"
 labels: "audit:currency,prio:P2,risk:low"
-state: open
+state: closed
 opened: 2026-07-30
 ---
 
@@ -23,3 +23,8 @@ EN 1041:2008+A1:2013은 **MDD 시대 표준으로, EN ISO 20417:2021이 대체(s
 ## 판정
 
 P2/risk:low — 철회 표준 인용 + 'H' 상태 오표기. 1문서 1개소. 정정 방향: EN 1041 삭제, EN ISO 20417:2021로 통일.
+## 정정·종결 (2026-07-31, 드레인 스프린트)
+- L98 §23.1: EN 1041:2008+A1:2013 삭제 → EN ISO 20417:2021로 통일(§23.2/§23.3과 정합). 상태 표기는 "H(15223-1)/S(20417)"로 정정 — EN ISO 20417:2021의 MDR 정합(H) 등재는 Tier1 미확인이므로 S로 보수 표기(추정 배제).
+- Tier1/Tier2 재확인: EN ISO 20417:2021이 EN 1041:2008+A1:2013을 supersede(BSI·Greenlight Guru·Johner 일치).
+- 확산 grep(전 저장소 "EN 1041"): 대상 문서 1개소 외 인용 없음.
+- state: closed. 실운영 문서 미참고.

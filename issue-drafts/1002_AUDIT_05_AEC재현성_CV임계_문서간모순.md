@@ -46,3 +46,6 @@ P1. 정답 확정은 표준 원문 확보 후 후속. 빌더: 표준 원문 대�
 - iTeh 배포 IEC 60601-2-54 Ed1.1(2009+AMD1:2015 CSV) 미리보기 PDF 재열람(cdn.standards.iteh.ai) — 목차에서 §201.6=Classification, §201.12=Accuracy of controls and instruments, Table 203.101(재현성·직선성 시험)·Table 203.102(AEC 시험 LOADINGS) 소속 재확인. 판정값 본문(p.31/33)은 미리보기 미포함.
 - WebSearch 재시도(§203.6.3 loading factors accuracy) — 카탈로그·포럼 결과만, 판정값 미확보.
 - **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 Table 203.101/203.102 판정값 대조·CV 역치(5% vs 10%) 단일화. 역치 임의 통일하지 않음(추정 배제). 실운영 문서 미참고. web_verification: attempted-paywalled(5차).
+## 재확인 시도 6차 (2026-07-31, 드레인 스프린트)
+- WebSearch 재시도(Table 203.102 / §203.6.4 AEC reproducibility CV) — 카탈로그·미리보기·포럼 결과만, 판정값 본문 미확보.
+- **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 Table 203.101/203.102 판정값 대조·CV 역치(5% vs 10%) 단일화. 역치 임의 통일하지 않음(추정 배제). 실운영 문서 미참고. web_verification: attempted-paywalled(6차).

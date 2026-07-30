@@ -1,7 +1,7 @@
 ---
 title: "audit(factuality): GSPR_정합표준_매핑표 — EN 62304 정합표준(H) 지위 문서 내 3중 모순 (L26 '등재 전' vs §17 'S' vs §9 '2026-01 H 등재')"
 labels: "audit:factuality,prio:P2,risk:med"
-state: open
+state: closed
 opened: 2026-07-30
 ---
 
@@ -24,3 +24,9 @@ Decision (EU) 2026/193 원문(EUR-Lex) 표 직접 대조 미수행 — 본 사�
 ## 판정
 
 P2/risk:med — 내부 모순(정합성). 정정 시 Decision 2026/193 Annex 원문 대조로 H/S 확정 후 3개소 통일 요망.
+## Tier1 확정 및 정정·종결 (2026-07-31, 드레인 스프린트)
+- **Tier1 신규 확보**: Decision (EU) 2026/193 EUR-Lex 원문 페이지 직접 열람 — 공식 표제·범위가 "neurosurgical implants, biological evaluation, clinical investigation, non-active surgical implants, sterilization, breathing gas pathways, small-bore connectors"로 한정, **EN 62304 미포함 확정**. 보조: medical-device-regulation.eu MDR 정합표준 통합표(2022-05 스냅샷)에도 EN 62304 부재(MDD 목록에만 EN 62304:2006 존재 — H 오인의 유력 기원).
+- **정답 방향 확정: S(미등재)** — 3개소 통일: §5 표 H→S, §9 노트 "2026-01 H 등재" 서술 전면 정정(2026/193 범위 명기), §10 출처 라인 정정. L26은 기존 서술이 정답과 정합(유지).
+- 자매문서 동반 정정: 11_일일_리서치로그/2026-05-26(취소선+정정 주석), 12_교차검증_보고서/2026-05-26(판정 ❌ 정정 주석).
+- 미확인 잔여: 2026-06-11 OJEU 추가 개정분의 EN 62304 포함 여부(가능성 낮음, 2026 Q3 분기 재검증 시 확인).
+- state: closed. 실운영 문서 미참고.

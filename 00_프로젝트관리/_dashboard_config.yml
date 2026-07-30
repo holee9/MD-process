@@ -56,7 +56,7 @@ maintenance:
   - id: FDA_QMSR
     last_checked: '2026-07-16'
   - id: EU_MDR_2017_745
-    last_checked: '2026-07-16'
+    last_checked: '2026-07-31'
   - id: EU_AI_Act
     last_checked: '2026-06-15'
   - id: MFDS_디지털의료제품법
@@ -72,7 +72,7 @@ maintenance:
   - id: IEC_60601-2-54
     last_checked: '2026-07-27'
   cadence:
-    daily_last: '2026-07-30'
+    daily_last: '2026-07-31'
     weekly_last: '2026-06-15'
     monthly_last: ''
     quarterly_last: '2026-06-28'

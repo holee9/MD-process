@@ -1,7 +1,7 @@
 ---
 title: "audit(citation): GSPR_정합표준_매핑표 §16 방사선 방호 — IEC 62667(광이온빔 치료장비 표준) 무관 인용"
 labels: "audit:citation,prio:P1,risk:med"
-state: open
+state: closed
 opened: 2026-07-30
 ---
 
@@ -24,3 +24,7 @@ IEC 62667:2017의 실제 표제는 **"Medical electrical equipment — Medical l
 ## 판정
 
 P1/risk:med — 무관(사실상 미존재급) 인용, NB 심사 시 신뢰도 훼손 소지. 1문서 1개소.
+## 정정·종결 (2026-07-31, 드레인 스프린트)
+- GSPR_정합표준_매핑표 L85 §16에서 IEC 62667 삭제(EN 60601-1-3 계열 유지, 정정 주석 병기). Tier1 재확인: IEC 62667:2017 표제 "Medical light ion beam equipment — Performance characteristics"(IEC Webstore·ANSI webstore 교차) — 광이온빔 치료장비, 진단 X-ray 무관 확정.
+- 확산 grep(전 저장소 "62667"): 대상 문서 1개소 외 인용 없음 — 자매 전파 없음 확인.
+- state: closed. 실운영 문서 미참고.
