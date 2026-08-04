@@ -52,3 +52,7 @@ P1. 정답 확정은 표준 원문 확보 후 후속. 빌더: 표준 원문 대�
 ## 재확인 시도 7차 (2026-08-04, 드레인 스프린트)
 - WebSearch 재시도(§201.12.1/§203.6.4 loading factors accuracy) — 카탈로그(iTeh 2022/2024)·elsmar 포럼(Tier2)만 반환. mdcpp.com 게시 IEC 60601-2-54:2022 전문 PDF 링크 발견했으나 fetch 본문 미반환(빈 응답). elsmar 스레드에서 Ed.1(2009) §203.6.4.3.104.6 CURRENT TIME PRODUCT 정확도 ±(10%+0.2mAs) 확인(Tier2, AEC 재현성 CV값 아님 — 판정 불사용).
 - **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 Table 203.101/203.102 판정값 대조·CV 역치(5% vs 10%) 단일화. 추정 배제 유지. 실운영 문서 미참고. web_verification: attempted-paywalled(7차).
+## 재확인 8차 (2026-08-05, 드레인 스프린트)
+- 간단 재확인만 수행(원장 권고: 반복 WebSearch/미리보기 재시도 한계효용 낮음). 상태 변화 없음 — Table 203.101/203.102 판정값 paywalled 유지.
+- 처리 방침은 plan #1018(GH#1690, 목표 2026-08-11)에서 확정 예정: 원문 확보 경로(구매/도서관/제조사) 결정 또는 보수적 잠정값+주석.
+- **상태: open 유지(blocked: paywalled).** 추정 배제 유지. 실운영 문서 미참고. web_verification: no(신규 시도 없음, 8차 간단 재확인).
