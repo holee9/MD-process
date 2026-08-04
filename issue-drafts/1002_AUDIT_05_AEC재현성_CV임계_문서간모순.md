@@ -49,3 +49,6 @@ P1. 정답 확정은 표준 원문 확보 후 후속. 빌더: 표준 원문 대�
 ## 재확인 시도 6차 (2026-07-31, 드레인 스프린트)
 - WebSearch 재시도(Table 203.102 / §203.6.4 AEC reproducibility CV) — 카탈로그·미리보기·포럼 결과만, 판정값 본문 미확보.
 - **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 Table 203.101/203.102 판정값 대조·CV 역치(5% vs 10%) 단일화. 역치 임의 통일하지 않음(추정 배제). 실운영 문서 미참고. web_verification: attempted-paywalled(6차).
+## 재확인 시도 7차 (2026-08-04, 드레인 스프린트)
+- WebSearch 재시도(§201.12.1/§203.6.4 loading factors accuracy) — 카탈로그(iTeh 2022/2024)·elsmar 포럼(Tier2)만 반환. mdcpp.com 게시 IEC 60601-2-54:2022 전문 PDF 링크 발견했으나 fetch 본문 미반환(빈 응답). elsmar 스레드에서 Ed.1(2009) §203.6.4.3.104.6 CURRENT TIME PRODUCT 정확도 ±(10%+0.2mAs) 확인(Tier2, AEC 재현성 CV값 아님 — 판정 불사용).
+- **상태: open 유지(blocked: paywalled).** 해소 조건 불변 — IEC 60601-2-54:2022 원문 구매 후 Table 203.101/203.102 판정값 대조·CV 역치(5% vs 10%) 단일화. 추정 배제 유지. 실운영 문서 미참고. web_verification: attempted-paywalled(7차).
