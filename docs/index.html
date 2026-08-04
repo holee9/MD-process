@@ -51,7 +51,7 @@ th{color:var(--muted);font-weight:600}
 </style></head><body>
 <style>.actions a[data-tip]{position:relative}.actions a[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:128%;width:290px;white-space:normal;text-align:left;background:#0b1020;color:#e2e8f0;border:1px solid #475569;border-radius:7px;padding:9px 11px;font-size:.72rem;line-height:1.5;font-weight:400;z-index:30;box-shadow:0 8px 22px rgba(0,0,0,.5)}.actions a[data-tip]:hover::before{content:"";position:absolute;left:16px;top:118%;border:6px solid transparent;border-bottom-color:#475569;z-index:30}</style>
 <h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>
-<p class="subtitle">마지막 갱신: <strong>2026-07-31</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
+<p class="subtitle">마지막 갱신: <strong>2026-08-04</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
@@ -59,12 +59,12 @@ th{color:var(--muted);font-weight:600}
 <div class="card" style="border-color:#7c3aed">
 <h2 style="color:#a78bfa">🔬 사실성·신뢰도 (독립 감사 · 1차 출처 재검증)</h2>
 <div class="grid">
-<div class="kpi green"><div class="value">96.7%</div><div class="label">최신 표본 사실 통과율</div></div>
+<div class="kpi green"><div class="value">96.0%</div><div class="label">최신 표본 사실 통과율</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">열린 사실오류(audit P0)</div></div>
-<div class="kpi"><div class="value">96</div><div class="label">누적 발견 사실오류</div></div>
-<div class="kpi"><div class="value">1129</div><div class="label">누적 검증 주장</div></div>
-<div class="kpi green"><div class="value">92</div><div class="label">감사결함 수정완료</div></div>
-<div class="kpi"><div class="value">90.4%</div><div class="label">누적 통과율</div></div>
+<div class="kpi"><div class="value">98</div><div class="label">누적 발견 사실오류</div></div>
+<div class="kpi"><div class="value">1179</div><div class="label">누적 검증 주장</div></div>
+<div class="kpi green"><div class="value">94</div><div class="label">감사결함 수정완료</div></div>
+<div class="kpi"><div class="value">90.7%</div><div class="label">누적 통과율</div></div>
 </div>
 <canvas id="auditTrend" height="90"></canvas>
 <p style="font-size:.76rem;color:var(--muted);margin-top:6px">독립 감사관이 빌더 산출물을 <b>1차 출처(법령·규제기관·표준 원문)</b>로 재검증. 통과율 = (검증주장 − 사실오류 − 인용결함)/검증주장. 시험소·컨설팅 자료는 보조(범위)로만 사용.</p>
@@ -77,15 +77,15 @@ th{color:var(--muted);font-weight:600}
 </table>
 <p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 1 / P1 17 / P2 12</p>
 </div>
-<script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-23", "docs": 3, "cl": 7, "er": 2, "pass": 57.1}, {"d": "2026-06-24", "docs": 3, "cl": 9, "er": 2, "pass": 77.8}, {"d": "2026-06-25", "docs": 3, "cl": 12, "er": 4, "pass": 58.3}, {"d": "2026-06-26", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-27", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-28", "docs": 2, "cl": 9, "er": 4, "pass": 55.6}, {"d": "2026-06-29", "docs": 1, "cl": 6, "er": 1, "pass": 66.7}, {"d": "2026-07-02", "docs": 2, "cl": 8, "er": 2, "pass": 62.5}, {"d": "2026-07-03", "docs": 5, "cl": 11, "er": 2, "pass": 72.7}, {"d": "2026-07-04", "docs": 11, "cl": 50, "er": 1, "pass": 98.0}, {"d": "2026-07-09", "docs": 5, "cl": 5, "er": 5, "pass": 0.0}, {"d": "2026-07-09", "docs": 22, "cl": 35, "er": 3, "pass": 91.4}, {"d": "2026-07-10", "docs": 22, "cl": 29, "er": 7, "pass": 75.9}, {"d": "2026-07-11", "docs": 15, "cl": 20, "er": 1, "pass": 95.0}, {"d": "2026-07-12", "docs": 15, "cl": 15, "er": 3, "pass": 80.0}, {"d": "2026-07-13", "docs": 11, "cl": 45, "er": 6, "pass": 82.2}, {"d": "2026-07-15", "docs": 8, "cl": 50, "er": 5, "pass": 90.0}, {"d": "2026-07-16", "docs": 4, "cl": 120, "er": 2, "pass": 98.3}, {"d": "2026-07-18", "docs": 4, "cl": 40, "er": 3, "pass": 92.5}, {"d": "2026-07-19", "docs": 5, "cl": 55, "er": 1, "pass": 98.2}, {"d": "2026-07-20", "docs": 8, "cl": 35, "er": 3, "pass": 91.4}, {"d": "2026-07-21", "docs": 5, "cl": 8, "er": 0, "pass": 100.0}, {"d": "2026-07-22", "docs": 12, "cl": 100, "er": 3, "pass": 97.0}, {"d": "2026-07-23", "docs": 22, "cl": 40, "er": 3, "pass": 92.5}, {"d": "2026-07-24", "docs": 15, "cl": 30, "er": 4, "pass": 86.7}, {"d": "2026-07-24(2\ucc28)", "docs": 11, "cl": 25, "er": 1, "pass": 96.0}, {"d": "2026-07-25", "docs": 5, "cl": 6, "er": 0, "pass": 100.0}, {"d": "2026-07-25(2\ucc28)", "docs": 8, "cl": 12, "er": 2, "pass": 83.3}, {"d": "2026-07-26", "docs": 8, "cl": 60, "er": 2, "pass": 96.7}, {"d": "2026-07-27", "docs": 4, "cl": 35, "er": 2, "pass": 94.3}, {"d": "2026-07-28", "docs": 11, "cl": 60, "er": 2, "pass": 96.7}, {"d": "2026-07-29", "docs": 9, "cl": 45, "er": 3, "pass": 93.3}, {"d": "2026-07-30", "docs": 12, "cl": 90, "er": 3, "pass": 96.7}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28", "5\ud68c\ucc28", "6\ud68c\ucc28", "7\ud68c\ucc28", "8\ud68c\ucc28", "9\ud68c\ucc28", "10\ud68c\ucc28", "11\ud68c\ucc28", "12\ud68c\ucc28", "13\ud68c\ucc28", "14\ud68c\ucc28", "15\ud68c\ucc28", "16\ud68c\ucc28", "17\ud68c\ucc28", "18\ud68c\ucc28", "19\ud68c\ucc28", "20\ud68c\ucc28", "21\ud68c\ucc28", "22\ud68c\ucc28", "23\ud68c\ucc28", "24\ud68c\ucc28", "25\ud68c\ucc28", "26\ud68c\ucc28", "27\ud68c\ucc28", "28\ud68c\ucc28", "29\ud68c\ucc28", "30\ud68c\ucc28", "31\ud68c\ucc28", "32\ud68c\ucc28", "33\ud68c\ucc28", "34\ud68c\ucc28", "35\ud68c\ucc28", "36\ud68c\ucc28", "37\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9, 57.1, 77.8, 58.3, 76.9, 77.8, 55.6, 66.7, 62.5, 72.7, 98.0, 0.0, 91.4, 75.9, 95.0, 80.0, 82.2, 90.0, 98.3, 92.5, 98.2, 91.4, 100.0, 97.0, 92.5, 86.7, 96.0, 100.0, 83.3, 96.7, 94.3, 96.7, 93.3, 96.7],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
+<script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-23", "docs": 3, "cl": 7, "er": 2, "pass": 57.1}, {"d": "2026-06-24", "docs": 3, "cl": 9, "er": 2, "pass": 77.8}, {"d": "2026-06-25", "docs": 3, "cl": 12, "er": 4, "pass": 58.3}, {"d": "2026-06-26", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-27", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-28", "docs": 2, "cl": 9, "er": 4, "pass": 55.6}, {"d": "2026-06-29", "docs": 1, "cl": 6, "er": 1, "pass": 66.7}, {"d": "2026-07-02", "docs": 2, "cl": 8, "er": 2, "pass": 62.5}, {"d": "2026-07-03", "docs": 5, "cl": 11, "er": 2, "pass": 72.7}, {"d": "2026-07-04", "docs": 11, "cl": 50, "er": 1, "pass": 98.0}, {"d": "2026-07-09", "docs": 5, "cl": 5, "er": 5, "pass": 0.0}, {"d": "2026-07-09", "docs": 22, "cl": 35, "er": 3, "pass": 91.4}, {"d": "2026-07-10", "docs": 22, "cl": 29, "er": 7, "pass": 75.9}, {"d": "2026-07-11", "docs": 15, "cl": 20, "er": 1, "pass": 95.0}, {"d": "2026-07-12", "docs": 15, "cl": 15, "er": 3, "pass": 80.0}, {"d": "2026-07-13", "docs": 11, "cl": 45, "er": 6, "pass": 82.2}, {"d": "2026-07-15", "docs": 8, "cl": 50, "er": 5, "pass": 90.0}, {"d": "2026-07-16", "docs": 4, "cl": 120, "er": 2, "pass": 98.3}, {"d": "2026-07-18", "docs": 4, "cl": 40, "er": 3, "pass": 92.5}, {"d": "2026-07-19", "docs": 5, "cl": 55, "er": 1, "pass": 98.2}, {"d": "2026-07-20", "docs": 8, "cl": 35, "er": 3, "pass": 91.4}, {"d": "2026-07-21", "docs": 5, "cl": 8, "er": 0, "pass": 100.0}, {"d": "2026-07-22", "docs": 12, "cl": 100, "er": 3, "pass": 97.0}, {"d": "2026-07-23", "docs": 22, "cl": 40, "er": 3, "pass": 92.5}, {"d": "2026-07-24", "docs": 15, "cl": 30, "er": 4, "pass": 86.7}, {"d": "2026-07-24(2\ucc28)", "docs": 11, "cl": 25, "er": 1, "pass": 96.0}, {"d": "2026-07-25", "docs": 5, "cl": 6, "er": 0, "pass": 100.0}, {"d": "2026-07-25(2\ucc28)", "docs": 8, "cl": 12, "er": 2, "pass": 83.3}, {"d": "2026-07-26", "docs": 8, "cl": 60, "er": 2, "pass": 96.7}, {"d": "2026-07-27", "docs": 4, "cl": 35, "er": 2, "pass": 94.3}, {"d": "2026-07-28", "docs": 11, "cl": 60, "er": 2, "pass": 96.7}, {"d": "2026-07-29", "docs": 9, "cl": 45, "er": 3, "pass": 93.3}, {"d": "2026-07-30", "docs": 12, "cl": 90, "er": 3, "pass": 96.7}, {"d": "2026-07-31", "docs": 22, "cl": 50, "er": 2, "pass": 96.0}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28", "5\ud68c\ucc28", "6\ud68c\ucc28", "7\ud68c\ucc28", "8\ud68c\ucc28", "9\ud68c\ucc28", "10\ud68c\ucc28", "11\ud68c\ucc28", "12\ud68c\ucc28", "13\ud68c\ucc28", "14\ud68c\ucc28", "15\ud68c\ucc28", "16\ud68c\ucc28", "17\ud68c\ucc28", "18\ud68c\ucc28", "19\ud68c\ucc28", "20\ud68c\ucc28", "21\ud68c\ucc28", "22\ud68c\ucc28", "23\ud68c\ucc28", "24\ud68c\ucc28", "25\ud68c\ucc28", "26\ud68c\ucc28", "27\ud68c\ucc28", "28\ud68c\ucc28", "29\ud68c\ucc28", "30\ud68c\ucc28", "31\ud68c\ucc28", "32\ud68c\ucc28", "33\ud68c\ucc28", "34\ud68c\ucc28", "35\ud68c\ucc28", "36\ud68c\ucc28", "37\ud68c\ucc28", "38\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9, 57.1, 77.8, 58.3, 76.9, 77.8, 55.6, 66.7, 62.5, 72.7, 98.0, 0.0, 91.4, 75.9, 95.0, 80.0, 82.2, 90.0, 98.3, 92.5, 98.2, 91.4, 100.0, 97.0, 92.5, 86.7, 96.0, 100.0, 83.3, 96.7, 94.3, 96.7, 93.3, 96.7, 96.0],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
 <div class="card" style="border-color:#2563eb">
 <h2 style="color:#5eb0ef">👤 사람 점검 (주간/월간 — 트리거 기반 · GitHub에서 바로 결정 반영)</h2>
 <table>
 <tr><th>주기</th><th>점검 항목</th><th>현재</th><th>결정 트리거</th></tr>
-<tr><td rowspan="3"><b>주간</b></td><td>사실 통과율 추세</td><td>95.2% (전주 94.9% ▲0.3)</td><td>하락 → 집중 지시</td></tr>
+<tr><td rowspan="3"><b>주간</b></td><td>사실 통과율 추세</td><td>데이터 누적 중 (38사이클)</td><td>하락 → 집중 지시</td></tr>
 <tr><td>열린 audit P0(미수정 사실오류)</td><td>0</td><td>&gt;0 지속 → 루프 점검</td></tr>
 <tr><td>해석범위·미확인(RA 판단)</td><td><a href="https://github.com/holee9/MD-process/issues?q=is%3Aopen+label%3Areview" target="_blank">목록</a></td><td>RA만 결정 가능</td></tr>
-<tr><td rowspan="2"><b>월간</b></td><td>표본 누적(사실성 기준선)</td><td>37 사이클 / 누적 90.4%</td><td>충분 → 정식 게이트 재채점</td></tr>
+<tr><td rowspan="2"><b>월간</b></td><td>표본 누적(사실성 기준선)</td><td>38 사이클 / 누적 90.7%</td><td>충분 → 정식 게이트 재채점</td></tr>
 <tr><td>조항완전성(plan 백로그)</td><td>23 열림</td><td>천장 근접 → 엔진완성 선언·조직통합</td></tr>
 </table>
 <div class="actions" style="margin-top:10px">
@@ -130,33 +130,33 @@ function submitIssueForm(){
 <div class="grid">
 <div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi red"><div class="value">98%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (332/329)</div></div>
+<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (334/334)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
-<div class="kpi red"><div class="value">50</div><div class="label">미해결 이슈</div></div>
+<div class="kpi red"><div class="value">53</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">92</div><div class="label">통제 문서 (01~10)</div></div>
 </div>
 <div class="card"><h2>유지보수 케이던스 현황</h2><table>
 <tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
-<tr><td>일일</td><td>매일 03:18</td><td>2026-07-31</td><td>매 실행</td></tr>
-<tr><td>주간</td><td>월요일</td><td>2026-06-15</td><td>2026-08-03</td></tr>
-<tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-08-01</td></tr>
+<tr><td>일일</td><td>매일 03:18</td><td>2026-08-04</td><td>매 실행</td></tr>
+<tr><td>주간</td><td>월요일</td><td>2026-06-15</td><td>2026-08-10</td></tr>
+<tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-09-01</td></tr>
 <tr><td>분기</td><td>1·4·7·10월 1일</td><td>2026-06-28</td><td>2026-10-01</td></tr>
 </table></div>
 <div class="two-col">
 <div class="card"><h2>규제 추적 현황</h2><table>
 <tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
-<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>15일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>0일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>46일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>46일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>46일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>46일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>14일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_62304</td><td>2026-07-16</td><td>15일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>4일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>19일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>4일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>50일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>50일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>50일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>50일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>18일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-07-16</td><td>19일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>8일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 329건 중 279건 완료 · 미해결 50건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 334건 중 281건 완료 · 미해결 53건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
@@ -165,19 +165,19 @@ function submitIssueForm(){
 <div class="card"><h2>문서통제 정합성</h2><table>
 <tr><td>frontmatter 유효 문서</td><td>252/256 (98%)</td></tr>
 <tr><td>frontmatter 결함</td><td>4건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>332/329 일치</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>334/334 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">08-04</span>report(weekly): 주간 갭분석 2026-08-04 — 종합 38% 6주 정체, 감사 15건 종결(avg 0.9일)·open 3건, C2 sweep 완료</li>
+<li><span class="date">07-31</span>audit(sweep C3): 표준 판본·미존재 인용 전수 — 02_품질경영시스템_QMS 결함 2건(3개소, #1014/#1015 GH#1662/1663)</li>
+<li><span class="date">07-30</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
+<li><span class="date">07-31</span>fix(audit-drain #1011 #1012 #1013): GSPR 매핑표 C3 결함 3건 정정·종결 — IEC 62667 무관인용 삭제, EN 1041 철</li>
 <li><span class="date">07-30</span>audit(sweep C3): 표준 판본·미존재 인용 전수 — 01_법규_규제 결함 3(#1011~#1013, GH#1659~1661)</li>
 <li><span class="date">07-29</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 <li><span class="date">07-30</span>fix(audit-drain): #1008 PRRC Art.15(1) 자격 정정(+교차검증 2건 부기), #1009 산안법 정기교육 매반기 체계 정정, #1010</li>
 <li><span class="date">07-28</span>chore(issues): update _log.json [skip ci]</li>
 <li><span class="date">07-29</span>audit(sweep C2): 수치역치 전수 — 09/10 카테고리 완료, 결함 3(#1008~#1010) — C2 클래스 100% 완료</li>
 <li><span class="date">07-28</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">07-29</span>fix(audit-drain): #1004 #1005 #1006 #1007 종결 — PSUR 주기 Art.86(1) 귀속·보존기간 매트릭스(10년/803.18)·</li>
-<li><span class="date">07-27</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">07-28</span>audit(sweep C2): 보고기한/수치역치 전수 — 07(결함0)·08(결함2: #1006 Art.86(2) 오귀속 P1, #1007 요약표 기한 뭉뚱그림 </li>
-<li><span class="date">07-28</span>chore(audit-drain #1002): 3차 Tier1 재확인 시도 기록 — 무료 미리보기 2종 판정값 미포함, blocked:paywalled 유지</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
@@ -189,7 +189,7 @@ function submitIssueForm(){
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[279, 50], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[281, 53], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>

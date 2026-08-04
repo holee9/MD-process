@@ -1,7 +1,8 @@
 ---
 title: "audit(citation): IEC_62366-1 계획서 §출처 — FDA 'Highest Priority Devices List (2022)' 연도 오귀속 (정답 2016-02-03 Draft, 2022-12-09 별도 표제 Draft로 대체)"
 labels: "audit:citation,prio:P2,risk:low"
-state: open
+state: closed
+closed: 2026-08-04
 opened: 2026-07-31
 ---
 
@@ -23,3 +24,8 @@ FDA "List of Highest Priority Devices for Human Factors Review"는 **2016-02-03 
 ## 판정
 
 P2/risk:low — 출처 목록 결함. 정정 권고: "Highest Priority Devices List (2016 Draft; 2022-12 'Content of Human Factors Information…' Draft로 대체)". 2022-12 Draft의 최종화 여부는 미확인(사실오류 아님, 정정 시 확인 요망).
+
+## 정정 완료 (2026-08-04)
+- IEC_62366-1 계획서 L32·L286: "(2022)"→"(2016 Draft; 2022-12 'Content of Human Factors Information in Medical Device Marketing Submissions' Draft로 대체)".
+- 자매문서 일괄: 일일리서치 2026-04-26 L20·교차검증 2026-04-26 L28 "(2022)"→"(2016 Draft)".
+- Tier1: Federal Register 2016-01889. 실운영 문서 미참고.
