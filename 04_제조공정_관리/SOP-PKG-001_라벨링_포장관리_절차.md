@@ -2,7 +2,7 @@
 doc-id: SOP-PKG-001
 title: 라벨링 및 포장 관리 절차
 type: SOP
-version: v0.2.3
+version: v0.2.4
 status: draft
 category: 04_제조공정_관리
 purpose: 의료용 X-ray 시스템·Detector·SW의 라벨 작성·검증·부착 및 포장 공정을 통제하여 규제 적합성과 제품 추적성을 보장한다
@@ -280,7 +280,7 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 2. **ESD 보호 (JEDEC/ESDA 공통 기준)**
    - ESD 보호 포장재는 ANSI/ESD S541 기준 적합품 사용
    - 포장·개봉 시 ESD 안전 작업 구역(EPA) 내에서 수행
-   - ESD 경고 라벨 부착: IEC 60417-5734 기호 사용
+   - ESD 경고 라벨 부착: IEC 60417-5134 기호 사용 (Electrostatic sensitive devices, ISO OBP 확인)
 
 3. **이중 포장 구조**
    - 1차 포장: MBB(방습) + ESD 차폐 백(shielding bag)
@@ -339,3 +339,4 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 | v0.2.1 | 2026-07-09 | audit-drain C2(보고기한) — §9.1 MFDS 회수계획서 제출기한 오류 정정: 일괄 "15일"→회수등급별 5일(1등급)/15일(2·3등급) | md-process-auditor |
 | v0.2.2 | 2026-07-15 | audit #967/#971 정정 — QMSR 820.120/820.130(구 QSR, 폐지)→§820.45 라벨링·포장 통제(2개소); eIFU 근거 'Art.23.1(f)'(Art.23=Parts and components)→Annex I §23.1(f)(2개소) | QMS-Bot |
 | v0.2.3 | 2026-07-25 | audit #996 정정 — §9 리콜 기록 보존기간 '제품수명+15년'(오기재)→'제품 단종 후 최소 10년(EU MDR Art.10(8) 비이식형)' | md-process-auditor |
+| v0.2.4 | 2026-08-06 | audit #1018(GH#1695) 정정 — §9 ESD 경고 라벨 기호 'IEC 60417-5734'(오기재)→'IEC 60417-5134'(Electrostatic sensitive devices, ISO OBP Tier1) | md-process-auditor |
