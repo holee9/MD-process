@@ -59,3 +59,6 @@ P1. 정답 확정은 표준 원문 확보 후 후속. 빌더: 표준 원문 대�
 ## 재확인 9차 (2026-08-06, 드레인 스프린트)
 - WebSearch 1회 재시도(Table 203.102 AEC reproducibility CV limit) — 기존 확인된 카탈로그·미리보기(VDE RLV, iTeh, elstandard.se) 및 Tier2 교육자료만 반환, 판정값 본문 미확보(신규 소스 없음).
 - **상태: open 유지(blocked: paywalled).** 처리 방침은 plan #1018(GH#1690, 목표 2026-08-11)에서 확정 예정 — 원문 확보 경로 결정 또는 보수적 잠정값+주석. 추정 배제 유지. 실운영 문서 미참고. web_verification: attempted-paywalled(9차).
+## 재확인 10차 (2026-08-07, 드레인 스프린트)
+- WebSearch 1회 재시도(Table 203.102 AEC reproducibility CV limit) — 기존 카탈로그(iTeh, IEC Webstore)·Tier2 학술자료(맘모그래피 AEC, 비해당)만 반환. 판정값 본문 미확보(신규 소스 없음).
+- **상태: open 유지(blocked: paywalled).** 처리 방침은 plan #1018(GH#1690, 목표 2026-08-11)에서 확정 예정 — 원문 확보 경로 결정 또는 보수적 잠정값+주석. 추정 배제 유지. 실운영 문서 미참고. web_verification: attempted-paywalled(10차).
