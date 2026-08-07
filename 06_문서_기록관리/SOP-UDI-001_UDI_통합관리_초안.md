@@ -2,7 +2,7 @@
 doc-id: SOP-UDI-001
 title: SOP-UDI-001 UDI 통합 관리 절차 (v0.2)
 type: SOP
-version: v0.3
+version: v0.3.1
 status: draft
 category: 06_문서_기록관리
 purpose: SOP-UDI-001 UDI 통합 관리 절차 (v0.2) 관련 문서
@@ -81,7 +81,7 @@ review-due: 2027-06-25
 │  [5] 라벨 설계·검증                                       │
 │       ├─ UDI-DI + PI 위치·크기·인코딩 설계                  │
 │       ├─ 바코드/2D 판독 시험 (F-UDI-002)                   │
-│       ├─ IEC/ISO 15223-1 기호 정합 확인                    │
+│       ├─ ISO 15223-1 기호 정합 확인                    │
 │       └─ 판정: 판독률 ≥99.5% → 합격                       │
 │              │                                           │
 │              ▼                                           │
@@ -112,7 +112,7 @@ review-due: 2027-06-25
 2. Basic UDI-DI (EU) / Primary DI (FDA) / 국내 UDI 동시 결정, UDR에 등재
 3. DoC(EU), 기술문서, 510(k)/PMA(해당 시) 문서와 UDI 교차 참조
 4. EUDAMED Actor→Device 등록, GUDID 제출, MFDS UDI 시스템 등록
-5. 라벨/IFU/포장·기기 표시(AI/DI+PI) 설계·검증 (IEC/ISO 15223-1 정합)
+5. 라벨/IFU/포장·기기 표시(AI/DI+PI) 설계·검증 (ISO 15223-1 정합)
 
 ### 6.2 PI(Production Identifier) 운영
 - LOT·S/N 부여 규칙: 모델코드 + 연월 + 일련번호, 재사용 금지
@@ -212,7 +212,7 @@ review-due: 2027-06-25
 | 2 | PI 항목 완비 | S/N, LOT, 제조일, SW ver 등 해당 항목 포함 | | □ |
 | 3 | 바코드/2D 판독률 | ≥99.5% (100회 스캔 기준) | ____% | □ |
 | 4 | 인체 판독 가능성 | HRI(Human Readable Interpretation) 선명 | | □ |
-| 5 | IEC/ISO 15223-1 기호 | 필수 기호 완비, 크기·색상 적합 | | □ |
+| 5 | ISO 15223-1 기호 | 필수 기호 완비, 크기·색상 적합 | | □ |
 | 6 | 내구성 (해당 시) | 세척·소독 100회 후 판독 가능 | | □ |
 | 7 | SW UDI 표시 (SaMD) | About/Splash 화면에 UDI 표시 확인 | | □ |
 
@@ -247,6 +247,7 @@ review-due: 2027-06-25
 |------|------|------|------|
 | 0.1 | 2026-04-20 | 초안 작성 (FDA/EU/KR 통합 골격) | RA(자동화 세션) |
 | 0.2 | 2026-05-05 | 절차 흐름도, F-UDI-001/002 양식, X-ray 적용예시, 판정기준 상세화 | holee9-automation |
+| v0.3.1 | 2026-08-08 | md-process-builder | audit #1024(GH#1702) 정정 — L84/L115/L215 'IEC/ISO 15223-1' 접두 오표기→'ISO 15223-1'(ISO/TC 210 단독 발행, ISO 카탈로그 Tier1) 3개소, 문서 내 표기 단일화 |
 
 ## 출처
 - 21 CFR Part 830 (UDI Rule)

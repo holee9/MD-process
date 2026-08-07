@@ -4,7 +4,7 @@ title: 의료기기파일 및 기술문서 관리 절차
 type: Procedure
 category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
-version: v0.6
+version: v0.6.1
 status: draft
 last-review: 2026-07-02
 owner: RA/QA
@@ -33,6 +33,7 @@ applicable:
 | v0.5 | 2026-07-02 | audit 정정: §18.5 FDA Cyber Guidance 2023-09-27 → **2026-02 Final** (Docket FDA-2021-D-1158, 2회 supersede) [audit #938]; §18.6 §807.100(b)(2)(ii)(B) → **(C)** 정정, (B)는 "as safe and as effective" 근거 별기록 [audit #936]; §18.7·§출처 Best Practices Predicate Draft 상태·Docket FDA-2023-D-3134 명시 [audit #937] | holee9-builder |
 | v0.6 | 2026-07-17 | §10.1 Part 11 요건표 '§11.10(k)(1)' 요구사항 오기술 정정 — eCFR 원문(§11.10(k)(1): 시스템 문서 배포·접근·이용 통제) 확인, 기존 '문서 유효성 기간 관리'(§11.10(c) 영역과 혼동)는 오기술 [audit #978] | md-process-auditor |
 | v0.7 | 2026-07-29 | audit #1004/#1005 정정: §13 PSUR 주기 'Class IIa 이상: 최소 2년'→'IIb/III 연 1회·IIa 2년'(EU MDR Art.86(1)); §14 PMS 기록 보존 '5년(803, EU MDR)'→EU 10년(Art.10(8)·Annex III)/FDA 803.18('2년 또는 기기 예상수명 중 긴 기간') | md-process-auditor |
+| v0.6.1 | 2026-08-08 | md-process-builder | audit #1022(GH#1700)·#1023(GH#1701) 정정 — L678 영상성능(MTF) 근거 IEC 62220-1-3→62220-1-1:2015(MTF는 DQE 결정 과정, 1-3은 동적 검출기 DQE로 재기술, IEC pub.6599 표제 Tier1); L739 STED 근거 SG1/N071:2012(용어정의 문서)→GHTF/SG1/N011:2008(IMDRF 아카이브 Tier1); §6.1 'N4가 정의' 근거불명 표기→N011:2008 명기 |
 
 ---
 
@@ -168,7 +169,7 @@ MDF (Medical Device File) — TF-TD-001
 
 ### 6.1 IMDRF/GHTF STED 섹션 ↔ 자사 문서 매핑
 
-STED는 IMDRF(구 GHTF) N4가 정의한 국제 기술문서 공통 형식으로, 한국(MFDS), 호주(TGA), 캐나다(Health Canada), 일본(PMDA) 등 다수 규제기관이 채택한다.
+STED는 GHTF SG1(문서 GHTF/SG1/N011:2008)이 정의한 국제 기술문서 공통 형식으로, 한국(MFDS), 호주(TGA), 캐나다(Health Canada), 일본(PMDA) 등 다수 규제기관이 채택한다.
 
 | STED 섹션 | 섹션 제목 | 내용 요약 | 자사 문서 매핑 | EU MDR Annex II 대응 |
 |-----------|-----------|-----------|---------------|---------------------|
@@ -675,7 +676,7 @@ K243734/K250211/K243171 3건 벤치마크 공통 표준 패턴이며, SE 매트�
 | HFE 보조 | ANSI/AAMI HE75 (판본은 X-ray 표준매핑 v0.4 참조) | 일반 HFE 가이드 | UEF 부속 |
 | 방사선 성능 | IEC 60601-2-54 Ed.2 (2022-09-26) | X-ray 영상기기 안전·성능 | IEC60601-2-54_형식시험_체크리스트 |
 | 영상 성능(DQE) | IEC 62220-1-1 (DQE 측정 방법, 판본은 X-ray 표준매핑 v0.4 참조) | DQE 측정 방법 | DQE 시험 보고서(F-IQ-001 예정, plan #932) |
-| 영상 성능(MTF) | IEC 62220-1-3 (MTF 측정 방법, 판본은 X-ray 표준매핑 v0.4 참조) | MTF 측정 방법 | MTF 시험 보고서(F-IQ-001 예정, plan #932) |
+| 영상 성능(MTF) | IEC 62220-1-1:2015 (MTF는 DQE 결정 과정에서 측정 — 정적 촬영용 검출기; 동적 영상 검출기 DQE는 IEC 62220-1-3:2008) | MTF 측정 방법 | MTF 시험 보고서(F-IQ-001 예정, plan #932) |
 | SW 수명주기 | IEC 62304:2006+AMD1:2015 (Ed.1.1) [audit #908/#925 정정 패턴 적용 — 'A2:2020' 미존재 표준 인용 금지] | SW 수명주기 프로세스 | IEC_62304_SW_수명주기 |
 | SW 사이버보안 | IEC 81001-5-1:2021 + FDA Final Guidance "Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions" (**February 2026**, Docket FDA-2021-D-1158; supersedes 2025-06-27 및 2023-09-27 final) | SW 사이버보안 | IEC_81001-5-1_FDA_Cybersecurity_SW보안, SBOM |
 | FDA SW | FDA "Content of Premarket Submissions for Device Software Functions" (2023-06-14) | SW 문서 수준 | SW Level of Concern 평가서 |
@@ -736,7 +737,7 @@ FDA 510(k) Program Guidance(2014-07-28) §6·§9에 따른 SE 결론은 다음 4
 - EU MDR 2017/745 Annex II, Annex III, Art. 10(8), Art. 15, Art. 32
 - FDA QMSR (21 CFR Part 820, 2026-02-02 시행) + §820.35 추가 요건
 - 21 CFR Part 11 (전자기록·전자서명)
-- IMDRF/GHTF SG1/N071:2012 (STED)
+- GHTF/SG1/N011:2008 (STED — Summary Technical Documentation; 구 인용 SG1/N071:2012는 용어 정의 문서로 STED와 무관, audit #1023 정정)
 - MFDS 의료기기법 시행규칙 별표 (기술문서 심사자료)
 - IEC 62304:2006+A1:2015, IEC 60601-2-54:2022, IEC 81001-5-1:2021
 - IEC 62366-1:2015+Amd1:2020, ISO 14971:2019
@@ -745,7 +746,7 @@ FDA 510(k) Program Guidance(2014-07-28) §6·§9에 따른 SE 결론은 다음 4
 - FDA **Draft Guidance** "Best Practices for Selecting a Predicate Device to Support a Premarket Notification [510(k)] Submission" (**September 2023, Docket FDA-2023-D-3134, Not for implementation. Contains non-binding recommendations**) — 2026-06 시점 미확정 [audit #937]
 - FDA "Solid State X-ray Imaging Devices 510(k) Submissions" Guidance (2016-09-01)
 - 21 CFR 807.100(b) Determination of Substantial Equivalence
-- IEC 62220-1-1:2015 (DQE), IEC 62220-1-3:2008 (MTF), AAMI/ANSI ES60601-1, ANSI/AAMI HE75:2009/R2018
+- IEC 62220-1-1:2015 (DQE — MTF 포함), IEC 62220-1-3:2008 (동적 영상 검출기 DQE), AAMI/ANSI ES60601-1, ANSI/AAMI HE75:2009/R2018
 - BMK-2026Q2-K243734 / BMK-2026Q2-K250211 / BMK-2026Q2-K243171 (자사 분기 종합 벤치마크)
 - 확인일(v0.4 추가): 2026-06-29
 - 확인일(v0.5 audit 정정): 2026-07-02 — eCFR §807.100 (last amended 2026-06-11), FDA Cybersecurity Final Guidance 페이지 (Feb 2026, Docket FDA-2021-D-1158), FDA Best Practices Draft Guidance 페이지 (Docket FDA-2023-D-3134)

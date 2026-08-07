@@ -2,7 +2,7 @@
 doc-id: SOP-CAL-001
 title: 교정 관리 절차
 type: SOP
-version: v0.2
+version: v0.2.1
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 의료기기 품질에 영향을 미치는 모니터링·측정 장비의 교정·검증 절차를 정의하여 측정 결과의 소급성과 신뢰성을 보장한다
@@ -10,7 +10,7 @@ applicable:
   - ISO 13485:2016 §7.6
   - FDA QMSR (21 CFR 820 → ISO 13485 alignment)
   - EU MDR 2017/745 Annex I §17.1
-  - IEC 60601-1:2020
+  - IEC 60601-1:2005+A1:2012+A2:2020
   - IEC 60601-2-54:2022
   - IEC 60580:2019 (DAP meter)
   - IEC 62220-1-1:2015 (DQE)
@@ -378,3 +378,4 @@ review-due: 2027-05-27
 |------|------|-----------|--------|
 | v0.1 | 2026-05-13 | 초안 작성 | holee9-automation |
 | v0.2 | 2026-05-27 | 절차 흐름도 추가, F-CAL-001/002/003 양식 구체화, OOT X-ray 특화 시나리오 추가, 상호참조 확충, 판정기준·담당·시점 명시 | holee9-automation |
+| v0.2.1 | 2026-08-08 | md-process-builder | audit #1019(GH#1697) 정정 — frontmatter 미존재 판본 'IEC 60601-1:2020'→'IEC 60601-1:2005+A1:2012+A2:2020'(Ed.3.2, IEC pub.67497 Tier1) |

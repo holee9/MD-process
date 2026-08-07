@@ -2,7 +2,7 @@
 doc-id: X-ray_장비_안전성능_표준_매핑
 title: 의료용 X-ray 장비 안전·성능 표준 매핑
 type: Matrix
-version: v0.4.2
+version: v0.4.3
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 진단용 X-ray system/detector/SW의 국제·지역별 안전·성능 규제·표준을 단일 매핑표로 정리
@@ -91,7 +91,7 @@ review-due: 2027-06-25
 | 사용적합성 | IEC 62366-1:2015+A1:2020 | SoTA (OJEU 미등재) | Recognized (HFE Guidance 2016 병행) | 식약처 사용적합성 가이드라인(2017) |
 | SW 수명주기 | IEC 62304:2006+AMD1:2015 (Edition 2 발행 예정 2026-08경) | SoTA (OJEU 미등재, EN 62304:2006/A1:2015) | Recognized (부분) | 식약처 SW밸리데이션 가이드라인 |
 | SW 보안(Product) | IEC 81001-5-1:2021 | SoTA (OJEU 미등재) | FDA Final Guidance (February 2026, Docket FDA-2021-D-1158) 참조 | 식약처 사이버보안 허가·심사 가이드라인(2022 개정) |
-| 진단 X-ray 개별 규격 | IEC 60601-2-54:2009+A1:2015+A2:2018 (촬영·투시) | EN 60601-2-54:2009+A1:2015+A2:2019 (Harmonized) | Recognized | KS C IEC 60601-2-54 |
+| 진단 X-ray 개별 규격 | IEC 60601-2-54:2022 (Ed.2, 촬영·투시 — 2009+A1:2015+A2:2018 Ed.1.2를 cancel & replace, IEC pub.69988) | EN/Harmonized 지위 미확인(구 EN 60601-2-54:2009 계열 표기 잔존 여부 OJEU 원문 미대조 — audit #1020 부기) | Recognized | KS C IEC 60601-2-54 (판본 미확인) |
 | 디지털 Detector 성능 | IEC 62220-1-1:2015 (DQE 측정) | SoTA | Recognized | KS C IEC 62220-1-1 |
 | 사용자 방호·선량(DAP/AED) | IEC 60580:2019 (DAP meter) | SoTA | — | KS C IEC 60580 |
 | 성능시험·선량표시 FDA 규제 | — | — | **21 CFR Part 1020 §1020.30/31** | — |
@@ -159,7 +159,7 @@ review-due: 2027-06-25
 | 검사 항목 | 규칙 제1122호 근거 | IEC/국제 표준 | 시험 방법·판정 기준 | 출하 QC 반영 |
 |-----------|-------------------|--------------|-------------------|-------------|
 | 공간 해상도 | 별표 — 해상력 | IEC 62220-1-1 §5.4 (MTF) | Line-pair phantom, ≥2.0 lp/mm @ 10% MTF (DR) | 출하 시 MTF 측정 기록 |
-| 저대비 해상도 | 별표 — 저대비 해상력 | IEC 61223-3-2 | Leeds TO.20 팬텀, 가시 구멍 수 기준 | 출하 시 팬텀 촬영 기록 |
+| 저대비 해상도 | 별표 — 저대비 해상력 | IEC 61223-3-8:2024 (radiography·radioscopy acceptance/constancy — 구 인용 IEC 61223-3-2는 맘모그래피 전용 표제로 무관, audit #1021 정정) | Leeds TO.20 팬텀, 가시 구멍 수 기준 (팬텀·판정기준은 61223-3-8 원문 대조 후 재확인) | 출하 시 팬텀 촬영 기록 |
 | 균일성 | 별표 — 감도 균일성 | IEC 62220-1-1 §5.6 | ROI 분석, 편차 ≤15% | 출하 시 Flood-field 촬영 |
 | 잡음 특성 | — | IEC 62220-1-1 §5.5 (NPS) | NPS 분석, DQE 산출 연동 | DQE 시험과 통합 |
 | DQE | — | IEC 62220-1-1:2015 | RQA5, DQE(0) ≥ 목표값 | 형식시험 + 출하 샘플링 |
@@ -240,3 +240,4 @@ review-due: 2027-06-25
 | v0.2 | 2026-05-28 | QA/RA | 활용 절차(§3) 추가, 설계 입력 체크포인트 표 구조화(§6), 양식 F-STD-MAP-001 추가, 상호참조 보강, 오픈 이슈 정리 |
 | v0.4.1 | 2026-07-10 | md-process-auditor | **audit #948 정정** — SW 보안(Product) 행 및 §5.2 FDA Cyber Guidance '2023-09'→2026-02 Final(Docket FDA-2021-D-1158) 정정(2개소) |
 | v0.4.2 | 2026-07-19 | md-process-auditor | §6 체크리스트 No.8 'IEC 81001-5-1 §7.4(위험통제)'→'§5.7(5.7.4 Penetration testing)' 정정 — Pen-test 근거조항 오귀속, audit #982 동일오류클래스 일괄교정 |
+| v0.4.3 | 2026-08-08 | md-process-builder | audit #1020(GH#1698)·#1021(GH#1699) 정정 — L94 IEC 60601-2-54 구판(Ed.1.2)→2022(Ed.2, pub.69988 cancel&replace), EN/KS 지위 미확인 부기; L162 저대비 해상도 근거 IEC 61223-3-2(맘모 전용, 무관)→IEC 61223-3-8:2024(pub.64680), 팬텀·판정기준 원문 대조 재확인 부기 |

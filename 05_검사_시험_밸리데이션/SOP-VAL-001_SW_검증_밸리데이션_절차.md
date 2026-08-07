@@ -2,7 +2,7 @@
 doc-id: SOP-VAL-001
 title: 소프트웨어 검증 및 밸리데이션 절차
 type: SOP
-version: v0.2
+version: v0.2.1
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: IEC 62304 기반 의료기기 소프트웨어의 검증(Verification) 및 밸리데이션(Validation) 활동을 체계적으로 수행하기 위한 절차를 정의한다
@@ -11,7 +11,7 @@ applicable:
   - ISO 13485:2016 §7.3.6, §7.3.7, §7.5.6
   - FDA QMSR (21 CFR 820 → ISO 13485 alignment)
   - EU MDR 2017/745 Annex I §17
-  - IEC 60601-1:2020 §14
+  - IEC 60601-1:2005+A1:2012+A2:2020 §14
   - IEC 60601-2-54:2022
   - IEC 81001-5-1:2021 (사이버보안)
   - IEC 62366-1:2015+A1:2020 (사용적합성)
@@ -446,3 +446,4 @@ SW Team Lead가 전체 V&V 결과를 종합하여 최종 보고서를 작성한�
 |------|------|-----------|--------|
 | v0.1 | 2026-05-12 | 초안 작성 | SW Team Lead |
 | v0.2 | 2026-05-27 | 절차 흐름도·판정기준 구체화, F-VAL-001/002/003 양식 추가, X-ray 특화 시험항목 보강, 상호참조 확충 | holee9-automation |
+| v0.2.1 | 2026-08-08 | md-process-builder | audit #1019(GH#1697) 정정 — frontmatter 미존재 판본 'IEC 60601-1:2020 §14'→'IEC 60601-1:2005+A1:2012+A2:2020 §14'(Ed.3.2, IEC pub.67497 Tier1) |
