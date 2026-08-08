@@ -1,7 +1,7 @@
 ---
 doc-id: F-RM-002
 title: 위험분석 워크시트 — FMEA (Failure Mode and Effects Analysis)
-version: v0.2.2
+version: v0.2.3
 type: Form
 status: draft
 category: 07_위험관리_ISO14971
@@ -35,6 +35,7 @@ applicable-standards:
 | v0.2 | 2026-05-30 | pFMEA·사이버보안·AI/ML·사용오류 FMEA 추가, 잔여위험 종합평가 양식, 추가 예시 | holee9-automation |
 | v0.2.1 | 2026-07-10 | **audit #942 정정** — §12 항목5 'ISO 14971 Clause 7.6'→'7.5' 정정 + 항목6 신설(§7.6 완전성 확인, 자매문서 #907 패턴 재발 방지) | md-process-auditor |
 | v0.2.2 | 2026-07-19 | **audit #982 정정** — §12.2 FMEA유형별 주의사항 표 '사이버보안' 행 'IEC 81001-5-1 §5.5 보안 시험 결과'→'§5.7'(5.7.1 SECURITY requirements testing) 정정 | md-process-auditor |
+| v0.2.3 | 2026-08-09 | **audit #1025(GH#1703) 정정** — §8 HAZ-AI-001 'IEC 62304 등급: C (Class III)'→'C'(IEC 62304 §4.3 안전등급은 A/B/C만 존재, 'Class III'는 기기등급 체계로 혼동 표기 제거; HAZ-AI-002/003 기존 정표기와 단일화). 전 저장소 동일클래스(62304 등급×기기등급 병기) grep 스윕 — 타 출현 0건 확인 | md-process-builder |
 
 ---
 
@@ -446,7 +447,7 @@ AI/ML 구성요소 고유의 위험(모델 드리프트, 학습데이터 편향,
 | 잔여D | 2 |
 | 잔여RPN | 48 |
 | 잔여AP | M (편익-위험 분석 연계) |
-| IEC 62304 등급 | C (Class III) |
+| IEC 62304 등급 | C |
 | 상태 | Closed |
 | 담당 | AI팀 / R&D SW팀 |
 
