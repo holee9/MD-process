@@ -2,7 +2,7 @@
 doc-id: SOP-CC-001
 title: SOP-CC-001 — 변경통제 절차 (Change Control Procedure)
 type: SOP
-version: v0.3
+version: v0.3.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.1 관련 문서
@@ -213,6 +213,7 @@ IEC 62304 Ed2(2026년 8월 발행 예정)에 따라 SW 변경 분류 기준의 �
 
 | 버전 | 일자 | 변경 사항 |
 |------|------|-----------|
+| v0.3.1 | 2026-09-10 | audit #1040 동일오류클래스 일괄교정 — §출처 '진단용 방사선 발생장치 안전관리규칙 (총리령 제1122호)' → '보건복지부령 제1122호'(law.go.kr 원문 표제부 Tier1) |
 | v0.3 | 2026-06-05 | v0.3 보강 — QMSR 실사 대비 기록 강화, EUDAMED 등록 갱신 절차 추가, IEC 62304 Ed2 전환 준비 |
 | v0.2 | 2026-05-21 | v0.2 보강 — 5축 병렬평가, 긴급변경, X-ray 특수사항, 양식 상세화 |
 | v0.1 | 2026-04-30 | 초안 작성 |
@@ -223,5 +224,5 @@ IEC 62304 Ed2(2026년 8월 발행 예정)에 따라 SW 변경 분류 기준의 �
 - IEC 62304:2006+A1:2015 §7 Software problem resolution, §8 Software maintenance
 - IEC 81001-5-1:2021 §8 Maintenance of security
 - IEC 60601-2-54:2022 (방사선 관련 시험 기준)
-- 진단용 방사선 발생장치 안전관리규칙 (총리령 제1122호)
+- 진단용 방사선 발생장치 안전관리규칙 (보건복지부령 제1122호)
 - 확인일: 2026-04-30
