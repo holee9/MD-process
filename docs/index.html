@@ -51,7 +51,7 @@ th{color:var(--muted);font-weight:600}
 </style></head><body>
 <style>.actions a[data-tip]{position:relative}.actions a[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:128%;width:290px;white-space:normal;text-align:left;background:#0b1020;color:#e2e8f0;border:1px solid #475569;border-radius:7px;padding:9px 11px;font-size:.72rem;line-height:1.5;font-weight:400;z-index:30;box-shadow:0 8px 22px rgba(0,0,0,.5)}.actions a[data-tip]:hover::before{content:"";position:absolute;left:16px;top:118%;border:6px solid transparent;border-bottom-color:#475569;z-index:30}</style>
 <h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>
-<p class="subtitle">마지막 갱신: <strong>2026-09-09</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
+<p class="subtitle">마지막 갱신: <strong>2026-09-10</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
@@ -63,7 +63,7 @@ th{color:var(--muted);font-weight:600}
 <div class="kpi green"><div class="value">0</div><div class="label">열린 사실오류(audit P0)</div></div>
 <div class="kpi"><div class="value">104</div><div class="label">누적 발견 사실오류</div></div>
 <div class="kpi"><div class="value">1319</div><div class="label">누적 검증 주장</div></div>
-<div class="kpi green"><div class="value">102</div><div class="label">감사결함 수정완료</div></div>
+<div class="kpi green"><div class="value">107</div><div class="label">감사결함 수정완료</div></div>
 <div class="kpi"><div class="value">91.2%</div><div class="label">누적 통과율</div></div>
 </div>
 <canvas id="auditTrend" height="90"></canvas>
@@ -130,14 +130,14 @@ function submitIssueForm(){
 <div class="grid">
 <div class="kpi green"><div class="value">0/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi red"><div class="value">98%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi red"><div class="value">✗</div><div class="label">_log 정합 (348/353)</div></div>
+<div class="kpi red"><div class="value">✗</div><div class="label">_log 정합 (351/358)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
 <div class="kpi red"><div class="value">64</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">92</div><div class="label">통제 문서 (01~10)</div></div>
 </div>
 <div class="card"><h2>유지보수 케이던스 현황</h2><table>
 <tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
-<tr><td>일일</td><td>매일 03:18</td><td>2026-09-09</td><td>매 실행</td></tr>
+<tr><td>일일</td><td>매일 03:18</td><td>2026-09-10</td><td>매 실행</td></tr>
 <tr><td>주간</td><td>월요일</td><td>2026-09-09</td><td>2026-09-14</td></tr>
 <tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-10-01</td></tr>
 <tr><td>분기</td><td>1·4·7·10월 1일</td><td>2026-06-28</td><td>2026-10-01</td></tr>
@@ -145,18 +145,18 @@ function submitIssueForm(){
 <div class="two-col">
 <div class="card"><h2>규제 추적 현황</h2><table>
 <tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
-<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>55일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>40일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>86일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>86일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>86일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>86일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>54일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_62304</td><td>2026-07-16</td><td>55일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>44일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>56일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>41일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>87일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>87일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>87일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>87일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>55일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-07-16</td><td>56일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>45일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 353건 중 289건 완료 · 미해결 64건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 358건 중 294건 완료 · 미해결 64건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
@@ -165,9 +165,12 @@ function submitIssueForm(){
 <div class="card"><h2>문서통제 정합성</h2><table>
 <tr><td>frontmatter 유효 문서</td><td>253/257 (98%)</td></tr>
 <tr><td>frontmatter 결함</td><td>4건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>348/353 불일치(매핑 보정 필요)</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>351/358 불일치(매핑 보정 필요)</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">09-09</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">09-09</span>audit(sweep C3): §표준 판본·미존재 인용 전수 — 10_교육_훈련 완료, 결함 5건 11개소 (#1036~#1040)</li>
+<li><span class="date">09-09</span>chore(matrix+dashboard): 재빌드 + cadence daily_last 2026-09-09 갱신 [skip ci]</li>
 <li><span class="date">09-09</span>docs(audit-drain): audit #1026~#1030 드래프트 5건 state:closed 등록(Tier1 재확인 근거·일괄교정 범위 기재) + au</li>
 <li><span class="date">09-09</span>fix(audit-drain #1026 #1029 #1030 동일클래스 일괄교정): 미스윕 카테고리(00·10) 자매재발 2건 신규 적발·정정 + 파생 로그·교차</li>
 <li><span class="date">09-09</span>fix(audit-drain #1026 #1027): 08_시판후_감시_PMS 2문서 정정 — FDA Postmarket Cyber Guidance &#x27;2</li>
@@ -175,9 +178,6 @@ function submitIssueForm(){
 <li><span class="date">09-09</span>report(weekly): 주간 갭분석 2026-09-09 — 종합 38% 12주차 정체, 주간리뷰 4회 연속 미실행(08-14~09-04)·저장소 30일 정지</li>
 <li><span class="date">08-09</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 <li><span class="date">08-10</span>audit(sweep C3): 표준 판본·미존재 인용 전수 — 09_공급자_관리 완료, 결함 3 (#1028 GH#1706, #1029 GH#1707, #1030</li>
-<li><span class="date">08-10</span>fix(audit-drain): #1002 재확인 13차(attempted-paywalled) 기록, cadence 갱신 — 열린 audit 1건(P1, bloc</li>
-<li><span class="date">08-09</span>audit(sweep C3): 표준 판본·미존재 인용 전수 — 08_시판후_감시_PMS 완료, 결함 2 (#1026 GH#1704, #1027 GH#1705)</li>
-<li><span class="date">08-08</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
@@ -189,7 +189,7 @@ function submitIssueForm(){
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[289, 64], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[294, 64], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>
