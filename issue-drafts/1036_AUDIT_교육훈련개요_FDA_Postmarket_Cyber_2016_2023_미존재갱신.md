@@ -2,6 +2,12 @@
 title: "audit(currency): 교육_훈련_개요 L130 — FDA Postmarket Cybersecurity Guidance '(2016/2023)' 미존재 갱신 판본 (#1026 자매재발)"
 labels: "audit:currency,prio:P1,risk:medium,training,compliance"
 opened: 2026-09-09
+state: closed
+closed: 2026-09-10
+resolution: |
+  기해소·재검증 종결. 대상 개소 `10_교육_훈련/교육_훈련_개요.md` L130은 audit #1026 동일클래스 일괄교정(2026-09-09)으로 이미 정정되어 현재 `FDA *Postmarket Management of Cybersecurity in Medical Devices* (Final, 2016-12-28; 이후 개정 없음)` 표기.
+  Tier1 재확인(본 사이클 직접 재검증): Federal Register 2016-31406(2016-12-28 Final Availability), FDA guidance 페이지 — Postmarket Final 가이던스 개정 이력 부재 확정. 2023-09-27 판은 별개 Premarket 가이던스이며 2026-02 Final(Docket FDA-2021-D-1158)로 supersede.
+  일괄교정 범위: 저장소 전수 grep 결과 `Postmarket … 2023 갱신/2016-2023` 패턴 실문서 잔존 0건(감사 원장·드래프트 내 이력 기술 제외).
 ---
 
 ## 대상 (C3×10_교육_훈련 전수 스윕 — C3 최종 카테고리)
