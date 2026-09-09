@@ -2,13 +2,13 @@
 doc-id: CHK-FDA-510K-RTA
 title: FDA 510(k) RTA Checklist 평가표
 type: Checklist
-version: v0.1
+version: v0.2
 status: draft
 category: 13_규제평가_체크리스트
 purpose: FDA 510(k) RTA Checklist 기반 자체 평가 항목 데이터
 applicable: [FDA QMSR, FDA 510(k)]
 owner: RA Lead (US)
-last-review: 2026-05-28
+last-review: 2026-09-09
 review-due: 2027-05-28
 ---
 
@@ -27,7 +27,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: cover_letter
   applicable_keywords: [FDA 510, FDA QMSR]
-  related_docs: []
+  related_docs: [T-FDA510K-A1_Cover_Letter_템플릿]
 
 - id: FDA-510K-A2
   source: FDA RTA Checklist Section A
@@ -76,7 +76,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: technical_documentation
   applicable_keywords: [FDA 510, FDA QMSR]
-  related_docs: []
+  related_docs: [T-FDA510K-B1_Device_Description_템플릿]
 
 - id: FDA-510K-B2
   source: FDA RTA Checklist Section B
@@ -94,7 +94,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: SE_comparison_table
   applicable_keywords: [FDA 510]
-  related_docs: []
+  related_docs: [T-FDA510K-B3_SE_비교표_템플릿]
 ```
 
 ## 3. Performance Data
@@ -175,3 +175,5 @@ review-due: 2027-05-28
 ---
 
 > v0.1 — 16개 핵심 항목으로 시작. 다음 보강에서 ~64개 추가하여 RTA 전체 ~80건 완성 예정.
+>
+> v0.2 (2026-09-09) — must 항목 중 3건(A1 Cover Letter, B1 Device Description, B3 SE 비교표) 골격 템플릿 신규 생성 및 related_docs 연결. 제품별 실 데이터는 미기재(작성 예정).

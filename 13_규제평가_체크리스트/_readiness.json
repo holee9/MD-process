@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-07",
+  "generated_at": "2026-09-09",
   "standards": {
     "FDA 510(k) RTA Checklist 평가표": {
-      "score": 0,
+      "score": 17,
       "items": 15,
       "unmet_must": 14,
       "file": "FDA_510k_RTA.md"
