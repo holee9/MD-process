@@ -2,7 +2,7 @@
 doc-id: CHK-FDA-510K-RTA
 title: FDA 510(k) RTA Checklist 평가표
 type: Checklist
-version: v0.3
+version: v0.4
 status: draft
 category: 13_규제평가_체크리스트
 purpose: FDA 510(k) RTA Checklist 기반 자체 평가 항목 데이터
@@ -36,16 +36,16 @@ review-due: 2027-05-28
   severity: must
   evidence_type: form
   applicable_keywords: [FDA 510]
-  related_docs: []
+  related_docs: [T-FDA510K-A2_Form3514_템플릿]
 
 - id: FDA-510K-A3
   source: FDA RTA Checklist Section A
   clause: A.3
-  requirement: FDA Form 3654 — Indications for Use Statement
+  requirement: FDA Form 3881 — Indications for Use Statement
   severity: must
   evidence_type: form
   applicable_keywords: [FDA 510]
-  related_docs: []
+  related_docs: [T-FDA510K-A3_Form3881_IFU_템플릿]
 
 - id: FDA-510K-A4
   source: FDA RTA Checklist Section A
@@ -54,7 +54,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: form
   applicable_keywords: [FDA 510]
-  related_docs: []
+  related_docs: [T-FDA510K-A4_Form3601_UserFee_템플릿]
 
 - id: FDA-510K-A5
   source: FDA RTA Checklist Section A
@@ -63,7 +63,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: form
   applicable_keywords: [FDA 510, IEC60601-1, IEC60601-2-54]
-  related_docs: []
+  related_docs: [T-FDA510K-A5_Form3654_Standards_템플릿, X-ray_장비_안전성능_표준_매핑]
 ```
 
 ## 2. Device Description & Indications
@@ -107,7 +107,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: test_report
   applicable_keywords: [FDA 510, IEC60601-1, IEC60601-2-54]
-  related_docs: []
+  related_docs: [IEC60601-2-54_형식시험_체크리스트, QC-IQ-001, F-DVV-001]
 
 - id: FDA-510K-C2
   source: FDA RTA Checklist Section C
@@ -116,7 +116,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: test_report
   applicable_keywords: [ISO10993]
-  related_docs: []
+  related_docs: [T-FDA510K-C2_Biocompatibility_템플릿]
 
 - id: FDA-510K-C3
   source: FDA RTA Checklist Section C
@@ -125,7 +125,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: test_report
   applicable_keywords: [IEC60601-1, IEC60601-2-54]
-  related_docs: []
+  related_docs: [X-ray_장비_안전성능_표준_매핑, IEC60601-2-54_형식시험_체크리스트]
 
 - id: FDA-510K-C4
   source: FDA RTA Checklist Section C
@@ -134,7 +134,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: SW_documentation
   applicable_keywords: [IEC62304, FDA SBOM, IEC81001-5-1]
-  related_docs: []
+  related_docs: [IEC_62304_SW_수명주기, SOP-VAL-001, IEC_81001-5-1_FDA_Cybersecurity_SW보안, SOP-SBOM-001]
 ```
 
 ## 4. Sterility / Shelf Life (해당 시)
@@ -179,3 +179,5 @@ review-due: 2027-05-28
 > v0.2 (2026-09-09) — must 항목 중 3건(A1 Cover Letter, B1 Device Description, B3 SE 비교표) 골격 템플릿 신규 생성 및 related_docs 연결. 제품별 실 데이터는 미기재(작성 예정).
 >
 > v0.3 (2026-09-10) — must 항목 3건 추가(B2 Intended Use/IFU, E1 Labeling, E2 UDI) 골격 템플릿 신규 생성 및 related_docs 연결. 누적 6/14 must 항목 골격 확보.
+>
+> v0.4 (2026-09-10) — **audit #1028 정정**: A.3 양식번호 오귀속(Form 3654 → **Form 3881**, Tier1 FDA 원문 확인). Section A 표지 양식 4건(3514/3881/3601/3654) 및 C.2 생체적합성 템플릿 신규 생성(이슈 #931 P0 대응). C.1/C.3/C.4는 신규 생성 없이 기존 실문서(형식시험 체크리스트·표준매핑·62304/81001-5-1/SBOM/SOP-VAL-001)에 연결. must 14/14 증빙 경로 확보.

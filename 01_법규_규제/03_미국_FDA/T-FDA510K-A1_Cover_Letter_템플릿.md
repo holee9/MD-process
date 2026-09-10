@@ -37,7 +37,7 @@ review-due: 2027-09-09
 | Product Code | 작성 예정 | ☐ |
 | Submission Type (Traditional/Special/Abbreviated) | 작성 예정 | ☐ |
 | Predicate Device 명칭 및 K-number | 작성 예정 | ☐ |
-| Indications for Use 요약 | 작성 예정 (FDA Form 3654와 정합) | ☐ |
+| Indications for Use 요약 | 작성 예정 (FDA Form 3881과 정합) | ☐ |
 | 동봉 서류 목록(Enclosures) | 작성 예정 | ☐ |
 | 서명(Authorized Representative) | 대외 제출 시에만 실명 서명 — 사내 초안 단계에서는 직책만 표기 | ☐ |
 

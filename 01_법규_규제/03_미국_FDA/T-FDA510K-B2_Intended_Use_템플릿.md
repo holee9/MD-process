@@ -5,7 +5,7 @@ type: Form
 version: v0.1
 status: draft
 category: 01_법규_규제
-purpose: FDA 510(k) RTA Checklist B.2 (Intended Use/IFU) 및 FDA Form 3654 대응 템플릿 — 골격만 정의, 제품별 실 데이터 작성 예정
+purpose: FDA 510(k) RTA Checklist B.2 (Intended Use/IFU) 및 FDA Form 3881 대응 템플릿 — 골격만 정의, 제품별 실 데이터 작성 예정
 applicable: [FDA 510(k), FDA QMSR]
 owner: RA 담당자
 last-review: 2026-09-10
@@ -14,7 +14,7 @@ review-due: 2027-09-10
 
 # T-FDA510K-B2 FDA 510(k) Intended Use / Indications for Use 템플릿 (v0.1 — 골격)
 
-> **주의**: 본 문서는 FDA_510k_RTA.md 항목 FDA-510K-B2(및 Form 3654) 대응 골격 템플릿이다. 제품 특정 데이터는 **작성 예정**이며, 임의의 데이터를 채우지 말 것.
+> **주의**: 본 문서는 FDA_510k_RTA.md 항목 FDA-510K-B2(및 Form 3881) 대응 골격 템플릿이다. 제품 특정 데이터는 **작성 예정**이며, 임의의 데이터를 채우지 말 것.
 
 ## 개정 이력
 
@@ -24,7 +24,7 @@ review-due: 2027-09-10
 
 ---
 
-## 구성 항목 (FDA RTA Checklist Section B.2 / Form 3654 기준)
+## 구성 항목 (FDA RTA Checklist Section B.2 / Form 3881 기준)
 
 | 항목 | 내용 |
 |------|------|
@@ -47,4 +47,4 @@ review-due: 2027-09-10
 ## 출처
 
 - FDA, "Refuse to Accept Policy for 510(k)s" Guidance Section B.2
-- FDA Form 3654 (Indications for Use Statement) — 최신 양식 원문 대조 필요
+- FDA Form 3881 (Indications for Use) — OMB No. 0910-0120, 최신 개정판 원문 대조 필요 (audit #1028 정정)
