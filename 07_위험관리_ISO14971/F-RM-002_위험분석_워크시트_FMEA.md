@@ -18,6 +18,7 @@ applicable-standards:
   - IEC 81001-5-1:2021
   - IEC 62366-1:2015+A1:2020
   - AAMI SW96:2023
+owner: 설계개발 책임자
 ---
 
 # F-RM-002 위험분석 워크시트 — FMEA (v0.2)

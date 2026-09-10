@@ -26,6 +26,30 @@ EXCLUDE_NAMES = {'README.md', '_TEMPLATE.md'}
 EXCLUDE_DIRS  = {'issue-drafts', '.github', '.git', 'scripts'}
 
 # 이슈 번호 역색인: doc-id-ish key → issue number
+# 카테고리별 기본 소유 직책 — 프로젝트_개요.md §3.1 역할 정의가 SSOT.
+# (audit #1030 근본원인 대응) 과거 기본값 'TBD'로 인해 미배정 문서가 무한 누적됐다.
+# 실명은 사용하지 않는다 — 인사이동·조직개편 시 문서 전체가 무효화되므로 직책만 사용한다.
+DEFAULT_OWNER_BY_CATEGORY = {
+    '00_프로젝트관리': 'QA 담당자',
+    '01_법규_규제': 'RA 담당자',
+    '02_품질경영시스템_QMS': '품질책임자(PRRC/MR)',
+    '03_설계_개발관리': '설계개발 책임자',
+    '04_제조공정_관리': '제조 책임자',
+    '05_검사_시험_밸리데이션': 'QA 담당자',
+    '06_문서_기록관리': 'QA 담당자',
+    '07_위험관리_ISO14971': '설계개발 책임자',
+    '08_시판후_감시_PMS': 'PMS 담당자',
+    '09_공급자_관리': 'QA 담당자',
+    '10_교육_훈련': 'QA 담당자',
+    '13_규제평가_체크리스트': 'RA 담당자',
+}
+
+
+def default_owner_for(category):
+    """카테고리 기준 기본 소유 직책 반환. 미정의 카테고리는 품질책임자가 총괄한다."""
+    return DEFAULT_OWNER_BY_CATEGORY.get(category, '품질책임자(PRRC/MR)')
+
+
 def load_issue_map():
     if not LOG_PATH.exists():
         return {}
@@ -197,7 +221,7 @@ def process_file(path, issue_map, dry_run=False):
             review_due = (d.replace(year=d.year+1)).isoformat()
         except:
             review_due = ''
-    owner = existing.get('owner') or 'TBD'
+    owner = existing.get('owner') or default_owner_for(category)
 
     # Log files: lighter frontmatter
     if type_ == 'Log' or category in ('11_일일_리서치로그', '12_교차검증_보고서'):

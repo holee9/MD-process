@@ -30,6 +30,7 @@ revision-history:
     date: 2026-05-30
     changes: 연간계획·갭분석·OJT·방사선안전·e-Learning 양식 추가, 역량매트릭스 보강
     author: holee9-automation
+owner: QA 담당자
 ---
 
 # F-TRN-001: 교육훈련 기록양식 통합 패키지 (v0.2)

@@ -20,6 +20,7 @@ related-docs:
   - 09_공급자_관리/SOP-SUP-001_공급자_감사_재평가_절차.md
   - 02_QMS/SOP-CC-001_변경통제_절차.md
   - 07_위험관리/위험관리_개요.md
+owner: QA 담당자
 ---
 
 # GUIDE-SQA-001 품질합의서(SQA) 작성지침

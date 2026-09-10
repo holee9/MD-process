@@ -43,11 +43,19 @@ def parse_fm(text):
             fm[cur_key].append(line[4:].strip())
     return fm
 
+# (audit #1030) owner 미배정 문서 누적 방지 — 정의된 직책만 허용, 실명·미배정 금지.
+# 직책 정의 SSOT: 00_프로젝트관리/프로젝트_개요.md §3.1
+FORBIDDEN_OWNERS = {'TBD', 'tbd', '미정', '-', ''}
+
+
 def check_full(fm, path, errors):
     required = ['doc-id','title','type','version','status','category','purpose']
     for f in required:
         if f not in fm or not fm[f]:
             errors.append(f'{path}: 필수 필드 누락: {f}')
+    owner = str(fm.get('owner', '')).strip()
+    if owner in FORBIDDEN_OWNERS:
+        errors.append(f'{path}: owner 미배정({owner or "누락"}) — 프로젝트_개요 §3.1 직책 중 하나를 지정할 것')
     if fm.get('type') and fm['type'] not in VALID_TYPES:
         errors.append(f'{path}: type 위반: {fm["type"]} (허용: {sorted(VALID_TYPES)})')
     if fm.get('status') and fm['status'] not in VALID_STATUS:

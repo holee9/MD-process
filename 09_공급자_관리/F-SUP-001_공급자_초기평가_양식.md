@@ -18,6 +18,7 @@ applicable-standards:
   - MFDS 의료기기 GMP
   - IEC 62304 (SW 수명주기)
   - IEC 81001-5-1 (의료기기 사이버보안)
+owner: QA 담당자
 ---
 
 # F-SUP-001 공급자 초기평가 양식
