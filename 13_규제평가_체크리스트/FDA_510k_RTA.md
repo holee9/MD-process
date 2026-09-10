@@ -2,13 +2,13 @@
 doc-id: CHK-FDA-510K-RTA
 title: FDA 510(k) RTA Checklist 평가표
 type: Checklist
-version: v0.2
+version: v0.3
 status: draft
 category: 13_규제평가_체크리스트
 purpose: FDA 510(k) RTA Checklist 기반 자체 평가 항목 데이터
 applicable: [FDA QMSR, FDA 510(k)]
 owner: RA Lead (US)
-last-review: 2026-09-09
+last-review: 2026-09-10
 review-due: 2027-05-28
 ---
 
@@ -85,7 +85,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: technical_documentation
   applicable_keywords: [FDA 510]
-  related_docs: []
+  related_docs: [T-FDA510K-B2_Intended_Use_템플릿]
 
 - id: FDA-510K-B3
   source: FDA RTA Checklist Section B
@@ -160,7 +160,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: labeling_draft
   applicable_keywords: [FDA 510, UDI]
-  related_docs: []
+  related_docs: [T-FDA510K-E1_Labeling_템플릿]
 
 - id: FDA-510K-E2
   source: FDA RTA Checklist Section E
@@ -169,7 +169,7 @@ review-due: 2027-05-28
   severity: must
   evidence_type: udi_plan
   applicable_keywords: [UDI]
-  related_docs: []
+  related_docs: [T-FDA510K-E2_UDI_템플릿]
 ```
 
 ---
@@ -177,3 +177,5 @@ review-due: 2027-05-28
 > v0.1 — 16개 핵심 항목으로 시작. 다음 보강에서 ~64개 추가하여 RTA 전체 ~80건 완성 예정.
 >
 > v0.2 (2026-09-09) — must 항목 중 3건(A1 Cover Letter, B1 Device Description, B3 SE 비교표) 골격 템플릿 신규 생성 및 related_docs 연결. 제품별 실 데이터는 미기재(작성 예정).
+>
+> v0.3 (2026-09-10) — must 항목 3건 추가(B2 Intended Use/IFU, E1 Labeling, E2 UDI) 골격 템플릿 신규 생성 및 related_docs 연결. 누적 6/14 must 항목 골격 확보.
