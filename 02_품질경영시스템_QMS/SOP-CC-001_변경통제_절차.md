@@ -10,7 +10,7 @@ applicable: [EU MDR 2017/745, EU MDR GSPR, FDA QMSR, FDA SBOM, IEC60601-1, IEC60
 forms: [F-CC-001, F-CC-002, F-CC-003, F-CC-004, F-CC-005]
 related-docs: [SOP-CAPA-001, SOP-NC-001, SOP-IA-001]
 related-issues: [39, 41, 42]
-owner: TBD
+owner: QA 담당자
 last-review: 2026-06-05
 review-due: 2027-05-21
 ---

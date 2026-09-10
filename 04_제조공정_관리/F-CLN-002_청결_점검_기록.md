@@ -13,7 +13,7 @@ applicable:
 forms: []
 related-docs: [SOP-CLN-001, F-CLN-001, SOP-NC-001, F-ENV-001]
 related-issues: [1525]
-owner: TBD
+owner: 제조 책임자
 last-review: 2026-06-20
 review-due: 2027-06-20
 ---

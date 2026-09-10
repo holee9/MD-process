@@ -9,7 +9,7 @@ purpose: JD-RA-001 PRRC / 품질책임자 / Management Representative 통합 직
 applicable: [21 CFR Part 820, EU MDR 2017/745, EU MDR PRRC, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC81001-5-1, ISO13485:2016, MFDS, UDI, 디지털의료제품법]
 forms: [F-JD-001]
 related-issues: [3, 63]
-owner: TBD
+owner: 품질책임자(PRRC/MR)
 last-review: 2026-05-05
 review-due: 2027-05-05
 ---

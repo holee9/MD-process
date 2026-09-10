@@ -15,7 +15,7 @@ applicable:
 forms: [F-RA-001, F-RA-002, F-RA-003]
 related-docs: [QM-001, JD-RA-001, SOP-QP-001, SOP-MR-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [1523]
-owner: TBD
+owner: 품질책임자(PRRC/MR)
 last-review: 2026-07-10
 review-due: 2027-06-20
 ---

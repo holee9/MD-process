@@ -17,7 +17,7 @@ applicable:
 forms: [F-CLN-001, F-CLN-002]
 related-docs: [SOP-MFG-001, SOP-MFG-002, SOP-NC-001, SOP-PKG-001, SOP-SVC-001, F-ENV-001]
 related-issues: [1525]
-owner: TBD
+owner: 제조 책임자
 last-review: 2026-06-20
 review-due: 2027-06-20
 ---

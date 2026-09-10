@@ -8,7 +8,7 @@ category: 04_제조공정_관리
 purpose: 의료용 X-ray 시스템·Detector·SW의 라벨 작성·검증·부착 및 포장 공정을 통제하여 규제 적합성과 제품 추적성을 보장한다
 applicable:
   - ISO13485:2016 §7.5.1(e)
-  - ISO13485:2016 §7.5.1.1
+  - ISO13485:2016 §7.5.1
   - FDA QMSR §820.45 라벨링·포장 통제 (구 QSR §820.120/§820.130 폐지)
   - EU MDR 2017/745 Annex I Ch.III §23
   - EU MDR 2017/745 Art.27 (UDI)

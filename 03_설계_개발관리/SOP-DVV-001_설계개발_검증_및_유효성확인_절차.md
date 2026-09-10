@@ -18,7 +18,7 @@ applicable:
 forms: [F-DVV-001, F-DVV-002, F-DVV-003]
 related-docs: [SOP-DT-001, SOP-CC-001, SOP-DHF-001, CHK-DR-001, IEC_62304_SW_수명주기, IEC_62366-1_사용적합성_엔지니어링_계획서_v0.1, IEC60601-2-54_형식시험_체크리스트]
 related-issues: [1524]
-owner: TBD
+owner: 설계개발 책임자
 last-review: 2026-06-28
 review-due: 2027-06-20
 ---

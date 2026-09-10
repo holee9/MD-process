@@ -10,7 +10,7 @@ applicable: [IEC81001-5-1:2021, FDA Premarket Cybersecurity Guidance 2026-02-03,
 forms: [F-CVD-001]
 related-docs: [SOP-SBOM-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [19]
-owner: TBD
+owner: 설계개발 책임자
 last-review: 2026-07-10
 review-due: 2027-05-21
 ---

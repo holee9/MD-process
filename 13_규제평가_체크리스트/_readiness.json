@@ -8,7 +8,7 @@
       "file": "FDA_510k_RTA.md"
     },
     "ISO 13485:2016 자체평가 체크리스트": {
-      "score": 76,
+      "score": 79,
       "items": 94,
       "unmet_must": 39,
       "file": "ISO_13485.md"

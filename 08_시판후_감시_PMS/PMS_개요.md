@@ -9,7 +9,7 @@ purpose: 시판후 감시 (Post-Market Surveillance) — v0.3.1 관련 문서
 applicable: [EU AI Act, EU MDR 2017/745, FDA QMSR, IEC62304, IEC81001-5-1, ISO13485:2016, MFDS, UDI]
 forms: [F-PMS-001]
 related-issues: [22]
-owner: TBD
+owner: PMS 담당자
 last-review: 2026-07-20
 review-due: 2027-07-02
 ---

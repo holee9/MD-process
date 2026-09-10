@@ -12,7 +12,7 @@ applicable:
   - FDA QMSR §820.20(b)(3)
 related-docs: [SOP-RA-002, JD-RA-001]
 related-issues: [1523]
-owner: TBD
+owner: 품질책임자(PRRC/MR)
 last-review: 2026-07-10
 review-due: 2027-06-20
 ---

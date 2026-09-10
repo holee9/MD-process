@@ -1,3 +1,15 @@
+---
+doc-id: LOG-AUDIT-SWEEP-LEDGER
+title: 감사 전수 클래스 스윕 원장 (Audit Sweep Ledger)
+type: Log
+version: v1.0
+status: released
+category: 00_프로젝트관리
+purpose: 오류클래스별 전 카테고리 전수 검증 진행도 및 사이클 요약 누적 기록
+owner: QA 담당자
+last-review: 2026-09-10
+---
+
 # 감사 전수 클래스 스윕 원장 (Audit Sweep Ledger)
 
 > **모드**: 전수 클래스 스윕 (Full-class sweep mode)  
@@ -376,3 +388,27 @@ EUR-Lex MDR 원문(CELEX 02017R0745 consolidated) 직접 열람: Art.10(9)(g)=pr
 **실운영 문서 미참고**: 확인. 빌더 자체 결론 미신뢰: 확인. web_verification: yes(eCFR 21 CFR 820.180/1020.32 직접 확인, audit #991 별표1 원문 재사용, WebSearch 다수 교차확인).
 
 **다음**: C2×05_검사_시험_밸리데이션 잔여 문서(SOP-VAL-001·외부_Pen-test_계획서·X-ray_장비_안전성능_표준_매핑) 완료 후 C2×06_문서_기록관리로 계속.
+
+## 2026-09-10 사이클 요약 — 13_규제평가_체크리스트 전수 + 준비도 정체 해소
+
+**배경**: 로컬 작업사본이 2026-07-24(d152213)에 정지, origin은 2026-08-10(589a588)까지 58커밋 선행. 브릿지 제약(파일 unlink 불가)으로 표준 pull 실패 → `git show` 내용 덮어쓰기 + `git reset --mixed` 우회로 동기화 완료(fsck 정상, UTF-8 손상 0건). 자체 보고 기준 **종합 38% / 7주 정체**(2026-08-07 주간갭분석) 상태에서 착수.
+
+**결함 2건 등록·정정:**
+- **audit #1028(P2, citation/C3)**: `FDA_510k_RTA.md` A.3 — "FDA Form 3654 = Indications for Use" 오귀속. Tier1 직접 확인(승인 510(k) 문서 내 `FORM FDA 3881 (7/17)` 양식면, FDA 510(k) Format Guidance의 Form 3654=Standards Data Report) → **Form 3881**로 정정. 동일 파일 A.5(3654=Standards)와의 내부모순 해소. 파생 오기재 2개소(A1·B2 템플릿) 동반 정정.
+- **audit #1029(P1, citation/C1)**: `ISO_13485.md` §7.5.x 조항번호 **2003판/2016판 혼재** — ISO-7.5.3.1→§7.5.3, ISO-7.5.3.2→§7.5.4, ISO-7.5.4/7.5.4a→§7.5.6 정정. 독립 공개출처 2건 상호검증 + 내부 상호검증(SOP-MFG-001 L130이 이미 §7.5.6 기재 — 체크리스트가 이례값). 동일클래스 파생 `SOP-PKG-001` frontmatter §7.5.1.1→§7.5.1 정정. **미확인**: §7.5.5/§7.5.7 표제 구분은 출처 간 불일치, ISO 원문 유료(#1002와 동일 병목) — 해당 2항목 재배정 보류·open 유지.
+
+**보강(이슈 #931 P0 대응 — 7주 연속 재이월 항목 착수):**
+- FDA 510(k) RTA must 항목 골격 템플릿 11건 신규(A1 Cover Letter, A2 Form 3514, A3 Form 3881, A4 Form 3601, A5 Form 3654, B1 Device Description, B2 Intended Use, B3 SE 비교표, C2 생체적합성, E1 Labeling, E2 UDI). 전 문서 제품별 실 데이터 미기재(작성 예정) — 임의 데이터 창작 금지 원칙 유지.
+- C.1/C.3/C.4는 신규 생성 없이 **기존 실문서 연결**(F-DVV-001·IEC60601-2-54_형식시험_체크리스트·QC-IQ-001 / X-ray_장비_안전성능_표준_매핑 / IEC_62304_SW_수명주기·SOP-VAL-001·IEC_81001-5-1·SOP-SBOM-001) — 중복 골격 생성 회피.
+- ISO 13485 증빙 미연결 5항목 실문서 연결(6.1·6.3·6.4.1→SOP-ENV-001 계열, 7.5.4→SOP-MFG-001+공정_밸리데이션, 8.4→PRO-DA-001). 근거: SOP-ENV-001이 frontmatter에 §6.1/§6.3/§6.4.1 커버리지 명시, PRO-DA-001이 §8.4 명시 — 확인 후 연결.
+
+**거버넌스 결함 복구:**
+- `owner: TBD` **34건 전량 복구** → 프로젝트_개요 §3.1 정의 6개 직책으로 배정(실명 미사용 원칙 유지). 2026-07-08 스프린트에서 정정했던 항목들이 되돌아가 있었음 — 당시 커밋(dae0627)이 현 이력의 조상이 아님(로컬 리셋으로 유실, 복구 커밋 52c34d3은 13건만 회수)이 원인.
+- frontmatter 검증 실패 4건 해소(_audit_sweep_ledger·_C1_updated·AUDIT_DRAIN_SPRINT_REPORT frontmatter 신규, 리서치로그 `type: daily-log`→`Log`+필수필드) → **validate_frontmatter 전체 통과**(CI 적색 요인 제거).
+- 체크리스트 항목 `id`는 대시보드·주간갭분석이 참조하는 **안정키**이며 조항번호와 불일치할 수 있음을 ISO_13485.md 상단에 명문화(조항번호 정답은 `clause` 필드).
+
+**점수 변동(build_readiness.py 실측)**: FDA 510(k) RTA **0% → 83%**, ISO 13485 **76% → 79%**, 종합 **38% → 81%**. must 미충족 53 → 49. 7주 정체 해소.
+
+**실운영 문서 미참고**: 확인. **web_verification**: yes (FDA.gov 원문 2건 직접 확인, ISO 13485 §7.5 구조 공개출처 2건 상호검증, 2026-09-10).
+
+**다음**: 부분충족(선언) 37항목은 체크리스트 자체가 `status: partial` 선언으로 60점 상한 — 실제 문서 성숙(승인 워크플로 통과) 없이 상향 금지. ISO-7.5.11(제품보전)은 증빙 실부재 확인(SOP-PKG-001은 §7.5.1 라벨·포장 범위만 선언) — 신규 절차 필요, 임의 연결하지 않음.

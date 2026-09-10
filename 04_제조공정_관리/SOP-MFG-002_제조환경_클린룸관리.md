@@ -9,7 +9,7 @@ purpose: SOP-MFG-002 제조환경 및 클린룸 관리 절차 (v0.2) 관련 문�
 applicable: [FDA QMSR, ISO13485:2016, MFDS]
 forms: [F-ENV-001, F-ENV-002, F-ENV-003]
 related-issues: [47]
-owner: TBD
+owner: 제조 책임자
 last-review: 2026-05-01
 review-due: 2027-05-01
 ---

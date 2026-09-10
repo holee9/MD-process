@@ -13,7 +13,7 @@ applicable:
   - IEC 60601-1, 60601-2-54
 related-docs: [SOP-DVV-001, SOP-DHF-001, F-DVV-003]
 related-issues: [1524]
-owner: TBD
+owner: 설계개발 책임자
 last-review: 2026-06-28
 review-due: 2027-06-20
 ---

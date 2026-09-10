@@ -1,3 +1,15 @@
+---
+doc-id: RPT-AUDIT-DRAIN-2026-07-08
+title: 2차 QMS 감사 드레인 스프린트 완료 보고서 (2026-07-08)
+type: Report
+version: v1.0
+status: released
+category: 00_프로젝트관리
+purpose: 2026-07-08 감사 드레인 스프린트 수행 결과·결함 해소 내역 기록
+owner: QA 담당자
+last-review: 2026-07-08
+---
+
 # 의료기기 제조 업무규칙 (MD-process)
 ## 2차 QMS 감사 드레인 스프린트 완료 보고서
 

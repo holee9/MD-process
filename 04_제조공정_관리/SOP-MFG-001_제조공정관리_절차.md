@@ -9,7 +9,7 @@ purpose: SOP-MFG-001 제조공정 관리 절차 (v0.2) 관련 문서
 applicable: [21 CFR Part 820, EU MDR PRRC, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, ISO13485:2016, MFDS, UDI]
 forms: [F-MFG-001, F-MFG-002]
 related-issues: [64]
-owner: TBD
+owner: 제조 책임자
 last-review: 2026-05-05
 review-due: 2027-05-05
 ---
