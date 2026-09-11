@@ -1,3 +1,14 @@
+---
+doc-id: LEDGER-C1-UPDATED
+title: 감사 전수 스윕 원장(C1 업데이트본)
+category: 00_프로젝트관리
+type: Report
+version: v0.1
+status: approved
+purpose: 오류 클래스별 문서 전수 감사 스윕 진행상황 추적(C1 업데이트본)
+owner: QA/RA 팀장
+---
+
 # 감사 전수 스윕 원장 (Audit Sweep Ledger) — 업데이트
 
 **목적:** 오류 클래스별 문서 전수 점검 진행 상황 추적  
