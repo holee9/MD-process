@@ -124,7 +124,7 @@ review-due: 2027-06-08
 
 | 규제 기관 | 제출물 | 근거 |
 |-----------|--------|------|
-| FDA | Premarket Submission에 SBOM·VEX·VDR 포함 | Section 524B (2025-10-01 이후 필수) |
+| FDA | Premarket Submission에 SBOM·VEX·VDR 포함 | Section 524B (2023-03-29 시행 / FDA RTA 적용 2023-10-01 이후 필수) |
 | EU MDR / NB | Technical Documentation Cybersecurity Annex에 SBOM 첨부 | MDCG 2019-16, IMDRF N73 |
 | MFDS | 사이버보안 허가·심사 서류에 RA-07(SBOM), RA-08(취약점) 포함 | 사이버보안 가이드라인 |
 | 고객/운영자 | VDR 또는 Customer Security Advisory 형태로 배포 | Section 524B Postmarket |
@@ -158,7 +158,9 @@ CISA CSAF(Common Security Advisory Framework) 2.0 기반으로 취약점 정보�
 | 5.9.4 | Security Officer | SOP-CVD-001(조정된 취약점 공개 정책)과 연계하여 고객 통지 판단 | CVD 정책 준수 |
 
 **EU CRA(Cyber Resilience Act) 2024/2847 대비:**
-- 2027년 시행 예정인 EU CRA는 디지털 제품(의료기기 포함 가능)에 대해 SBOM 의무화 및 취약점 보고 의무를 강화
+- **EU CRA(Regulation (EU) 2024/2847) 적용 3단계**: 발효 **2024-12-10** → **Art.14 적극 악용 취약점·중대 사고 보고의무 2026-09-11 적용 개시(이미 발효)** → 본체 의무(필수 사이버보안 요구사항·적합성평가·CE·기술문서) **2027-12-11 전면 적용**
+- CRA는 디지털 제품에 대해 SBOM 의무화 및 취약점 보고 의무를 강화. 단, MDR 2017/745 적용 의료기기에 대한 CRA 적용범위(배제 규정)는 해석이 갈리는 사안으로 별도 검토 리드(audit #1051 부기)
+- **Art.14 보고 트리거 판단 단계**(2026-09-11 이후 적용범위 해당 시)를 §5.5 VEX 판정 / §5.9 CSAF 워크플로에 반영할지 여부는 적용범위 해석 확정 후 결정
 - CycloneDX 1.6+ / SPDX 3.0 호환 포맷으로 사전 전환 검토
 - SBOM 자동 갱신 주기를 현행 릴리스 단위에서 CI 빌드 단위로 단축 계획
 
@@ -277,3 +279,5 @@ C. X-ray 특수 구성요소 포함 확인
 | v0.3 | 2026-06-08 | QMSR 실사 대응 — §5.8 사이버보안 파일 MDF 편입·실사 체크포인트 신설, §5.9 CSAF 기반 취약점 자동 연동 신설, EU CRA 2024/2847 사전 대비(SPDX 3.0/CycloneDX 1.6 전환 계획), QMSR §820.180 기록 관리 연동, SOP-CVD-001·SOP-FSCA-001 상호참조 추가 | QA/RA |
 | v0.4.1 | 2026-07-12 | **audit #962 정정** — frontmatter applicable 및 §1 목적 "디지털의료제품법 제16조"(우수 관리체계 인증, SBOM과 무관) 오귀속 → "제14조"(전자적 침해행위로부터의 보호 조치, 보안지침 준수)로 정정. Tier1: 국가법령정보센터 디지털의료제품법(법률 제20139호) 원문. | md-process-auditor |
 | v0.4.2 | 2026-07-15 | audit #966/#967 정정 — frontmatter·§5.8·§8 QMSR §820.180(폐지)→§820.35/ISO 13485 §4.2.5; §8 보존기간 '수명+15년(Annex IX)'→단종 후 최소 10년(Art.10(8)/Annex IX Ch.III §7 비이식형) | QMS-Bot |
+| v0.4.3 | 2026-09-17 | audit #1050 정정 — §5.7 "Section 524B (2025-10-01 이후 필수)"(2년 오기) → "2023-03-29 시행 / FDA RTA 적용 2023-10-01 이후 필수". Tier1: P.L. 117-328 §3305(공포 후 90일), Federal Register 2023-06646. 확산 7개소 일괄 정정 | QMS-Bot |
+| v0.4.4 | 2026-09-17 | audit #1051 정정 — §5.9 "EU CRA 2027년 시행 예정" 단일표기 → 3단계 명시(발효 2024-12-10 / Art.14 보고의무 2026-09-11 / 본체 2027-12-11), MDR 배제 해석범위 리드·Art.14 트리거 검토 항목 부기 | QMS-Bot |
