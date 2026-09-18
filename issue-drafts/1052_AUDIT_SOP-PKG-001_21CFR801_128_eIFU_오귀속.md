@@ -2,7 +2,7 @@
 title: "audit(citation): SOP-PKG-001 §5.6 'FDA 21 CFR 801.128 Guidance' 전자 IFU 근거 오귀속 — 801.128은 전략비축물자(SNS) 라벨링 예외 조항"
 labels: "audit:citation,prio:P2,risk:low,fda,labeling,eifu"
 opened: 2026-09-17
-state: open
+state: closed
 ---
 
 ## 대상 (C4×04_제조공정_관리 전수 스윕 중 부수 적출 — 귀속 클래스 C1)
@@ -36,3 +36,8 @@ state: open
 
 - 동 문서 §5.1 eIFU 웹사이트 유지 "제품 수명 종료 후 최소 15년"은 Commission Impl. Reg. (EU) 2021/2226 근거로 기존 C2×04 사이클에서 PASS 확정된 값이며 본 이슈와 무관하다.
 - 2021/2226 자체의 발효일(2021-12-14 채택·OJ 게재 후 20일 경과) 및 구 Reg. (EU) No 207/2012 경과적용 종료(2024-05-26)는 문서에 미기재이나, **일자 주장 자체가 부재**하므로 C4 결함으로 판정하지 않는다(보완 권고 수준).
+
+## 종결 (2026-09-19, audit-drain 사이클)
+
+- Tier1/증거 재확인 후 수정 반영, `state: closed`.
+- 상세 조치는 커밋 메시지 및 아래 본문 참조.

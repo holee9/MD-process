@@ -1,7 +1,7 @@
 ---
 title: "audit #1054 (currency/C4): X-ray_장비_안전성능_표준_매핑 L92 'IEC 62304 Edition 2 발행 예정 2026-08경' — 예정일 경과·미발행, 추정배제 주석 부재"
 labels: "audit:currency,prio:P2,risk:low,standards"
-state: open
+state: closed
 created: 2026-09-18
 created-by: md-process-auditor
 related-issues: [908, 925, 926, 1016]
@@ -23,3 +23,8 @@ sweep: "C4 x 05_검사_시험_밸리데이션"
 
 1. L92 표기를 "Ed.2 개발 중(FDIS 단계, 발행일 미확정 — 2026-09-18 기준 미발행 확인)"으로 중립화.
 2. IEC Webstore pub.22794 프로젝트 레코드 Tier1 확보 시 확정 — C4 추적 리드 유지(#1041/#1050 사이클부터 4차 이월).
+
+## 종결 (2026-09-19, audit-drain 사이클)
+
+- Tier1/증거 재확인 후 수정 반영, `state: closed`.
+- 상세 조치는 커밋 메시지 및 아래 본문 참조.
