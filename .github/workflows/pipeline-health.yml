@@ -2,6 +2,8 @@ name: Pipeline Health Check
 
 # audit #1031: process-project 스케줄이 멈춰도 아무 경보가 없던 구조적 취약점 대응.
 # 저장소가 GitHub 서버에서 매일 스스로 생존 여부를 점검하므로,
+# (--skip-local: 여기는 신규 클론이라 로컬 워킹트리·미push 점검은 의미가 없어 생략.
+#  해당 항목은 로컬 스케줄이 sync_and_push.sh 직전에 수행한다.)
 # 로컬 스케줄러가 죽어도 이 워크플로는 계속 돌아간다(단일 실패점 회피).
 
 on:
@@ -32,7 +34,7 @@ jobs:
         id: check
         run: |
           set +e
-          python3 scripts/check_pipeline_health.py | tee health.txt
+          python3 scripts/check_pipeline_health.py --skip-local | tee health.txt
           echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
           exit 0
 

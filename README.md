@@ -37,6 +37,21 @@
 - **process-project** 작업이 매일 03:18 KST 자동 실행
 - `/tmp/wk-*` 신규 클론에서 작업 → main push → Actions 트리거
 
+#### 사이클 종료 처리 (필수 — audit #1033)
+사이클은 **반드시** 마지막에 다음을 호출해 커밋·push까지 완주시킨다:
+
+```bash
+bash scripts/sync_and_push.sh "<커밋 메시지>"
+```
+
+락 정리(rm 불가 환경은 rename 우회) → 커밋 → fetch/merge → 자동생성물 재빌드 → push → 사후검증을 수행하며 멱등하다.
+이 단계를 생략하면 **작업은 되는데 결과가 GitHub에 도달하지 않는** 상태가 된다(2026-09-18 실제 발생: 야간 사이클 산출물 12파일 방치 + 로컬 8커밋 5주간 미반영).
+
+#### 생존 감시
+- 로컬: `python3 scripts/check_pipeline_health.py` — 최근 커밋일·주간 리포트일에 더해 **워킹트리 미커밋(임계 0건)·미push 커밋**을 감시한다.
+- GitHub Actions: `.github/workflows/pipeline-health.yml`이 매일 00:30 UTC 실행(`--skip-local`). 실패 시 이슈 자동 생성.
+- 감시자를 GitHub 측에도 둔 이유: 로컬 스케줄러가 죽으면 로컬 감시도 함께 죽어 단일 실패점이 되기 때문이다.
+
 ### 이슈 자동 동기화
 - `issue-drafts/NNN_*.md` 작성·push 시 GitHub Issue 자동 생성
 - frontmatter `state: closed` 추가 시 자동 close 처리
