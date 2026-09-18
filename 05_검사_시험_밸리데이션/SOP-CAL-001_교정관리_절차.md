@@ -15,7 +15,7 @@ applicable:
   - IEC 60580:2019 (DAP meter)
   - IEC 62220-1-1:2015 (DQE)
   - MFDS GMP
-  - 진단용방사선발생장치의안전관리에관한규칙(제1122호)
+  - 진단용방사선발생장치의안전관리에관한규칙(제1185호)
 forms: [F-CAL-001, F-CAL-002, F-CAL-003]
 related-docs:
   - SOP-MFG-001_제조공정관리_절차

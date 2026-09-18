@@ -6,7 +6,7 @@ version: v0.3
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.1 관련 문서
-applicable: [EU MDR 2017/745, EU MDR GSPR, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, UDI, 진단용방사선안전관리규칙(제1122호)]
+applicable: [EU MDR 2017/745, EU MDR GSPR, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, UDI, 진단용방사선안전관리규칙(제1185호)]
 forms: [F-CC-001, F-CC-002, F-CC-003, F-CC-004, F-CC-005]
 related-docs: [SOP-CAPA-001, SOP-NC-001, SOP-IA-001]
 related-issues: [39, 41, 42]
