@@ -49,6 +49,22 @@ def last_weekly_report_date():
     return max(dates) if dates else None
 
 
+def lock_state():
+    """(잔존 락 수, 잔재 수) 반환. (audit #1034)
+
+    락이 남아 있으면 이후 모든 git 쓰기 명령이 즉사하므로, 정지의 선행 신호다.
+    잔재(.lock.bak/.old/.stale 등)는 과거 세션이 손으로 치운 흔적으로,
+    누적된다는 것 자체가 같은 문제가 반복되고 있다는 증거다.
+    """
+    gd = REPO / '.git'
+    try:
+        locks = list(gd.glob('*.lock')) + list(gd.glob('refs/heads/*.lock'))
+        debris = [p for p in gd.glob('*.lock.*')]
+        return len(locks), len(debris)
+    except Exception:
+        return None, None
+
+
 def working_tree_state():
     """(변경파일수, 미push커밋수) 반환. 조회 실패 시 (None, None).
 
@@ -109,6 +125,18 @@ def main():
                 f'(임계 {args.max_report_days}일) — 리뷰 주기 중단 확인 필요')
 
     if not args.skip_local:
+        locks, debris = lock_state()
+        if locks is not None:
+            lines.append(f'git 락 잔존: {locks}건 / 정리 잔재: {debris}건')
+            if locks > 0:
+                problems.append(
+                    f'git 락 {locks}건 잔존 — 이 상태에서는 모든 git 쓰기 명령이 실패한다. '
+                    f'`bash scripts/git_safe.sh --clean` 으로 정리할 것')
+            if debris > 10:
+                problems.append(
+                    f'락 정리 잔재 {debris}건 누적 — 같은 문제가 반복되고 있다는 신호. '
+                    f'사이클이 scripts/run_cycle.sh(마운트 밖 실행)를 타는지 확인할 것')
+
         dirty, unpushed = working_tree_state()
         if dirty is not None:
             lines.append(f'워킹트리 미커밋: {dirty}건 (임계 {args.max_dirty_files}건)')

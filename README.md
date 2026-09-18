@@ -37,7 +37,22 @@
 - **process-project** 작업이 매일 03:18 KST 자동 실행
 - `/tmp/wk-*` 신규 클론에서 작업 → main push → Actions 트리거
 
-#### 사이클 종료 처리 (필수 — audit #1033)
+#### 사이클 실행 (권장 경로 — audit #1034)
+```bash
+bash scripts/run_cycle.sh "<커밋 메시지>"
+```
+**마운트 밖 작업 클론**(`~/.mdprocess-work`)에서 최신화→빌드→검증→커밋→push→사후검증→마운트 폴더 동기화까지 수행한다.
+
+이 경로를 쓰는 이유는 **락 문제가 애초에 발생하지 않기 때문**이다. git은 `.git/*.lock`을 만들고 작업 후 스스로 지우는데, 이 저장소가 놓인 마운트는 삭제가 세션 권한에 의존하고 그 권한은 세션 종료 시 사라진다. 락이 남으면 이후 **모든 git 쓰기 명령이 즉사**한다(실측: `fatal: Unable to create ... index.lock: File exists`). 마운트 밖 VM 공간은 삭제 제약이 없어(실측 확인) 이 문제가 성립하지 않는다.
+
+#### 마운트 폴더에서 직접 git을 써야 할 때
+```bash
+bash scripts/git_safe.sh <git 인자>   # 락 자동 정리 후 실행
+bash scripts/git_safe.sh --clean      # 락 + 누적 잔재 청소
+```
+오래된 락만 정리하고 **방금 생성된 락(작업 중인 git)은 보존**한다. 삭제가 막힌 환경에서는 rename으로 우회한다(rename은 항상 가능).
+
+#### 사이클 종료 처리 (in-place 경로 — audit #1033)
 사이클은 **반드시** 마지막에 다음을 호출해 커밋·push까지 완주시킨다:
 
 ```bash
@@ -48,7 +63,7 @@ bash scripts/sync_and_push.sh "<커밋 메시지>"
 이 단계를 생략하면 **작업은 되는데 결과가 GitHub에 도달하지 않는** 상태가 된다(2026-09-18 실제 발생: 야간 사이클 산출물 12파일 방치 + 로컬 8커밋 5주간 미반영).
 
 #### 생존 감시
-- 로컬: `python3 scripts/check_pipeline_health.py` — 최근 커밋일·주간 리포트일에 더해 **워킹트리 미커밋(임계 0건)·미push 커밋**을 감시한다.
+- 로컬: `python3 scripts/check_pipeline_health.py` — 최근 커밋일·주간 리포트일에 더해 **git 락 잔존·정리 잔재 누적·워킹트리 미커밋(임계 0건)·미push 커밋**을 감시한다.
 - GitHub Actions: `.github/workflows/pipeline-health.yml`이 매일 00:30 UTC 실행(`--skip-local`). 실패 시 이슈 자동 생성.
 - 감시자를 GitHub 측에도 둔 이유: 로컬 스케줄러가 죽으면 로컬 감시도 함께 죽어 단일 실패점이 되기 때문이다.
 

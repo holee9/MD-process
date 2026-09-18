@@ -40,6 +40,14 @@ cd "$WORK_DIR" || exit 1
 # 작업 클론은 마운트 밖이라 락 제약이 없다. 그래도 방어적으로 정리.
 rm -f .git/*.lock 2>/dev/null
 
+# 커밋 identity 승계 — 신규 클론에는 설정이 없어 커밋이 실패한다.
+# 마운트 저장소의 설정을 그대로 물려받아 이력상 동일 주체로 남게 한다.
+CI_NAME="$(git -C "$MOUNT_REPO" config --get user.name 2>/dev/null || echo 'md-process-auditor')"
+CI_MAIL="$(git -C "$MOUNT_REPO" config --get user.email 2>/dev/null || echo 'auditor@md-process')"
+git config user.name  "$CI_NAME"
+git config user.email "$CI_MAIL"
+log "커밋 주체: ${CI_NAME} <${CI_MAIL}>"
+
 # --- 2. 최신화 (로컬 변경은 버리고 origin 기준으로 맞춘다) ------------------
 git fetch --quiet "$URL" main 2>&1 | mask || { log "fetch 실패"; exit 1; }
 git reset --hard --quiet FETCH_HEAD || { log "reset 실패"; exit 1; }
