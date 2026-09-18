@@ -87,4 +87,3 @@ if [ "${BASH_SOURCE[0]}" = "$0" ]; then
     *)        gs_clean_locks >/dev/null; gs_git "$@" ;;
   esac
 fi
-# 반입 테스트 마커 211206
