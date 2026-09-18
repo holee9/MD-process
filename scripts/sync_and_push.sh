@@ -64,18 +64,21 @@ TOKEN="$(tr -d '[:space:]' < "$TOKEN_FILE")"
 URL="https://${REMOTE_USER}:${TOKEN}@github.com/${REPO_PATH}"
 
 clear_locks
-if ! git fetch "$URL" main 2>&1 | sed "s/${TOKEN}/***/g"; then
+# 원격추적 참조(refs/remotes/origin/main)까지 갱신한다.
+# URL 직접 fetch/push 는 기본적으로 FETCH_HEAD 만 갱신하므로, 갱신하지 않으면
+# `@{u}` 가 낡은 채로 남아 생존 점검이 "미push"로 오탐한다(2026-09-18 확인).
+if ! git fetch "$URL" "main:refs/remotes/origin/main" --force 2>&1 | sed "s/${TOKEN}/***/g"; then
   log "fetch 실패 — 네트워크/자격증명 확인 필요"; exit 1
 fi
 
-AHEAD=$(git rev-list --count FETCH_HEAD..HEAD)
-BEHIND=$(git rev-list --count HEAD..FETCH_HEAD)
+AHEAD=$(git rev-list --count origin/main..HEAD)
+BEHIND=$(git rev-list --count HEAD..origin/main)
 log "동기화 전: ahead=${AHEAD} behind=${BEHIND}"
 
 if [ "$BEHIND" -gt 0 ]; then
   clear_locks
   # 자동생성물 충돌은 재빌드로 해소 가능하므로 rebase보다 merge를 쓴다(이력 보존).
-  if ! git merge FETCH_HEAD --no-edit 2>&1 | tail -5; then
+  if ! git merge origin/main --no-edit 2>&1 | tail -5; then
     log "병합 충돌 — 사람 개입 필요. push 중단(작업은 커밋되어 안전)."
     exit 2
   fi
@@ -100,8 +103,8 @@ fi
 
 # --- 5. 사후 검증 -----------------------------------------------------------
 clear_locks
-git fetch "$URL" main >/dev/null 2>&1
-REMAIN=$(git rev-list --count FETCH_HEAD..HEAD)
+git fetch "$URL" "main:refs/remotes/origin/main" --force >/dev/null 2>&1
+REMAIN=$(git rev-list --count origin/main..HEAD)
 if [ "$REMAIN" -eq 0 ]; then
   log "검증 통과 — origin과 완전 일치"
 else

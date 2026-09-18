@@ -49,8 +49,8 @@ git config user.email "$CI_MAIL"
 log "커밋 주체: ${CI_NAME} <${CI_MAIL}>"
 
 # --- 2. 최신화 (로컬 변경은 버리고 origin 기준으로 맞춘다) ------------------
-git fetch --quiet "$URL" main 2>&1 | mask || { log "fetch 실패"; exit 1; }
-git reset --hard --quiet FETCH_HEAD || { log "reset 실패"; exit 1; }
+git fetch --quiet "$URL" "main:refs/remotes/origin/main" --force 2>&1 | mask || { log "fetch 실패"; exit 1; }
+git reset --hard --quiet origin/main || { log "reset 실패"; exit 1; }
 git clean -qfd
 log "기준: $(git log -1 --format='%h %s' | cut -c1-70)"
 
@@ -109,8 +109,8 @@ else
 fi
 
 # --- 6. 사후 검증 -----------------------------------------------------------
-git fetch --quiet "$URL" main 2>&1 | mask
-if [ "$(git rev-list --count FETCH_HEAD..HEAD)" -ne 0 ]; then
+git fetch --quiet "$URL" "main:refs/remotes/origin/main" --force 2>&1 | mask
+if [ "$(git rev-list --count origin/main..HEAD)" -ne 0 ]; then
   log "경고: push 후에도 미반영분 존재"; exit 1
 fi
 log "검증 통과 — origin 일치"
@@ -122,8 +122,8 @@ bash scripts/git_safe.sh --clean >/dev/null 2>&1
 if [ -n "$(git status --porcelain)" ]; then
   log "마운트 폴더에 미커밋 변경 있음 — 덮어쓰지 않고 보존. 수동 확인 필요."
 else
-  bash scripts/git_safe.sh fetch "$URL" main >/dev/null 2>&1
-  bash scripts/git_safe.sh merge --ff-only FETCH_HEAD >/dev/null 2>&1 \
+  bash scripts/git_safe.sh fetch "$URL" "main:refs/remotes/origin/main" --force >/dev/null 2>&1
+  bash scripts/git_safe.sh merge --ff-only origin/main >/dev/null 2>&1 \
     && log "마운트 폴더 최신화 완료: $(git log -1 --format=%h)" \
     || log "마운트 폴더 ff-merge 불가 — 분기 상태, 수동 확인 필요"
 fi
