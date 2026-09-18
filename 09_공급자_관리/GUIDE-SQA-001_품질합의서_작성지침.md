@@ -1,7 +1,7 @@
 ---
 doc-id: GUIDE-SQA-001
 title: 품질합의서(SQA) 작성지침
-version: v0.2.1
+version: v0.2.2
 type: Guide
 category: 09_공급자_관리
 purpose: 공급자 품질합의서(SQA) 작성·검토·체결을 위한 작성지침
@@ -488,7 +488,7 @@ SQA 협상 전 아래 기준에 따라 조항을 사전 분류한다.
 
 | 항목 | SQA 명시 내용 |
 |------|--------------|
-| 품질 요구사항 | DQE, MTF, NPS 측정 기준 (IEC 62220-1 기반) |
+| 품질 요구사항 | DQE, MTF, NPS 측정 기준 (IEC 62220-1-1:2015 기반) |
 | 환경관리 | 클린룸 등급 및 온습도 관리 기준 명시 |
 | FW/SW 구성관리 | 디텍터 내장 FW의 버전관리, 업데이트 절차 합의 |
 | 사이버보안 | IEC 81001-5-1 기반 취약점 관리 의무 |
@@ -556,5 +556,5 @@ SQA 초안 완성 후 아래 체크리스트로 완전성을 확인한다.
 - IEC 81001-5-1:2021 (의료기기 사이버보안)
 - ISO 27001:2022 (정보보안경영시스템)
 - GHTF/SG3/N17:2008 (공급자 관리 가이던스)
-- AAMI TIR36:2007 (Supplier Quality Agreement 가이드)
+- AAMI TIR36:2007 *Validation of software for regulated processes* — 규제 프로세스 자동화 SW의 밸리데이션 TIR이며 SQA(품질합의서) 작성 가이드가 아님. **2020-04-10 철회(withdrawn)**. 공급자가 제공·운용하는 자동화 SW/전자기록 시스템의 밸리데이션 합의 항목에 한해 참고자료로만 사용 <!-- 2026-09-09 audit #1028 정정: 구 표제 'Supplier Quality Agreement 가이드'는 오귀속(ANSI webstore Tier1 표제 대조), 철회 사실 부기 -->
 - 확인일: 2026-05-30

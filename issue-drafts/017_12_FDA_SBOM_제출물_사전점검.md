@@ -5,7 +5,7 @@ state: closed
 ---
 
 ## 배경
-FDA premarket submission SBOM 의무화(2025-10-01 시행, RTA 처리) 대응. 6개 카테고리 27개 항목 Readiness 점검.
+FDA premarket submission SBOM 의무화(524B 시행 2023-03-29 / RTA 적용 2023-10-01) 대응. 6개 카테고리 27개 항목 Readiness 점검.
 
 ## 체크리스트
 - [x] 6개 카테고리 (SBOM / Support / Vulnerability / Cybersecurity Plan / SPDF / Labeling) 점검표 작성

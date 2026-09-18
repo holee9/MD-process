@@ -224,7 +224,8 @@ review-due: 2027-05-16
 
 ### 5.6 전자 라벨링(e-Labeling)
 
-1. SW 제품 또는 SW 업데이트는 전자 IFU 제공 가능 (EU MDR Annex I §23.1(f), Commission Implementing Regulation (EU) 2021/2226, FDA 21 CFR 801.128 Guidance)
+1. SW 제품 또는 SW 업데이트는 전자 IFU 제공 가능 (EU MDR Annex I §23.1(f), Commission Implementing Regulation (EU) 2021/2226)
+   > **인용 정정 (audit #1052, 2026-09-19):** 종전 본 항은 미국 근거로 'FDA 21 CFR 801.128 Guidance'를 병기하였으나, **21 CFR 801.128의 실제 표제는 "Exceptions or alternatives to labeling requirements for medical devices held by the Strategic National Stockpile"**(Part 801 Subpart D, 전략국가비축물자 라벨링 예외)로 전자 IFU와 무관하며, 가이던스가 아니라 시행규칙 조문이다(eCFR 현행본 직접 확인). 미국 전자 IFU 허용 근거는 **Tier1 미확인(미확정)** 상태이므로 인용을 삭제하고 EU 근거만 유지한다. 미국 시장 eIFU 적용 전 FDA 현행 근거를 Tier1로 확정할 것.
 2. 전자 IFU URL은 라벨에 인쇄; 접근 가능성 검증 (EU 2021/2226 Art.3 요건 충족 확인)
 3. 전자 IFU 버전 관리: SOP-DOC-001에 따라 통제
 4. EU 시장 전자 IFU 제공 시 §5.1의 EU 2021/2226 요구사항을 준수하고, IFU 웹사이트 가용성을 분기별로 모니터링한다.
@@ -256,7 +257,7 @@ review-due: 2027-05-16
 - 방사선 방출구 근처 경고 기호 부착
 - 이동형 장비: 외면에 전리방사선 경고 삼엽 기호
 
-### 8.2 진단용 방사선 안전관리규칙(제1122호) 표시
+### 8.2 진단용 방사선 안전관리규칙(제1185호) 표시
 
 - 방사선 발생장치 표면에 방사선 경고 표지 부착
 - 사용 장소 방사선 구역 표지는 설치자(병원) 책임이나, 설치 매뉴얼에 안내 포함

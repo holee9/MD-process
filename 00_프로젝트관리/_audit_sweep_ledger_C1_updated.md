@@ -1,13 +1,12 @@
 ---
-doc-id: LOG-AUDIT-SWEEP-LEDGER-C1
-title: 감사 전수 스윕 원장 — C1 클래스 업데이트본
-type: Log
-version: v1.0
-status: released
+doc-id: LEDGER-C1-UPDATED
+title: 감사 전수 스윕 원장(C1 업데이트본)
 category: 00_프로젝트관리
-purpose: C1(조항번호 정확성) 오류클래스 전수 점검 진행 상황 추적
-owner: QA 담당자
-last-review: 2026-09-10
+type: Report
+version: v0.1
+status: approved
+purpose: 오류 클래스별 문서 전수 감사 스윕 진행상황 추적(C1 업데이트본)
+owner: QA/RA 팀장
 ---
 
 # 감사 전수 스윕 원장 (Audit Sweep Ledger) — 업데이트

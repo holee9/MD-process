@@ -2,7 +2,7 @@
 doc-id: SOP-PSUR-001
 title: 정기안전성보고(PSUR) 및 시판후임상추적(PMCF) 절차
 type: SOP
-version: v0.3
+version: v0.3.2
 status: draft
 category: 08_시판후_감시_PMS
 purpose: EU MDR Art.86 PSUR 작성·제출 및 Art.61/Annex XIV Part B PMCF 활동 수행 절차를 정의하여 시판 후 안전성·임상적 편익 근거를 지속 갱신한다
@@ -178,7 +178,7 @@ PMCF 계획서(F-PMCF-001)에 다음을 포함한다:
 |--------------|------|-----------|
 | 방사선량 모니터링 | DAP (Dose Area Product) | 국가 DRL(Diagnostic Reference Level) 대비 추적, 분기별 통계 분석 |
 | 영상 화질 — MTF | Modulation Transfer Function | 제조 시 기준값 대비 ±10% 이내 유지 여부 모니터링 |
-| 영상 화질 — DQE | Detective Quantum Efficiency | IEC 62220-1에 따른 측정, 연 1회 이상 평가 |
+| 영상 화질 — DQE | Detective Quantum Efficiency | IEC 62220-1-1:2015에 따른 측정, 연 1회 이상 평가 |
 | Reject Rate 분석 | 재촬영률(Repeat/Reject Rate) | 목표: 5% 이하, 원인별 분류(포지셔닝, 노출, 모션 등) 분석 |
 
 - DAP 데이터는 DICOM Radiation Dose SR 또는 RDIM(Radiation Dose Index Monitoring) 시스템에서 자동 수집
@@ -252,4 +252,5 @@ PMCF 계획서(F-PMCF-001)에 다음을 포함한다:
 | v0.1 | 2026-05-12 | 초안 작성 | RA/QA Lead |
 | v0.2 | 2026-05-29 | PSUR 데이터분석·제출주기·PMCF 설문·X-ray PMCF·AI/ML 모니터링 보강 | holee9-automation |
 | v0.3 | 2026-06-24 | audit #912 Art.86(2) Class IIb '매 2년' → '연 1회' 정정·중복표 통합; audit #914 §2 단종 후 보존기간 '15년' → '10년'(Art.10(8) 비이식형) 정정 | QMS-Bot |
+| v0.3.2 | 2026-09-09 | audit #1027 정정 — §DQE 측정 근거 'IEC 62220-1'(2003 구판, IEC 62220-1-1:2015가 cancel&replace)를 현행 'IEC 62220-1-1:2015'로 정정 | md-process-auditor |
 | v0.3.1 | 2026-07-29 | audit #1006 — §5.1 Class IIb/III 연1회 근거 Art.86(2)→Art.86(1) 조항 귀속 정정(Art.86(2)=Class III·이식형 NB 전자제출) | md-process-auditor |

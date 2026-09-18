@@ -1,8 +1,8 @@
 ---
 doc-id: PMS_개요
-title: 시판후 감시 (Post-Market Surveillance) — v0.3.2
+title: 시판후 감시 (Post-Market Surveillance) — v0.3.3
 type: Overview
-version: v0.3.2
+version: v0.3.3
 status: draft
 category: 08_시판후_감시_PMS
 purpose: 시판후 감시 (Post-Market Surveillance) — v0.3.1 관련 문서
@@ -20,6 +20,7 @@ review-due: 2027-07-02
 > v0.1(2026-04-17) 개요 작성 → v0.2(2026-05-03) 절차흐름·양식·X-ray 적용예시·PSUR 구조 추가
 > v0.3(2026-07-02) audit #927/#928/#929 정정: IEC 62304 §6/§9 분리 (Maintenance/Problem Resolution), EU AI Act Art.72→Art.73 (Serious Incident 보고 근거), EU MDR Art.87 보고기한 3버킷 분리(사망 10일/공중보건 위협 2일/기타 15일)
 > v0.3.1(2026-07-10) audit #949 정정: §6 US(FDA) 표 '30일(사망·중상 5 work days)' 반전 정정 → §803.50 개별보고 30일 / §803.53 5 work day(remedial action 또는 FDA 서면요구 시)로 분리
+> v0.3.3(2026-09-09) audit #1026 정정: §8.1 'FDA Postmarket Cybersecurity Guidance (2016, 2023 갱신)' — Postmarket Final 가이던스는 2016-12-28 발행 후 개정 이력 없음(미존재 판본 표기). 2023-09·2025-06 판은 별개의 **Premarket** Cybersecurity 가이던스이며 현행은 2026-02 Final(Docket FDA-2021-D-1158)
 > v0.3.2(2026-07-20) audit #985 정정: §6 EU MDR Art.87 보고기한 조항번호 오귀속 정정 — (2)/(3)/(4) 오배정을 원문대로 (3)기타15일/(4)공중보건2일/(5)사망10일로 재배정(L108, L116)
 
 ---
@@ -138,7 +139,7 @@ Class IIa 이상 제품에 대해 아래 구조로 PSUR 작성:
 ## 8. 사이버보안 사고·AI 부작용 PMS 통합
 
 ### 8.1 근거 (추가)
-- FDA Postmarket Cybersecurity Guidance (2016, 2023 갱신)
+- FDA *Postmarket Management of Cybersecurity in Medical Devices* (Final, 2016-12-28 발행, Docket FDA-2015-D-5105 / FR 2016-31406) — 발행 이후 개정판 없음
 - IEC 81001-5-1:2021 §8 — 보안 사고 대응·교훈 기록
 - EU AI Act Art. 73 — 심각한 사고(Serious Incident) 보고 의무 (인지 후 15일 / 사망 가능 시 10일 / 광범위 침해·중대 인프라 붕괴 시 2일). PMS 계획·PMM 자체 근거는 Art. 72.
 - MFDS 사이버보안 허가심사 가이드 (2025) — 시판후 취약점 관리

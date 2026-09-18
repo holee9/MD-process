@@ -6,7 +6,7 @@ version: v0.3
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.1 관련 문서
-applicable: [EU MDR 2017/745, EU MDR GSPR, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, UDI, 진단용방사선안전관리규칙(제1122호)]
+applicable: [EU MDR 2017/745, EU MDR GSPR, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, IEC81001-5-1, ISO13485:2016, ISO14971:2019, MFDS, UDI, 진단용방사선안전관리규칙(제1185호)]
 forms: [F-CC-001, F-CC-002, F-CC-003, F-CC-004, F-CC-005]
 related-docs: [SOP-CAPA-001, SOP-NC-001, SOP-IA-001]
 related-issues: [39, 41, 42]
@@ -223,5 +223,5 @@ IEC 62304 Ed2(2026년 8월 발행 예정)에 따라 SW 변경 분류 기준의 �
 - IEC 62304:2006+A1:2015 §7 Software problem resolution, §8 Software maintenance
 - IEC 81001-5-1:2021 §8 Maintenance of security
 - IEC 60601-2-54:2022 (방사선 관련 시험 기준)
-- 진단용 방사선 발생장치 안전관리규칙 (총리령 제1122호)
+- 진단용 방사선 발생장치 안전관리규칙 (보건복지부령 제1122호(현행 제1185호, 2026-07-09))
 - 확인일: 2026-04-30

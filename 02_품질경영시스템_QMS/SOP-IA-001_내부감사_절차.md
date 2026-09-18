@@ -328,7 +328,7 @@ review-due: 2027-05-21
 
 ### 14.3 신규 FDA 실사 대응 절차 (CP 7382.850)
 
-FDA는 2026-01-30에 신규 Compliance Program **CP 7382.850** "Inspection of Medical Device Manufacturers"를 발행하여, 기존 QSIT(Quality System Inspection Technique)을 대체하였다.
+FDA는 2026-02-02(QMSR 시행일과 동일자)에 신규 Compliance Program **CP 7382.850** "Inspection of Medical Device Manufacturers"를 발행하여, 기존 QSIT(Quality System Inspection Technique) 기반 CP 7382.845(2023-09-29 발행) 및 CP 7383.001(2012-03-05 발행)을 대체하였다(원문 표제부 `IMPLEMENTATION DATE 02/02/2026`, `Date of Issuance: February 2, 2026`).
 
 #### 14.3.1 실사 시 내부감사 관련 예상 질의 항목
 

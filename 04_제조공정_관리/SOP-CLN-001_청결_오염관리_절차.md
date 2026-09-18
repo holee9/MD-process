@@ -12,7 +12,7 @@ applicable:
   - FDA QMSR §820.10/ISO 13485 §6.4.2 편입 — 오염 관리 (구 QSR §820.70(e) 폐지; QMSR 2026-02-02 발효)
   - EU MDR 2017/745 Annex I §10.3 (위험 감소 — 오염·미생물 부하)
   - MFDS GMP 별표2 §6.4 (작업환경)
-  - 진단용 방사선 안전관리규칙 (제1122호) — 방사선 차폐 표면 청결
+  - 진단용 방사선 안전관리규칙 (제1185호) — 방사선 차폐 표면 청결
   - IEC 60601-1 §11.6 (Cleaning, disinfection and sterilization of ME EQUIPMENT and its parts)
 forms: [F-CLN-001, F-CLN-002]
 related-docs: [SOP-MFG-001, SOP-MFG-002, SOP-NC-001, SOP-PKG-001, SOP-SVC-001, F-ENV-001]
