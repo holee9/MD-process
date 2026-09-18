@@ -24,6 +24,7 @@ CHK_DIR = REPO / '13_규제평가_체크리스트'
 
 DEFAULT_MAX_COMMIT_DAYS = 10   # 일 03:18 스케줄 기준, 10일 무커밋이면 명백한 정지
 DEFAULT_MAX_REPORT_DAYS = 14   # 주간 리포트 기준, 2회차 연속 결번이면 경보
+DEFAULT_MAX_DIRTY_FILES = 0    # 사이클 종료 시 워킹트리는 비어 있어야 정상
 
 
 def last_commit_date():
@@ -48,10 +49,37 @@ def last_weekly_report_date():
     return max(dates) if dates else None
 
 
+def working_tree_state():
+    """(변경파일수, 미push커밋수) 반환. 조회 실패 시 (None, None).
+
+    (audit #1033) 2026-09-18 사례: 야간 사이클이 작업은 마쳤으나 커밋 단계에서 멈춰
+    12개 파일이 워킹트리에 방치됐고, 커밋일 기준 점검만으로는 이를 잡지 못했다.
+    '산출은 됐는데 반영이 안 된' 상태를 별도 신호로 감시한다.
+    """
+    dirty = unpushed = None
+    try:
+        out = subprocess.run(['git', 'status', '--porcelain'],
+                             cwd=REPO, capture_output=True, text=True, check=True).stdout
+        dirty = len([l for l in out.splitlines() if l.strip()])
+    except Exception:
+        pass
+    try:
+        out = subprocess.run(['git', 'log', '@{u}..HEAD', '--oneline'],
+                             cwd=REPO, capture_output=True, text=True, check=True).stdout
+        unpushed = len([l for l in out.splitlines() if l.strip()])
+    except Exception:
+        pass
+    return dirty, unpushed
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--max-commit-days', type=int, default=DEFAULT_MAX_COMMIT_DAYS)
     ap.add_argument('--max-report-days', type=int, default=DEFAULT_MAX_REPORT_DAYS)
+    ap.add_argument('--max-dirty-files', type=int, default=DEFAULT_MAX_DIRTY_FILES,
+                    help='워킹트리 미커밋 파일 허용 상한 (기본 0 = 커밋 누락 즉시 경보)')
+    ap.add_argument('--skip-local', action='store_true',
+                    help='로컬 워킹트리/미push 점검 생략 (GitHub Actions 등 클론 환경용)')
     args = ap.parse_args()
 
     today = datetime.date.today()
@@ -79,6 +107,22 @@ def main():
             problems.append(
                 f'주간 리포트 결번: 최신 {r}, {age}일 경과 '
                 f'(임계 {args.max_report_days}일) — 리뷰 주기 중단 확인 필요')
+
+    if not args.skip_local:
+        dirty, unpushed = working_tree_state()
+        if dirty is not None:
+            lines.append(f'워킹트리 미커밋: {dirty}건 (임계 {args.max_dirty_files}건)')
+            if dirty > args.max_dirty_files:
+                problems.append(
+                    f'커밋 누락 의심: 워킹트리에 미커밋 변경 {dirty}건 — '
+                    f'사이클이 작업 후 커밋 단계에서 중단됐을 수 있음 '
+                    f'(전형 원인: .git/*.lock 잔존)')
+        if unpushed is not None:
+            lines.append(f'미push 커밋: {unpushed}건')
+            if unpushed > 0:
+                problems.append(
+                    f'push 누락: 로컬 커밋 {unpushed}건이 origin에 미반영 — '
+                    f'산출물이 GitHub에 도달하지 못하는 상태')
 
     for l in lines:
         print(f'  {l}')
