@@ -1,7 +1,8 @@
 ---
 title: "audit #1058 (currency/C4): TF-TD-001 'SW Level of Concern(Basic/Moderate/Major)' 구 체계 잔존 — 2023-06-14 Final Guidance가 폐지·Documentation Level(Basic/Enhanced)로 대체, 동일 문서 인용근거와 자기모순"
 labels: "audit:currency,prio:P1,risk:medium,regulatory,FDA"
-state: open
+state: closed
+closed: 2026-09-20
 created: 2026-09-19
 created-by: md-process-auditor
 related-issues: [1050, 1045, 938]
@@ -33,3 +34,20 @@ sweep: "C4 x 06_문서_기록관리"
 ## 권고 (감사관은 문서 미수정)
 
 L650 → `SW Documentation Level(Basic/Enhanced)`, L682 산출물 → `SW Documentation Level 판정서`. 12 카테고리 1개소 동반 확산 정정.
+
+---
+
+## 종결 (2026-09-20, audit-drain 스프린트)
+
+Tier1 재확인(2026-09-20, fda.gov 가이던스 페이지 및 FR 2023-12723): "Content of Premarket Submissions for Device Software Functions"(Final, 2023-06-14)가 2005-05-11 가이던스를 대체하며 **Level of Concern을 Documentation Level(basic / enhanced) 2분류로 전환**. Enhanced 기준은 '소프트웨어 기능의 고장·결함이 사망 또는 중상해의 개연적 위험을 갖는 위해상황을 초래할 수 있는 경우'.
+
+**정정(동일 오류클래스 전 문서 일괄):**
+
+| 문서 | 개소 | 수정 |
+|---|---|---|
+| `06_문서_기록관리/TF-TD-001_...md` | L650 | `SW Level of Concern(Basic/Moderate/Major)` → `SW Documentation Level(Basic/Enhanced)` |
+| 〃 | L682 | 산출물 `SW Level of Concern 평가서` → `SW Documentation Level(Basic/Enhanced) 판정서` |
+| `12_교차검증_보고서/벤치마크_2026-Q2_K243734.md` | L67 | `SW Level of Concern: Basic` → `SW Documentation Level: Basic` + 근거 가이던스 명기 + 정정 각주(시점기록 보존 원칙) |
+| `01_법규_규제/03_미국_FDA/T-FDA510K-B1_Device_Description_템플릿.md` | L35 | `(Level of Concern)` → `(Documentation Level: Basic/Enhanced)`, IEC 62304 '등급'→'안전등급(Class A/B/C)' 명확화 |
+
+저장소 전수 grep `Level of Concern` 결과 현행 문서 잔존 0건(감사 산출물 `_audit_log.md`·`_audit_sweep_ledger.md`·issue-drafts는 기록물로 원문 보존). TF-TD-001 v0.7.1 개정이력 반영.

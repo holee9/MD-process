@@ -2,7 +2,7 @@
 doc-id: SOP-DOC-001
 title: 문서 및 기록 관리 절차
 type: SOP
-version: v0.3.1
+version: v0.3.3
 status: draft
 category: 06_문서_기록관리
 purpose: QMS 운영에 필요한 문서의 작성·검토·승인·배포·개정·폐기 및 품질기록의 식별·수집·보관·보호·검색·보존기한·폐기 절차를 정의한다
@@ -161,7 +161,9 @@ review-due: 2027-05-15
 
 #### 6.2.1 ALCOA+ 데이터 무결성 원칙 *(v0.2 추가)*
 
-모든 품질기록은 **ALCOA+ 원칙**을 준수하여야 한다 (FDA Data Integrity Guidance 2018 참조).
+모든 품질기록은 **ALCOA+ 원칙**을 준수하여야 한다.
+
+> **근거 및 적용범위 주기(audit #1060, 2026-09-20 정정)**: ALCOA+는 범분야 데이터무결성 원칙이다. 참고 문헌인 FDA "Data Integrity and Compliance With Drug CGMP: Questions and Answers"(Final, 2018-12, FR 2018-26957)는 **의약품 CGMP(21 CFR Parts 210·211·212)를 적용범위로 하며 의료기기(21 CFR 820 / FDA QMSR)를 규율하지 않는다** — 본 절차는 동 원칙을 자사 정책으로 **준용**하는 것이며, 의료기기 기록 요구의 법적 근거는 ISO 13485:2016 §4.2.5 및 FDA QMSR(21 CFR 820)이다. 범분야 근거로는 MHRA "GxP Data Integrity Guidance and Definitions"(2018-03) 병용.
 
 | 원칙 | 영문 | 설명 |
 |------|------|------|
@@ -337,3 +339,4 @@ EU Annex 11에 따라 전자기록 시스템(EDMS 포함)에 대해 다음 밸�
 | v0.3 | 2026-07-17 | §6.4 보존기한표 RMF 근거 'ISO 14971 §3.5'(용어정의 조항) → 정답 '§4.5 Risk management file' 정정 — §3=Terms and definitions, §4.1~4.5(General/Management responsibilities/Competence/RM plan/RM file) 구조 확인 [audit #977] | md-process-auditor |
 | v0.3.1 | 2026-07-19 | §9.3 'IEC 81001-5-1 §5.7(AI/ML 관련 보안 고려)' 인용 정정 — §5.7은 Software system testing 조항(AI/ML 보안 전담 조항 아님), Tier1 미확인 세부조항은 '미확인'으로 표기(추정배제) — audit #982 동일오류클래스 정정 | md-process-auditor |
 | v0.3.2 | 2026-07-29 | audit #1005 — §6.4 '수명+5년' 사내 강화기준 명시(표준 수치 미규정), EU MDR 10년 우선적용·긴 기간 적용 원칙 명시 | md-process-auditor |
+| v0.3.3 | 2026-09-20 | audit #1060 정정 — §6.2.1 ALCOA+ 근거 'FDA Data Integrity Guidance 2018' 무조건 귀속 → 적용범위 주기 추가. 동 가이던스(FR 2018-26957, 2018-12) 실체는 의약품 CGMP(21 CFR 210/211/212) 대상으로 의료기기 미규율 → '준용' 명시 + 의료기기 법적근거(ISO 13485 §4.2.5, FDA QMSR) 및 범분야 근거(MHRA GxP DI 2018-03) 병기 | md-process-builder |

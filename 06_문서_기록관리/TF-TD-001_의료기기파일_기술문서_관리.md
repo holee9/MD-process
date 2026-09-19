@@ -4,7 +4,7 @@ title: 의료기기파일 및 기술문서 관리 절차
 type: Procedure
 category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
-version: v0.6.1
+version: v0.7.1
 status: draft
 last-review: 2026-07-02
 owner: RA/QA
@@ -34,6 +34,7 @@ applicable:
 | v0.6 | 2026-07-17 | §10.1 Part 11 요건표 '§11.10(k)(1)' 요구사항 오기술 정정 — eCFR 원문(§11.10(k)(1): 시스템 문서 배포·접근·이용 통제) 확인, 기존 '문서 유효성 기간 관리'(§11.10(c) 영역과 혼동)는 오기술 [audit #978] | md-process-auditor |
 | v0.7 | 2026-07-29 | audit #1004/#1005 정정: §13 PSUR 주기 'Class IIa 이상: 최소 2년'→'IIb/III 연 1회·IIa 2년'(EU MDR Art.86(1)); §14 PMS 기록 보존 '5년(803, EU MDR)'→EU 10년(Art.10(8)·Annex III)/FDA 803.18('2년 또는 기기 예상수명 중 긴 기간') | md-process-auditor |
 | v0.6.1 | 2026-08-08 | md-process-builder | audit #1022(GH#1700)·#1023(GH#1701) 정정 — L678 영상성능(MTF) 근거 IEC 62220-1-3→62220-1-1:2015(MTF는 DQE 결정 과정, 1-3은 동적 검출기 DQE로 재기술, IEC pub.6599 표제 Tier1); L739 STED 근거 SG1/N071:2012(용어정의 문서)→GHTF/SG1/N011:2008(IMDRF 아카이브 Tier1); §6.1 'N4가 정의' 근거불명 표기→N011:2008 명기 |
+| v0.7.1 | 2026-09-20 | md-process-builder | audit #1058 정정 — L650·L682 'SW Level of Concern(Basic/Moderate/Major)' 구 체계 → **'SW Documentation Level(Basic/Enhanced)'**. FDA Final Guidance "Content of Premarket Submissions for Device Software Functions"(2023-06-14, FR 2023-12723)가 2005년 가이던스를 대체하며 Level of Concern을 폐지하고 Documentation Level 2분류를 도입(fda.gov Tier1 재확인 2026-09-20). 동일 오류클래스 전 문서 일괄 정정(T-FDA510K-B1, 벤치마크_K243734) |
 
 ---
 
@@ -647,7 +648,7 @@ FDA 510(k) Program Guidance(2014-07-28)·SSXI Guidance(2016-09-01) 기준 용어
 | 인터페이스 | Wired interface(Gigabit Ethernet 등), Wireless interface(Wi-Fi 802.11ac/ax 등), Tethering |
 | 전원 | Battery type/capacity, AC adapter, Charger |
 | 환경 | Operating temp/humidity, IP rating, Drop/load-bearing |
-| SW | SW Level of Concern(Basic/Moderate/Major), OTS components, Cybersecurity controls |
+| SW | SW Documentation Level(Basic/Enhanced), OTS components, Cybersecurity controls |
 | Biocompat | Patient-contact materials, ISO 10993 결과 |
 | Accessories | Battery, Cable, Adapter, Dongle, Charger, Software apps |
 
@@ -679,7 +680,7 @@ K243734/K250211/K243171 3건 벤치마크 공통 표준 패턴이며, SE 매트�
 | 영상 성능(MTF) | IEC 62220-1-1:2015 (MTF는 DQE 결정 과정에서 측정 — 정적 촬영용 검출기; 동적 영상 검출기 DQE는 IEC 62220-1-3:2008) | MTF 측정 방법 | MTF 시험 보고서(F-IQ-001 예정, plan #932) |
 | SW 수명주기 | IEC 62304:2006+AMD1:2015 (Ed.1.1) [audit #908/#925 정정 패턴 적용 — 'A2:2020' 미존재 표준 인용 금지] | SW 수명주기 프로세스 | IEC_62304_SW_수명주기 |
 | SW 사이버보안 | IEC 81001-5-1:2021 + FDA Final Guidance "Cybersecurity in Medical Devices: Quality Management System Considerations and Content of Premarket Submissions" (**February 2026**, Docket FDA-2021-D-1158; supersedes 2025-06-27 및 2023-09-27 final) | SW 사이버보안 | IEC_81001-5-1_FDA_Cybersecurity_SW보안, SBOM |
-| FDA SW | FDA "Content of Premarket Submissions for Device Software Functions" (2023-06-14) | SW 문서 수준 | SW Level of Concern 평가서 |
+| FDA SW | FDA "Content of Premarket Submissions for Device Software Functions" (2023-06-14) | SW 문서 수준 | SW Documentation Level(Basic/Enhanced) 판정서 |
 | FDA SSXI | FDA "Solid State X-ray Imaging Devices 510(k) Guidance" (2016-09-01) | SSXI 510(k) 일반 | 본 §18 + X-ray 표준매핑 |
 | 위험관리 | ISO 14971:2019 | 위험관리 프로세스 | RMF, ISO14971_프로세스_상세 |
 | 생체적합성 | ISO 10993-1:2018 + 시리즈 | 환자 접촉부 | ISO 10993 시험기록(F 양식 예정, plan #933) |

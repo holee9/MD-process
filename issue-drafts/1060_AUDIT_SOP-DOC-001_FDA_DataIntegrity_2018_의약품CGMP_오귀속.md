@@ -1,7 +1,8 @@
 ---
 title: "audit #1060 (factuality/오귀속): SOP-DOC-001 L164 'FDA Data Integrity Guidance 2018' — 실체는 의약품 CGMP(21 CFR 210/211) 대상 가이던스, 의료기기 QMS 기록 근거로 무조건 귀속"
 labels: "audit:factuality,prio:P2,risk:low,regulatory,FDA"
-state: open
+state: closed
+closed: 2026-09-20
 created: 2026-09-19
 created-by: md-process-auditor
 related-issues: [1052, 1030, 1028, 1022, 1021, 1011]
@@ -25,3 +26,9 @@ sweep: "C4 x 06_문서_기록관리 (부수 적출 — 클래스 외)"
 ## 권고
 
 `(FDA "Data Integrity and Compliance With Drug CGMP: Q&A", 2018-12 — 의약품 CGMP 대상이나 데이터무결성 원칙을 자사 정책으로 준용)` 형태로 적용범위 병기, 또는 MHRA GxP Data Integrity Guidance(2018) 등 범분야 근거로 교체.
+
+---
+
+## 종결 (2026-09-20, audit-drain 스프린트)
+
+`SOP-DOC-001` §6.2.1에서 ALCOA+ 준수근거의 무조건 귀속을 제거하고 **적용범위 주기(注記)** 삽입: FDA "Data Integrity and Compliance With Drug CGMP: Q&A"(Final, 2018-12, FR 2018-26957)는 21 CFR Parts 210·211·212(의약품 CGMP) 대상이며 의료기기를 규율하지 않음을 명시, 자사 **준용** 성격 확정, 의료기기 기록요구의 법적 근거를 ISO 13485:2016 §4.2.5 및 FDA QMSR(21 CFR 820)로 별도 적시, 범분야 근거로 MHRA GxP Data Integrity Guidance(2018-03) 병기. v0.3.3 개정이력 반영. 동일 클래스 전수 grep(`Data Integrity`) — 현행 문서 잔존 1개소(본 건)뿐, 11_일일리서치로그 1개소는 시점기록으로 보존.

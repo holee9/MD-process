@@ -2,7 +2,7 @@
 doc-id: SOP-UDI-001
 title: SOP-UDI-001 UDI 통합 관리 절차 (v0.2)
 type: SOP
-version: v0.3.1
+version: v0.3.2
 status: draft
 category: 06_문서_기록관리
 purpose: SOP-UDI-001 UDI 통합 관리 절차 (v0.2) 관련 문서
@@ -143,7 +143,7 @@ review-due: 2027-06-25
 | 포장/수량 변경 | YES | 〃 | 포장 단위·수량이 UDI-DI 단위와 불일치 시 |
 | 멸균 방식 변경 | YES | 〃 | 멸균→비멸균 또는 방식 변경 |
 | 모델명/상호 변경 | YES | 〃 | 법적 제조자명·모델명 변경 |
-| 중대한 SW 기능 변경 | YES (SaMD UDI-DI) | MDCG 2019-4, FDA Guidance 2022 | 알고리즘 변경, 새 기능 추가, 표시단위 변경 |
+| 중대한 SW 기능 변경 | YES (SaMD UDI-DI) | MDCG 2019-4 | 알고리즘 변경, 새 기능 추가, 표시단위 변경 |
 | 마이너 버그 수정·성능 개선 | NO (PI만) | 〃 | SW version PI만 갱신 |
 | 비의도성 표시 개선 | NO | 〃 | 라벨 디자인만 변경, DI 불변 |
 | Detector 모델 교체 (호환) | 판정 필요 | F-UDI-001 | 기능·성능 동등 시 NO, 상이 시 YES |
@@ -248,6 +248,7 @@ review-due: 2027-06-25
 | 0.1 | 2026-04-20 | 초안 작성 (FDA/EU/KR 통합 골격) | RA(자동화 세션) |
 | 0.2 | 2026-05-05 | 절차 흐름도, F-UDI-001/002 양식, X-ray 적용예시, 판정기준 상세화 | holee9-automation |
 | v0.3.1 | 2026-08-08 | md-process-builder | audit #1024(GH#1702) 정정 — L84/L115/L215 'IEC/ISO 15223-1' 접두 오표기→'ISO 15223-1'(ISO/TC 210 단독 발행, ISO 카탈로그 Tier1) 3개소, 문서 내 표기 단일화 |
+| v0.3.2 | 2026-09-20 | md-process-builder | audit #1059 정정 — L146 근거란 'FDA Guidance 2022' 삭제(표제·Docket·발행일 전무한 미식별 인용으로 검증 불가, 대상 문서 특정 실패). SaMD UDI-DI 재발급 근거는 MDCG 2019-4 단독 유지. 추정배제 원칙 적용 |
 
 ## 출처
 - 21 CFR Part 830 (UDI Rule)

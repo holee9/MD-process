@@ -13,7 +13,7 @@ labels: "planning,review,compliance,prio:P0"
 |---|---|---|---|
 | FDA-510K-A1 | A.1 | Cover Letter draft (.docx) — applicant info, contact, submitter type | must |
 | FDA-510K-A2 | A.2 | FDA Form 3514 (CDRH Premarket Review Submission Cover Sheet) 채워넣기 | must |
-| FDA-510K-A3 | A.3 | FDA Form 3654 (Indications for Use Statement) | must |
+| FDA-510K-A3 | A.3 | FDA Form **3881** (Indications for Use Statement) | must |  <!-- audit #1028 정정(2026-09-20): Form 3654는 Standards Data Report(A.5) -->
 | FDA-510K-A4 | A.4 | FDA Form 3601 (User Fee Cover Sheet) + Section A 영수증 첨부 자리 | must |
 | FDA-510K-B2 | B.2 | Intended Use / Indications for Use 문서 (질환·인구·환경 기술) | must |
 | FDA-510K-B3 | B.3 | Substantial Equivalence 비교표 — Predicate K-number 식별 + 비교 매트릭스 | must |

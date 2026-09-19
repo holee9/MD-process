@@ -1,6 +1,8 @@
 ---
 title: "audit #1028 (citation/C3): FDA_510k_RTA A.3 — 'FDA Form 3654 = Indications for Use Statement' 오귀속 (정답 Form 3881)"
 labels: "audit:citation,prio:P2,risk:medium,compliance"
+state: closed
+closed: 2026-09-20
 ---
 
 ## 결함 (13_규제평가_체크리스트 스윕, 2026-09-10 등록)
@@ -38,3 +40,9 @@ requirement: FDA Form 3654 — Indications for Use Statement
 - Tier1: https://www.fda.gov/media/88379/download , https://www.accessdata.fda.gov/cdrh_docs/pdf18/K180196.pdf
 
 실운영 문서 미참고. web_verification: yes (FDA.gov 직접 확인, 2026-09-10).
+
+---
+
+## 종결 (2026-09-20, audit-drain 스프린트)
+
+`FDA_510k_RTA.md` FDA-510K-A3 = `FDA Form 3881 — Indications for Use Statement` 반영 확인(L44), A.5의 Form 3654=Standards Data Report 유지(L62) — 내부모순 해소 확인. 문서_매트릭스 T-FDA510K-A3(Form 3881)·A5(Form 3654) 정합. 저장소 전수 grep(3654/3881) 결과 현행 문서 잔존 오기재 0건. 미체크 항목 '실 제출 시 최신 양식 개정판 재확인'은 결함이 아닌 **제출시점 운영 유의사항**이므로 #931(Form 표지 양식 작성)로 이관하고 본 audit은 종결.

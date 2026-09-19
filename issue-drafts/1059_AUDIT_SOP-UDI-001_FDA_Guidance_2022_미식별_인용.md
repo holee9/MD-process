@@ -1,7 +1,8 @@
 ---
 title: "audit #1059 (citation): SOP-UDI-001 L146 'FDA Guidance 2022' — 표제·Docket 부재 미식별 인용, 검증 불가"
 labels: "audit:citation,prio:P2,risk:low,regulatory,FDA,UDI"
-state: open
+state: closed
+closed: 2026-09-20
 created: 2026-09-19
 created-by: md-process-auditor
 related-issues: [1058, 1015]
@@ -35,3 +36,9 @@ sweep: "C4 x 06_문서_기록관리"
 - `MDCG 2018-1 rev. 4` — 현행 최신 개정(health.ec.europa.eu, Rev.5 미존재). PASS
 - `MDCG 2019-4` (UDI for SaMD) 실존. PASS
 - `FDA QMSR §820.35(c) (2026-02-02 시행)` — #1041/#1045 Tier1 유지. PASS
+
+---
+
+## 종결 (2026-09-20, audit-drain 스프린트)
+
+`SOP-UDI-001` L146 근거란에서 미식별 인용 `FDA Guidance 2022` **삭제**, SaMD UDI-DI 재발급 근거는 `MDCG 2019-4` 단독 유지(추정배제 원칙 — 대상 문서 특정 실패 시 보전 인용 금지). 문서 내 인용 수준 불일치 해소. v0.3.2 개정이력 반영. 부기된 리드(§출처 확인일 2026-05-05 정체, EUDAMED 4모듈 의무화 2026-05-28 미기재)는 **결함이 아닌 누락**이므로 본 audit에서 분리 — 신규 콘텐츠 동결 중이므로 스프린트 종료 후 plan 항목으로 처리.
