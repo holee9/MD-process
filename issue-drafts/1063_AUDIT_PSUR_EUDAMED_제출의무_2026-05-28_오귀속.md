@@ -1,7 +1,7 @@
 ---
 title: "audit #1063 (factuality/C4): Class III·이식형 PSUR의 EUDAMED 제출이 '2026-05-28부터 의무' — Vigilance/PMS 모듈 미의무화, 4개 모듈에 미포함 (2문서 2개소 + 자기모순, 발생원 11·12 확산 3개소)"
 labels: "audit:factuality,prio:P1,risk:medium,regulatory,EU-MDR,EUDAMED"
-state: open
+state: closed
 created: 2026-09-21
 created-by: md-process-auditor
 related-issues: [1041, 1045, 1050, 1052]
@@ -50,3 +50,18 @@ sweep: "C4 x 08_시판후_감시_PMS"
 4. 4개 모듈 목록(Actor / UDI-Devices / NB&Certificates / Market Surveillance)을 SOP-PMS-001 §8.1에 명시하여 재발 차단.
 
 실운영 문서 미참고. web_verification: yes (health.ec.europa.eu 공식 공지 원문 직접 fetch + WebSearch 교차, 2026-09-21).
+
+---
+
+## 종결 (2026-09-22, audit-drain 스프린트)
+
+- **Tier1 재확인(본 사이클 직접 재검증)**: Commission Decision (EU) 2025/2371 of 26 November 2025(OJEU 2025-11-27 게재) + Regulation (EU) 2024/1860 경과 6개월 → **2026-05-28 의무화 모듈은 Actor registration / UDI·Devices registration / Notified Bodies & Certificates / Market Surveillance 4개로 한정**. Vigilance & PMS 모듈, CI/PS 모듈 미포함(개발 중). EC DG SANTE 공지 제목 및 본문 재확인.
+- **정정 완료(본문 2개소 + 자매 1개소)**:
+  - `SOP-FSCA-001` §5.12.2-3: "현재 이미 2026-05-28부터 의무" 삭제 → "Vigilance/PMS 모듈 의무화 시 전환"으로 미래시제 통일 + 4개 모듈 목록 명시.
+  - `SOP-PMS-001` §8.2: "2026-05-28부터 EUDAMED 제출 의무" → "모듈 의무화 이전 현행은 NB 기존 경로, 의무화 후 EUDAMED 전환(Art.86(2)·Art.92)".
+  - `SOP-PMS-001` §8.1: 의무화 4개 모듈 목록 + **Vigilance/PMS·CI/PS 미포함** 명문화(권고 4항, 재발 차단).
+  - **동일클래스 proactive 적발**: `SOP-PSUR-001` §5.4 L131 "NB에 EUDAMED 경유 제출" — 감사 지적 범위 밖이었으나 동일 오류(미의무 모듈 경유 제출 단정). 현행 경로 명시로 정정.
+- **확산 3개소 교정**: `11_일일리서치_2026-06-07` L56(정정 각주 삽입)·L88(인라인 정정), `12_교차검증_2026-06-07` L49 판정 `✅ 정확(EU MDR Art.86, RegDesk)` → **`❌ 오류`로 하향 + Tier2 인용을 사실근거에서 제거**, L80·L104 동반 하향. 로그류는 시점 기록으로 원문 보존 + 각주 정정 방식 적용.
+- 자기모순 해소 확인: SOP-FSCA-001 §5.12.1(L332)·SOP-PMS-001 §8.3(L247)의 "미의무화" 서술과 정정 후 본문이 정합.
+
+실운영 문서 미참고.

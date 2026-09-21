@@ -5,7 +5,7 @@ type: SOP
 version: v0.3.2
 status: draft
 category: 06_문서_기록관리
-purpose: SOP-UDI-001 UDI 통합 관리 절차 (v0.2) 관련 문서
+purpose: SOP-UDI-001 UDI 통합 관리 절차 (v0.3.2) 관련 문서
 applicable: [EU MDR 2017/745, EU MDR GSPR, EU MDR PRRC, FDA QMSR, MFDS, UDI]
 forms: [F-UDI-001, F-UDI-002]
 related-issues: [57, 915]

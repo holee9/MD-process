@@ -15,7 +15,7 @@ last-review: 2026-06-28
 review-due: 2027-06-08
 ---
 
-# 설계이관(Design Transfer) 절차 — v0.3
+# 설계이관(Design Transfer) 절차 — v0.4
 
 ## 1. 목적
 

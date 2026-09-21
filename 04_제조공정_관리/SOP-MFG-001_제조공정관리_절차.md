@@ -5,7 +5,7 @@ type: SOP
 version: v0.2.1
 status: draft
 category: 04_제조공정_관리
-purpose: SOP-MFG-001 제조공정 관리 절차 (v0.2) 관련 문서
+purpose: SOP-MFG-001 제조공정 관리 절차 (v0.2.1) 관련 문서
 applicable: [21 CFR Part 820, EU MDR PRRC, FDA QMSR, FDA SBOM, IEC60601-1, IEC60601-2-54, IEC62304, ISO13485:2016, MFDS, UDI]
 forms: [F-MFG-001, F-MFG-002]
 related-issues: [64]

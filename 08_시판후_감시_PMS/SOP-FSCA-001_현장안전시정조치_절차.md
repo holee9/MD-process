@@ -341,7 +341,7 @@ Vigilance 모듈 의무화 확정 시 아래 전환을 6개월 이내 완료한�
 
 1. **보고 채널 전환**: MIR form → EUDAMED Vigilance 모듈 전자 제출로 전환
 2. **FSN 등록**: EUDAMED을 통한 FSN 전자 배포 및 등록
-3. **PSUR 연계**: Class III 및 이식형 기기 PSUR을 EUDAMED으로 제출 (현재 이미 2026-05-28부터 의무)
+3. **PSUR 연계**: Vigilance/PMS 모듈 의무화 시, Class III 및 이식형 기기 PSUR을 EUDAMED 경유 제출로 전환(EU MDR Art.86(2)·Art.92). **2026-05-28 의무화 4개 모듈(Actor registration / UDI·Devices / Notified Bodies & Certificates / Market Surveillance)에 Vigilance/PMS 모듈은 미포함**이므로 현재 EUDAMED 경유 PSUR 제출 의무는 발생하지 않는다 (Commission Decision (EU) 2025/2371, OJEU 2025-11-27; audit #1063)
 4. **절차 갱신**: 본 절차 §5.2.1 및 §5.7.1의 보고 양식/시스템 항목을 EUDAMED Vigilance 모듈로 갱신
 5. **교육**: EUDAMED Vigilance 모듈 운영 관련 RA·PMS 담당자 교육 실시
 

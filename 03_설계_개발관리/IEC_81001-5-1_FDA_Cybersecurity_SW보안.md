@@ -35,7 +35,7 @@ last-review: 2026-07-10
 review-due: 2027-05-24
 ---
 
-# 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 — v0.3
+# 의료기기 SW 사이버보안 — IEC 81001-5-1 및 FDA Premarket Cybersecurity 통합 — v0.3.1
 
 ## 1. 목적
 

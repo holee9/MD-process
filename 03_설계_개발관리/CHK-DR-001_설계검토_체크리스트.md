@@ -34,7 +34,7 @@ last-review: 2026-07-10
 review-due: 2027-05-24
 ---
 
-# 설계검토(Design Review) 체크리스트 — v0.2
+# 설계검토(Design Review) 체크리스트 — v0.2.1
 
 ## 1. 목적
 

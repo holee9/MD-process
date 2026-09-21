@@ -23,7 +23,7 @@ review-due: 2027-06-22
 
 # SOP-PMS-001 불만처리 및 부작용보고 절차 v0.3
 
-> **문서번호**: SOP-PMS-001 | **버전**: v0.3 | **시행일**: 2026-06-07
+> **문서번호**: SOP-PMS-001 | **버전**: v0.4.1 | **시행일**: 2026-06-07
 > **작성**: PMS 담당 | **검토**: QA | **승인**: QA장
 
 ---
@@ -191,7 +191,7 @@ review-due: 2027-06-22
 
 ### 7.1 QMSR 하 불만처리 프로세스 정합
 
-FDA QMSR(2026-02-02 발효)은 기존 21 CFR 820.198(Complaint Files)을 ISO 13485 §8.2.2/§8.2.3으로 전환하였다. CP 7382.850 실사에서 불만처리는 MAI(Measurement, Analysis & Improvement) 영역의 핵심 확인 항목이며, 2026년 초기 실사에서 위험관리에 이어 빈발 관찰사항으로 기록되었다.
+FDA QMSR(2026-02-02 발효)은 기존 21 CFR 820.198(Complaint Files)을 ISO 13485 §8.2.2/§8.2.3으로 전환하였다. CP 7382.850 실사에서 불만처리는 MAI(Measurement, Analysis & Improvement) 영역의 핵심 확인 항목이다. 초기 QMSR 실사(2026-02-02 발효 이후 ~2026-04 중순 집계분)에서 불만처리는 위험관리에 이어 상위 관찰영역으로 보고되었다 — **보도 기준·잠정치**(FDA/CDRH 관계자 공개 발표를 정리한 규제 전문매체 보도, 확인일 2026-09-21). FDA 공식 실사통계 공표본(Tier 1)은 미확보이므로 순위·집계구간은 갱신될 수 있으며, 본 절차의 판정기준으로 사용하지 않는다. [audit #1065]
 
 **ISO 13485 §8.2.2(불만처리) → QMSR 정합 요구사항:**
 
@@ -230,7 +230,7 @@ FDA 2026 Device Guidance Agenda에서 불만처리 관련 갱신 예정(Hogan Lo
 
 ### 8.1 EUDAMED 의무 보고 연계
 
-2026-05-28 EUDAMED 4개 모듈 의무화에 따라 불만처리 프로세스에 아래를 반영한다:
+2026-05-28부터 의무화되는 EUDAMED 모듈은 **Actor registration / UDI·Devices registration / Notified Bodies & Certificates / Market Surveillance 4개에 한정**되며, **Vigilance & Post-Market Surveillance 모듈과 Clinical Investigations/Performance Studies 모듈은 미포함(개발 중)**이다 (Commission Decision (EU) 2025/2371 of 26 Nov 2025, OJEU 2025-11-27 + Regulation (EU) 2024/1860 경과 6개월). 이에 따라 불만처리 프로세스에 아래를 반영한다:
 
 - **Actor Registration 확인**: SRN(Single Registration Number) 확보 완료 확인. 모든 규제 보고서에 SRN 기재
 - **UDI/Device Registration**: 불만 대상 기기의 UDI-DI가 EUDAMED에 정확히 등록되어 있는지 확인
@@ -238,7 +238,7 @@ FDA 2026 Device Guidance Agenda에서 불만처리 관련 갱신 예정(Hogan Lo
 
 ### 8.2 PSUR 제출 연계
 
-- Class III 및 이식형 기기의 PSUR은 2026-05-28부터 EUDAMED으로 제출 의무
+- **Vigilance/PMS 모듈 의무화 이전(현행)**: PSUR은 NB에 기존 경로로 제출한다. Class III 및 이식형 기기의 PSUR을 EUDAMED 경유로 제출하는 의무는 **Vigilance/PMS 모듈 의무화 이후** 발생한다(EU MDR Art.86(2)·Art.92, 전자시스템 = §8.1의 미의무화 모듈). — audit #1063 정정
 - 불만 데이터는 PSUR 집계의 핵심 입력. §6.6 종결 시 PMS 데이터에 반영하여 PSUR 작성(SOP-PSUR-001)에 활용
 - PSUR 빈도: Class III — 연 1회, Class IIb — 연 1회, Class IIa — 2년마다
 
