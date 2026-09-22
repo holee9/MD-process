@@ -69,6 +69,33 @@ def check_log(fm, path, errors):
     if fm.get('type') not in {'Log','Report'}:
         errors.append(f'{path}: log/report type 위반: {fm.get("type")}')
 
+def _vk(v): return tuple(int(x) for x in v.split('.'))
+
+def check_version_sync(text, path, errors):
+    """audit #1066 재발방지 게이트: frontmatter version ↔ 개정이력 행 ↔ H1 ↔ last-review 정합.
+    (ISO 13485:2016 §4.2.4 — 현행 개정상태 식별). 개정이력 표가 없는 문서는 비대상."""
+    m = re.match(r'---\n(.*?)\n---\n', text, re.S)
+    if not m: return
+    fm = m.group(1)
+    ver = re.search(r'^version:\s*"?v?(\d+(?:\.\d+)+)"?\s*$', fm, re.M)
+    lr = re.search(r'^last-review:\s*"?(\d{4}-\d{2}-\d{2})', fm, re.M)
+    rows = re.findall(r'^\|\s*\**v?(\d+\.\d+(?:\.\d+)?)\**\s*\|\s*(\d{4}-\d{2}-\d{2})', text, re.M)
+    if not ver or not rows: return
+    fv = ver.group(1)
+    mv = max((r[0] for r in rows), key=_vk)
+    if _vk(mv) > _vk(fv):
+        errors.append(f'{path}: version {fv} < 개정이력 최신행 {mv} (frontmatter 미갱신)')
+    elif fv not in [r[0] for r in rows]:
+        errors.append(f'{path}: version {fv} 행이 개정이력에 없음')
+    h1 = re.search(r'^# .*$', text[m.end():], re.M)
+    if h1:
+        hv = re.findall(r'v(\d+(?:\.\d+)+)', h1.group(0))
+        if hv and hv[-1] != fv:
+            errors.append(f'{path}: H1 버전 v{hv[-1]} ≠ frontmatter v{fv}')
+    md = max(r[1] for r in rows)
+    if lr and md > lr.group(1):
+        errors.append(f'{path}: last-review {lr.group(1)} < 개정이력 최신일 {md}')
+
 def main():
     errors = []
     seen_ids = collections.defaultdict(list)
@@ -77,13 +104,14 @@ def main():
         d = REPO / cat
         if not d.exists(): continue
         for p in d.rglob('*.md'):
-            if p.name in EXCLUDE_NAMES: continue
+            if p.name in EXCLUDE_NAMES or p.name.startswith('handoff-'): continue
             text = p.read_text(encoding='utf-8')
             fm = parse_fm(text)
             if fm is None:
                 errors.append(f'{p.relative_to(REPO)}: frontmatter 없음')
                 continue
             check_full(fm, str(p.relative_to(REPO)), errors)
+            check_version_sync(text, str(p.relative_to(REPO)), errors)
             if 'doc-id' in fm: seen_ids[fm['doc-id']].append(str(p.relative_to(REPO)))
 
     for cat in LOG_CATEGORIES:

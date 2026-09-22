@@ -15,7 +15,7 @@ last-review: 2026-06-05
 review-due: 2027-05-21
 ---
 
-# SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.2
+# SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.3
 
 문서번호: SOP-CC-001  
 버전: v0.1 (초안)  

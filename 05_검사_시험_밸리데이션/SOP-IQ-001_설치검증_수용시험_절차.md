@@ -2,7 +2,7 @@
 doc-id: SOP-IQ-001
 title: 설치검증(IQ) 및 수용시험 절차
 type: SOP
-version: v0.2.2
+version: v0.2.3
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: X-ray 시스템 설치 완료 후 설치검증(IQ)과 수용시험(Acceptance Test)을 체계적으로 수행하여 장비가 설계 사양 및 규제 요구사항을 충족함을 검증한다
@@ -35,11 +35,11 @@ related-docs:
   - CHK-IEC60601-2-54_형식시험체크리스트
 related-issues: [38, 40, 46, 56, 60]
 owner: QA/서비스 Lead
-last-review: 2026-05-27
-review-due: 2027-05-27
+last-review: 2026-09-17
+review-due: 2027-09-17
 ---
 
-# SOP-IQ-001: 설치검증(IQ) 및 수용시험 절차 v0.2
+# SOP-IQ-001: 설치검증(IQ) 및 수용시험 절차 v0.2.3
 
 ## 1. 목적
 

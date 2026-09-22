@@ -31,8 +31,8 @@ related-docs:
   - SOP-SBOM-001
 related-issues: [59, 1517]
 owner: QA Manager / 구매팀장
-last-review: 2026-06-17
-review-due: 2027-06-17
+last-review: 2026-09-09
+review-due: 2027-09-09
 ---
 
 # SOP-SUP-001 공급자 관리 절차 — v0.4.1

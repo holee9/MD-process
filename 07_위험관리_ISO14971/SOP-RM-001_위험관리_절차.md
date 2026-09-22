@@ -20,11 +20,11 @@ forms: [F-RM-001, F-RM-002, F-RM-003]
 related-docs: [ISO14971_프로세스_상세, 위험관리_개요, SOP-CC-001, SOP-PMS-001, SOP-CAPA-001, PRO-DA-001]
 related-issues: [7, 21, 48]
 owner: RA/QA Lead
-last-review: 2026-06-07
-review-due: 2027-06-07
+last-review: 2026-07-19
+review-due: 2027-07-19
 ---
 
-# SOP-RM-001 위험관리 절차 v0.3
+# SOP-RM-001 위험관리 절차 v0.3.1
 
 ## 1. 목적
 

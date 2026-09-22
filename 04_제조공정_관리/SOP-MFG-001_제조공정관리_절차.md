@@ -1,6 +1,6 @@
 ---
 doc-id: SOP-MFG-001
-title: SOP-MFG-001 제조공정 관리 절차 (v0.2)
+title: SOP-MFG-001 제조공정 관리 절차 (v0.2.1)
 type: SOP
 version: v0.2.1
 status: draft
@@ -10,11 +10,11 @@ applicable: [21 CFR Part 820, EU MDR PRRC, FDA QMSR, FDA SBOM, IEC60601-1, IEC60
 forms: [F-MFG-001, F-MFG-002]
 related-issues: [64]
 owner: 제조 책임자
-last-review: 2026-05-05
-review-due: 2027-05-05
+last-review: 2026-07-25
+review-due: 2027-07-25
 ---
 
-# SOP-MFG-001 제조공정 관리 절차 (v0.2)
+# SOP-MFG-001 제조공정 관리 절차 (v0.2.1)
 
 > v0.2 — 2026-05-06: 신규 작성 — 절차 흐름도, 생산일보 양식(F-MFG-001), 공정검사 체크리스트(F-MFG-002), X-ray 시스템 공정 적용예시, 판정기준 포함
 

@@ -15,7 +15,7 @@ last-review: 2026-07-10
 review-due: 2027-05-21
 ---
 
-# SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.1 초안)
+# SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.3.1 초안)
 
 문서번호: SOP-CVD-001
 버전: v0.1 (초안)

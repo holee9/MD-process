@@ -32,7 +32,7 @@ related-docs:
   - CHK-DR-001
 related-issues: [15]
 owner: AI/ML Lead + RA
-last-review: 2026-07-10
+last-review: 2026-08-08
 review-due: 2027-05-24
 ---
 

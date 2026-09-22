@@ -11,7 +11,7 @@ forms: [F-AIGOV-001, F-AIGOV-002]
 related-docs: [SOP-AIDATA-001, AI_구성요소_단위_성능평가, SOP-CC-001, SOP-RM-001, F-RM-002, SOP-PSUR-001, SOP-FSCA-001, SOP-SBOM-001, 디지털의료제품법_SaMD_AI_요구, QC-IQ-001, EU_AI_Act_MDR_중첩적용_매핑]
 related-issues: [20]
 owner: AI Governance Officer
-last-review: 2026-06-28
+last-review: 2026-07-13
 review-due: 2027-06-27
 ---
 

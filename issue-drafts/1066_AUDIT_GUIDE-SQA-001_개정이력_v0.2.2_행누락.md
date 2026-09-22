@@ -1,7 +1,7 @@
 ---
 title: "audit #1066 (currency/문서관리): GUIDE-SQA-001 frontmatter version v0.2.2 — §17 개정이력에 v0.2.2 행 부재(정정 미기록), #1064 후속 잔여 클래스"
 labels: "audit:currency,prio:P2,risk:low,qms,document-control"
-state: open
+state: closed
 created: 2026-09-22
 created-by: md-process-auditor
 related-issues: [1028, 1029, 1064]
@@ -56,3 +56,32 @@ sweep: "C4 x 09_공급자_관리"
 - **IEC 60336:2020 = Edition 5.0, 2020-12 발행**, 2005년 제4판 cancel & replace — IEC Webstore pub.62504 · ANSI Webstore preview 표제부 교차확인. #1030이 근거로 삼은 값 **PASS**.
 
 실운영 문서 미참고. web_verification: ok (ANSI/Techstreet/IEC Webstore 공식 유통채널 표제부).
+
+---
+
+## 종결 (2026-09-23, audit-drain 스프린트)
+
+**본건 정정 (GUIDE-SQA-001)**
+- §17 개정이력에 v0.2.2(2026-09-09) 행 소급 기재 — #1028 AAMI TIR36 표제 정정 + 동 커밋(ad362fe) §14.2 IEC 62220-1-1:2015 정정.
+- 본문 버전 배너: "현행판 v0.2.2 — 2026-09-09" 명시, 기존 v0.2 배너는 "최근 주요 개정"으로 한정.
+- `last-review` 2026-05-30 → 2026-09-09 (review-due 필드 없음 → 규칙상 +1년 자동 적용).
+
+**동일 오류클래스 전 저장소 일괄 교정 (proactive, 00~10 통제문서 전수)** — 결함 41문서
+
+| 하위 클래스 | 건수 | 대상 |
+|---|---|---|
+| A. 개정이력 행 누락 (version 존재·행 부재) | 4 | GUIDE-SQA-001 v0.2.2, SOP-AIDATA-001 v0.3, SOP-DT-001 v0.4 (audit #926, 2026-06-27), GSPR 체크리스트 0.3 (audit #925, 2026-06-27) — git 이력 대조 후 소급 기재 |
+| B. **역방향: 개정이력 행은 추가됐으나 frontmatter version 미갱신** (감사 스캔 범위 밖이던 신규 적발) | 5 | SOP-SBOM-001 v0.4.2→**v0.4.4**, SOP-CAL-001 v0.2.1→**v0.2.2**, SOP-IQ-001 v0.2.2→**v0.2.3**, 영상품질_QC_프로토콜 v0.2.1→**v0.2.2**, SOP-FSCA-001 v0.4.2→**v0.4.3** |
+| C. H1 제목 버전 ≠ frontmatter | 20 | SOP-FSCA-001(v0.3), SOP-PMS-001(v0.3), SOP-CVD-001(v0.1), SOP-NC-001(v0.1), SOP-CC-001(v0.2) 등 — 전부 frontmatter 현행판으로 동기화 |
+| D. `last-review` < 개정이력 최신일 (문서_메타데이터_규칙 §5 위반) | 33 | 최신 개정일로 갱신; `review-due`는 기존값이 (구 last-review+1년)이거나 신 last-review보다 이른 경우에만 재산정 |
+| E. frontmatter title/purpose·`**최종 갱신**` 구버전 잔존 | 7 | SOP-MFG-001·IEC60601-2-54·SOP-UDI-001·공급자_관리_개요·GSPR(title/purpose), PRO-CRP-001·SOP-DOC-001(최종 갱신일) |
+
+- 사후 전수 스캔 결과 결함 **0건**.
+- 파일명 `GSPR_체크리스트_v0.2_템플릿.md`는 링크 안정성 위해 유지(제목·frontmatter만 v0.3).
+- 버전·일자 값은 저장소 git 이력(커밋 일자·diff) 기준 — 규제 사실값 변경 없음.
+
+**재발 방지 (권고 4 이행)**
+- `scripts/validate_frontmatter.py`에 `check_version_sync()` 게이트 추가: ① version < 개정이력 최신행 ② version 행 부재 ③ H1 버전 불일치 ④ last-review < 최신 개정일 → CI 실패. `v` 접두·볼드 표기 정규화 포함. 음성 대조 시험(v0.2.1 되돌림) 적발 확인.
+- 부수: `00_프로젝트관리/handoff-*.md`(세션 인계 파일, 통제문서 아님)가 필수필드 누락으로 CI를 실패시키던 상태 → 검증 대상에서 제외. 게이트 현재 **통과**.
+
+실운영 문서 미참고.

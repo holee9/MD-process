@@ -7,7 +7,7 @@ category: 09_공급자_관리
 purpose: 공급자 품질합의서(SQA) 작성·검토·체결을 위한 작성지침
 status: approved
 author: holee9-automation
-last-review: 2026-05-30
+last-review: 2026-09-09
 applicable-products: X-ray 시스템, Flat-Panel Detector, 의료기기 SW
 standards:
   - ISO 13485:2016 §7.4
@@ -25,7 +25,9 @@ owner: QA 담당자
 
 # GUIDE-SQA-001 품질합의서(SQA) 작성지침
 
-> **v0.2 --- 2026-05-30**: KPI 모니터링 체계, 에스컬레이션 매트릭스, SQA 개정절차, 협상 전략,
+> **현행판 v0.2.2 --- 2026-09-09** (인용 정정, §17 참조)
+>
+> **최근 주요 개정 v0.2 --- 2026-05-30**: KPI 모니터링 체계, 에스컬레이션 매트릭스, SQA 개정절차, 협상 전략,
 > 클라우드/SaaS 공급자 특화 조항, 공급자 Exit 전략, 적정성 점검 점수화 체계 추가
 
 ---
@@ -546,6 +548,7 @@ SQA 초안 완성 후 아래 체크리스트로 완전성을 확인한다.
 | v0.1 | 2026-04-17 | 초기 작성 --- SQA 기본 구조, 공통 필수 조항, 유형별 특화 조항, 적정성 점검 개요 | holee9-automation |
 | v0.2 | 2026-05-30 | KPI 모니터링 및 스코어카드 체계, 에스컬레이션 매트릭스(Level 1~4), SQA 개정절차 상세화, 협상 전략 가이드, 클라우드/SaaS 공급자 특화 조항(C1~C12), 공급자 Exit 전략, 적정성 점검 점수화 체계 보강 | holee9-automation |
 | v0.2.1 | 2026-07-25 | audit #996 정정 — §11.3 협상 시나리오 '15년 보존'(오기재, §9 표의 정답 '10년(비이식형)'과 모순)→'10년 보존'로 정합화 | md-process-auditor |
+| v0.2.2 | 2026-09-09 | audit #1028 정정 — §출처 AAMI TIR36:2007 표제 오귀속('Supplier Quality Agreement 가이드' → 'Validation of software for regulated processes'), 2020-04-10 철회 부기 / 동 커밋(ad362fe) 정정 — §14.2 FPD 품질 요구사항 IEC 62220-1 구판 → IEC 62220-1-1:2015. (2026-09-23 audit #1066: 개정이력 행 누락 소급 기재) | md-process-auditor |
 
 ## 출처
 

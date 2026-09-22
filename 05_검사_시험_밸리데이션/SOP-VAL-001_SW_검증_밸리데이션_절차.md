@@ -32,11 +32,11 @@ related-docs:
   - AI_구성요소_단위_성능평가
 related-issues: [6, 9, 26, 56, 60]
 owner: SW Team Lead
-last-review: 2026-05-27
-review-due: 2027-05-27
+last-review: 2026-08-08
+review-due: 2027-08-08
 ---
 
-# SOP-VAL-001 소프트웨어 검증 및 밸리데이션 절차 v0.2
+# SOP-VAL-001 소프트웨어 검증 및 밸리데이션 절차 v0.2.1
 
 ## 1. 목적
 

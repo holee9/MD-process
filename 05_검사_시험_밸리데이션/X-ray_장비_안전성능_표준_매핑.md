@@ -39,7 +39,7 @@ related-docs:
   - 외부_Pen-test_계획서
 related-issues: [10, 915]
 owner: RA/QA Lead
-last-review: 2026-07-10
+last-review: 2026-08-08
 review-due: 2027-06-25
 ---
 

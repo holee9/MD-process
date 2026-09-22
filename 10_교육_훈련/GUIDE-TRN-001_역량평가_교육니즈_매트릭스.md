@@ -17,8 +17,8 @@ forms: [F-TRN-001, F-TRN-002, F-TRN-003]
 related-docs: [SOP-TRN-001, 교육_훈련_개요, QMSR_역량매트릭스]
 related-issues: []
 owner: HR / QA Lead
-last-review: 2026-06-03
-review-due: 2027-06-03
+last-review: 2026-09-10
+review-due: 2027-09-10
 ---
 
 # X-ray 의료기기 제조 역량 매트릭스 및 교육 니즈 평가 가이드

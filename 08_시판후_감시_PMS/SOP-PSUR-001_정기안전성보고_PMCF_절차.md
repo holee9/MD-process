@@ -18,11 +18,11 @@ forms: [F-PSUR-001, F-PMCF-001]
 related-docs: [PMS_개요, SOP-PMS-001_불만처리_부작용보고_절차, SOP-RM-001]
 related-issues: [22, 35, 51, 52]
 owner: RA/QA Lead
-last-review: 2026-06-24
+last-review: 2026-09-09
 review-due: 2027-05-12
 ---
 
-# SOP-PSUR-001 정기안전성보고(PSUR) 및 시판후임상추적(PMCF) 절차 v0.3
+# SOP-PSUR-001 정기안전성보고(PSUR) 및 시판후임상추적(PMCF) 절차 v0.3.2
 
 ## 1. 목적
 

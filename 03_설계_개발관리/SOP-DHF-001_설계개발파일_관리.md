@@ -29,7 +29,7 @@ related-docs:
   - IEC_62304_SW_수명주기
 related-issues: [1516]
 owner: 설계개발 Lead / QA Manager
-last-review: 2026-07-15
+last-review: 2026-09-10
 review-due: 2027-06-17
 ---
 

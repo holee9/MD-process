@@ -10,8 +10,8 @@ applicable: [21 CFR Part 820, EU MDR 2017/745, EU MDR PRRC, FDA QMSR, FDA SBOM, 
 forms: [F-JD-001]
 related-issues: [3, 63]
 owner: 품질책임자(PRRC/MR)
-last-review: 2026-05-05
-review-due: 2027-05-05
+last-review: 2026-05-06
+review-due: 2027-05-06
 ---
 
 # JD-RA-001 PRRC / 품질책임자 / Management Representative 통합 직무기술서 (v0.2)

@@ -2,7 +2,7 @@
 doc-id: QC-IQ-001
 title: 영상품질 QC 프로토콜 — X-ray 촬영·투시 시스템
 type: Plan
-version: v0.2.1
+version: v0.2.2
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: X-ray 촬영/투시 시스템 영상품질 QC 항목·판정기준·주기·절차를 정의하고 출하 전 수락시험부터 PMS 환류까지 전체 주기를 커버한다
@@ -34,11 +34,11 @@ related-docs:
   - PMS_개요
 related-issues: [36, 10, 40, 56]
 owner: QA/Radiation Safety Officer
-last-review: 2026-05-27
-review-due: 2027-05-27
+last-review: 2026-09-17
+review-due: 2027-09-17
 ---
 
-# 영상품질 QC 프로토콜 — X-ray 촬영·투시 시스템 v0.2
+# 영상품질 QC 프로토콜 — X-ray 촬영·투시 시스템 v0.2.2
 
 ## 1. 목적
 

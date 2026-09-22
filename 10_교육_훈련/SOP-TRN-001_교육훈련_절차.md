@@ -10,8 +10,8 @@ applicable: [EU MDR 2017/745, EU MDR PRRC, FDA QMSR, IEC60601-2-54, IEC62304, IE
 forms: [F-TRN-001, F-TRN-002]
 related-issues: [54, 55]
 owner: QA 담당자
-last-review: 2026-05-03
-review-due: 2027-05-03
+last-review: 2026-05-04
+review-due: 2027-05-04
 ---
 
 # SOP-TRN-001: 교육·훈련 관리 절차 (v0.2)

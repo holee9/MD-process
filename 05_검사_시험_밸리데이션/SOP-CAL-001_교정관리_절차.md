@@ -2,7 +2,7 @@
 doc-id: SOP-CAL-001
 title: 교정 관리 절차
 type: SOP
-version: v0.2.1
+version: v0.2.2
 status: draft
 category: 05_검사_시험_밸리데이션
 purpose: 의료기기 품질에 영향을 미치는 모니터링·측정 장비의 교정·검증 절차를 정의하여 측정 결과의 소급성과 신뢰성을 보장한다
@@ -31,11 +31,11 @@ related-docs:
   - X-ray_장비_안전성능_표준_매핑
 related-issues: [36, 38, 46, 56]
 owner: QA Lead
-last-review: 2026-05-27
-review-due: 2027-05-27
+last-review: 2026-09-17
+review-due: 2027-09-17
 ---
 
-# SOP-CAL-001: 교정 관리 절차 v0.2
+# SOP-CAL-001: 교정 관리 절차 v0.2.2
 
 ## 1. 목적
 

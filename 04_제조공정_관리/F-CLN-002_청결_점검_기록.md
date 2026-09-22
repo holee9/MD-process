@@ -14,8 +14,8 @@ forms: []
 related-docs: [SOP-CLN-001, F-CLN-001, SOP-NC-001, F-ENV-001]
 related-issues: [1525]
 owner: 제조 책임자
-last-review: 2026-06-20
-review-due: 2027-06-20
+last-review: 2026-07-25
+review-due: 2027-07-25
 ---
 
 # F-CLN-002 — 청결 점검 기록 (공정·출하·서비스)

@@ -6,7 +6,7 @@ category: 06_문서_기록관리
 purpose: 의료기기 기술문서(MDF)의 구성·작성·갱신·보관 절차
 version: v0.7.1
 status: draft
-last-review: 2026-07-02
+last-review: 2026-09-20
 owner: RA/QA
 applicable:
   - ISO 13485:2016

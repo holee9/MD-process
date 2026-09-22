@@ -28,7 +28,7 @@ related-docs:
   - X-ray_장비_안전성능_표준_매핑
 related-issues: [11, 25, 26, 34]
 owner: Security Officer / QA/RA Lead
-last-review: 2026-07-10
+last-review: 2026-07-19
 review-due: 2027-05-28
 ---
 

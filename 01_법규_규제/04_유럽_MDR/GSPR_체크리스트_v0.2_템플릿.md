@@ -1,11 +1,11 @@
 ---
 doc-id: GSPR_체크리스트_v0.2_템플릿
-title: QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿)
+title: QM-GSPR-CHK-001 GSPR 체크리스트 v0.3 (템플릿)
 type: Checklist
 version: v0.3
 status: draft
 category: 01_법규_규제
-purpose: QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿) 관련 문서
+purpose: QM-GSPR-CHK-001 GSPR 체크리스트 v0.3 (템플릿) 관련 문서
 applicable: [EU AI Act, EU MDR 2017/745, EU MDR GSPR, IEC60601-1, IEC60601-2-54, IEC62304, IEC62366-1, IEC81001-5-1, ISO13485:2016, ISO14971:2019]
 related-issues: [5, 40, 46, 48, 49, 51, 53, 54, 56, 57, 58, 60, 62, 63]
 owner: RA 담당자
@@ -13,7 +13,7 @@ last-review: 2026-06-28
 review-due: 2027-04-20
 ---
 
-# QM-GSPR-CHK-001 GSPR 체크리스트 v0.2 (템플릿)
+# QM-GSPR-CHK-001 GSPR 체크리스트 v0.3 (템플릿)
 
 ## 1. 적용 규정
 - EU MDR Regulation (EU) 2017/745 Annex I (GSPR, 23개 요구사항)
@@ -72,3 +72,4 @@ review-due: 2027-04-20
 |------|------|----------|
 | 0.1 | 2026-04-17 | 초기 체크리스트 (컬럼만) |
 | 0.2 | 2026-04-20 | H/S/F 상태 컬럼, 개정판 기재 의무화, AI/ML·사이버보안 섹션 추가 |
+| 0.3 | 2026-06-27 | audit #925 정정 — GSPR 12 적용표준 'IEC 62304:2006/A2:2015'(미존재 개정) → 'IEC 62304:2006+AMD1:2015 (Ed.1.1)'. 동판 내 후속 정정: audit #1014/#1015(2026-08-04, 판본 문자열), audit #1029(2026-09-10, ISO 13485 §7.5.x 조항번호). (2026-09-23 audit #1066 동일클래스: 개정이력 행 누락 소급 기재) |

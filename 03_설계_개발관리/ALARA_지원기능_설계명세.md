@@ -28,8 +28,8 @@ related-docs:
   - 설계개발_프로세스
 related-issues: [37]
 owner: 설계개발 Lead / 방사선안전관리자
-last-review: 2026-05-24
-review-due: 2027-05-24
+last-review: 2026-08-05
+review-due: 2027-08-05
 ---
 
 # ALARA 지원 기능 설계 명세 — v0.2.2

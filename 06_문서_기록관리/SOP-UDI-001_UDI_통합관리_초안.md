@@ -1,6 +1,6 @@
 ---
 doc-id: SOP-UDI-001
-title: SOP-UDI-001 UDI 통합 관리 절차 (v0.2)
+title: SOP-UDI-001 UDI 통합 관리 절차 (v0.3.2)
 type: SOP
 version: v0.3.2
 status: draft
@@ -10,11 +10,11 @@ applicable: [EU MDR 2017/745, EU MDR GSPR, EU MDR PRRC, FDA QMSR, MFDS, UDI]
 forms: [F-UDI-001, F-UDI-002]
 related-issues: [57, 915]
 owner: RA 담당자
-last-review: 2026-06-25
-review-due: 2027-06-25
+last-review: 2026-09-20
+review-due: 2027-09-20
 ---
 
-# SOP-UDI-001 UDI 통합 관리 절차 (v0.2)
+# SOP-UDI-001 UDI 통합 관리 절차 (v0.3.2)
 
 > v0.2 — 2026-05-05: 절차 흐름도 추가, F-UDI-001/002 양식 추가, DI 재발급 판정 기준 상세화, X-ray 시스템 적용예시 보강
 

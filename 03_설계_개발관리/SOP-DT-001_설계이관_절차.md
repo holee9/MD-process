@@ -401,3 +401,4 @@ EU AI Act Art. 17(품질관리시스템)과 FDA QMSR을 동시 준수하기 위�
 | v0.1 | 2026-05-20 | 초안 작성 — 4-Phase 이관 절차, X-ray/SW/AI 특수 요구 반영 | QA/RA |
 | v0.2 | 2026-05-23 | 보강 — 단계별 수행자/판정기준 표 추가, F-DT-001/002 양식 본문 포함, X-ray 특수 고려사항 §9 신설, 상호참조 확충 | QA/RA |
 | v0.3 | 2026-06-08 | QMSR 설계이관 대응 — §9.5 QMSR 실사 체크포인트(ISO 13485 §7.3.8 매핑, DHF/DMR→DDF/MDF 용어 전환 확인, 제조 준비도 증거 체계) 신설, §9.6 AI 모델 설계이관 QMSR·EU AI Act Art.17 이중 준수 요구(모델 패키지·재현성·PCCP·SBOM MDF 편입) 신설, 규제 근거 표 QMSR 시행일 반영, SOP-AIGOV-001·SOP-AIDATA-001 상호참조 추가 | QA/RA |
+| v0.4 | 2026-06-27 | audit #926 정정 — IEC 62304 판본 표기 'IEC 62304:2015'(단축형·미존재 판본) → 'IEC 62304:2006+AMD1:2015' §5.8(frontmatter applicable·근거표). (2026-09-23 audit #1066 동일클래스: 개정이력 행 누락 소급 기재) | md-process-auditor |

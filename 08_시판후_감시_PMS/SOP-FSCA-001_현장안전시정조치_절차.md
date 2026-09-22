@@ -2,7 +2,7 @@
 doc-id: SOP-FSCA-001
 title: 현장안전시정조치(FSCA) 절차
 type: SOP
-version: v0.4.2
+version: v0.4.3
 status: draft
 category: 08_시판후_감시_PMS
 purpose: 시판 후 안전 문제 발견 시 현장안전시정조치 개시·실행·보고·종결 절차 수립
@@ -27,11 +27,11 @@ related-docs:
   - SOP-RM-001
 related-issues: []
 owner: RA/QA Lead
-last-review: 2026-07-10
+last-review: 2026-07-29
 review-due: 2027-06-22
 ---
 
-# SOP-FSCA-001 현장안전시정조치(FSCA) 절차 v0.3
+# SOP-FSCA-001 현장안전시정조치(FSCA) 절차 v0.4.3
 
 ## 1. 목적
 
