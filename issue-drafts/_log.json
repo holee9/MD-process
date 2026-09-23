@@ -429,5 +429,8 @@
   "1064_AUDIT_PMS_개요_버전메타_3중불일치_개정이력_역전.md": "1770",
   "1065_AUDIT_SOP-PMS-001_QMSR실사_빈발관찰_근거미표기.md": "1771",
   "1066_AUDIT_GUIDE-SQA-001_개정이력_v0.2.2_행누락.md": "1772",
-  "1067_AUDIT_d4f582b_stale덮어쓰기_종결정정5건_원복_회귀.md": "1773"
+  "1067_AUDIT_d4f582b_stale덮어쓰기_종결정정5건_원복_회귀.md": "1773",
+  "1068_AUDIT_MFDS_GMP_X-ray_품목분류번호_A10030_A10040_미존재_오귀속.md": "1774",
+  "1069_AUDIT_AI_Act_고위험_근거_Annex_II_III_오귀속.md": "1775",
+  "1070_AUDIT_X-ray_AEC_콘솔SW_MDR등급_IIa_오분류_Rule10.md": "1776"
 }
