@@ -1,13 +1,13 @@
 ---
 doc-id: F-TRN-001
 title: 교육훈련 기록양식 통합 패키지
-version: v0.2
+version: v0.2.2
 type: Form
 category: 10_교육_훈련
 purpose: 품질영향 업무 수행자 교육훈련 실시·평가 기록 통합 양식
 status: draft
 author: 품질보증팀
-last-review: 2026-05-30
+last-review: 2026-09-24
 effective-date: TBD (승인 후)
 parent-sop: SOP-TRN-001
 applies-to: 전 부서 (품질 영향 업무 수행자)
@@ -30,10 +30,18 @@ revision-history:
     date: 2026-05-30
     changes: 연간계획·갭분석·OJT·방사선안전·e-Learning 양식 추가, 역량매트릭스 보강
     author: holee9-automation
+  - ver: v0.2.1
+    date: 2026-09-10
+    changes: audit #1040 정정 — '총리령 제1122호' → '보건복지부령 제1122호'
+    author: md-process-auditor
+  - ver: v0.2.2
+    date: 2026-09-24
+    changes: audit #1067 회귀 복구 — d4f582b에서 삭제된 v0.2.1 이력 재삽입, 제1185호 현행 병기 반영 기록
+    author: md-process-builder
 owner: QA 담당자
 ---
 
-# F-TRN-001: 교육훈련 기록양식 통합 패키지 (v0.2)
+# F-TRN-001: 교육훈련 기록양식 통합 패키지 (v0.2.2)
 
 > **v0.2** — 2026-05-30: 연간 교육훈련 계획(F-TRN-001d), 갭 분석(F-TRN-001e), OJT 체크리스트 강화, 방사선 안전 특별교육 양식, e-Learning 이수 추적 양식, 역량매트릭스 보강(사이버보안·AI/ML·UDI), Kirkpatrick 4단계 유효성 측정 메트릭 추가
 
@@ -667,6 +675,8 @@ owner: QA 담당자
 |------|------|-----------|--------|
 | v0.1 | 2026-05-04 | 초판 — F-TRN-001a 교육실시기록서, F-TRN-001b OJT 체크리스트, F-TRN-001c 역량평가 매트릭스 | 품질보증팀 |
 | v0.2 | 2026-05-30 | 연간계획·갭분석·OJT·방사선안전·e-Learning 양식 추가, 역량매트릭스 보강 | holee9-automation |
+| v0.2.1 | 2026-09-10 | audit #1040 정정 — frontmatter·근거 법령 란 '진단용 방사선 발생장치 안전관리규칙 (총리령 제1122호)' 2개소 → '보건복지부령 제1122호'(law.go.kr 원문 표제부 Tier1, 「의료법」 제37조 근거 부령) | md-process-auditor |
+| v0.2.2 | 2026-09-24 | audit #1067 회귀 복구 — 커밋 d4f582b(2026-09-18) stale 덮어쓰기로 삭제된 v0.2.1 이력행·버전 재기재. 근거 법령 란 '현행 제1185호(2026-07-09)' 병기(d4f582b, audit #1032) 이력화 | md-process-builder |
 
 ---
 
