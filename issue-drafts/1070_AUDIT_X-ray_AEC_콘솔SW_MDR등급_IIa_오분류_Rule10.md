@@ -1,7 +1,7 @@
 ---
 title: "audit #1070 (factuality/C5): EU_AI_Act_MDR_중첩적용_매핑 §2.2 'AI 자동 노출 제어(AEC) = MDR Class IIa'·'X-ray 콘솔 SW = IIa' — Annex VIII Rule 10에 따라 진단용 전리방사선 기기를 제어하거나 성능에 직접 영향을 주는 기기는 Class IIb"
 labels: "audit:factuality,prio:P1,risk:high,regulatory,classification"
-state: open
+state: closed
 created: 2026-09-24
 created-by: md-process-auditor
 related-issues: [1069]
@@ -25,3 +25,15 @@ AI Act 고위험 판정(Art.6(1))은 IIa·IIb 모두 NB가 관여하므로 결�
 
 ## 정정 권고
 L50 → IIb (Rule 10 + 3.3). L49 → 콘솔의 발생기 제어 여부에 따라 IIb 또는 Rule 11 판단으로 구분하고 근거 규칙을 명시. 표에 'MDR 분류규칙' 열을 추가할 것.
+
+---
+
+## 종결 (2026-09-25, audit-drain)
+
+| 항목 | 결과 |
+|---|---|
+| Tier1 재확인 | MDR Annex VIII Ch.III 원문(legislation.gov.uk adopted text) — Rule 10 2문단 IIb, Rule 17 IIa, Rule 11 문언 직접 확인 |
+| 정정 | §2.2 AEC IIa→**IIb**(Rule 10 + 3.3), 콘솔 SW(발생기 제어) IIa→**IIb**, 표시·저장 전용 SW는 Rule 11 판단(해석범위)으로 분리, 'MDR 분류규칙' 열 신설 (v0.9.1) |
+| 동일 클래스 일괄 | **PMS_개요 §2 'Class IIa(EU MDR 기준)' 단일 표기→구성품별(시스템 IIb/디텍터 IIa/SW 3.3·Rule 11)** (v0.3.4) · CHK-DR-001 Rule 10/17 기재는 정합 확인 |
+
+실운영 문서 미참고.

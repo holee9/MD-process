@@ -2,7 +2,7 @@
 doc-id: EU_AI_Act_MDR_중첩적용_매핑
 title: "EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)"
 type: Matrix
-version: v0.9
+version: v0.9.1
 status: draft
 category: 01_법규_규제
 purpose: "EU AI Act(2024/1689)와 EU MDR(2017/745) 간 중첩 요건 식별, 단일 QMS/기술문서 통합 충족 전략 및 X-ray AI 영상 분석 시스템 적용 지침"
@@ -11,7 +11,7 @@ forms: [F-AIAMD-GAP-001]
 related-docs: [EU_MDR_2017_745, GSPR_정합표준_매핑표, GSPR_체크리스트_v0.2_템플릿, SOP-AIGOV-001, SOP-AIDATA-001, SOP-CC-001, SOP-RM-001, SOP-PSUR-001, 디지털의료제품법_SaMD_AI_요구]
 related-issues: [4, 7, 20, 21, 48, 58, 1527]
 owner: RA/QA Lead
-last-review: 2026-09-11
+last-review: 2026-09-25
 review-due: 2027-06-27
 ---
 
@@ -26,11 +26,12 @@ review-due: 2027-06-27
 ### 2.1 High-risk AI 분류 판단 절차
 
 ```
-1. 제품이 EU 조화법령(Annex II) 대상인가?
+1. 제품이 EU 조화법령(**Annex I**, Section A point 11 = Reg. (EU) 2017/745 MDR) 대상인가?
    ├─ Yes: MDR/IVDR 등재 확인
    │   └─ 제3자 적합성평가(NB) 필요한 Class?
    │       ├─ Class IIa/IIb/III → High-risk AI system (Art. 6(1))
-   │       └─ Class I (self-cert) → 원칙상 비해당 (단, Annex III 확인)
+   │       └─ Class I (non-sterile·non-measuring·비재사용 수술기구, self-cert) → Art.6(1) 비해당 (단, Annex III 별도 확인)
+   │          ※ Class Is/Im/Ir(멸균·측정·재사용 수술기구)은 NB 관여 → **Art.6(1) 해당** (MDCG 2025-6/AIB 2025-1 Q2·Table 1)
    └─ No: Annex III 별도 해당 여부 확인
 
 2. High-risk 확정 시
@@ -43,12 +44,13 @@ review-due: 2027-06-27
 
 ### 2.2 X-ray AI 시스템 분류 예시
 
-| 구성요소 | MDR Class | NB 필요 | AI Act 분류 | 근거 |
-|----------|-----------|---------|-------------|------|
-| AI 영상 판독 보조 SW (CADe/CADx) | IIa~IIb | Yes | **High-risk** | Art. 6(1) + Annex II §11 |
-| X-ray 콘솔 SW (비AI) | IIa | Yes | **비해당** | AI 기능 없음 |
-| AI 자동 노출 제어 | IIa | Yes | **High-risk** | 안전 구성요소 |
-| AI 데이터 분석 (통계 리포트) | IIa | Yes | 판단 필요 | Rule-based vs. ML 여부 |
+| 구성요소 | MDR Class | MDR 분류규칙 (Annex VIII) | NB 필요 | AI Act 분류 | 근거 |
+|----------|-----------|---------------------------|---------|-------------|------|
+| AI 영상 판독 보조 SW (CADe/CADx) | IIa~IIb | Rule 11 (진단 결정 정보 제공; 영향 중대도에 따라 IIa/IIb/III) | Yes | **High-risk** | Art. 6(1) + **Annex I Section A point 11** (MDR) |
+| X-ray 콘솔 SW (비AI) — 발생기 제어·노출 파라미터 설정 포함 | **IIb** | Rule 10 (진단용 전리방사선 기기를 제어·감시하거나 성능에 직접 영향) + Ch.II 3.3 (구동 SW = 기기 동일등급) | Yes | **비해당** | AI 기능 없음 |
+| (참고) 영상 표시·저장 전용 SW (발생기 제어 없음, 분리 모듈) | 해석범위: Rule 11 판단 대상 (I~IIb) | Rule 11 | 등급에 따름 | **비해당** | AI 기능 없음 — 기능 분할 근거를 기술문서에 명시 |
+| AI 자동 노출 제어 (AEC) | **IIb** | Rule 10 (X-ray 발생기 성능에 직접 영향) + Ch.II 3.3 | Yes | **High-risk** | 안전 구성요소 — Art.6(1) + Annex I Section A point 11 |
+| AI 데이터 분석 (통계 리포트) | IIa (잠정) | Rule 11 (진단·치료 결정 목적이 아니면 Class I 가능 — 의도된 용도로 판정) | 등급에 따름 | 판단 필요 | Rule-based vs. ML 여부 |
 
 ## 3. 적용 일정 (단계별)
 
@@ -172,7 +174,9 @@ AI 기능 설명:                     AI Act 분류:
 
 ## 9. 출처
 
-- Regulation (EU) 2024/1689 (AI Act) — 전문, Art. 6, 9-17, 43, 61-62, Annex II/III/IV
+- Regulation (EU) 2024/1689 (AI Act) — 전문, Art. 6, 9-17, 43, 61-62, Annex I(Section A point 11: MDR)/III/IV (※ Annex II는 Art.5(1)(h)(iii) 형사범죄 목록으로 본 문서 비해당)
+- MDCG 2025-6 / AIB 2025-1 (2025-06) — Interplay between MDR/IVDR and AIA, Q2·Table 1 (Art.6(1) 적용 조건)
+- Regulation (EU) 2017/745 Annex VIII Chapter III Rule 10·11·17 및 Chapter II 3.3 (legislation.gov.uk adopted text)
 - Regulation (EU) 2017/745 (MDR) — Art. 10, 15, 83-87, Annex I-III, IX-XI
 - MDCG 2019-11 (소프트웨어 분류), MDCG 2019-16 Rev.1 (사이버보안), MDCG 2020-3 (significant changes)
 - IEC 62304:2006/A1:2015, IEC 62366-1:2015/A1:2020, IEC 81001-5-1:2021
@@ -273,3 +277,4 @@ AI 기능 설명:                     AI Act 분류:
 | v0.7 | 2026-06-27 | **1차 출처 정합화 (audit #919)** — (1) Art.4 적용 근거를 Art.113(b)→**Art.113(a)** 정정(Art.4는 Chapter I 소재). (2) Enforcement(Art.99 등) 일자를 **2026-08-03→2026-08-02** 정정(Art.113 본문 chapeau "It shall apply from 2 August 2026"; Art.113(c)는 Art.6(1) 고위험 의무로 2027-08-02 적용이므로 enforcement 근거가 될 수 없음). (3) §12 D-Day를 **D-36(2026-06-27 기준 → 2026-08-02)** 로 재계산, §12.1 SLA 일자·§12.3 영업일 표·§12.4 KPI·§12.5 자기검토 일괄 갱신. EUR-Lex Reg. 2024/1689 Art.113 원문 및 European Commission AI Literacy Q&A로 직접 재확인 |
 | v0.8 | 2026-06-27 | **노후 인용 갱신 (audit #920)** — §5 PCCP 행 및 §9 출처를 "FDA PCCP **Draft** Guidance (2023)"→"**Final Guidance** — Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions (Final; 2025-08-18 현재 본; Docket FDA-2022-D-2628; original final issued December 2024)"으로 갱신. 범위를 ML→**AI-enabled device software functions 전반**으로 보정. FDA Guidance 페이지(2025-08-18 current)로 직접 재확인. 사내 SOP-AIGOV-001 v0.3 "FDA PCCP Guidance 2024" 표기와 정합 회복 |
 | v0.9 | 2026-09-11 | **P0 사실성 정정 (audit #1041)** — Regulation (EU) 2026/1744(Digital Omnibus on AI, 채택 2026-07-08 / OJ 2026-07-24 / 발효 2026-07-27, CELEX 32026R1744) 확정 반영. §3 일정표에 발효일·Annex III 2027-12-02·Annex I 2028-08-02 행 신설, '잠정 합의 시·예상·미완료' 조건부 표현 전량 제거. §12.2 시나리오 (A)/(B) 분기를 (A) 확정으로 종결하고 (B) 트랙 삭제, 기준일을 2028-08-02로 재설정. §12 D-36 D-day·KPI 기준일(경과분) 무효화 및 재설정. 자매 문서 SOP-AIGOV-001 §3.1 '제안'→'확정' 동반 정정 |
+| v0.9.1 | 2026-09-25 | **audit #1069/#1070 정정** — (1) AI Act 고위험 근거 'Annex II'(§2.1·§2.2·§9, 3개소)→**Annex I Section A point 11**(MDR) 정정(Annex II는 형사범죄 목록). §2.1 Class Is/Im/Ir Art.6(1) 해당 보완(MDCG 2025-6 Table 1). (2) §2.2 AEC·X-ray 콘솔 SW MDR 등급 IIa→**IIb**(Annex VIII Rule 10 + Ch.II 3.3), 'MDR 분류규칙' 열 신설, 표시·저장 전용 SW는 Rule 11 판단(해석범위)으로 분리. 근거: MDR Annex VIII 원문, MDCG 2025-6 Q2 |

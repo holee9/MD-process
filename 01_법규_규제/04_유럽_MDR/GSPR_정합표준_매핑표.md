@@ -2,7 +2,7 @@
 doc-id: GSPR_정합표준_매핑표
 title: "EU MDR Annex I GSPR ↔ 정합표준 매핑표"
 type: Matrix
-version: v0.3.1
+version: v0.3.2
 status: draft
 category: 01_법규_규제
 purpose: "EU MDR Annex I GSPR 요구사항별 정합표준(Harmonized/State-of-the-art) 매핑, X-ray 시스템/SaMD 적용 지침 및 적합성 증빙 작성 절차"
@@ -11,7 +11,7 @@ forms: [F-GSPR-MAP-001]
 related-docs: [GSPR_체크리스트_v0.2_템플릿, EU_MDR_2017_745, EU_AI_Act_MDR_중첩적용_매핑, X-ray_장비_안전성능_표준_매핑, SOP-RM-001, SOP-VAL-001, IEC_62366-1_사용적합성_엔지니어링_계획서]
 related-issues: [5, 10, 40, 56, 60]
 owner: RA/QA Lead
-last-review: 2026-07-10
+last-review: 2026-09-25
 review-due: 2027-05-26
 ---
 
@@ -165,7 +165,7 @@ OJEU 재검증 이력:
 ## 9. 한계 및 주의사항
 
 - OJEU 게재 현황은 월 단위로 변동됨 → **분기 1회 재검증** 필요 (다음 검증: 2026 Q3).
-- AI/ML 의료기기는 EU AI Act Annex III(고위험 AI)와 MDR이 중첩 적용 → EU_AI_Act_MDR_중첩적용_매핑 참조.
+- AI/ML 의료기기는 EU AI Act **Art.6(1) + Annex I Section A point 11**(MDR; NB 관여 등급)에 따라 고위험 AI로 분류되어 MDR과 중첩 적용 → EU_AI_Act_MDR_중첩적용_매핑 참조. (Annex III는 독립형 용도 목록으로 의료기기 경로 아님 — audit #1069)
 - ISO 14971:2019/A11:2021는 EU 고유 본문 수정(Annexes ZA/ZB/ZC)이 포함 → **EN 버전** 적용 필수.
 - IEC 62304의 EN 62304:2006+AMD1:2015 (Ed.1.1)는 **MDR 정합표준(H) 미등재** — Decision (EU) 2026/193(2026-01-28)의 개정 범위는 신경외과 임플란트·생물학적평가·임상시험·비활성 수술 임플란트·멸균·호흡가스경로·소구경 커넥터 표준에 한정되어 EN 62304 미포함(EUR-Lex 원문 표제·범위 직접 확인, audit #1013). MDCG 2021-5에 따라 state-of-the-art(S)로 적용. 2026-06-11 추가 개정분 반영 여부는 미확인 — 2026 Q3 분기 재검증 시 확인. **IEC 62304 Amendment 2는 발행된 적이 없으며**, Edition 2는 개발 중(FDIS 단계)이며 **발행일은 미확정** — 2026-09-19 기준 발행 미확인(종전 '2026-08경 발행 예정'은 예정일 경과로 철회, Tier2는 2027년 발행 예측과 상충, IEC Webstore pub.22794 Tier1 미대조; audit #908/#925/#1054).
 - Common Specifications(CS)은 정합표준이 없는 경우 EU 집행위가 채택하는 기술 사양으로, MDR Art. 9 근거 → 해당 시 별도 매핑 추가.
@@ -188,3 +188,4 @@ OJEU 재검증 이력:
 | v0.1 | 2026-04-20 | 초안 작성 |
 | v0.2 | 2026-05-26 | 적합성 증빙 작성 절차 추가, X-ray 시스템 적용 컬럼 전면 보강, SaMD·X-ray 핵심 표준 묶음 구분, 양식 F-GSPR-MAP-001 추가, OJEU 최신 현황 반영, 상호참조 확충 |
 | v0.3.1 | 2026-07-10 | **audit #950 정정** — §5 매핑표 §19 주제 오인('무선·전자기기'→'Particular requirements for active implantable devices', 자사 비이식형이므로 N/A) 정정, EMC/무선 매핑 항목을 §17로 통합 | md-process-auditor |
+| v0.3.2 | 2026-09-25 | **audit #1069 정정** — §9 AI Act 고위험 근거 'Annex III'→**Art.6(1) + Annex I Section A point 11**(MDR) 정정 (MDCG 2025-6 Q2) | md-process-builder |

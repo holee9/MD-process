@@ -1,7 +1,7 @@
 ---
 title: "audit #1069 (citation/C5): EU AI Act에서 의료기기가 고위험으로 분류되는 근거를 'Annex II'(3개소)·'Annex III'(1개소)로 기재 — 정답은 Art.6(1) + Annex I Section A point 11(MDR). Annex II는 형사범죄 목록"
 labels: "audit:citation,audit:factuality,prio:P1,risk:medium,regulatory,classification,ai"
-state: open
+state: closed
 created: 2026-09-24
 created-by: md-process-auditor
 related-issues: [1041]
@@ -28,3 +28,16 @@ L33 `Class I (self-cert) → 원칙상 비해당`은 MDCG 2025-6 Table 1과 정�
 
 ## 정정 권고
 3개소 Annex II→Annex I(Section A point 11), GSPR L168 Annex III→Art.6(1)/Annex I. 확산 grep: `AI Act.*Annex II\b`, `Annex III\(고위험` 전 저장소.
+
+---
+
+## 종결 (2026-09-25, audit-drain)
+
+| 항목 | 결과 |
+|---|---|
+| Tier1 재확인 | MDCG 2025-6/AIB 2025-1 PDF 직접 열람 — Q2 Art.6(1) 조건, Table 1(Class Is/Im/Ir = Yes). Annex I Section A point 11 = MDR |
+| 정정 | EU_AI_Act_MDR_중첩적용_매핑 §2.1·§2.2·§9 'Annex II'→Annex I Section A point 11, §2.1 Class Is/Im/Ir 보완 (v0.9.1) · GSPR_정합표준_매핑표 §9 'Annex III'→Art.6(1)+Annex I (v0.3.2) |
+| 동일 클래스 grep | `Annex II`+AI Act 문맥 잔존 0 (MDR Annex II TD 인용은 정상) · Annex III 표기는 독립형 일정 문맥만 잔존(정상) |
+| 한계 | EUR-Lex 본문 직접 fetch 불가(provenance 제한) — Annex II 표제는 원문 미대조, MDCG 문서로 경로 확정 |
+
+실운영 문서 미참고.

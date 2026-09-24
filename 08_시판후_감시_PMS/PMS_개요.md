@@ -1,26 +1,27 @@
 ---
 doc-id: PMS_개요
-title: 시판후 감시 (Post-Market Surveillance) — v0.3.3
+title: 시판후 감시 (Post-Market Surveillance) — v0.3.4
 type: Overview
-version: v0.3.3
+version: v0.3.4
 status: draft
 category: 08_시판후_감시_PMS
-purpose: 시판후 감시 (Post-Market Surveillance) — v0.3.3 관련 문서
+purpose: 시판후 감시 (Post-Market Surveillance) — v0.3.4 관련 문서
 applicable: [EU AI Act, EU MDR 2017/745, FDA QMSR, IEC62304, IEC81001-5-1, ISO13485:2016, MFDS, UDI]
 forms: [F-PMS-001]
 related-issues: [22]
 owner: PMS 담당자
-last-review: 2026-09-09
+last-review: 2026-09-25
 review-due: 2027-09-09
 ---
 
-# 시판후 감시 (Post-Market Surveillance) — v0.3.3
+# 시판후 감시 (Post-Market Surveillance) — v0.3.4
 
-> **버전**: v0.3.3 | **최종 갱신**: 2026-09-09 | **작성**: md-process-auditor
+> **버전**: v0.3.4 | **최종 갱신**: 2026-09-25 | **작성**: md-process-auditor
 > v0.1(2026-04-17) 개요 작성 → v0.2(2026-05-03) 절차흐름·양식·X-ray 적용예시·PSUR 구조 추가
 > v0.3(2026-07-02) audit #927/#928/#929 정정: IEC 62304 §6/§9 분리 (Maintenance/Problem Resolution), EU AI Act Art.72→Art.73 (Serious Incident 보고 근거), EU MDR Art.87 보고기한 3버킷 분리(사망 10일/공중보건 위협 2일/기타 15일)
 > v0.3.1(2026-07-10) audit #949 정정: §6 US(FDA) 표 '30일(사망·중상 5 work days)' 반전 정정 → §803.50 개별보고 30일 / §803.53 5 work day(remedial action 또는 FDA 서면요구 시)로 분리
 > v0.3.2(2026-07-20) audit #985 정정: §6 EU MDR Art.87 보고기한 조항번호 오귀속 정정 — (2)/(3)/(4) 오배정을 원문대로 (3)기타15일/(4)공중보건2일/(5)사망10일로 재배정(L108, L116)
+> v0.3.4(2026-09-25) audit #1070 동일 클래스 정정: §2 적용 범위 'Class IIa(EU MDR 기준)' 단일 표기→구성품별 등급(X-ray 시스템 IIb Rule 10 / 디텍터 IIa Rule 17 / SW 3.3·Rule 11)으로 정정. MDR Annex VIII 원문 확인.
 > v0.3.3(2026-09-09) audit #1026 정정: §8.1 'FDA Postmarket Cybersecurity Guidance (2016, 2023 갱신)' — Postmarket Final 가이던스는 2016-12-28 발행 후 개정 이력 없음(미존재 판본 표기). 2023-09·2025-06 판은 별개의 **Premarket** Cybersecurity 가이던스이며 현행은 2026-02 Final(Docket FDA-2021-D-1158)
 
 ---
@@ -32,7 +33,8 @@ review-due: 2027-09-09
 ## 2. 적용 범위
 
 - 자사 제조 의료용 X-ray 시스템(일반촬영·투시), 디지털 디텍터(FPD), 영상처리 SW(AI 포함)
-- Class IIa(EU MDR 기준) / 2등급(MFDS) / Class II(FDA)
+- EU MDR: X-ray 시스템 **Class IIb**(Annex VIII Rule 10) / 평판 디텍터 Class IIa(Rule 17) / SW: 구동 SW는 구동기기 동일등급(Ch.II 3.3), 독립 SW는 Rule 11 — MFDS 2등급 / FDA Class II (21 CFR 892.1680)
+  - ※ PSUR 주기는 등급별 적용: IIb 연 1회, IIa 최소 2년(MDR Art.86(1))
 
 ## 3. 관련 규제·표준
 
