@@ -432,5 +432,9 @@
   "1067_AUDIT_d4f582b_stale덮어쓰기_종결정정5건_원복_회귀.md": "1773",
   "1068_AUDIT_MFDS_GMP_X-ray_품목분류번호_A10030_A10040_미존재_오귀속.md": "1774",
   "1069_AUDIT_AI_Act_고위험_근거_Annex_II_III_오귀속.md": "1775",
-  "1070_AUDIT_X-ray_AEC_콘솔SW_MDR등급_IIa_오분류_Rule10.md": "1776"
+  "1070_AUDIT_X-ray_AEC_콘솔SW_MDR등급_IIa_오분류_Rule10.md": "1776",
+  "1071_AUDIT_SOP-CC-001_IEC62304_안전등급_A_B_정의_오기재.md": "1777",
+  "1072_AUDIT_SOP-IA-001_X-ray_제품등급_Class_II_III_관할혼용.md": "1778",
+  "1073_AUDIT_디지털의료기기_GMP_8가지_유형군_근거부재.md": "1779",
+  "1074_AUDIT_SOP-CC-001_IEC62304_Ed2_발행예정일_경과_1054미확산.md": "1780"
 }
