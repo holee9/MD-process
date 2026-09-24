@@ -1,5 +1,6 @@
 ---
 title: "audit #1030 (근본원인/거버넌스): owner 'TBD' 무한 재발 — 자동 주입 기본값이 원인, 스크립트 수정 + CI 게이트 신설"
+state: closed
 labels: "audit:governance,prio:P1,risk:medium,maintenance,qms"
 ---
 
@@ -44,3 +45,9 @@ frontmatter 자동 주입 시 owner가 없으면 **무조건 'TBD'를 기록**. 
 - 선행 이슈: #999 (반복오류클래스 근본원인 대응)
 
 실운영 문서 미참고. 본 건은 저장소 내부 코드·거버넌스 결함으로 외부 규제 출처 검증 불요.
+
+---
+
+## 종결 (2026-09-25, 사후검증)
+
+- 잔여 항목(재발 0건 사후확인) 충족: 전 저장소 `owner: TBD/미정` **0건**, validate-frontmatter CI 게이트 가동 중.

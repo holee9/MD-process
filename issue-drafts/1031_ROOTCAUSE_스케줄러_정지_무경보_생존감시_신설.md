@@ -1,5 +1,6 @@
 ---
 title: "audit #1031 (근본원인/운영): 자동화 스케줄 정지 시 무경보 — 생존 감시 스크립트 + GitHub Actions 일일 점검 신설"
+state: closed
 labels: "audit:governance,prio:P1,risk:high,maintenance"
 ---
 
@@ -43,3 +44,10 @@ labels: "audit:governance,prio:P1,risk:high,maintenance"
 - 선행 이슈: #1030(근본원인 대응 계보)
 
 실운영 문서 미참고. 본 건은 저장소 운영 인프라 결함으로 외부 규제 출처 검증 불요.
+
+---
+
+## 종결 (2026-09-25, 사후검증)
+
+- pipeline-health.yml 스케줄 실행 **5회 연속 success**(2026-09-20~09-24, GitHub API 확인).
+- process-project 스케줄 복구: 2026-09-18 이후 **일일 야간 커밋 연속 도달** 확인(git log) — 복구됨.
