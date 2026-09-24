@@ -2,7 +2,7 @@
 doc-id: CHK-DR-001
 title: 설계검토(Design Review) 체크리스트
 type: Checklist
-version: v0.2.1
+version: v0.2.2
 status: draft
 category: 03_설계_개발관리
 purpose: 설계 단계별 게이트 검토(DR0~DR5) 시 확인 항목 정의 및 실무 수행 절차를 규정하여 체계적 설계검토 보장
@@ -30,11 +30,11 @@ related-docs:
   - ALARA_지원기능_설계명세
 related-issues: [18]
 owner: 설계개발 Lead
-last-review: 2026-07-10
+last-review: 2026-09-25
 review-due: 2027-05-24
 ---
 
-# 설계검토(Design Review) 체크리스트 — v0.2.1
+# 설계검토(Design Review) 체크리스트 — v0.2.2
 
 ## 1. 목적
 
@@ -118,7 +118,7 @@ ISO 13485 §7.3.5 준수: 각 검토에는 검토 대상 설계 단계와 관련
 | # | 확인 항목 | 근거 | X-ray 맥락 | 확인 |
 |---|----------|------|------------|------|
 | 0-1 | 의도된 사용 목적(Intended Use) 및 적응증 명확히 정의 | ISO 13485 §7.3.2 | 촬영 부위·대상(성인/소아), 이동형/고정형 구분 | ☐ |
-| 0-2 | 규제 분류 경로 확정 (MFDS 등급, FDA Class, EU MDR Rule) | EU MDR Annex VIII Ch.III §6.2(Rule 10)/§7.4(Rule 17) | X-ray 시스템: MFDS 3등급, FDA Class II(510(k), Product Code MQB), EU MDR Rule 10→Class IIb; 평판 디텍터: Rule 17→Class IIa; 부속 SW: §3.3 구동기기 동일등급 또는 Rule 11 개별적용 | ☐ |
+| 0-2 | 규제 분류 경로 확정 (MFDS 등급, FDA Class, EU MDR Rule) | EU MDR Annex VIII Ch.III §6.2(Rule 10)/§7.4(Rule 17) | X-ray 시스템: MFDS 2등급(A11110.01~.03 디지털 진단용 엑스선 촬영장치 [2]; 투시 A11040.01/.02 [2]), FDA Class II(510(k), 21 CFR 892.1680, Product Code KPR), EU MDR Rule 10→Class IIb; 평판 디텍터: FDA Class II(892.1680, Product Code MQB), EU MDR Rule 17→Class IIa; 부속 SW: §3.3 구동기기 동일등급 또는 Rule 11 개별적용 | ☐ |
 | 0-3 | 설계·개발 계획서(DDP) 작성 및 승인 | ISO 13485 §7.3.2 | HW/Detector/SW/AI 각 모듈 개발 단계 포함 | ☐ |
 | 0-4 | 프로젝트 팀 구성, 역할·책임 정의 | ISO 13485 §7.3.2(b) | 방사선안전관리자 지정 확인 | ☐ |
 | 0-5 | 적용 표준·법규 목록(GSPR 매핑 포함) 작성 | EU MDR Annex I | IEC 60601-1/-2-54, IEC 62304, 방사선안전관리규칙 | ☐ |
@@ -286,3 +286,4 @@ ISO 13485 §7.3.5 준수: 각 검토에는 검토 대상 설계 단계와 관련
 | v0.1 | 2026-05-20 | 초안 — DR0~DR5 게이트별 체크항목 정의 | QA/RA |
 | v0.2 | 2026-05-24 | 수행절차(§4) 추가, 판정기준 구체화, F-DR-001 양식 본문 포함, X-ray 맥락 컬럼 추가, 상호참조 보강 | QA/RA |
 | v0.2.1 | 2026-07-10 | **audit #943/#944 정정** — DR0 0-2행 EU MDR 'Rule 5/9'→'Rule 10(Class IIb)+Rule 17(Class IIa)' 정정, DR0 0-6행 ISO 14971 '§4.1'→'§4.4'(RMP 조항) 정정 | md-process-auditor |
+| v0.2.2 | 2026-09-25 | **audit #1068 동일 클래스 일괄 정정** — DR0 0-2행 X-ray 시스템 'MFDS 3등급'→**2등급**(등급규정 [별표 1] A11110.01~.03 [2], 투시 A11040.01/.02 [2]); FDA Product Code 'MQB'(solid state x-ray imager = 평판 디텍터 코드)→X-ray 시스템 **KPR**(stationary x-ray system), 디텍터 **MQB** 분리(모두 21 CFR 892.1680 Class II, FDA Product Classification DB 확인) | md-process-builder |
