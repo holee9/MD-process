@@ -2,7 +2,7 @@
 doc-id: SOP-IA-001
 title: SOP-IA-001 내부감사 절차 (Internal Audit Procedure)
 type: SOP
-version: v0.3
+version: v0.3.1
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: QMS 적합성·유효성을 검증하기 위한 내부감사 계획·실행·보고·후속조치 절차
@@ -23,7 +23,7 @@ related-docs:
   - SOP-TRN-001
 related-issues: []
 owner: QA Lead
-last-review: 2026-06-04
+last-review: 2026-09-25
 review-due: 2027-05-21
 ---
 
@@ -225,6 +225,7 @@ review-due: 2027-05-21
 
 | 버전 | 일자 | 변경 사항 |
 |------|------|-----------|
+| v0.3.1 | 2026-09-25 | **audit #1072 정정** — §14.4 'X-ray → Class II/III'(관할 미표기·등급체계 혼용)→관할별 등급 병기. 투시(A11040.01/.02)도 현행 별표1상 [2]등급(law.go.kr 원문 확인) |
 | v0.3 | 2026-06-04 | v0.3 보강 — FDA QMSR(2026-02-02 발효) 대응: 감사 기록 FDA 열람 가능 반영, 기록 품질 강화 지침, CP 7382.850 실사 대비 절차, 리스크 기반 감사 강화 |
 | v0.2 | 2026-05-21 | v0.2 보강 — 양식 템플릿(F-IA-001~003) 추가, 감사원 자격·X-ray/SW 특수 감사 항목 상세화, 교차참조 갱신 |
 | v0.1 | 2026-05-08 | 초안 작성 — ISO 13485 §8.2.4, ISO 19011, QMSR, EU MDR, MFDS GMP 요구사항 반영 |
@@ -357,7 +358,7 @@ QMSR/CP 7382.850은 **리스크 기반 QMS 평가**를 강조한다. 내부감�
 
 | 리스크 요소 | 감사 대응 |
 |------------|----------|
-| 제품 안전 등급 (X-ray → Class II/III) | 설계·위험관리·검사 프로세스 감사 빈도 상향 |
+| 제품 안전 등급 (X-ray: MFDS 2등급[등급규정 별표1 A11110/A11040] / FDA Class II[21 CFR 892.1680] / EU MDR Class IIb[Annex VIII Rule 10]) | 설계·위험관리·검사 프로세스 감사 빈도 상향 |
 | SW 안전 클래스 C | IEC 62304 §5.5~5.8 V&V 감사 항목 강화 |
 | AI/ML 구성요소 | 데이터셋 관리(SOP-AIDATA-001), 드리프트 모니터링 감사 항목 추가 |
 | 사이버보안 | SBOM 현행성, 취약점 공개(SOP-CVD-001), Pen-test 이행 확인 |

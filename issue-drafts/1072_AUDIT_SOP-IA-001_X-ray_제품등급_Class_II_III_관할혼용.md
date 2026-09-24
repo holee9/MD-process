@@ -1,7 +1,7 @@
 ---
 title: "audit #1072 (factuality/C5): SOP-IA-001 §14.4 'X-ray → Class II/III' — 관할 미표기·등급체계 혼용 (FDA 21 CFR 892.1680 = Class II, EU MDR Rule 10 = IIb, MFDS = 2등급/투시 3등급)"
 labels: "audit:factuality,prio:P2,risk:low,regulatory,classification"
-state: open
+state: closed
 created: 2026-09-25
 created-by: md-process-auditor
 related-issues: [1068, 1070]
@@ -22,3 +22,12 @@ sweep: "C5 x 02_품질경영시스템_QMS"
 
 ## 정정 권고
 `X-ray → MFDS 2등급(투시 3등급) / FDA Class II / EU MDR Class IIb`처럼 관할별로 풀어서 적을 것.
+
+---
+
+## 종결 (2026-09-25, audit-drain)
+
+- SOP-IA-001 §14.4 → 'MFDS 2등급 / FDA Class II(892.1680) / EU MDR IIb(Rule 10)' 관할별 병기 (v0.3.1).
+- **본 이슈 근거의 'MFDS 투시 3등급'은 구판 값** — law.go.kr 현행 [별표 1](flSeq=153998841) 직접 확인 결과 A11040.01/.02 **[2]등급**. 정정문은 2등급으로 반영. (감사 원장 `_audit_sweep_ledger.md` L70의 동일 표기는 수동편집 금지 대상이라 미수정 — 감사자 확인 요청)
+
+실운영 문서 미참고.

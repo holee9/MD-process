@@ -2,7 +2,7 @@
 doc-id: SOP-CC-001
 title: SOP-CC-001 — 변경통제 절차 (Change Control Procedure)
 type: SOP
-version: v0.3.2
+version: v0.3.3
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.3.2 관련 문서
@@ -11,11 +11,11 @@ forms: [F-CC-001, F-CC-002, F-CC-003, F-CC-004, F-CC-005]
 related-docs: [SOP-CAPA-001, SOP-NC-001, SOP-IA-001]
 related-issues: [39, 41, 42]
 owner: QA 담당자
-last-review: 2026-09-24
+last-review: 2026-09-25
 review-due: 2027-05-21
 ---
 
-# SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.3.2
+# SOP-CC-001 — 변경통제 절차 (Change Control Procedure) v0.3.3
 
 문서번호: SOP-CC-001  
 버전: v0.1 (초안)  
@@ -197,13 +197,13 @@ EUDAMED 4개 모듈 의무화(2026-05-28 발효)에 따라 변경통제 프로�
 
 ### 9.3 IEC 62304 Edition 2 전환 준비
 
-IEC 62304 Ed2(2026년 8월 발행 예정)에 따라 SW 변경 분류 기준의 전환을 준비한다:
+IEC 62304 Ed.2 — FDIS 단계, **발행일 미확정**(2026-09-25 기준 미발행; ISO 카탈로그상 IEC 62304:2006은 Ed.1 + AMD1:2015가 현행, audit #1054/#1074). 발행 시 SW 변경 분류 기준 전환을 위해 다음을 준비한다 (Ed.2 컬럼은 **초안 기준·Tier1 미대조**):
 
 | 현행 (Ed1) | 전환 후 (Ed2) | 변경통제 영향 |
 |-----------|-------------|-------------|
-| Class A (사망·중상 불가) | Level I (낮은 위험) | Minor 변경 간주 기준 재정의 필요 |
-| Class B (중상 가능, 사망 불가) | Level II (높은 위험) | Major 변경 심의 기준 재정의 필요 |
-| Class C (사망·중상 가능) | Level II (높은 위험) | — |
+| Class A (상해·건강손상 불가) — §4.3 | Level I (낮은 위험) | Minor 변경 간주 기준 재정의 필요 |
+| Class B (비중대(non-SERIOUS) 상해 가능) — §4.3 | Level II (높은 위험) | Major 변경 심의 기준 재정의 필요 |
+| Class C (사망·중대(SERIOUS) 상해 가능) — §4.3 | Level II (높은 위험) | — |
 
 - Ed2 발행 확정 시 F-CC-002(영향평가서)의 SW 분류 항목을 Level I/II로 갱신
 - AI/ML 구성요소 변경 시 Ed2의 AI 수명주기 요구사항 반영 여부 평가 추가
@@ -213,6 +213,7 @@ IEC 62304 Ed2(2026년 8월 발행 예정)에 따라 SW 변경 분류 기준의 �
 
 | 버전 | 일자 | 변경 사항 |
 |------|------|-----------|
+| v0.3.3 | 2026-09-25 | **audit #1071/#1074 정정** — §9.3 IEC 62304 §4.3 SW 안전등급 정의 정정(A=상해·건강손상 불가, B=비중대 상해 가능; 종전 B '중상 가능'은 Class C 정의와 충돌), SOP-RM-001 §표기와 통일. Ed.2 '2026년 8월 발행 예정'(경과)→발행일 미확정·FDIS로 중립화, Level I/II 매핑은 초안 기준 명시 |
 | v0.3.2 | 2026-09-24 | audit #1067 회귀 복구 — 커밋 d4f582b(2026-09-18) stale 덮어쓰기로 삭제된 v0.3.1 이력행·버전 재기재. §출처 '현행 제1185호(2026-07-09)' 병기(audit #1032/#1053) 이력화 |
 | v0.3.1 | 2026-09-10 | audit #1040 동일오류클래스 일괄교정 — §출처 '진단용 방사선 발생장치 안전관리규칙 (총리령 제1122호)' → '보건복지부령 제1122호'(law.go.kr 원문 표제부 Tier1) |
 | v0.3 | 2026-06-05 | v0.3 보강 — QMSR 실사 대비 기록 강화, EUDAMED 등록 갱신 절차 추가, IEC 62304 Ed2 전환 준비 |

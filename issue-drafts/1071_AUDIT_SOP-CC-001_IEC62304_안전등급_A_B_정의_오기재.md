@@ -1,7 +1,7 @@
 ---
 title: "audit #1071 (factuality/C5): SOP-CC-001 §9.3 IEC 62304 SW 안전등급 정의 — 'Class B (중상 가능, 사망 불가)'·'Class A (사망·중상 불가)' 오기재 (정답 §4.3: A=상해·건강손상 불가 / B=상해 가능하나 중대하지 않음 / C=사망·중대상해 가능)"
 labels: "audit:factuality,prio:P1,risk:medium,standards,classification"
-state: open
+state: closed
 created: 2026-09-25
 created-by: md-process-auditor
 related-issues: [984, 1054]
@@ -28,3 +28,16 @@ SOP-CC-001 표는 Ed.2 전환 시 Major/Minor 변경 심의 기준을 다시 정
 
 ## 정정 권고
 L204 → `Class A (상해·건강손상 불가)`, L205 → `Class B (비중대 상해 가능)`. SOP-RM-001 L167 표현과 통일.
+
+---
+
+## 종결 (2026-09-25, audit-drain)
+
+| 항목 | 결과 |
+|---|---|
+| 정정 | SOP-CC-001 §9.3 Class A=상해·건강손상 불가 / B=비중대 상해 가능 / C=사망·중대 상해 가능 (v0.3.3) |
+| 근거 | IEC 62304 §4.3(본문 유료 — Tier1 본문 미대조, 저장소 내부 SOP-RM-001 L167·GUIDE-VIG-001 L102와 정합) |
+| 동일 클래스 grep | Class A/B 정의 표기 전 저장소 — 추가 오기 0 |
+| 부수 | Ed.2 Level I/II 매핑 '초안 기준·Tier1 미대조' 명시 |
+
+실운영 문서 미참고.
