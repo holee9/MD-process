@@ -63,7 +63,7 @@ th{color:var(--muted);font-weight:600}
 <div class="kpi green"><div class="value">0</div><div class="label">열린 사실오류(audit P0)</div></div>
 <div class="kpi"><div class="value">104</div><div class="label">누적 발견 사실오류</div></div>
 <div class="kpi"><div class="value">1339</div><div class="label">누적 검증 주장</div></div>
-<div class="kpi green"><div class="value">142</div><div class="label">감사결함 수정완료</div></div>
+<div class="kpi green"><div class="value">143</div><div class="label">감사결함 수정완료</div></div>
 <div class="kpi"><div class="value">91.3%</div><div class="label">누적 통과율</div></div>
 </div>
 <canvas id="auditTrend" height="90"></canvas>
@@ -71,11 +71,11 @@ th{color:var(--muted);font-weight:600}
 </div>
 <div class="card"><h2>3소스 이슈 백로그 (열림)</h2><table>
 <tr><th>소스</th><th>열린 수</th><th>의미</th></tr>
-<tr><td><b>① audit</b> (감사 결함)</td><td>2</td><td>독립 감사가 찾은 미수정 결함 — <b>최우선</b></td></tr>
+<tr><td><b>① audit</b> (감사 결함)</td><td>1</td><td>독립 감사가 찾은 미수정 결함 — <b>최우선</b></td></tr>
 <tr><td>② plan (전략 갭)</td><td>22</td><td>ISO 13485 조항완전성 백로그</td></tr>
 <tr><td>③ emergent (발생)</td><td>2</td><td>실행 중 자가발견</td></tr>
 </table>
-<p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 1 / P1 17 / P2 17</p>
+<p style="font-size:.76rem;color:var(--muted);margin-top:6px">우선순위 <b>audit P0 &gt; emergent P0 &gt; plan P1···</b> · 열린 P0 1 / P1 16 / P2 17</p>
 </div>
 <script>var AUD_META=[{"d": "2026-06-22", "docs": 2, "cl": 9, "er": 4, "pass": 44.4}, {"d": "2026-06-22", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-22", "docs": 1, "cl": 4, "er": 4, "pass": 0.0}, {"d": "2026-06-22", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-23", "docs": 3, "cl": 7, "er": 2, "pass": 57.1}, {"d": "2026-06-24", "docs": 3, "cl": 9, "er": 2, "pass": 77.8}, {"d": "2026-06-25", "docs": 3, "cl": 12, "er": 4, "pass": 58.3}, {"d": "2026-06-26", "docs": 4, "cl": 13, "er": 2, "pass": 76.9}, {"d": "2026-06-27", "docs": 4, "cl": 9, "er": 1, "pass": 77.8}, {"d": "2026-06-28", "docs": 2, "cl": 9, "er": 4, "pass": 55.6}, {"d": "2026-06-29", "docs": 1, "cl": 6, "er": 1, "pass": 66.7}, {"d": "2026-07-02", "docs": 2, "cl": 8, "er": 2, "pass": 62.5}, {"d": "2026-07-03", "docs": 5, "cl": 11, "er": 2, "pass": 72.7}, {"d": "2026-07-04", "docs": 11, "cl": 50, "er": 1, "pass": 98.0}, {"d": "2026-07-09", "docs": 5, "cl": 5, "er": 5, "pass": 0.0}, {"d": "2026-07-09", "docs": 22, "cl": 35, "er": 3, "pass": 91.4}, {"d": "2026-07-10", "docs": 22, "cl": 29, "er": 7, "pass": 75.9}, {"d": "2026-07-11", "docs": 15, "cl": 20, "er": 1, "pass": 95.0}, {"d": "2026-07-12", "docs": 15, "cl": 15, "er": 3, "pass": 80.0}, {"d": "2026-07-13", "docs": 11, "cl": 45, "er": 6, "pass": 82.2}, {"d": "2026-07-15", "docs": 8, "cl": 50, "er": 5, "pass": 90.0}, {"d": "2026-07-16", "docs": 4, "cl": 120, "er": 2, "pass": 98.3}, {"d": "2026-07-18", "docs": 4, "cl": 40, "er": 3, "pass": 92.5}, {"d": "2026-07-19", "docs": 5, "cl": 55, "er": 1, "pass": 98.2}, {"d": "2026-07-20", "docs": 8, "cl": 35, "er": 3, "pass": 91.4}, {"d": "2026-07-21", "docs": 5, "cl": 8, "er": 0, "pass": 100.0}, {"d": "2026-07-22", "docs": 12, "cl": 100, "er": 3, "pass": 97.0}, {"d": "2026-07-23", "docs": 22, "cl": 40, "er": 3, "pass": 92.5}, {"d": "2026-07-24", "docs": 15, "cl": 30, "er": 4, "pass": 86.7}, {"d": "2026-07-24(2\ucc28)", "docs": 11, "cl": 25, "er": 1, "pass": 96.0}, {"d": "2026-07-25", "docs": 5, "cl": 6, "er": 0, "pass": 100.0}, {"d": "2026-07-25(2\ucc28)", "docs": 8, "cl": 12, "er": 2, "pass": 83.3}, {"d": "2026-07-26", "docs": 8, "cl": 60, "er": 2, "pass": 96.7}, {"d": "2026-07-27", "docs": 4, "cl": 35, "er": 2, "pass": 94.3}, {"d": "2026-07-28", "docs": 11, "cl": 60, "er": 2, "pass": 96.7}, {"d": "2026-07-29", "docs": 9, "cl": 45, "er": 3, "pass": 93.3}, {"d": "2026-07-30", "docs": 12, "cl": 90, "er": 3, "pass": 96.7}, {"d": "2026-07-31", "docs": 22, "cl": 50, "er": 2, "pass": 96.0}, {"d": "2026-08-04", "docs": 15, "cl": 45, "er": 2, "pass": 95.6}, {"d": "2026-08-05", "docs": 11, "cl": 40, "er": 1, "pass": 97.5}, {"d": "2026-08-06", "docs": 8, "cl": 55, "er": 3, "pass": 94.5}, {"d": "2026-09-23", "docs": 4, "cl": 20, "er": 0, "pass": 95.0}];new Chart(document.getElementById('auditTrend'),{type:'line',data:{labels:["1\ud68c\ucc28", "2\ud68c\ucc28", "3\ud68c\ucc28", "4\ud68c\ucc28", "5\ud68c\ucc28", "6\ud68c\ucc28", "7\ud68c\ucc28", "8\ud68c\ucc28", "9\ud68c\ucc28", "10\ud68c\ucc28", "11\ud68c\ucc28", "12\ud68c\ucc28", "13\ud68c\ucc28", "14\ud68c\ucc28", "15\ud68c\ucc28", "16\ud68c\ucc28", "17\ud68c\ucc28", "18\ud68c\ucc28", "19\ud68c\ucc28", "20\ud68c\ucc28", "21\ud68c\ucc28", "22\ud68c\ucc28", "23\ud68c\ucc28", "24\ud68c\ucc28", "25\ud68c\ucc28", "26\ud68c\ucc28", "27\ud68c\ucc28", "28\ud68c\ucc28", "29\ud68c\ucc28", "30\ud68c\ucc28", "31\ud68c\ucc28", "32\ud68c\ucc28", "33\ud68c\ucc28", "34\ud68c\ucc28", "35\ud68c\ucc28", "36\ud68c\ucc28", "37\ud68c\ucc28", "38\ud68c\ucc28", "39\ud68c\ucc28", "40\ud68c\ucc28", "41\ud68c\ucc28", "42\ud68c\ucc28"],datasets:[{label:'사실 통과율%',data:[44.4, 77.8, 0.0, 76.9, 57.1, 77.8, 58.3, 76.9, 77.8, 55.6, 66.7, 62.5, 72.7, 98.0, 0.0, 91.4, 75.9, 95.0, 80.0, 82.2, 90.0, 98.3, 92.5, 98.2, 91.4, 100.0, 97.0, 92.5, 86.7, 96.0, 100.0, 83.3, 96.7, 94.3, 96.7, 93.3, 96.7, 96.0, 95.6, 97.5, 94.5, 95.0],borderColor:'#a78bfa',backgroundColor:'rgba(167,139,250,.15)',fill:true,tension:0.3}]},options:{responsive:true,plugins:{legend:{labels:{color:'#94a3b8'}},tooltip:{callbacks:{title:function(it){var i=it[0].dataIndex;return (i+1)+'회차 ('+AUD_META[i].d+')';},label:function(it){var m=AUD_META[it.dataIndex];return ['통과율 '+m.pass+'%','표본 '+m.docs+'문서 / '+m.cl+'주장','사실오류 '+m.er+'건'];}}}},scales:{y:{min:0,max:100,ticks:{color:'#94a3b8'},grid:{color:'#1e293b'}},x:{ticks:{color:'#94a3b8'}}}}});</script>
 <div class="card" style="border-color:#2563eb">
@@ -132,7 +132,7 @@ function submitIssueForm(){
 <div class="kpi red"><div class="value">99%</div><div class="label">frontmatter 유효율</div></div>
 <div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (405/403)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
-<div class="kpi red"><div class="value">72</div><div class="label">미해결 이슈</div></div>
+<div class="kpi red"><div class="value">71</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">104</div><div class="label">통제 문서 (01~10)</div></div>
 </div>
 <div class="card"><h2>유지보수 케이던스 현황</h2><table>
@@ -156,7 +156,7 @@ function submitIssueForm(){
 <tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>60일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 403건 중 331건 완료 · 미해결 72건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 403건 중 332건 완료 · 미해결 71건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
@@ -168,6 +168,7 @@ function submitIssueForm(){
 <tr><td>이슈 드래프트 ↔ _log 매핑</td><td>405/403 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">09-25</span>chore(build): 병합 후 자동생성물 재빌드 [skip ci]</li>
 <li><span class="date">09-25</span>fix(audit-drain #1078): validate_frontmatter EXCLUDE_NAMES에 _audit_sweep_ledger.md 추가 — ca</li>
 <li><span class="date">09-25</span>chore(issues): update _log.json [skip ci]</li>
 <li><span class="date">09-25</span>report(weekly): 주간 갭분석 2026-09-25 — 종합 82%(48 must 미충족, 관측구간 내 변동 0), #931/#932 15주차 미종결·g</li>
@@ -177,7 +178,6 @@ function submitIssueForm(){
 <li><span class="date">09-25</span>chore(audit-drain #1030/#1031/#1033/#1034): 사후검증 충족 종결 · #1029 blocked-tier1 진행기록</li>
 <li><span class="date">09-25</span>fix(audit-drain #1068): X-ray 품목분류 A10030/A10040(미존재)→A11000 계열 + 동일클래스 CHK-DR-001 MFDS 3→</li>
 <li><span class="date">09-25</span>fix(audit-drain #1069/#1070): AI Act 고위험 근거 Annex II/III→Art.6(1)+Annex I §A pt11 · AEC/콘솔</li>
-<li><span class="date">09-24</span>chore(issues): update _log.json [skip ci]</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
@@ -189,7 +189,7 @@ function submitIssueForm(){
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[331, 72], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[332, 71], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>
