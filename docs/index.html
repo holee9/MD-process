@@ -63,7 +63,7 @@ th{color:var(--muted);font-weight:600}
 <div class="kpi green"><div class="value">0</div><div class="label">열린 사실오류(audit P0)</div></div>
 <div class="kpi"><div class="value">104</div><div class="label">누적 발견 사실오류</div></div>
 <div class="kpi"><div class="value">1339</div><div class="label">누적 검증 주장</div></div>
-<div class="kpi green"><div class="value">141</div><div class="label">감사결함 수정완료</div></div>
+<div class="kpi green"><div class="value">142</div><div class="label">감사결함 수정완료</div></div>
 <div class="kpi"><div class="value">91.3%</div><div class="label">누적 통과율</div></div>
 </div>
 <canvas id="auditTrend" height="90"></canvas>
@@ -130,7 +130,7 @@ function submitIssueForm(){
 <div class="grid">
 <div class="kpi red"><div class="value">4/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi red"><div class="value">99%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (402/402)</div></div>
+<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (405/403)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
 <div class="kpi red"><div class="value">72</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">104</div><div class="label">통제 문서 (01~10)</div></div>
@@ -138,7 +138,7 @@ function submitIssueForm(){
 <div class="card"><h2>유지보수 케이던스 현황</h2><table>
 <tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
 <tr><td>일일</td><td>매일 03:18</td><td>2026-09-25</td><td>매 실행</td></tr>
-<tr><td>주간</td><td>월요일</td><td>2026-09-18</td><td>2026-09-28</td></tr>
+<tr><td>주간</td><td>월요일</td><td>2026-09-25</td><td>2026-09-28</td></tr>
 <tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-10-01</td></tr>
 <tr><td>분기</td><td>1·4·7·10월 1일</td><td>2026-06-28</td><td>2026-10-01</td></tr>
 </table></div>
@@ -156,7 +156,7 @@ function submitIssueForm(){
 <tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>60일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 402건 중 330건 완료 · 미해결 72건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 403건 중 331건 완료 · 미해결 72건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
@@ -165,9 +165,11 @@ function submitIssueForm(){
 <div class="card"><h2>문서통제 정합성</h2><table>
 <tr><td>frontmatter 유효 문서</td><td>268/270 (99%)</td></tr>
 <tr><td>frontmatter 결함</td><td>2건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>402/402 일치</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>405/403 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">09-25</span>chore(issues): update _log.json [skip ci]</li>
+<li><span class="date">09-25</span>report(weekly): 주간 갭분석 2026-09-25 — 종합 82%(48 must 미충족, 관측구간 내 변동 0), #931/#932 15주차 미종결·g</li>
 <li><span class="date">09-25</span>chore(build): 대시보드 재빌드 [skip ci]</li>
 <li><span class="date">09-25</span>fix(audit-drain #1071/#1072/#1074): IEC 62304 §4.3 안전등급 정의·Ed2 발행예정 경과(PRO-DA-001 동일클래스)·X</li>
 <li><span class="date">09-25</span>chore(build): 대시보드 재빌드·cadence daily_last 2026-09-25 [skip ci]</li>
@@ -176,8 +178,6 @@ function submitIssueForm(){
 <li><span class="date">09-25</span>fix(audit-drain #1069/#1070): AI Act 고위험 근거 Annex II/III→Art.6(1)+Annex I §A pt11 · AEC/콘솔</li>
 <li><span class="date">09-24</span>chore(issues): update _log.json [skip ci]</li>
 <li><span class="date">09-24</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">09-25</span>audit(sweep C5×02): 기기등급/분류 전수 — 02 QMS 22문서, 결함 3(#1071 P1 IEC62304 Class A/B 정의 오기재 · #1</li>
-<li><span class="date">09-23</span>chore(issues): update _log.json [skip ci]</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
@@ -189,7 +189,7 @@ function submitIssueForm(){
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[330, 72], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[331, 72], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>

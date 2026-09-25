@@ -17,7 +17,7 @@ FULL_CATEGORIES = [
 ]
 LOG_CATEGORIES = ['11_일일_리서치로그','12_교차검증_보고서']
 
-EXCLUDE_NAMES = {'README.md','_TEMPLATE.md','문서_매트릭스.md','_audit_log.md'}
+EXCLUDE_NAMES = {'README.md','_TEMPLATE.md','문서_매트릭스.md','_audit_log.md','_audit_sweep_ledger.md'}  # audit#1078: sweep_ledger는 _audit_log.md와 동일하게 매 사이클 cadence 헤더('**현재**' 요약줄)를 frontmatter 앞에 두는 관행 문서 — frontmatter 위치검증 오탐 차단
 
 VALID_TYPES = {'SOP','Procedure','Form','Checklist','Matrix','Plan','Report','Guide','Spec','JD','Index','Overview','Log','Manual'}
 VALID_STATUS = {'draft','review','approved','released','obsolete'}
