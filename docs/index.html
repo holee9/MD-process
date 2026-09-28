@@ -51,7 +51,7 @@ th{color:var(--muted);font-weight:600}
 </style></head><body>
 <style>.actions a[data-tip]{position:relative}.actions a[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:128%;width:290px;white-space:normal;text-align:left;background:#0b1020;color:#e2e8f0;border:1px solid #475569;border-radius:7px;padding:9px 11px;font-size:.72rem;line-height:1.5;font-weight:400;z-index:30;box-shadow:0 8px 22px rgba(0,0,0,.5)}.actions a[data-tip]:hover::before{content:"";position:absolute;left:16px;top:118%;border:6px solid transparent;border-bottom-color:#475569;z-index:30}</style>
 <h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>
-<p class="subtitle">마지막 갱신: <strong>2026-09-27</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
+<p class="subtitle">마지막 갱신: <strong>2026-09-28</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
@@ -130,44 +130,47 @@ function submitIssueForm(){
 <div class="grid">
 <div class="kpi red"><div class="value">4/9</div><div class="label">규제 점검만기 경과</div></div>
 <div class="kpi red"><div class="value">99%</div><div class="label">frontmatter 유효율</div></div>
-<div class="kpi green"><div class="value">✓</div><div class="label">_log 정합 (407/404)</div></div>
+<div class="kpi red"><div class="value">✗</div><div class="label">_log 정합 (407/409)</div></div>
 <div class="kpi green"><div class="value">0</div><div class="label">리뷰 만기 문서</div></div>
-<div class="kpi red"><div class="value">71</div><div class="label">미해결 이슈</div></div>
+<div class="kpi red"><div class="value">76</div><div class="label">미해결 이슈</div></div>
 <div class="kpi"><div class="value">104</div><div class="label">통제 문서 (01~10)</div></div>
 </div>
 <div class="card"><h2>유지보수 케이던스 현황</h2><table>
 <tr><th>주기</th><th>실행 시점</th><th>마지막 실행</th><th>다음 예정</th></tr>
 <tr><td>일일</td><td>매일 03:18</td><td>2026-09-25</td><td>매 실행</td></tr>
-<tr><td>주간</td><td>월요일</td><td>2026-09-25</td><td>2026-09-28</td></tr>
+<tr><td>주간</td><td>월요일</td><td>2026-09-25</td><td>2026-10-05</td></tr>
 <tr><td>월간</td><td>매월 1일</td><td>-</td><td>2026-10-01</td></tr>
-<tr><td>분기</td><td>1·4·7·10월 1일</td><td>2026-06-28</td><td>2026-10-01</td></tr>
+<tr><td>분기</td><td>1·4·7·10월 1일</td><td>2026-09-28</td><td>2026-10-01</td></tr>
 </table></div>
 <div class="two-col">
 <div class="card"><h2>규제 추적 현황</h2><table>
 <tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
-<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>73일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>58일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>104일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>104일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>104일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>104일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>72일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_62304</td><td>2026-07-16</td><td>73일</td><td><span class="tag tag-green">최신</span></td></tr>
-<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>62일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>74일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>59일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>105일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>105일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>105일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>105일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>73일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-07-16</td><td>74일</td><td><span class="tag tag-green">최신</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>63일</td><td><span class="tag tag-green">최신</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
-<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 404건 중 333건 완료 · 미해결 71건</p>
+<p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 409건 중 333건 완료 · 미해결 76건</p>
 </div></div>
 <div class="card"><h2>문서 정기검토 만기 (0건, 주기 12개월)</h2><table>
 <tr><th>문서</th><th>카테고리</th><th>최종 갱신</th><th>경과</th></tr>
 <tr><td colspan="4">만기 도래 문서 없음 — 전 문서 검토주기 내</td></tr>
 </table></div>
 <div class="card"><h2>문서통제 정합성</h2><table>
-<tr><td>frontmatter 유효 문서</td><td>268/270 (99%)</td></tr>
+<tr><td>frontmatter 유효 문서</td><td>273/275 (99%)</td></tr>
 <tr><td>frontmatter 결함</td><td>2건</td></tr>
-<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>407/404 일치</td></tr>
+<tr><td>이슈 드래프트 ↔ _log 매핑</td><td>407/409 불일치(매핑 보정 필요)</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">09-27</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
+<li><span class="date">09-27</span>docs(handoff): 2026-09-27 19:36 UTC handoff + status snapshot — C1~C5 전수 스윕 100% 완주 기록</li>
+<li><span class="date">09-27</span>audit(sweep C5): 기기등급/분류 전수 — 07~10 완료, 결함 0건, C5 100%(10/10), C1~C5 전 클래스 전수 스윕 완주</li>
 <li><span class="date">09-27</span>chore(cycle): 자동 사이클 산출물 반영</li>
 <li><span class="date">09-27</span>chore(issues): update _log.json [skip ci]</li>
 <li><span class="date">09-27</span>fix(audit-drain #1079): EUDAMED legacy 등록기한 2026-11-28 확정(6차 이월 해소) + C5x06_문서_기록관리 스윕 완료(</li>
@@ -175,21 +178,18 @@ function submitIssueForm(){
 <li><span class="date">09-26</span>audit(sweep C5x05): 검사_시험_밸리데이션 전수 — 결함 0(2번째 구조적 클린), 다음 C5x06_문서_기록관리</li>
 <li><span class="date">09-26</span>chore(build): rebase 후 자동생성물 재빌드 [skip ci]</li>
 <li><span class="date">09-26</span>audit-drain(sweep C5×04): 제조공정_관리 전수 스윕 완료(결함0, 구조적클린) + audit#1067 회귀 재검증(재발없음) + audit#1</li>
-<li><span class="date">09-26</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
-<li><span class="date">09-25</span>audit(sweep C5): 03_설계_개발관리 전수 — 신규 결함 0, MFDS A11040 등급 상충 재검증 종결</li>
-<li><span class="date">09-25</span>chore(build): 병합 후 자동생성물 재빌드 [skip ci]</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
 <div>📅 주간: 월요일 · 월간: 1일 · 분기: 1·4·7·10월</div>
 <div>📊 리서치 로그: 75건</div>
-<div>✅ 교차검증: 75건</div>
+<div>✅ 교차검증: 79건</div>
 <div>🌐 GitHub Pages 배포</div>
 </div></div>
 <script>
 new Chart(document.getElementById('issueChart'), {
   type:'doughnut',
-  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[333, 71], backgroundColor:['#4ade80','#fbbf24']}]},
+  data:{labels:['완료 (closed)','미해결 (open)'], datasets:[{data:[333, 76], backgroundColor:['#4ade80','#fbbf24']}]},
   options:{responsive:true, plugins:{legend:{labels:{color:'#94a3b8'}}}}
 });
 </script></body></html>
