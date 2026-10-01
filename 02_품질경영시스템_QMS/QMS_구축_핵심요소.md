@@ -36,7 +36,7 @@ review-due: 2027-05-22
 | 문서 관리 | §4.2 | ISO 13485 편입 | Art.10(8) | 품질관리기준 | SOP-DOC-001 |
 | 경영 책임 | §5 | 편입 | Art.10(9) | 동일 | SOP-MR-001 |
 | 자원 관리 | §6 | 편입 | Art.10(9) | 동일 | 교육훈련 포함 |
-| 설계 개발 | §7.3 | 편입 + Design History File | Art.10(3), Annex II | 동일 | DHF/DMR |
+| 설계 개발 | §7.3 | 편입 + Design History File | Art.10(4), Annex II (+Art.10(9)) | 동일 | DHF/DMR |
 | 구매·공급자 | §7.4 | 편입 | Art.10(9) | 동일 | OSS 포함 |
 | 생산·공정 | §7.5 | 편입 | Annex IX | 동일 | IQ/OQ/PQ |
 | 검사·측정 | §7.6, §8.2.4 | 편입 | Art.10(9) | 동일 | SOP-CAL-001 |
