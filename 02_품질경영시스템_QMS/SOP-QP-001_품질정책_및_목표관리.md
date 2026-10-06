@@ -11,7 +11,7 @@ purpose: >
 applicable:
   - ISO 13485:2016 §5.1, §5.3, §5.4.1, §5.4.2
   - FDA QMSR 21 CFR Part 820 §820.20(a)(b)(c)
-  - EU MDR 2017/745 Art.10(9)(b)
+  - EU MDR 2017/745 Art.10(9)(c)
   - MFDS GMP 별표2
 forms: [F-QP-001]
 related-docs:
@@ -147,4 +147,5 @@ QMS 전 프로세스 및 이에 참여하는 모든 기능 부서.
 
 | 버전 | 일자 | 변경 내용 | 작성자 |
 |---|---|---|---|
+| v0.3 | 2026-10-06 | audit #1088 정정 — EU MDR Art.10 하위조항 오귀속 정정(EUR-Lex 02017R0745-20250110 대조): Art.10(9)(b)→(c) | md-process-auditor |
 | v0.3 | 2026-06-15 | 신규 작성 — §5.3·§5.4 갭 해소 | QMS-Bot |

@@ -4,7 +4,7 @@ labels: "audit:citation,prio:P2,risk:medium,regulatory"
 opened: 2026-10-05
 created-by: md-process-auditor
 related-issues: [1085, 1028]
-state: open
+state: closed
 sweep: "표본 모드 8차 — #1085 EUR-Lex verbatim 확보 후 Art.10 인용 전수 재대조"
 ---
 
@@ -31,3 +31,15 @@ Reg.(EU) 2017/745 통합본 CELEX 02017R0745-20250110 (EUR-Lex HTML, 2026-10-05 
 위 표 '정답' 열대로 정정 검토.
 
 실운영 문서 미참고. web:ok (EUR-Lex).
+
+---
+
+## 종결 (2026-10-06, audit-drain 스프린트)
+
+- Tier1 재확인: EUR-Lex CELEX 02017R0745-20250110 Art.10(9) (a)~(m)·(12)·(13) 직접 재열람 — 감사 근거와 일치((c)=경영진 책임, (d)=자원관리·공급자/하도급자 선정·통제, (f)=임상평가·PMCF, (g)=제품실현, (13)=사고 기록·보고).
+- 정정(7문서 본문): SOP-SUP-001 (f)→(d) 3개소 / 교육_훈련_개요·F-TRN-001·SOP-TRN-001 (13)→(9)(d) / SOP-RA-002 (a)(b)→(c) 3개소·F-RA-001·SOP-QP-001 (a)/(b)→(c).
+- 동일 클래스 전수 grep(Art.10(9)(x)·(13)) 파생 3건 추가 적발 — 시점 기록 원문 보존 + 정정 각주: 교차검증_2026-06-21 (Art.10(9)(g) '데이터 보호' 오귀속), 2026-05-17_SQA 정합성 (Art.10(13) NC/CAPA → (12)/(9)(l)), 리서치로그 2026-06-17 (f)→(d).
+- 해석범위(미수정): F-QP-001 (9)(a) KPI, QM-001 Art.10(2) — 유권해석 범위.
+- F-RA-001은 이력표가 공란 템플릿이라 개정이력 미추가.
+
+실운영 문서 미참고.

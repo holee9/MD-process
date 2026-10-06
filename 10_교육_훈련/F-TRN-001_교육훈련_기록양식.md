@@ -15,7 +15,7 @@ product-scope: 의료용 X-ray 시스템 / 평판형 검출기(Flat-Panel Detect
 standards:
   - ISO 13485:2016 §6.2
   - FDA QMSR (ISO 13485 참조편입)
-  - EU MDR 2017/745 Art. 10(13), Art. 15
+  - EU MDR 2017/745 Art. 10(9)(d), Art. 15
   - MFDS GMP §6.2
   - IEC 62304:2006+A1:2015
   - IEC 60601-2-54
@@ -673,6 +673,7 @@ owner: QA 담당자
 
 | 버전 | 일자 | 변경 내용 | 작성자 |
 |------|------|-----------|--------|
+| v0.1 | 2026-10-06 | audit #1088 정정 — EU MDR Art.10 하위조항 오귀속 정정(EUR-Lex 02017R0745-20250110 대조): Art.10(13)→Art.10(9)(d) | md-process-auditor |
 | v0.1 | 2026-05-04 | 초판 — F-TRN-001a 교육실시기록서, F-TRN-001b OJT 체크리스트, F-TRN-001c 역량평가 매트릭스 | 품질보증팀 |
 | v0.2 | 2026-05-30 | 연간계획·갭분석·OJT·방사선안전·e-Learning 양식 추가, 역량매트릭스 보강 | holee9-automation |
 | v0.2.1 | 2026-09-10 | audit #1040 정정 — frontmatter·근거 법령 란 '진단용 방사선 발생장치 안전관리규칙 (총리령 제1122호)' 2개소 → '보건복지부령 제1122호'(law.go.kr 원문 표제부 Tier1, 「의료법」 제37조 근거 부령) | md-process-auditor |
