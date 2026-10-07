@@ -100,8 +100,8 @@ review-due: 2027-06-27
 | AI Act 요건 | 조항 | MDR / ISO 대응 | 통합 접근 | X-ray 적용 |
 |-------------|------|----------------|-----------|-----------|
 | Accuracy | Art. 15(1) | MDR Annex I §1 | 임상 성능 시험 + AI 성능 지표 결합 | AUC, Sensitivity, Specificity, PPV, NPV (해부 구조별·병변별) |
-| Robustness | Art. 15(3) | MDR Annex I §17.2 | Stress Testing: 입력 변형, 장비 변동, 환경 변화 | 다양한 kVp/mAs 조합, 노이즈 주입, 저선량 영상 테스트 |
-| Cybersecurity | Art. 15(4) | MDR Annex I §17.4, IEC 81001-5-1 | 사이버보안 계획 통합 | DICOM 통신 보안, 모델 파일 무결성 검증 |
+| Robustness | Art. 15(4) | MDR Annex I §17.2 | Stress Testing: 입력 변형, 장비 변동, 환경 변화 | 다양한 kVp/mAs 조합, 노이즈 주입, 저선량 영상 테스트 |
+| Cybersecurity | Art. 15(5) | MDR Annex I §17.4, IEC 81001-5-1 | 사이버보안 계획 통합 | DICOM 통신 보안, 모델 파일 무결성 검증 |
 
 ### 4.5 QMS & 적합성평가
 

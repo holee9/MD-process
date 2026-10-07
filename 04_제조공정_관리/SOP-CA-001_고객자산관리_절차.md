@@ -63,7 +63,7 @@ review-due: 2027-06-20
 - **자산 인수 검증(Receipt Verification):** 인수 시 외관·기능·목록의 일치 여부 확인.
 - **이상(Adverse Event on Customer Property):** 분실·손상·오염·무단접근·데이터 손상 등 자산 보전 훼손 사건.
 - **PHI (Protected Health Information):** HIPAA 정의 보호대상 보건정보. DICOM 헤더의 환자 식별자 포함.
-- **익명화(De-identification):** PHI 제거 또는 가역적 비식별화 처리(GDPR Art.4(5) 가명처리/Art.26 익명화).
+- **익명화(De-identification):** PHI 제거 또는 가역적 비식별화 처리(GDPR Art.4(5) 가명처리; 익명화는 Recital 26 — 조문 아님).
 
 ## 5. 절차 본문
 

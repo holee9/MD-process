@@ -4,7 +4,7 @@ labels: "audit:citation,prio:P2,risk:medium,regulatory"
 opened: 2026-10-06
 created-by: md-process-auditor
 related-issues: [1088, 1085]
-state: open
+state: closed
 sweep: "표본 모드 9차 — #1088 확산(MDR Art.10 외 타 조문 하위항 인용 전수)"
 ---
 
@@ -32,3 +32,14 @@ Art.86(1)(2)(IIb·III 연1회/IIa 2년, III·이식형 전자제출), Art.87(3)(
 위 표 '정답' 열대로 정정 검토.
 
 실운영 문서 미참고. web:ok (EUR-Lex).
+
+---
+
+## 종결 (2026-10-07, audit-drain 스프린트)
+
+- Tier1 직접 재확인: MDR Art.15(1)~(6) 문언(EUR-Lex 통합본 CELEX 02017R0745-20250110: (4)=복수 PRRC 공동책임, (5)=불이익 금지, (6)=AR의 PRRC 상시 확보), Art.11(3)(a)=DoC·기술문서 작성 검증; AI Act Art.15(3)=정확도 지표 선언 / (4)=오류·결함 resilient / (5)=무권한 제3자 대응(EC AI Act Service Desk 공식 조문). MDR Art.89(8)=FSN 시정조치 정보 제공 — EUR-Lex 페이지 분할로 직접 회수 실패, 공개 2차(advisera 전문본)+감사자 EUR-Lex verbatim으로 대조. GDPR Art.26=공동관리자(감사자 EUR-Lex 대조, 본 세션 미재회수).
+- 정정 5건/8개소: PRRC 매핑 L84(11(3)(a)→15(6)), L92·L97·L113(15(4)→15(5)); AI Act 매핑 L103(15(3)→15(4))·L104(15(4)→15(5)); SOP-FSCA-001 L183(87(11)→89(8)); SOP-CA-001 L66(Art.26 익명화 삭제, Recital 26 안내).
+- 동일 클래스 전수 grep(Art.15(x)·11(3)(a)·87(11)·GDPR Art.26, 리서치로그·교차검증·감사로그 시점기록 제외): 잔존 0.
+- 해석범위(미수정): GUIDE-VIG-001 'Art.11(3)(d)', AI Act 매핑 'Art.9(2)'.
+
+실운영 문서 미참고.
