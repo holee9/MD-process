@@ -9,7 +9,7 @@ purpose: 의료기기 품질에 영향을 미치는 모니터링·측정 장비�
 applicable:
   - ISO 13485:2016 §7.6
   - FDA QMSR (21 CFR 820 → ISO 13485 alignment)
-  - EU MDR 2017/745 Annex I §17.1
+  - EU MDR 2017/745 Annex I §15.1, §14.2(g)
   - IEC 60601-1:2005+A1:2012+A2:2020
   - IEC 60601-2-54:2022
   - IEC 60580:2019 (DAP meter)

@@ -9,7 +9,7 @@ purpose: 제품군별 잠재 오염원·청결 사양·세척불필요 근거를
 applicable:
   - ISO 13485:2016 §6.4.2, §7.5.2
   - FDA QMSR §820.10/ISO 13485 §6.4.2 편입 (구 QSR §820.70(e) 폐지)
-  - EU MDR Annex I §10.3
+  - EU MDR Annex I §10.2, §11.1
 forms: []
 related-docs: [SOP-CLN-001, SOP-MFG-002, F-CLN-002]
 related-issues: [1525]
@@ -60,7 +60,7 @@ review-due: 2027-06-20
 | 콜리메이터 카운터그리드 | 간접 접촉 | 사용자 측 세척 의무 명시 | 사용설명서 §8.4 + 본체 라벨 | RA Lead / TBD | QA Lead |
 | SW 매체 (USB) | 비접촉 | n/a (물리적 미생물 부하 무관) | 설치 가이드 §3 (매체 폐기 지침) | RA Lead / TBD | QA Lead |
 
-근거 변경 시 SOP-CC-001 변경통제 발동. EU MDR Technical Documentation Annex II §5에 본 표 사본 첨부.
+근거 변경 시 SOP-CC-001 변경통제 발동. EU MDR Technical Documentation Annex II §3(b)에 본 표 사본 첨부.
 
 ## §4 갱신 이력
 

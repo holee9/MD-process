@@ -4,7 +4,7 @@ labels: "audit:citation,prio:P2,risk:medium,regulatory"
 opened: 2026-10-07
 created-by: md-process-auditor
 related-issues: [1088, 1089]
-state: open
+state: closed
 sweep: "표본 모드 10차 — MDR Annex 하위항(Annex I §n·Annex II §n) 글자 인용 전수"
 ---
 
@@ -35,3 +35,23 @@ TF-TD-001 §1~§6 자체 정의, 설계개발_프로세스 'Annex II §1~6', SOP
 Annex II 원문 확인 후 위 표 '제안 정답'으로 정정 검토. 확인 전까지 §번호 인용 시 TF-TD-001 매핑 우선.
 
 실운영 문서 미참고. web:ok(부분) — Annex 본문 회수 실패(절단).
+
+
+---
+
+## 종결 (2026-10-08, audit-drain 스프린트)
+
+**Tier1 확보**: EUR-Lex 공식 PDF(CELEX 02017R0745-20250110, 161p) 직접 다운로드→pdftotext로 Annex II·Annex I 원문 전문 대조 (WebFetch 절단 우회).
+
+**Annex II 원문 구조 확정**: §1 Device description and specification(1.1(a)~(l), 1.2) / §2 Information to be supplied by the manufacturer(라벨·IFU) / §3 Design and manufacturing information((a)설계단계 (b)제조공정·밸리데이션 (c)사이트 식별) / §4 GSPR / §5 Benefit-risk analysis and risk management / §6.1 Pre-clinical and clinical data((a)시험 (b)상세 시험정보·SW V&V (c)CER (d)PMCF) / §6.2 Additional information in specific cases((a)~(g)).
+
+**정정 (자사 TF-TD-001 매핑 자체의 오류 포함)**:
+- 감사 표 #1~#6 전량 정정 (SOP-DHF-001, SOP-DT-001, CHK-DR-001, F-CLN-001, SOP-CLN-001 → §3 / §6; GUIDE-VIG-001 §4 전자기록 근거 삭제).
+- 감사자 기준(TF-TD-001) 자체 오류 정정: §2는 '제조자 정보'가 아니라 라벨·IFU, 사이트 식별은 §3(c); 임상평가는 §6.2가 아니라 §6.1(c)(d); §6.2(c)는 인체 흡수 물질 기기이며 사용적합성 아님(미확인 항목 해소, 문서_기록관리_개요 L163 포함 정정).
+- SOP-DVV-001: 존재하지 않는 '§6.1 e)' → §3(a), '§6.1 b)' → §6.1(b)(c).
+- 시점 기록 4건(11_/12_)은 원문 보존 + 정정 각주.
+
+**동일 오류 클래스(MDR Annex I §n 오귀속) 일괄 교정 — 미확인 항목 해소**: ALARA §14.2(c)(접촉 물질 위험)→§16.1(a)/§16.2; SOP-ENV-001 '§16 제조환경'(§16=방사선 방호)→방사선 구역 한정 표기; SOP-CAL-001 측정정확도 §17.1→§15.1/§14.2(g); SOP-CLN-001·F-CLN-001 §10.3(재료·물질 사용 안전성)→§10.2(오염물·잔류물)/§11.1(감염·미생물); 검사_시험_밸리데이션_개요 최종검사 '§17'(프로그래머블 시스템)→직접 대응 없음 표기.
+**유지**: SOP-IQ-001 §17.1, AI Act 매핑의 Annex II §6.1 (해석 범위), 02·ALARA 외 §17.x/§23.x/§15 인용은 원문 일치 확인.
+
+실운영 문서 미참고. Tier1 = EUR-Lex 공식 PDF.
