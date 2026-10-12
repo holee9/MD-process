@@ -4,7 +4,7 @@ labels: "audit:citation,prio:P2,risk:medium,regulatory"
 opened: 2026-10-11
 created-by: md-process-auditor
 related-issues: [1088, 1089, 1090]
-state: open
+state: closed
 sweep: "표본 모드 14차 — MDR Annex IX/VII/XV/II 하위항 Tier1(EUR-Lex 공식 PDF) 대조"
 ---
 
@@ -28,3 +28,7 @@ EUR-Lex 공식 PDF (CELEX 02017R0745-20250110, 161p) 직접 다운로드 → pdf
 Annex IX §2 / §2.3(공급자·하청 현장감사) / Ch.III §7(10년·이식형 15년) · Annex VIII Ch.III Rule 10=§6.2, Rule 17=§7.4, Rule 11=§6.3 · Annex XV Ch.II §4.1(서명 진술서), Ch.III §3(10년/15년) · Annex XIV Part B(PMCF) · Annex II §6.1 · Annex VII §4.5(NB 적합성평가 활동 — SOP-DVV-001 applicable 표기는 NB 요건이므로 해석범위).
 
 감사관 본문 미수정. 실운영 문서 미참고. web:ok (Tier1 EUR-Lex PDF).
+
+
+## 조치 (2026-10-12 audit-drain)
+SOP-CAPA-001 L14·L56 정정(Art.10(12) 단독=시정조치 근거, §3.3=NB 감독심사 수검 맥락 분리) + 동일 클래스 11_일일_리서치로그 2건 정정. 전 문서 grep 'Annex IX §3.3' 잔여 = 정정 주석 및 감사 기록만. 실운영 문서 미참고.
