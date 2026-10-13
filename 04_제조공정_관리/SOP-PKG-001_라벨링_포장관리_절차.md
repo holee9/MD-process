@@ -2,7 +2,7 @@
 doc-id: SOP-PKG-001
 title: 라벨링 및 포장 관리 절차
 type: SOP
-version: v0.2.4
+version: v0.2.5
 status: draft
 category: 04_제조공정_관리
 purpose: 의료용 X-ray 시스템·Detector·SW의 라벨 작성·검증·부착 및 포장 공정을 통제하여 규제 적합성과 제품 추적성을 보장한다
@@ -21,7 +21,7 @@ forms: [F-PKG-001, F-PKG-002, F-PKG-003]
 related-docs: [SOP-MFG-001, SOP-UDI-001, SOP-DOC-001, SOP-CC-001]
 related-issues: []
 owner: Production/QA Lead
-last-review: 2026-08-06
+last-review: 2026-10-13
 review-due: 2027-05-16
 ---
 
@@ -121,7 +121,7 @@ review-due: 2027-05-16
    - CE 마크 + Notified Body 번호
    - EU Authorized Representative(EC REP) 정보
    - EU Importer 정보 (해당 시)
-   - 의료기기 기호 (MDR Annex I §23.2(a))
+   - 의료기기 표시 — 의료기기임을 나타내는 표시 (MDR Annex I §23.2(q); 기호 형식은 §23.1(h) 조화표준/CS 준수)
    - UDI 캐리어 (Art.27)
    - 유효기한 또는 제조 후 사용기한 (해당 시)
    - 전자 IFU 규정 (EU MDR 2017/745 Annex I §23.1(f) 및 Commission Implementing Regulation (EU) 2021/2226):
@@ -341,3 +341,4 @@ Flat-Panel Detector는 습도 민감 부품(MSL, Moisture Sensitivity Level)을 
 | v0.2.2 | 2026-07-15 | audit #967/#971 정정 — QMSR 820.120/820.130(구 QSR, 폐지)→§820.45 라벨링·포장 통제(2개소); eIFU 근거 'Art.23.1(f)'(Art.23=Parts and components)→Annex I §23.1(f)(2개소) | QMS-Bot |
 | v0.2.3 | 2026-07-25 | audit #996 정정 — §9 리콜 기록 보존기간 '제품수명+15년'(오기재)→'제품 단종 후 최소 10년(EU MDR Art.10(8) 비이식형)' | md-process-auditor |
 | v0.2.4 | 2026-08-06 | audit #1018(GH#1695) 정정 — §9 ESD 경고 라벨 기호 'IEC 60417-5734'(오기재)→'IEC 60417-5134'(Electrostatic sensitive devices, ISO OBP Tier1) | md-process-auditor |
+| v0.2.5 | 2026-10-13 | audit #1095(GH#1801) 정정 — 의료기기 표시 근거 'Annex I §23.2(a)'(=기기명/상표명)→§23.2(q)(+§23.1(h)) | md-process-auditor |

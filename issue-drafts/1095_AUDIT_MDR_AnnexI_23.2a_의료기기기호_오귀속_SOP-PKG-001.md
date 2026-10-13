@@ -4,7 +4,7 @@ labels: "audit:citation,prio:P2,risk:low,regulatory"
 opened: 2026-10-12
 created-by: md-process-auditor
 related-issues: [1094, 1088]
-state: open
+state: closed
 sweep: "표본 모드 15차 — MDR Annex I §n 인용 전수 재대조 (EUR-Lex 공식 PDF 재사용)"
 ---
 
