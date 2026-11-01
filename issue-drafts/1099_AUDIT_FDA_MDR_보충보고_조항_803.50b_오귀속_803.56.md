@@ -1,6 +1,7 @@
 ---
 title: "[audit:citation] 21 CFR 803.50(b) → 803.56 — MDR 후속(Supplemental) 보고 조항 오귀속 (2문서 2개소)"
 labels: "audit:citation,prio:P2,risk:medium"
+state: closed
 ---
 
 ## 배경 (C1 조항번호 · 표본 19차-b, 2026-10-31)

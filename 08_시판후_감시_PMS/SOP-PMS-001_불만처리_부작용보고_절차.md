@@ -140,7 +140,7 @@ review-due: 2027-06-22
 | **EU** | 경향 보고(Trend) | 인지 후 즉시 | EUDAMED | EU MDR Art.88 |
 | **US** | **사망·중상·중대오작동(일반)** | **30 calendar days** | FDA eMDR (MedWatch 3500A) | 21 CFR 803.50(a)(1) |
 | **US** | **§803.53 발동(remedial action 필요 또는 FDA 서면 요청)** | **5 work days** | FDA eMDR (MedWatch 3500A) | 21 CFR 803.53(a)(1)(2) |
-| **US** | 후속(Supplemental) | 30 calendar days | FDA eMDR | 21 CFR 803.50(b) |
+| **US** | 후속(Supplemental) | 30 calendar days | FDA eMDR | 21 CFR 803.56 |
 | **KR** | 사망·생명위협 | **7일** (추가보고 8일 이내) | 의약품안전나라 | 의료기기법 시행규칙 §51①1 |
 | **KR** | 중대 부작용(중상해·입원·장애·선천이상) | **15일** | 의약품안전나라 | 의료기기법 시행규칙 §51①2 |
 | **KR** | 기타 이상사례 | 30일 | 의약품안전나라 | 의료기기법 시행규칙 §51①3 |
