@@ -1,4 +1,4 @@
-**현재**: 2026-10-31(c) — 표본 20차: C1 QMSR §820.35(a)~(d) 전수 대조, 결함 0(web:partial, Cornell LII). 이전 내용은 아래 이력 참조.
+**현재**: 2026-11-01 — 표본 21차: MDR Annex I §n 헤딩 수준 정합, 결함 0(web:partial). 직전: 2026-10-31(c) — 표본 20차: C1 QMSR §820.35(a)~(d) 전수 대조, 결함 0(web:partial, Cornell LII). 이전 내용은 아래 이력 참조.
 **다음**: (c') 고시 제2025-28호 PDF 본문 유형군 조항 대조 (d''') MDR Annex I 잔여 §n 인용 전수 재대조(PDF 재사용: curl -L -A Mozilla EUR-Lex PDF CELEX 02017R0745-20250110 → pdftotext).
 ---
 doc-id: LOG-AUDIT-SWEEP-LEDGER
