@@ -33,7 +33,19 @@
 
 ## 자동화 시스템
 
-### 스케줄링
+### 스케줄링 — GitHub Actions 이전 (audit #1035, 2026-11-03)
+
+PC 1대에 의존하던 스케줄이 PC 오프라인 시 전면 정지(2026-10-17~30, 14일)한 데 따라 GitHub 서버 실행으로 이전했다.
+
+| 워크플로 | 주기(KST) | 내용 | 조건 |
+|---|---|---|---|
+| `scheduled-maintenance.yml` | 매일 03:18 / 금 17:00 | 지표 재빌드·검증 / 주간 갭분석(`build_weekly_report.py`) | 항상 실행 |
+| `claude-cycle.yml` | 매일 03:30 | AI 감사·보강(`.github/prompts/cycle.md`) | **`ANTHROPIC_API_KEY` 시크릿 등록 시** |
+| `pipeline-health.yml` | 매일 09:30 | 생존 감시, 실패 시 이슈 자동 생성 | 항상 실행 |
+
+AI 사이클 시크릿 등록 전까지는 로컬 `process-project` 스케줄이 감사를 계속 담당한다. 등록 후에는 로컬 스케줄을 중지해 이중 실행을 피한다.
+
+#### (구) 로컬 스케줄
 - **process-project** 작업이 매일 03:18 KST 자동 실행
 - `/tmp/wk-*` 신규 클론에서 작업 → main push → Actions 트리거
 
