@@ -41,6 +41,15 @@ def parse_fm(text):
             fm[cur].append(line[4:].strip())
     return fm
 
+SKELETON_MIN_TBW = 5  # '작성 예정' 표기 하한
+
+def is_skeleton(fm, text):
+    """골격(내용 미기재) 문서 판정 — 채점 과대평가 방지 (#1080 지적 대응).
+    제목/목적에 '골격'이 있거나 본문 '작성 예정'이 5회 이상이면 골격으로 본다.
+    골격 문서는 증빙 '경로'일 뿐 실제 증빙이 아니므로 충족 처리하지 않는다."""
+    head = f"{fm.get('title','')} {fm.get('purpose','')}"
+    return ('골격' in head) or text.count('작성 예정') >= SKELETON_MIN_TBW
+
 def collect_all_docs():
     """전체 문서: doc-id, type, applicable 수집"""
     docs = []
@@ -53,6 +62,7 @@ def collect_all_docs():
             except: continue
             fm = parse_fm(text) or {}
             docs.append({
+                'skeleton': is_skeleton(fm, text),
                 'doc_id': fm.get('doc-id') or p.stem,
                 'type': fm.get('type','-'),
                 'category': cat,
@@ -118,6 +128,10 @@ def score_item(item, all_docs):
         matches = [d for d in all_docs if d.get('doc_id') in rdocs]
         if not matches:
             return {'score': 0, 'status': '미충족(증빙 미발견)', 'matches': []}
+        real = [m for m in matches if not m.get('skeleton')]
+        if not real:
+            return {'score': 30, 'status': '부분(골격만 — 내용 미기재)', 'matches': matches}
+        matches = real
         ev_type = item.get('evidence_type','')
         if ev_type in ('form',) and not any(m['type']=='Form' for m in matches):
             return {'score': 50, 'status':'부분(양식 없음)','matches':matches}

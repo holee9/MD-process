@@ -7,7 +7,7 @@ category: 10_교육_훈련
 purpose: 품질영향 업무 수행자 교육훈련 실시·평가 기록 통합 양식
 status: draft
 author: 품질보증팀
-last-review: 2026-09-24
+last-review: 2026-10-06
 effective-date: TBD (승인 후)
 parent-sop: SOP-TRN-001
 applies-to: 전 부서 (품질 영향 업무 수행자)

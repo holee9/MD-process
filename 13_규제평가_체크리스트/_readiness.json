@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-01",
+  "generated_at": "2026-11-03",
   "standards": {
     "FDA 510(k) RTA Checklist 평가표": {
-      "score": 83,
+      "score": 45,
       "items": 15,
-      "unmet_must": 10,
+      "unmet_must": 11,
       "file": "FDA_510k_RTA.md"
     },
     "ISO 13485:2016 자체평가 체크리스트": {
@@ -15,5 +15,5 @@
     }
   },
   "all_items": 109,
-  "all_unmet_must": 48
+  "all_unmet_must": 49
 }

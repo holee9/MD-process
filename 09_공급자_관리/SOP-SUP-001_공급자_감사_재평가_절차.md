@@ -31,7 +31,7 @@ related-docs:
   - SOP-SBOM-001
 related-issues: [59, 1517]
 owner: QA Manager / 구매팀장
-last-review: 2026-09-09
+last-review: 2026-10-06
 review-due: 2027-09-09
 ---
 
