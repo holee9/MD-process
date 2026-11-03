@@ -1,0 +1,63 @@
+name: Scheduled Maintenance
+
+# audit #1035 — 로컬 PC 스케줄 의존 제거(1단계: LLM 불필요 작업).
+# PC가 꺼져도 지표 재빌드·검증·주간 리포트가 멈추지 않도록 GitHub 서버에서 실행한다.
+# 2026-10-17~30 PC 오프라인으로 14일 정지·주간 리포트 2회 결번이 실제 발생한 데 대한 대책.
+
+on:
+  schedule:
+    - cron: '18 18 * * *'   # 매일 03:18 KST — 지표 재빌드·검증
+    - cron: '0 8 * * 5'     # 매주 금 17:00 KST — 주간 갭분석
+  workflow_dispatch:
+    inputs:
+      weekly:
+        description: '주간 리포트도 생성'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install -q pyyaml
+
+      - name: Rebuild metrics
+        run: |
+          python3 scripts/build_readiness.py
+          python3 scripts/build_matrix.py
+          python3 scripts/build_dashboard_html.py
+
+      - name: Weekly report
+        if: github.event.schedule == '0 8 * * 5' || inputs.weekly == true
+        run: python3 scripts/build_weekly_report.py
+
+      - name: Validate
+        run: python3 scripts/validate_frontmatter.py
+
+      - name: Commit & push (retry on race)
+        run: |
+          git config user.name  "md-process-builder"
+          git config user.email "builder@md-process"
+          git add -A
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -q -m "chore(maintenance): 정기 지표 재빌드·주간 리포트 [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && { echo "push 완료"; exit 0; }
+            echo "push 경합 — 재시도 $i"; sleep $((i*10))
+          done
+          exit 1

@@ -1,0 +1,82 @@
+name: Claude Cycle (Audit/Build)
+
+# audit #1035 — 로컬 PC 스케줄 의존 제거(2단계: AI 감사·보강).
+# 저장소 시크릿 ANTHROPIC_API_KEY 가 등록되어야 실행된다. 미등록 시 건너뛰고 안내만 남긴다.
+# Actions 실행 환경에는 회사 실운영 문서가 존재하지 않으므로 클린룸 원칙
+# (철학_및_거버넌스.md §3 오염 차단)이 구조적으로 보장된다.
+
+on:
+  schedule:
+    - cron: '30 18 * * *'   # 매일 03:30 KST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+  id-token: write
+
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check API key
+        id: key
+        env:
+          K: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$K" ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::ANTHROPIC_API_KEY 시크릿 미등록 — AI 사이클 건너뜀 (Settings → Secrets and variables → Actions)"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.key.outputs.ok == 'true'
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        if: steps.key.outputs.ok == 'true'
+        with:
+          python-version: '3.11'
+
+      - if: steps.key.outputs.ok == 'true'
+        run: pip install -q pyyaml
+
+      - name: Run Claude cycle
+        if: steps.key.outputs.ok == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            저장소: ${{ github.repository }} / 실행일(UTC): 오늘.
+            `.github/prompts/cycle.md` 를 읽고 그 지시를 그대로 수행하라.
+          claude_args: >-
+            --max-turns 80
+            --allowedTools "Read,Edit,Write,Glob,Grep,WebSearch,WebFetch,Bash(python3:*),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git show:*),Bash(ls:*),Bash(grep:*)"
+
+      - name: Rebuild, validate, commit & push
+        if: steps.key.outputs.ok == 'true'
+        run: |
+          python3 scripts/build_readiness.py
+          python3 scripts/build_matrix.py
+          python3 scripts/build_dashboard_html.py
+          python3 scripts/validate_frontmatter.py
+          git config user.name  "md-process-auditor"
+          git config user.email "auditor@md-process"
+          git add -A
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          MSG="$(cat .cycle_commit_msg 2>/dev/null || echo 'audit(cycle): 자동 감사 사이클 산출물')"
+          rm -f .cycle_commit_msg; git add -A
+          git commit -q -m "$MSG"
+          for i in 1 2 3; do
+            git pull --rebase -q origin main && git push -q origin HEAD:main && { echo "push 완료"; exit 0; }
+            sleep $((i*10))
+          done
+          exit 1
