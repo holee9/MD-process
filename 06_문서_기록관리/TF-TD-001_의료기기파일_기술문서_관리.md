@@ -684,7 +684,7 @@ K243734/K250211/K243171 3건 벤치마크 공통 표준 패턴이며, SE 매트�
 | FDA SW | FDA "Content of Premarket Submissions for Device Software Functions" (2023-06-14) | SW 문서 수준 | SW Documentation Level(Basic/Enhanced) 판정서 |
 | FDA SSXI | FDA "Solid State X-ray Imaging Devices 510(k) Guidance" (2016-09-01) | SSXI 510(k) 일반 | 본 §18 + X-ray 표준매핑 |
 | 위험관리 | ISO 14971:2019 | 위험관리 프로세스 | RMF, ISO14971_프로세스_상세 |
-| 생체적합성 | ISO 10993-1:2018 + 시리즈 | 환자 접촉부 | ISO 10993 시험기록(F 양식 예정, plan #933) |
+| 생체적합성 | ISO 10993-1 (현행 판본은 적용 시점에 iso.org 확인; 2018판은 iso.org 상 Withdrawn) + 시리즈 | 환자 접촉부 | ISO 10993 시험기록(F 양식 예정, plan #933) |
 | 라벨링 | ISO 15223-1:2021, ISO 20417:2021 | 라벨·IFU 기호 | DMR 라벨링 |
 
 ### 18.6 §SE-4 Substantial Equivalence 결론문 표준 양식

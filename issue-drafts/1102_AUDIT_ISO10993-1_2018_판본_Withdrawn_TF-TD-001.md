@@ -1,7 +1,7 @@
 ---
 title: "[audit:currency] ISO 10993-1:2018 — iso.org 상 Withdrawn(Edition 5) 판본을 현행 기준으로 인용 (TF-TD-001 L687, 1문서 1개소)"
 labels: "audit:currency,prio:P2,risk:medium"
-state: open
+state: closed
 ---
 
 ## 배경 (C3 표준 판본 · 표본 24차, 2026-11-05)
@@ -19,3 +19,7 @@ iso.org 표준 페이지 https://www.iso.org/standard/68936.html (ISO 10993-1:20
 
 ## 판정
 P2/risk:medium. 실운영 문서 미참고.
+
+
+## 종결
+TF-TD-001 L687 판본 연도 삭제·Withdrawn 주석 반영(1차 출처 iso.org/standard/68936.html 재확인). EU 조화표준/FDA 인정판본은 별도 Tier1 미확인으로 남김. 실운영 문서 미참고.
