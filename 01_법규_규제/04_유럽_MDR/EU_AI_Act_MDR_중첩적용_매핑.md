@@ -2,7 +2,7 @@
 doc-id: EU_AI_Act_MDR_중첩적용_매핑
 title: "EU AI Act ↔ EU MDR 중첩 적용 매핑 (AI/ML SaMD 대비)"
 type: Matrix
-version: v0.9.1
+version: v0.9.2
 status: draft
 category: 01_법규_규제
 purpose: "EU AI Act(2024/1689)와 EU MDR(2017/745) 간 중첩 요건 식별, 단일 QMS/기술문서 통합 충족 전략 및 X-ray AI 영상 분석 시스템 적용 지침"
@@ -11,7 +11,7 @@ forms: [F-AIAMD-GAP-001]
 related-docs: [EU_MDR_2017_745, GSPR_정합표준_매핑표, GSPR_체크리스트_v0.2_템플릿, SOP-AIGOV-001, SOP-AIDATA-001, SOP-CC-001, SOP-RM-001, SOP-PSUR-001, 디지털의료제품법_SaMD_AI_요구]
 related-issues: [4, 7, 20, 21, 48, 58, 1527]
 owner: RA/QA Lead
-last-review: 2026-09-25
+last-review: 2026-11-07
 review-due: 2027-06-27
 ---
 
@@ -64,7 +64,7 @@ review-due: 2027-06-27
 | **2027-12-02** | 독립형(Annex III) 고위험 의무 적용 | MDR 전면 적용 | 당초 2026-08-02 → 연기 |
 | **2028-08-02** | **MDR/IVDR 등 규제제품 탑재형(Annex I) 고위험 의무 적용 — 자사 X-ray AI 모듈 해당** | MDR 전면 적용 | **핵심 마일스톤**. 당초 2027-08-02(Art.113(c)) → 연기 |
 
-**주의**: Regulation (EU) 2026/1744 발효(2026-07-27)로 MDR Annex I 제품 탑재형 고위험 AI의 의무 적용일은 **2028-08-02**로 확정 이동하였다(당초 2027-08-02). 다만 Art.50 투명성 의무·GPAI 의무·Art.5 금지관행·Art.4 리터러시 의무는 **연기 대상이 아니며 기존 일정대로 적용 중**이다. NB 선정 시 AI Act 지정 범위(designated scope) 포함 여부를 반드시 확인한다.
+**주의**: Regulation (EU) 2026/1744 발효(2026-07-27)로 MDR Annex I 제품 탑재형 고위험 AI의 의무 적용일은 **2028-08-02**로 확정 이동하였다(당초 2027-08-02). Art.5 기존 금지관행·GPAI 의무·Art.4 리터러시 의무(2025-02-02부터 적용, 단 Art.4는 2026/1744로 문언 교체 — '직원 AI 리터러시 개발을 지원하는 조치' 방식)는 연기 대상이 아니다. **다만** Art.5 신설 금지관행(Art.5(1) (ba)(bb), Art.5(1a)(1b))은 **2026-12-02**부터, 2026-08-02 이전 시장출시 생성형 AI의 Art.50(2) 준수는 신설 Art.111(4)에 따라 **2026-12-02**까지 유예된다(audit #1814 인용 Tier1: Reg.(EU) 2026/1744 Art.113(3)(a)·Art.111(4); EUR-Lex 본문 자동조회 불가로 재확인 미완 — 인용 전 원문 대조 필요). NB 선정 시 AI Act 지정 범위(designated scope) 포함 여부를 반드시 확인한다.
 
 > **✅ 2026 Omnibus 개정 — 확정 (2026-09-11 갱신, audit #1041):** **Regulation (EU) 2026/1744** of the European Parliament and of the Council **of 8 July 2026** amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 (**Digital Omnibus on AI**)이 **OJ 2026-07-24 게재, 2026-07-27 발효**되었다(CELEX 32026R1744, `eli:date_document 2026-07-08`, `eli:first_date_entry_in_force 2026-07-27`). 이로써 고위험 AI 의무 적용일은 독립형(Annex III) **2027-12-02**, MDR/IVDR 등 규제제품 탑재형(Annex I — **자사 X-ray AI 영상분석 모듈 해당**) **2028-08-02**로 **연기 확정**되었다. 종전 문서가 지시하던 "정식 채택 전까지 기존 일정(2026-08-02/2027-08-02)을 구속력 있는 기준선으로 간주" 지침은 **폐지**한다. **변동 없는 항목**: AI Act 발효 2024-08-01, Art.5 금지관행·Art.4 AI 리터러시 적용 2025-02-02(Art.113(a)), GPAI 2025-08-02, 일반 적용일(chapeau) 2026-08-02, Art.50 투명성 의무 — Omnibus는 이들 일자를 변경하지 않았다. **추가 검토 항목**: Omnibus가 신설한 Art.5 금지관행 추가분(AI 생성 비동의 성적 이미지·CSAM 관련)의 자사 해당 여부 별도 확인 필요.
 >
@@ -259,7 +259,7 @@ AI 기능 설명:                     AI Act 분류:
 ### 12.5 적대적 자기검토 (2026-09-11 관점)
 - Q: "Art.4 AI 리터러시 의무의 적용 시점은?" → A: **2025-02-02부터 이미 적용**(Reg. 2024/1689 Art.113(a) — Chapters I, II from 2 February 2025). Enforcement(Art.99 등)는 **2026-08-02**부터(Art.113 본문 chapeau, 일반 적용일). Omnibus와 무관(§3 단서·§12 본문).
 - Q: "자사 X-ray AI 모듈의 고위험 의무 적용 기준일은?" → A: **2028-08-02**(Annex I 탑재형). Reg. (EU) 2026/1744 발효(2026-07-27)로 확정 — 종전 (B) baseline(2026-08-02)은 폐지(§3 단서·§12.2).
-- Q: "연기 대상이 아닌 의무는?" → A: Art.5 금지관행·Art.4 리터러시(2025-02-02), GPAI(2025-08-02), Art.50 투명성 및 일반 적용일(2026-08-02) — 모두 **이미 적용 중**.
+- Q: "연기 대상이 아닌 의무는?" → A: Art.5 기존 금지관행·Art.4 리터러시(2025-02-02; Art.4 문언은 2026/1744로 교체), GPAI(2025-08-02), Art.50 투명성 일반 적용일(2026-08-02)은 이미 적용 중. 단 Art.5 신설 금지관행·Art.50(2) 기시장출시 생성형 AI 유예는 **2026-12-02**(audit #1814).
 - Q: "교육 대상은 자사 직원만인가, 외부 협력자도 포함하는가?" → A: §12.1 4번째 행(외부 협력자 포함).
 - Q: "교육 효과성 측정은?" → A: 평가시험(§12.3 1주차) + 이수율 KPI(§12.4).
 
@@ -278,3 +278,4 @@ AI 기능 설명:                     AI Act 분류:
 | v0.8 | 2026-06-27 | **노후 인용 갱신 (audit #920)** — §5 PCCP 행 및 §9 출처를 "FDA PCCP **Draft** Guidance (2023)"→"**Final Guidance** — Marketing Submission Recommendations for a Predetermined Change Control Plan for AI-Enabled Device Software Functions (Final; 2025-08-18 현재 본; Docket FDA-2022-D-2628; original final issued December 2024)"으로 갱신. 범위를 ML→**AI-enabled device software functions 전반**으로 보정. FDA Guidance 페이지(2025-08-18 current)로 직접 재확인. 사내 SOP-AIGOV-001 v0.3 "FDA PCCP Guidance 2024" 표기와 정합 회복 |
 | v0.9 | 2026-09-11 | **P0 사실성 정정 (audit #1041)** — Regulation (EU) 2026/1744(Digital Omnibus on AI, 채택 2026-07-08 / OJ 2026-07-24 / 발효 2026-07-27, CELEX 32026R1744) 확정 반영. §3 일정표에 발효일·Annex III 2027-12-02·Annex I 2028-08-02 행 신설, '잠정 합의 시·예상·미완료' 조건부 표현 전량 제거. §12.2 시나리오 (A)/(B) 분기를 (A) 확정으로 종결하고 (B) 트랙 삭제, 기준일을 2028-08-02로 재설정. §12 D-36 D-day·KPI 기준일(경과분) 무효화 및 재설정. 자매 문서 SOP-AIGOV-001 §3.1 '제안'→'확정' 동반 정정 |
 | v0.9.1 | 2026-09-25 | **audit #1069/#1070 정정** — (1) AI Act 고위험 근거 'Annex II'(§2.1·§2.2·§9, 3개소)→**Annex I Section A point 11**(MDR) 정정(Annex II는 형사범죄 목록). §2.1 Class Is/Im/Ir Art.6(1) 해당 보완(MDCG 2025-6 Table 1). (2) §2.2 AEC·X-ray 콘솔 SW MDR 등급 IIa→**IIb**(Annex VIII Rule 10 + Ch.II 3.3), 'MDR 분류규칙' 열 신설, 표시·저장 전용 SW는 Rule 11 판단(해석범위)으로 분리. 근거: MDR Annex VIII 원문, MDCG 2025-6 Q2 |
+| v0.9.2 | 2026-11-07 | **audit #1814 정정** — Omnibus '타 일자 불변' 전칭 서술 2개소 교정: Art.5 신설분·Art.50(2) 유예 2026-12-02, Art.4 문언 교체 반영. Tier1 본문 자동조회 불가(미확인 표기). 실운영 문서 미참고. |

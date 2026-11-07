@@ -51,7 +51,7 @@ th{color:var(--muted);font-weight:600}
 </style></head><body>
 <style>.actions a[data-tip]{position:relative}.actions a[data-tip]:hover::after{content:attr(data-tip);position:absolute;left:0;top:128%;width:290px;white-space:normal;text-align:left;background:#0b1020;color:#e2e8f0;border:1px solid #475569;border-radius:7px;padding:9px 11px;font-size:.72rem;line-height:1.5;font-weight:400;z-index:30;box-shadow:0 8px 22px rgba(0,0,0,.5)}.actions a[data-tip]:hover::before{content:"";position:absolute;left:16px;top:118%;border:6px solid transparent;border-bottom-color:#475569;z-index:30}</style>
 <h1>의료기기 제조 업무규칙 — 자율구축·독립감사 대시보드</h1>
-<p class="subtitle">마지막 갱신: <strong>2026-11-06</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
+<p class="subtitle">마지막 갱신: <strong>2026-11-07</strong> · 단계: <strong>유지보수(통제문서 상시 운영)</strong> · <a href="https://github.com/holee9/MD-process">GitHub</a> · <a href="https://github.com/holee9/MD-process/issues">이슈</a> · <span class="tag tag-green">1차 구축 v0.2+ 완료</span></p>
 <div class="actions">
 <button onclick="window.print()">🖨 인쇄 / PDF 저장</button>
 <a href="https://github.com/holee9/MD-process/raw/main/docs/index.html" download="md-process-dashboard.html">💾 HTML 다운로드</a>
@@ -145,15 +145,15 @@ function submitIssueForm(){
 <div class="two-col">
 <div class="card"><h2>규제 추적 현황</h2><table>
 <tr><th>규제</th><th>최종 확인</th><th>경과</th><th>상태</th></tr>
-<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>113일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>98일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>144일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>144일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>144일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>144일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>112일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>IEC_62304</td><td>2026-07-16</td><td>113일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
-<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>102일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>FDA_QMSR</td><td>2026-07-16</td><td>114일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>EU_MDR_2017_745</td><td>2026-07-31</td><td>99일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>EU_AI_Act</td><td>2026-06-15</td><td>145일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>MFDS_디지털의료제품법</td><td>2026-06-15</td><td>145일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>진단용방사선_안전관리규칙</td><td>2026-06-15</td><td>145일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>ISO_13485_2016</td><td>2026-06-15</td><td>145일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>ISO_14971_2019</td><td>2026-07-17</td><td>113일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>IEC_62304</td><td>2026-07-16</td><td>114일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
+<tr><td>IEC_60601-2-54</td><td>2026-07-27</td><td>103일</td><td><span class="tag tag-yellow">점검 필요</span></td></tr>
 </table></div>
 <div class="card"><h2>이슈 상태</h2><canvas id="issueChart" height="160"></canvas>
 <p style="font-size:.78rem;color:var(--muted);margin-top:8px">총 430건 중 345건 완료 · 미해결 85건</p>
@@ -168,6 +168,7 @@ function submitIssueForm(){
 <tr><td>이슈 드래프트 ↔ _log 매핑</td><td>433/430 일치</td></tr>
 </table></div>
 <div class="card"><h2>최근 커밋 (10)</h2><ul class="commit-list">
+<li><span class="date">11-06</span>chore(maintenance): 정기 지표 재빌드·주간 리포트 [skip ci]</li>
 <li><span class="date">11-06</span>audit(sample C4): AI Act Omnibus 2026/1744 일자 대조 — 결함 1 (#1814)</li>
 <li><span class="date">11-06</span>fix(audit-drain C3): ISO 10993-1:2018 Withdrawn 판본 고정 인용 정정 (#1102 closed)</li>
 <li><span class="date">11-06</span>chore(maintenance): 정기 지표 재빌드·주간 리포트 [skip ci]</li>
@@ -177,7 +178,6 @@ function submitIssueForm(){
 <li><span class="date">11-05</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 <li><span class="date">11-05</span>audit(sample 24): C3 표준 판본 — ISO 10993-1:2018 Withdrawn, 결함 1 (#1810)</li>
 <li><span class="date">11-04</span>chore(maintenance): 정기 지표 재빌드·주간 리포트 [skip ci]</li>
-<li><span class="date">11-04</span>chore(matrix): rebuild 문서_매트릭스.md [skip ci]</li>
 </ul></div>
 <div class="card"><h2>시스템 정보</h2><div class="schedule-info">
 <div>⏰ 매일 03:18 KST (일일 감시·정합성)</div>
