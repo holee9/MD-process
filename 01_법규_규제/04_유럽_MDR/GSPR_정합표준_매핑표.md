@@ -2,7 +2,7 @@
 doc-id: GSPR_정합표준_매핑표
 title: "EU MDR Annex I GSPR ↔ 정합표준 매핑표"
 type: Matrix
-version: v0.3.2
+version: v0.3.3
 status: draft
 category: 01_법규_규제
 purpose: "EU MDR Annex I GSPR 요구사항별 정합표준(Harmonized/State-of-the-art) 매핑, X-ray 시스템/SaMD 적용 지침 및 적합성 증빙 작성 절차"
@@ -83,8 +83,8 @@ review-due: 2027-05-26
 | §14.7 | 재사용(재처리) | EN ISO 17664-1/-2 | H | 재사용 환자 접촉 액세서리 해당 시 |
 | §15 | 측정 기능 | EN 60601-1 §12.4; OIML | H | 선량 표시(DAP/CTDI), kVp/mAs 정확도 |
 | **§16** | **방사선 방호** | **EN 60601-1-3:2008/A1:2013/A2:2021** [audit #1011: 무관 표준 IEC 62667(광이온빔 치료장비) 삭제] | **H** | **ALARA 지원 기능, 선량 제한, 차폐 설계, 조사야 제한** |
-| **§17** | **프로그래머블 전자시스템 / 소프트웨어 (§17.1 EMC·신뢰성, §17.2 SW 개발수명주기·정보보안, §17.4 IT security)** | **IEC 62304:2006+AMD1:2015 (Ed.1.1); IEC 82304-1; IEC/TR 80002-1; IEC 81001-5-1(보안); EN 60601-1-2:2014/A1:2020 (EMC, §17.1)** | **S** | **SW 수명주기, 분류(Class A/B/C), 사이버보안, SOUP/OTS 관리, EMC 시험(전자기 간섭), WiFi/BT 모듈(RED 2014/53/EU)** |
-| §17.4 | 모바일 플랫폼 SW | IEC 62304 + IEC 82304-1 | S | 모바일 뷰어 앱 해당 시 |
+| **§17** | **프로그래머블 전자시스템 / 소프트웨어 (§17.1 반복성·신뢰성·성능, §17.2 SW 개발수명주기·정보보안, §17.3 모바일 컴퓨팅 플랫폼용 SW, §17.4 IT security)** | **IEC 62304:2006+AMD1:2015 (Ed.1.1); IEC 82304-1; IEC/TR 80002-1; IEC 81001-5-1(보안); EN 60601-1-2:2014/A1:2020 (EMC — Annex I 조항 귀속은 해석범위)** | **S** | **SW 수명주기, 분류(Class A/B/C), 사이버보안, SOUP/OTS 관리, EMC 시험(전자기 간섭), WiFi/BT 모듈(RED 2014/53/EU)** |
+| §17.3 | 모바일 플랫폼 SW | IEC 62304 + IEC 82304-1 | S | 모바일 뷰어 앱 해당 시 |
 | §18 | 에너지원 / 배터리 안전 | EN 60601-1; EN 62133-2 | H | X-ray 고전압 발생장치, UPS 배터리 |
 | §19 | Particular requirements for active implantable devices (활성 이식형 의료기기 특수요구사항) | — | N/A | **Not Applicable** — 자사 X-ray FPD·System·SaMD는 비이식형(non-implantable). N/A 근거는 GSPR 체크리스트(F-GSPR-MAP-001)에 서면화 [audit #950] |
 | §20 | 기계적·열적 위험 | EN 60601-1 §9, §11 | H | X-ray 튜브 과열 보호, 기계적 충돌 방지 |
@@ -189,3 +189,4 @@ OJEU 재검증 이력:
 | v0.2 | 2026-05-26 | 적합성 증빙 작성 절차 추가, X-ray 시스템 적용 컬럼 전면 보강, SaMD·X-ray 핵심 표준 묶음 구분, 양식 F-GSPR-MAP-001 추가, OJEU 최신 현황 반영, 상호참조 확충 |
 | v0.3.1 | 2026-07-10 | **audit #950 정정** — §5 매핑표 §19 주제 오인('무선·전자기기'→'Particular requirements for active implantable devices', 자사 비이식형이므로 N/A) 정정, EMC/무선 매핑 항목을 §17로 통합 | md-process-auditor |
 | v0.3.2 | 2026-09-25 | **audit #1069 정정** — §9 AI Act 고위험 근거 'Annex III'→**Art.6(1) + Annex I Section A point 11**(MDR) 정정 (MDCG 2025-6 Q2) | md-process-builder |
+| v0.3.3 | 2026-11-08 | **audit GH#1816 정정** — §17.4 모바일 플랫폼 SW→§17.3 (MDR Annex I Ch.II §17.3=모바일 컴퓨팅 플랫폼용 SW, §17.4=HW·IT 네트워크·IT 보안), §17.1 'EMC·신뢰성'→'반복성·신뢰성·성능'(EMC 문언 없음) | md-process-auditor |

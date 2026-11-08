@@ -2,7 +2,7 @@
 doc-id: SOP-CVD-001
 title: SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책
 type: SOP
-version: v0.3.1
+version: v0.3.2
 status: draft
 category: 02_품질경영시스템_QMS
 purpose: 보안 취약점의 조정된 공개·접수·처리·공시 절차를 수립하여 제품 사이버보안 유지
@@ -107,8 +107,8 @@ PGP 키는 매 12개월 갱신, 채널은 24/7 모니터링.
 | 관할 | 트리거 | 기한 | 양식 |
 |------|--------|------|------|
 | FDA(미) | 환자에게 위해 가능한 사이버 사고 | 즉시(unforeseeable adverse event) + MDR 30일 | MedWatch 3500A |
-| EU MDR | 사망/중대 위해 가능 | 인지 후 즉시(serious 2d/15d) | EUDAMED Vigilance |
-| MFDS(국내) | 사용 중 부작용·결함 | 사망 7일/위해 15일/기타 30일 | 의료기기전자민원창구 |
+| EU MDR | 중대 사고(Serious Incident) | 인지 후 즉시, 늦어도 기타 중대사고 15일(Art.87(3)) / 사망·예상 외 중대한 건강 악화 10일(Art.87(5)) / 공중보건 중대위협 2일(Art.87(4)) | EUDAMED Vigilance |
+| MFDS(국내) | 사용 중 부작용·결함 | 사망·생명위협 7일(추가보고 8일) / 기타 중대 이상사례 15일 (의료기기법 시행규칙 제51조; 조문 원문 pinpoint는 시행 전 재확인) | 의료기기전자민원창구 |
 | KISA(국내) | 침해사고 인지 시 | 24시간 이내 | 정보통신망법 §48의3 |
 
 본 매트릭스는 `01_법규_규제/`의 각 규제 문서와 교차참조한다.
@@ -183,6 +183,7 @@ X-ray 시스템은 "cyber device"로서 다음 취약점 유형에 대한 CVD �
 ## 14. 개정 이력
 | 버전 | 날짜 | 변경 내용 | 작성 |
 |------|------|-----------|------|
+| v0.3.2 | 2026-11-08 | **audit GH#1815 정정(C2 보고기한)** — §10 EU MDR 행 Art.87 2/10/15일 3구간 명시(사망 10일 누락 보완), MFDS 행 Tier1 근거 없는 '기타 30일' 삭제·시행규칙 제51조 기준(7일+8일/15일)으로 저장소 정합 | md-process-auditor |
 | v0.3.1 | 2026-07-10 | **audit #954/#948 정정** — §524B(b)(2)→(b)(1) 인용부정확 정정(2개소, CVD 계획 근거), FDA Cyber Guidance 판본 '2023-09-26'→2026-02 Final(Docket FDA-2021-D-1158) 정정 | md-process-auditor |
 | v0.3 | 2026-06-05 | v0.3 보강 — FDA 사이버보안 지침 2026-02 개정 반영, QMSR CVD 계획 QMS 편입, CVSS v4.0 전면 적용 |
 | v0.2 | 2026-05-21 | v0.2 보강 — forms·related-docs 추가, applicable 규격 보강, frontmatter 정규화, 양식 템플릿(F-CVD-001) 추가 |
