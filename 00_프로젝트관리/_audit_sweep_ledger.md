@@ -1,4 +1,4 @@
-**현재**: 2026-11-05 — 표본 24차: C3 ISO 10993-1:2018 Withdrawn(iso.org Tier1), 결함 1(audit #1810, web:ok). 직전: 2026-11-04 — 표본 23차: C4 발효일 문서 간 정합, 결함 0(web:partial). 직전: 2026-11-01 — 표본 21차: MDR Annex I §n 헤딩 수준 정합, 결함 0(web:partial). 직전: 2026-10-31(c) — 표본 20차: C1 QMSR §820.35(a)~(d) 전수 대조, 결함 0(web:partial, Cornell LII). 이전 내용은 아래 이력 참조.
+**현재**: 2026-11-09 — 표본 27차: C2 MFDS 보고기한 고시 제2026-67호 제5조 대조, 결함 1(GH#1819, P3, web:partial). 직전: 2026-11-05 — 표본 24차: C3 ISO 10993-1:2018 Withdrawn(iso.org Tier1), 결함 1(audit #1810, web:ok). 직전: 2026-11-04 — 표본 23차: C4 발효일 문서 간 정합, 결함 0(web:partial). 직전: 2026-11-01 — 표본 21차: MDR Annex I §n 헤딩 수준 정합, 결함 0(web:partial). 직전: 2026-10-31(c) — 표본 20차: C1 QMSR §820.35(a)~(d) 전수 대조, 결함 0(web:partial, Cornell LII). 이전 내용은 아래 이력 참조.
 **다음**: (c') 고시 제2025-28호 PDF 본문 유형군 조항 대조 (d''') MDR Annex I 잔여 §n 인용 전수 재대조(PDF 재사용: curl -L -A Mozilla EUR-Lex PDF CELEX 02017R0745-20250110 → pdftotext).
 ---
 doc-id: LOG-AUDIT-SWEEP-LEDGER
@@ -125,3 +125,5 @@ last-review: 2026-09-25
 
 > 2026-10-06 표본 모드 9차: 전수 100% 유지. #1088 확산 점검 — EUR-Lex(MDR/AI Act/GDPR) verbatim 대조, 신규 audit #1089(P2, 5건/8개소: MDR Art.15(4)→(5)·Art.11(3)(a)→15(6)·Art.87(11)→89(8) / AI Act Art.15(3)(4)→(4)(5) / GDPR Art.26). web:ok. 실운영 문서 미참고.
 > 2026-11-08 표본 모드 26차: 전수 100% 유지. Annex I §14.2/§17.x 원문 대조 → GH#1816·#1817(P2 citation).
+
+> 2026-11-09 표본 모드 27차: 전수 100% 유지. 고시 제2026-67호 제5조① 30일/분기+1개월 구간 Tier1 확인 → GH#1819(P3). 시행규칙 §51① 원문 미회수. web:partial. 실운영 문서 미참고.
