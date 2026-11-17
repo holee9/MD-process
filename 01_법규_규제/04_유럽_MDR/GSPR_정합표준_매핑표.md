@@ -11,7 +11,7 @@ forms: [F-GSPR-MAP-001]
 related-docs: [GSPR_체크리스트_v0.2_템플릿, EU_MDR_2017_745, EU_AI_Act_MDR_중첩적용_매핑, X-ray_장비_안전성능_표준_매핑, SOP-RM-001, SOP-VAL-001, IEC_62366-1_사용적합성_엔지니어링_계획서]
 related-issues: [5, 10, 40, 56, 60]
 owner: RA/QA Lead
-last-review: 2026-09-25
+last-review: 2026-11-08
 review-due: 2027-05-26
 ---
 

@@ -11,7 +11,7 @@ forms: [F-AIAMD-GAP-001]
 related-docs: [EU_MDR_2017_745, GSPR_정합표준_매핑표, GSPR_체크리스트_v0.2_템플릿, SOP-AIGOV-001, SOP-AIDATA-001, SOP-CC-001, SOP-RM-001, SOP-PSUR-001, 디지털의료제품법_SaMD_AI_요구]
 related-issues: [4, 7, 20, 21, 48, 58, 1527]
 owner: RA/QA Lead
-last-review: 2026-11-07
+last-review: 2026-11-08
 review-due: 2027-06-27
 ---
 

@@ -11,11 +11,11 @@ forms: [F-CVD-001]
 related-docs: [SOP-SBOM-001, SOP-CC-001, SOP-CAPA-001]
 related-issues: [19]
 owner: 설계개발 책임자
-last-review: 2026-07-10
+last-review: 2026-11-08
 review-due: 2027-05-21
 ---
 
-# SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.3.1 초안)
+# SOP-CVD-001 — Coordinated Vulnerability Disclosure 정책 (v0.3.2 초안)
 
 문서번호: SOP-CVD-001
 버전: v0.1 (초안)
