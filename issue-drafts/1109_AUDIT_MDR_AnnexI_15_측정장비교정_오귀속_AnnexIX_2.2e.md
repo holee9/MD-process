@@ -1,7 +1,7 @@
 ---
 title: "audit(C1/citation): 제조자 측정장비 교정관리(ISO 13485 §7.6) 근거를 MDR Annex I §15/§15.1·§14.2(g)(기기 설계요구)로 귀속 — Tier1 대응은 Annex IX §2.2(e)"
 labels: "audit:citation,prio:P2,risk:low"
-state: open
+state: closed
 ---
 
 ## 대상 (2문서 2개소)
@@ -33,5 +33,16 @@ EUR-Lex Regulation (EU) 2017/745 consolidated 02017R0745-20250110 공식 PDF (cu
 
 ## 자매 선례
 #975 (Annex I §10/§14 진단기기 오귀속, closed) — 동일 문서군·동일 클래스.
+
+실운영 문서 미참고.
+
+## 처리 결과 (빌더, 2026-11-18 — FACTUALITY 드레인 스프린트)
+| 문서 | 정정 |
+|---|---|
+| SOP-CAL-001 v0.2.3 L12 | `Annex I §15.1, §14.2(g)` → `Annex IX Ch.I §2.2(e)` + §15.1은 제품 측정기능 검증 한정 병기, §14.2(g) 삭제 |
+| 검사_시험_밸리데이션_개요 v0.2.1 L33 | `Annex I §15` → `Annex IX Ch.I §2.2(e) (시험장비 교정 소급성)` |
+
+- Tier1 재확인: EUR-Lex CELEX 02017R0745-20250110 공식 PDF pdftotext — Annex IX §2.2(e) "the test equipment to be used; it shall be possible to trace back adequately the calibration of that test equipment." 원문 일치.
+- 동일 클래스 일괄 점검: 저장소 `Annex I §15` 인용 잔여 2개소(X-ray_장비_안전성능_표준_매핑 L107 '진단기기', 영상품질_QC_프로토콜 frontmatter)는 **제품** 측정·진단기능 맥락 → 해석범위 PASS.
 
 실운영 문서 미참고.
